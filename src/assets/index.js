@@ -10,3 +10,8 @@ export { default as helpIcon } from './icons/icon-help.png';
 export { default as plusIcon } from './icons/icon-plus.png';
 
 export { default as requiredIcon } from './icons/icon-required.png';
+
+export { default as expandLessSmall } from './icons/icon-expand-less-small.png';
+export { default as expandMoreSmall } from './icons/icon-expand-more-small.png';
+export { default as expandLessLarge } from './icons/icon-expand-less-large.png';
+export { default as expandMoreLarge } from './icons/icon-expand-more-large.png';

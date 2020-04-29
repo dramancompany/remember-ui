@@ -31,7 +31,12 @@ const plugins = [
 /**
  * External Dependencies
  */
-const dependencies = ['@tippy.js/react', 'react-toastify', 'react-text-mask'];
+const dependencies = [
+  '@tippy.js/react',
+  'react-toastify',
+  'react-text-mask',
+  'body-scroll-lock',
+];
 
 export default outputData.map(({ file, format }) => ({
   input: 'src/index.js',

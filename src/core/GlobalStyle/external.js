@@ -1,8 +1,9 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 import { blue100, white, gray100, gray400 } from './variable';
+import { flexCenter } from './mixin';
 
-export const arrowMixin = (name, color) => css`
+const arrowMixin = (name, color) => css`
   ${name === 'dclight' &&
   css`
     &[data-placement^='bottom'] .tippy-arrow {
@@ -45,7 +46,7 @@ export const arrowMixin = (name, color) => css`
   }
 `;
 
-export const TippyTheme = createGlobalStyle`
+const TippyTheme = css`
   .tippy-content {
     cursor: pointer;
   }
@@ -73,5 +74,36 @@ export const TippyTheme = createGlobalStyle`
 
     ${arrowMixin('dcblue', blue100)}
   }
+`;
 
+const ModalTheme = css`
+  .dc-modal-overlay {
+    ${flexCenter}
+    z-index: 500;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(33, 33, 33, 0);
+    transition: background-color 200ms ease-in-out;
+
+    &--open {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &--close {
+      background-color: rgba(33, 33, 33, 0);
+    }
+  }
+
+  .dc-modal {
+    ${flexCenter}
+    outline: 0;
+  }
+`;
+
+export const GlobalTheme = createGlobalStyle`
+  ${TippyTheme}
+  ${ModalTheme}
 `;

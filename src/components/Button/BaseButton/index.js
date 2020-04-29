@@ -4,6 +4,7 @@ import { Spinner } from '../../Spinner';
 
 import {
   Inner,
+  Container,
   BlackButton,
   YellowButton,
   LightYellowButton,
@@ -53,7 +54,7 @@ export const BaseButton = ({
       case 'plus':
         return PlusButton;
       default:
-        return Button;
+        return Container;
     }
   };
 
