@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useDetectScrollPositionTop() {
+export function useDetectScrollPositionTop() {
   const [isScrollTop, setIsScrollTop] = useState(true);
 
   const handleScroll = () => {
@@ -21,5 +21,3 @@ function useDetectScrollPositionTop() {
 
   return isScrollTop;
 }
-
-export default useDetectScrollPositionTop;
