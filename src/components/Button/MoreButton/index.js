@@ -1,10 +1,10 @@
 import React from 'react';
 
 import {
-  expandMoreSmall,
-  expandLessSmall,
-  expandLessLarge,
-  expandMoreLarge,
+  expandMoreSmallIcon,
+  expandLessSmallIcon,
+  expandLessLargeIcon,
+  expandMoreLargeIcon,
 } from '../../../assets';
 
 import { Icon } from './MoreButton.styles';
@@ -14,8 +14,8 @@ export const MoreButton = ({
   size = 'small',
   onClick = () => {},
 }) => {
-  const lessIcon = size === 'small' ? expandLessSmall : expandLessLarge;
-  const moreIcon = size === 'small' ? expandMoreSmall : expandMoreLarge;
+  const lessIcon = size === 'small' ? expandLessSmallIcon : expandLessLargeIcon;
+  const moreIcon = size === 'small' ? expandMoreSmallIcon : expandMoreLargeIcon;
   return (
     <Icon size={size} onClick={onClick} src={value ? lessIcon : moreIcon} />
   );
