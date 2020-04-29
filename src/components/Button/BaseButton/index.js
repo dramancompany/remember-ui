@@ -14,7 +14,7 @@ import {
   PlusButton,
 } from './Button.styles';
 
-export const Button = ({
+export const BaseButton = ({
   className = '',
   disabled = false,
   onClick = () => {},

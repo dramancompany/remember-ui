@@ -5,12 +5,7 @@ import { useStorageHook } from '../../../hooks';
 
 import { Tooltip } from './InfoTooltip.styles';
 
-export const DcInfoTooltip = ({
-  target,
-  children,
-  content,
-  defaultDisabled,
-}) => {
+export const InfoTooltip = ({ target, children, content, defaultDisabled }) => {
   const [isShown, setIsShown] = useStorageHook(`${target}-tooltip-shown`);
 
   const isDisabled = isShown === 'true' || defaultDisabled;
