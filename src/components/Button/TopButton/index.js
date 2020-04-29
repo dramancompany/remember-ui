@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useDetectScrollPositionTop from '../../../hooks/useDetectScrollPositionTop';
+import { useDetectScrollPositionTop } from '../../../hooks';
 
 import { Container } from './TopButton.styles';
 import { TopBtn } from '../../../assets';
