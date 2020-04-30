@@ -1,0 +1,37 @@
+---
+name: MoreButton
+menu: Components/Button
+---
+
+import { Playground, Props } from 'docz'
+import { MoreButton } from './MoreButton'
+import { BaseButton } from '../BaseButton/BaseButton'
+
+# MoreButton
+
+## Properties
+
+<Props of={MoreButton} />
+
+## Basic usage
+
+<Playground>
+  <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+    <BaseButton color="black">
+      Show
+      <MoreButton />
+    </BaseButton>
+    <BaseButton color="black">
+      Hide
+      <MoreButton value />
+    </BaseButton>
+    <BaseButton fill>
+      Show
+      <MoreButton size="large" />
+    </BaseButton>
+    <BaseButton fill>
+      Hide
+      <MoreButton value size="large" />
+    </BaseButton>
+  </div>
+</Playground>

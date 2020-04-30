@@ -1,0 +1,24 @@
+---
+name: LinkButton
+menu: Components/Button
+---
+
+import { Playground, Props } from 'docz'
+import { LinkButton } from './LinkButton'
+
+# LinkButton
+
+## Properties
+
+<Props of={LinkButton} />
+
+## Basic usage
+
+<Playground>
+  <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+    <LinkButton>Default</LinkButton>
+    <LinkButton showAddress={false}>Default</LinkButton>
+    <LinkButton address="https://career.rememberapp.co.kr">Career</LinkButton>
+    <LinkButton showAddress={false} address="https://career.rememberapp.co.kr">Career</LinkButton>
+  </div>
+</Playground>
