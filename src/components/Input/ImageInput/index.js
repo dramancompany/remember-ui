@@ -1,41 +1,49 @@
-import styled from 'styled-components';
+import React, { useState } from 'react';
+
+import { customToast as toast } from '../../../utils';
+import { BaseButton } from '../../Button';
 
 import {
-  gray200,
-  gray,
-  flexCenterY,
-  textSmall,
-  textExtraSmall,
-} from '../../../core/GlobalStyle';
+  Container,
+  Title,
+  Image,
+  FileName,
+  InputFile,
+} from './ImageInput.styles';
 
-export const Container = styled.div``;
+export const ImageInput = ({ id, onChange, label }) => {
+  const [imageName, setImageName] = useState('');
 
-export const Title = styled.div`
-  ${textSmall({ color: gray })};
+  const changeCompanyLogo = e => {
+    if (e.target.files && e.target.files[0]) {
+      const IMAGE_SIZE_LIMIT = 1024 * 1024 * 5;
+      const reader = new FileReader();
+      const imageSize = e.target.files[0].size;
+      setImageName(e.target.files[0].name);
 
-  margin-bottom: 10px;
-`;
-
-export const Image = styled.div`
-  ${flexCenterY}
-`;
-
-export const FileName = styled.span`
-  ${textExtraSmall({ color: gray200 })};
-
-  margin-left: 8px;
-`;
-
-export const InputFile = styled.input.attrs({
-  type: 'file',
-  accept: 'image/png, image/jpeg',
-})`
-  /* 파일 필드 숨기기 */
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-`;
+      if (imageSize < IMAGE_SIZE_LIMIT) {
+        reader.onload = nestedEvent => {
+          onChange(nestedEvent.target.result);
+        };
+        reader.readAsDataURL(e.target.files[0]);
+      } else {
+        toast('5MB 이상 이미지는 업로드 할 수 없습니다');
+        setImageName('');
+      }
+    }
+  };
+  return (
+    <Container>
+      {label && <Title>{label}</Title>}
+      <Image>
+        <label htmlFor={id}>
+          <BaseButton width={82} onClick={() => {}} color="black">
+            파일 선택
+          </BaseButton>
+        </label>
+        <FileName>{imageName}</FileName>
+      </Image>
+      <InputFile id={id} onChange={e => changeCompanyLogo(e)} />
+    </Container>
+  );
+};
