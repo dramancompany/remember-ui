@@ -1,0 +1,43 @@
+---
+name: DoubleInput
+menu: Components/Input
+---
+
+import { Playground, Props } from 'docz'
+import { DoubleInput } from './DoubleInput'
+import { Container } from '../../Container/Container'
+
+# DoubleInput
+
+## Properties
+
+<Props of={DoubleInput} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <DoubleInput
+      label1="유효 기간"
+      value1={12}
+      value2={12}
+      name1="expiryDateMonth"
+      name2="expiryDateYear"
+      placeholder1="MM"
+      placeholder2="YY"
+      onChange1={()=>{}}
+      onChange2={()=>{}}
+      validate={(_expiryDateMonth, _expiryDateYear) => {
+        if (
+          _expiryDateMonth.length === 2 &&
+          _expiryDateYear.length === 2
+        ) {
+          return '';
+        }
+        return '유효 기간은 2자리 숫자로 입력하세요';
+      }}
+      maxLength={2}
+      onlyNumber
+    />
+  </Container>
+</Playground>

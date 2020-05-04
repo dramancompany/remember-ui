@@ -23,8 +23,8 @@ BaseButton.propTypes = {
     'plus',
   ]),
   size: t.oneOf(['small', 'medium', 'large', 'xlarge']),
-  width: t.string,
   className: t.string,
+  width: t.number,
   onClick: t.func,
 };
 
@@ -36,7 +36,7 @@ BaseButton.defaultProps = {
   isLoading: false,
   color: 'yellow',
   size: 'small',
-  width: '72',
   className: '',
+  width: 72,
   onClick: () => {},
 };

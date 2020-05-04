@@ -1,0 +1,84 @@
+---
+name: BaseInput
+menu: Components/Input
+---
+
+import { Playground, Props } from 'docz'
+import { BaseInput } from './BaseInput'
+import { Container } from '../../Container/Container'
+import { Checkbox } from '../../Control/Checkbox/Checkbox'
+
+# BaseInput
+
+## Properties
+
+<Props of={BaseInput} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <BaseInput
+      type="text"
+      name="test1"
+    />
+    <BaseInput
+      name="test2"
+      readOnly
+    />
+    <BaseInput
+      name="test2"
+      disabled
+    />
+  </Container>
+  <br />
+  <Container>
+    <BaseInput
+      name="test2"
+      label="제목"
+      placeholder="제목을 입력하세요 (최대 50자)"
+      maxLength={50}
+      marginBottom={10}
+    />
+    <BaseInput
+      name="test3"
+      label="구매자"
+      placeholder="구매자명을 입력하세요"
+      maxLength={150}
+      marginBottom={10}
+      autoFocus
+      required
+      useError
+      validate={(name) => {
+        if (!name) return '구매자명을 입력하세요';
+      }}
+    />
+    <BaseInput
+      name="test3"
+      label="핸드폰"
+      placeholder="핸드폰 번호를 입력하세요"
+      maxLength={150}
+      marginBottom={10}
+      autoFocus
+      required
+      useError
+      onlyNumber
+      validate={(phone) => {
+        if (!phone) return '핸드폰 번호를 입력하세요';
+      }}
+    />
+    <BaseInput
+      label="이메일"
+      placeholder="이메일"
+      footer={
+        <div style={{display:'flex', alignItems:'center'}}>
+          <Checkbox state="on" />
+          <span className="notify-text">
+            알림메일을 수신합니다
+          </span>
+        </div>
+      }
+    />
+
+  </Container>
+</Playground>
