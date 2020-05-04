@@ -1,0 +1,26 @@
+---
+name: Checkbox
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import { Checkbox } from './Checkbox'
+import { Container } from '../../Container/Container'
+
+# Checkbox
+
+## Properties
+
+<Props of={Checkbox} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <Checkbox state="on" />
+    <Checkbox state="off" />
+    <Checkbox state="on" disabled />
+    <Checkbox disabled />
+    <Checkbox onClick={()=>alert("hello")} />
+  </Container>
+</Playground>

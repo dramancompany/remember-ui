@@ -5,6 +5,7 @@ menu: Components/Button
 
 import { Playground, Props } from 'docz'
 import { LinkButton } from './LinkButton'
+import { Container } from '../../Container/Container'
 
 # LinkButton
 
@@ -15,10 +16,10 @@ import { LinkButton } from './LinkButton'
 ## Basic usage
 
 <Playground>
-  <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+  <Container direction="column">
     <LinkButton>Default</LinkButton>
     <LinkButton showAddress={false}>Default</LinkButton>
     <LinkButton address="https://career.rememberapp.co.kr">Career</LinkButton>
     <LinkButton showAddress={false} address="https://career.rememberapp.co.kr">Career</LinkButton>
-  </div>
+  </Container>
 </Playground>

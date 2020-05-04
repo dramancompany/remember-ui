@@ -6,6 +6,7 @@ menu: Components/Button
 import { Playground, Props } from 'docz'
 import { MoreButton } from './MoreButton'
 import { BaseButton } from '../BaseButton/BaseButton'
+import { Container } from '../../Container/Container'
 
 # MoreButton
 
@@ -16,7 +17,7 @@ import { BaseButton } from '../BaseButton/BaseButton'
 ## Basic usage
 
 <Playground>
-  <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+  <Container direction="column">
     <BaseButton color="black">
       Show
       <MoreButton />
@@ -33,5 +34,5 @@ import { BaseButton } from '../BaseButton/BaseButton'
       Hide
       <MoreButton value size="large" />
     </BaseButton>
-  </div>
+  </Container>
 </Playground>

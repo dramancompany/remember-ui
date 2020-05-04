@@ -5,6 +5,7 @@ menu: Components/Button
 
 import { Playground, Props } from 'docz'
 import { BaseButton } from './BaseButton'
+import { Container } from '../../Container/Container'
 
 # BaseButton
 
@@ -15,12 +16,12 @@ import { BaseButton } from './BaseButton'
 ## Basic usage
 
 <Playground>
-  <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+  <Container direction="column">
     <BaseButton>Default</BaseButton>
     <BaseButton fill>Fill</BaseButton>
     <BaseButton rounded={false} disabled>No Rounded</BaseButton>
     <BaseButton isLoading>isLoading</BaseButton>
     <BaseButton color="blue" size="large" width="150">Large blue</BaseButton>
     <BaseButton fill color="plus" size="xlarge" width="150">plus</BaseButton>
-  </div>
+  </Container>
 </Playground>

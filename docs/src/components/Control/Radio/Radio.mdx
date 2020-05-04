@@ -1,0 +1,24 @@
+---
+name: Radio
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import { Radio } from './Radio'
+import { Container } from '../../Container/Container'
+
+# Radio
+
+## Properties
+
+<Props of={Radio} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <Radio />
+    <Radio isChecked />
+    <Radio isChecked onClick={()=>alert("hello")} />
+  </Container>
+</Playground>

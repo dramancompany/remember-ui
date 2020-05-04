@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz'
 import { Chip } from './Chip'
+import { Container } from '../Container/Container'
 
 # Chip
 
@@ -15,11 +16,11 @@ import { Chip } from './Chip'
 ## Basic usage
 
 <Playground>
-  <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+  <Container>
     <Chip>Some message1</Chip>
     <Chip>Some message2</Chip>
     <Chip>Some message3</Chip>
     <Chip>Some message4</Chip>
     <Chip isOverflowed>Blah blah~ BlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblah</Chip>
-  </div>
+  </Container>
 </Playground>
