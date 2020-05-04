@@ -3,9 +3,9 @@ name: Checkbox
 menu: Components
 ---
 
-import { Playground, Props } from 'docz'
-import { Checkbox } from './Checkbox'
-import { Container } from '../../Container/Container'
+import { Playground, Props } from 'docz';
+import { Checkbox } from './Checkbox';
+import { Container } from '../../Container/Container';
 
 # Checkbox
 
@@ -16,11 +16,32 @@ import { Container } from '../../Container/Container'
 ## Basic usage
 
 <Playground>
-  <Container>
-    <Checkbox state="on" />
-    <Checkbox state="off" />
-    <Checkbox state="on" disabled />
-    <Checkbox disabled />
-    <Checkbox onClick={()=>alert("hello")} />
-  </Container>
+  {() => {
+    const [isChecked, setIsChecked] = React.useState(true);
+    const toggle = () => setIsChecked(!isChecked);
+    return (
+      <>
+        <Container direction="column">
+          <div>체크박스 on/off/disabled</div>
+          <Container direction="row">
+            <Checkbox state="on" />
+            <Checkbox state="off" />
+            <Checkbox state="on" disabled />
+          </Container>
+        </Container>
+        
+        <Container direction="column">
+          <div>체크박스 onClick Event Bind</div>
+          <Container direction="row">
+            <Checkbox state={isChecked ? 'on' : 'off'} onClick={toggle} />
+            <Checkbox
+              state={isChecked ? 'on' : 'off'}
+              onClick={toggle}
+              disabled
+            />
+          </Container>
+        </Container>
+      </>
+    );
+  }}
 </Playground>

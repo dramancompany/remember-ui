@@ -3,9 +3,9 @@ name: Radio
 menu: Components
 ---
 
-import { Playground, Props } from 'docz'
-import { Radio } from './Radio'
-import { Container } from '../../Container/Container'
+import { Playground, Props } from 'docz';
+import { Radio } from './Radio';
+import { Container } from '../../Container/Container';
 
 # Radio
 
@@ -16,9 +16,27 @@ import { Container } from '../../Container/Container'
 ## Basic usage
 
 <Playground>
-  <Container>
-    <Radio />
-    <Radio isChecked />
-    <Radio isChecked onClick={()=>alert("hello")} />
-  </Container>
+  {() => {
+    const [radioId, setRadioId] = React.useState(1);
+    const setRadio = (id) => setRadioId(id);
+    return (
+      <>
+        <Container direction="column">
+          <div>Radio on/off</div>
+          <Container direction="row">
+            <Radio isChecked />
+            <Radio />
+          </Container>
+        </Container>
+        
+        <Container direction="column">
+          <div>Radio onClick Event Bind</div>
+          <div style={{display:'flex', alignItems:'center'}}>
+            <Radio isChecked={radioId===1} onClick={() => setRadio(1)} /><span>옵션1</span> 
+            <Radio isChecked={radioId===2} onClick={() => setRadio(2)} /><span>옵션2</span>
+          </div>
+        </Container>
+      </>
+    );
+  }}
 </Playground>

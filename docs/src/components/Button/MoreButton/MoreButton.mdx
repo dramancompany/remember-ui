@@ -3,10 +3,10 @@ name: MoreButton
 menu: Components/Button
 ---
 
-import { Playground, Props } from 'docz'
-import { MoreButton } from './MoreButton'
-import { BaseButton } from '../BaseButton/BaseButton'
-import { Container } from '../../Container/Container'
+import { Playground, Props } from 'docz';
+import { MoreButton } from './MoreButton';
+import { BaseButton } from '../BaseButton/BaseButton';
+import { Container } from '../../Container/Container';
 
 # MoreButton
 
@@ -17,22 +17,43 @@ import { Container } from '../../Container/Container'
 ## Basic usage
 
 <Playground>
-  <Container direction="column">
-    <BaseButton color="black">
-      Show
-      <MoreButton />
-    </BaseButton>
-    <BaseButton color="black">
-      Hide
-      <MoreButton value />
-    </BaseButton>
-    <BaseButton fill>
-      Show
-      <MoreButton size="large" />
-    </BaseButton>
-    <BaseButton fill>
-      Hide
-      <MoreButton value size="large" />
-    </BaseButton>
-  </Container>
+  {() => {
+    const [isShow, setIsShow] = React.useState(false);
+    const toggle = () => setIsShow(!isShow);
+    return (
+      <>
+        <Container direction="column">
+          <div>MoreButton Show/Hide</div>
+          <Container direction="row">
+            <BaseButton color="black">
+              Show
+              <MoreButton />
+            </BaseButton>
+            <BaseButton color="black">
+              Hide
+              <MoreButton value />
+            </BaseButton>
+            <BaseButton fill>
+              Show
+              <MoreButton size="large" />
+            </BaseButton>
+            <BaseButton fill>
+              Hide
+              <MoreButton value size="large" />
+            </BaseButton>
+          </Container>
+        </Container>
+        
+        <Container direction="column">
+          <div>MoreButton onClick Event Bind</div>
+          <Container direction="row">
+            <BaseButton fill onClick={toggle}>
+              {isShow ? 'Hide':'Show'}
+              <MoreButton size="large" value={isShow} />
+            </BaseButton>
+          </Container>
+        </Container>
+      </>
+    );
+  }}
 </Playground>

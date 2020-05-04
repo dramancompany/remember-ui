@@ -8,14 +8,14 @@ export const BaseInput = ({ ...rest }) => {
 
 BaseInput.propTypes = {
   type: t.string.isRequired,
-  value: t.string.isRequired,
   name: t.string.isRequired,
+  value: t.string,
   placeholder: t.string,
   label: t.string,
   maxLength: t.number,
   marginBottom: t.number,
   outerRef: t.string,
-  footer: t.string,
+  footer: t.object,
   className: t.string,
 
   autoFocus: t.oneOf([false, true]),
