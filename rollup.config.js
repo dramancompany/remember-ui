@@ -34,6 +34,7 @@ const plugins = [
 const dependencies = [
   '@tippy.js/react',
   'react-toastify',
+  'react-outside-click-handler',
   'react-text-mask',
   'body-scroll-lock',
 ];
