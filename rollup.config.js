@@ -37,6 +37,7 @@ const dependencies = [
   'react-outside-click-handler',
   'react-text-mask',
   'body-scroll-lock',
+  'react-modal',
 ];
 
 export default outputData.map(({ file, format }) => ({
