@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { helpIcon, plusIcon } from '../../../assets';
-import { Icon, Tooltip as TooltipDiv } from './BaseTooltip.styles';
+import { Icon, Tooltip } from './BaseTooltip.styles';
 import 'tippy.js/dist/tippy.css';
 
-const getImgFromType = (type) => {
+const getImgFromType = type => {
   switch (type) {
     case 'plus':
       return plusIcon;
@@ -20,7 +20,7 @@ const getImgFromType = (type) => {
  * @param { 'small' | 'medium' } size
  * @param { 'dclight', 'dcdark', 'dcblue' } theme
  */
-export const Tooltip = ({
+export const BaseTooltip = ({
   customComponent,
   offset = '0,0',
   arrow = true,
@@ -33,7 +33,7 @@ export const Tooltip = ({
   placement = 'bottom',
   textAlign = 'center',
 }) => (
-  <TooltipDiv
+  <Tooltip
     offset={offset}
     placement={placement}
     arrow={arrow}
@@ -57,5 +57,5 @@ export const Tooltip = ({
         style={iconStyle}
       />
     )}
-  </TooltipDiv>
+  </Tooltip>
 );

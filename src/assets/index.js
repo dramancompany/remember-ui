@@ -18,3 +18,8 @@ export { default as expandMoreLargeIcon } from './icons/icon-expand-more-large.p
 
 export { default as successIcon } from './icons/icon-success.png';
 export { default as warningIcon } from './icons/icon-warning.png';
+
+export { default as arrowBackActiveIcon } from './icons/icon-arrow-back-active.png';
+export { default as arrowBackInactiveIcon } from './icons/icon-arrow-back-inactive.png';
+export { default as arrowForwardActiveIcon } from './icons/icon-arrow-forward-active.png';
+export { default as arrowForwardInactiveIcon } from './icons/icon-arrow-forward-inactive.png';
