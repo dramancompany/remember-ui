@@ -9,10 +9,9 @@ export const PopoverItem = ({
   bold = false,
   onClick,
   className,
-  testId,
 }) => {
   return (
-    <Container onClick={onClick} data-testid={testId}>
+    <Container onClick={onClick}>
       <Popover
         className={className}
         selected={selected}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Popover, Content } from './Popover.styles';
 
-export const Popover = ({
+export const BasePopover = ({
   onPopoverOpenChange = () => {},
   className = 'DcPopover',
   customElement,
