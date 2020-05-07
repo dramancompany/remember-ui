@@ -11,8 +11,6 @@ export const BaseModal = ({
   allowKeyExit = true,
   children,
 }) => {
-  const bodyElement = document.querySelector('body');
-
   return (
     <Modal
       overlayClassName={{
@@ -25,7 +23,7 @@ export const BaseModal = ({
       onRequestClose={onClose}
       onAfterOpen={() => {
         onAfterOpen();
-        disableBodyScroll(bodyElement);
+        disableBodyScroll(document.querySelector('body'));
       }}
       onAfterClose={clearAllBodyScrollLocks}
       shouldCloseOnOverlayClick={false}
