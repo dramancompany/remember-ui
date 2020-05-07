@@ -1,0 +1,37 @@
+---
+name: ProgressModal
+menu: Components/Modal
+---
+
+import { Playground, Props } from 'docz';
+import { ProgressModal } from './ProgressModal';
+import { Container } from '../../Container/Container';
+import { BaseButton } from '../../Button/BaseButton/BaseButton';
+
+# ProgressModal
+
+## Properties
+
+<Props of={ProgressModal} />
+
+## Basic usage
+
+<Playground>
+  {() => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    return (
+      <Container>
+        <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen(true)}>Open Progress Modal</BaseButton>
+        <ProgressModal 
+          isOpen={isOpen}
+          currentCount={4}
+          totalCount={5}
+          title={(currentCount, totalCount) =>
+            `${currentCount} / ${totalCount}명에게 메시지 전송 중`
+          }
+          message="메시지 전송 중에 브라우저 창을 닫지 마세요"
+        />
+      </Container>
+    );
+  }}
+</Playground>

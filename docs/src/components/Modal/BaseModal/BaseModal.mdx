@@ -6,6 +6,7 @@ menu: Components/Modal
 import { Playground, Props } from 'docz';
 import { BaseModal } from './BaseModal';
 import { Container } from '../../Container/Container';
+import { BaseButton } from '../../Button/BaseButton/BaseButton';
 
 # BaseModal
 
@@ -16,5 +17,18 @@ import { Container } from '../../Container/Container';
 ## Basic usage
 
 <Playground>
-  <Container></Container>
+  {() => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    return (
+      <Container>
+        <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen(true)}>Open Modal</BaseButton>
+        <BaseModal isOpen={isOpen}>
+          <div style={{ backgroundColor:"#fff", width:"50vw", height:"50vh", display:"flex", alignItems:"center", justifyContent:"center", flexDirection:"column"}}>
+            <span>Modal is Open</span>
+            <BaseButton fill color={"gray"} onClick={()=>setIsOpen(false)}>Close Modal</BaseButton>
+          </div>
+        </BaseModal>
+      </Container>
+    );
+  }}
 </Playground>

@@ -1,9 +1,17 @@
 import React from 'react';
 import t from 'prop-types';
-import { BaseModal as Component } from '../../../../../dist/index.esm';
+import {
+  BaseModal as Component,
+  GlobalTheme,
+} from '../../../../../dist/index.esm';
 
 export const BaseModal = ({ children, ...rest }) => {
-  return <Component {...rest}>{children}</Component>;
+  return (
+    <>
+      <GlobalTheme />
+      <Component {...rest}>{children}</Component>
+    </>
+  );
 };
 
 BaseModal.propTypes = {

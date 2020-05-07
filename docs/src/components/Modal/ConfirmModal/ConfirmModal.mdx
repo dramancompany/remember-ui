@@ -6,6 +6,7 @@ menu: Components/Modal
 import { Playground, Props } from 'docz';
 import { ConfirmModal } from './ConfirmModal';
 import { Container } from '../../Container/Container';
+import { BaseButton } from '../../Button/BaseButton/BaseButton';
 
 # ConfirmModal
 
@@ -16,5 +17,37 @@ import { Container } from '../../Container/Container';
 ## Basic usage
 
 <Playground>
-  <Container></Container>
+  {() => {
+    const [isOpen1, setIsOpen1] = React.useState(false);
+    const [isOpen2, setIsOpen2] = React.useState(false);
+    const handleSubmit = () =>{
+      alert("보냈습니다")
+    }
+    return (
+      <Container>
+        <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen1(true)}>Open Success Modal</BaseButton>
+        <ConfirmModal 
+          isOpen={isOpen1}
+          title={`000 님에게 메시지를 보내시겠습니까?`}
+          message={"테스트 메시지 영역"}
+          okText="보내기"
+          closeText="취소"
+          onOk={() => handleSubmit()}
+          onClose={()=>setIsOpen1(false)}
+        />
+        <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen2(true)}>Open Waring Modal</BaseButton>
+        <ConfirmModal 
+          icon={"warning"}
+          type={"delete"}
+          isOpen={isOpen2}
+          title={`000 님에게 메시지를 보내시겠습니까?`}
+          message={"테스트 메시지 영역"}
+          okText="보내기"
+          closeText="취소"
+          onOk={() => handleSubmit()}
+          onClose={()=>setIsOpen2(false)}
+        />
+      </Container>
+    );
+  }}
 </Playground>

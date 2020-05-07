@@ -1,9 +1,17 @@
 import React from 'react';
 import t from 'prop-types';
-import { ConfirmModal as Component } from '../../../../../dist/index.esm';
+import {
+  ConfirmModal as Component,
+  GlobalTheme,
+} from '../../../../../dist/index.esm';
 
 export const ConfirmModal = ({ children, ...rest }) => {
-  return <Component {...rest}>{children}</Component>;
+  return (
+    <>
+      <GlobalTheme />
+      <Component {...rest}>{children}</Component>
+    </>
+  );
 };
 
 ConfirmModal.propTypes = {
