@@ -1,6 +1,6 @@
 ---
 name: Popover
-menu: Components
+menu: Components/Control
 ---
 
 import { Playground, Props } from 'docz';
@@ -19,7 +19,6 @@ import { BaseButton } from '../../Button/BaseButton/BaseButton';
 
 <Playground>
   {() => {
-    const [isOpen, setIsOpen] = React.useState(false);
     return (
       <>
         <div style={{width:"150px"}}>
@@ -38,7 +37,7 @@ import { BaseButton } from '../../Button/BaseButton/BaseButton';
               </div>
             }
           >
-          <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen(true)}>Open Popover</BaseButton>
+          <BaseButton fill width={150} size={"large"}>Open Popover</BaseButton>
           </Popover>
         </div>
       </>
