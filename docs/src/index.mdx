@@ -27,6 +27,9 @@ import { Select } from './components/Control/Select/Select';
 import { Popover } from './components/Control/Popover/Popover';
 import { PopoverItem } from './components/Control/PopoverItem/PopoverItem';
 
+import { Chip } from './components/Chip/Chip.js';
+import { Spinner } from './components/Spinner/Spinner';
+
 import { Container } from './components/Container/Container';
 import './index.scss';
 
@@ -240,7 +243,6 @@ import './index.scss';
   </Container>
 </Playground>
 
-
 ## Tooltip Components
 
 <Playground>
@@ -289,6 +291,29 @@ import './index.scss';
         </span>
       }
     />
+  </Container>
+
+</Playground>
+
+## General Components
+
+<Playground>
+  Chip
+  <Container direction="row" className="container">
+    <Chip>Some message1</Chip>
+    <Chip>Some message2</Chip>
+    <Chip>Some message3</Chip>
+    <Chip>Some message4</Chip>
+    <Chip isOverflowed>
+      Blah blah~
+      BlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblah
+    </Chip>
+  </Container>
+
+  Spinner
+  <Container direction="row" className="container">
+    <Spinner />
+    <Spinner width={10} height={10} borderWeight={2} />
   </Container>
 
 </Playground>
