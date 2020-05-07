@@ -1,0 +1,48 @@
+---
+name: Select
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+import { Select } from './Select';
+import { Container } from '../../Container/Container';
+
+# Select
+
+## Properties
+
+<Props of={Select} />
+
+## Basic usage
+
+<Playground>
+  {() => {
+    const options = [
+      {
+        id: 1,
+        label: '인재검색 50',
+        value: '50',
+      },
+      {
+        id: 2,
+        label: '인재검색 100',
+        value: '100',
+      },
+      {
+        id: 3,
+        label: '인재검색 200',
+        value: '200',
+      },
+    ];
+    const [current, setCurrent] = React.useState(options[0].id);
+    return (
+      <Select
+        className="pass-type"
+        label="상품 종류"
+        value={current}
+        onChange={setCurrent}
+        options={options}
+      />
+    );
+  }}
+</Playground>

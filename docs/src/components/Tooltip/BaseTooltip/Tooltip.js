@@ -1,9 +1,17 @@
 import React from 'react';
 import t from 'prop-types';
-import { Tooltip as Component } from '../../../../../dist/index.esm';
+import {
+  BaseTooltip as Component,
+  GlobalTheme,
+} from '../../../../../dist/index.esm';
 
 export const Tooltip = ({ ...rest }) => {
-  return <Component {...rest} />;
+  return (
+    <>
+      <GlobalTheme />
+      <Component {...rest} />
+    </>
+  );
 };
 
 Tooltip.propTypes = {

@@ -1,0 +1,34 @@
+---
+name: PopoverItem
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+import { PopoverItem } from './PopoverItem';
+import { Container } from '../../Container/Container';
+
+# PopoverItem
+
+## Properties
+
+<Props of={PopoverItem} />
+
+## Basic usage
+
+<Playground>
+  {() => {
+    return (
+      <Container>
+        <PopoverItem onClick={() => alert("Pop!")}>
+          쿠폰 등록
+        </PopoverItem>
+        <PopoverItem warning onClick={() => alert("Pop!")}>
+          쿠폰 등록
+        </PopoverItem>
+        <PopoverItem bold onClick={() => alert("Pop!")}>
+          쿠폰 등록
+        </PopoverItem>
+      </Container>
+    );
+  }}
+</Playground>
