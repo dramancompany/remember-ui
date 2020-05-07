@@ -1,0 +1,46 @@
+---
+name: Popover
+menu: Components/Control
+---
+
+import { Playground, Props } from 'docz';
+import { Popover } from './Popover';
+import { PopoverItem } from '../PopoverItem/PopoverItem';
+import { Container } from '../../Container/Container';
+import { BaseButton } from '../../Button/BaseButton/BaseButton';
+
+# Popover
+
+## Properties
+
+<Props of={Popover} />
+
+## Basic usage
+
+<Playground>
+  {() => {
+    return (
+      <>
+        <div style={{width:"150px"}}>
+          <Popover
+            content={
+              <div>
+                <PopoverItem onClick={() => alert("Pop!")}>
+                  쿠폰 등록1
+                </PopoverItem>
+                <PopoverItem onClick={() => alert("Pop!")}>
+                  쿠폰 등록2
+                </PopoverItem>
+                <PopoverItem onClick={() => alert("Pop!")}>
+                  쿠폰 등록3
+                </PopoverItem>
+              </div>
+            }
+          >
+          <BaseButton fill width={150} size={"large"}>Open Popover</BaseButton>
+          </Popover>
+        </div>
+      </>
+    );
+  }}
+</Playground>
