@@ -1,0 +1,39 @@
+---
+name: Textarea
+menu: Components/Input
+---
+
+import { Playground, Props } from 'docz'
+import { Textarea } from './Textarea'
+import { Container } from '../../Container/Container'
+import { Checkbox } from '../../Control/Checkbox/Checkbox'
+
+# Textarea
+
+## Properties
+
+<Props of={Textarea} />
+
+## Basic usage
+
+<Playground>
+  {() => {
+    const [content, setContent] = React.useState('');
+    return (
+      <>
+        <Container>
+          <Textarea
+            label={"문의내용"}
+            type="text"
+            name="message"
+            maxLength={1500}
+            onChange={e => setContent(e.target.value)}
+            value={content}
+            placeholder={"1500자 내로 문의 내용을 적어 주세요."}
+            required
+          />
+        </Container>
+      </>
+    );
+  }}
+</Playground>
