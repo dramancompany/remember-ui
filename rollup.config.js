@@ -4,6 +4,7 @@ import babel from 'rollup-plugin-babel';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
+import { terser } from 'rollup-plugin-terser';
 
 import pkg from './package.json';
 
@@ -26,6 +27,7 @@ const plugins = [
   }),
   commonjs(),
   resolve(),
+  // terser(),
 ];
 
 /**
