@@ -4,7 +4,7 @@ const FONT_FAMILY =
 export default {
   name: 'Remember UI',
   description: 'Remember UI Components',
-  base: '/',
+  base: '/remember-ui',
   src: './docsSrc',
   dest: './docs',
   themeConfig: {
