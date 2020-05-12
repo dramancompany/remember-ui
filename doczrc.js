@@ -1,3 +1,5 @@
+import { css } from 'docz-plugin-css';
+
 const FONT_FAMILY =
   '-apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Icons16", sans-serif';
 
@@ -16,4 +18,10 @@ export default {
       body: FONT_FAMILY,
     },
   },
+  plugins: [
+    css({
+      preprocessor: 'sass',
+      cssmodules: true,
+    }),
+  ],
 };
