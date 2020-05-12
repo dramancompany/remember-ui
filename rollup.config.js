@@ -27,7 +27,7 @@ const plugins = [
   }),
   commonjs(),
   resolve(),
-  // terser(),
+  terser(),
 ];
 
 /**
