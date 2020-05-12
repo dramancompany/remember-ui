@@ -16,7 +16,7 @@
     "build": "rollup -c",
     "build:all": "yarn build && yarn docz:build",
     "docz:dev": "docz dev",
-    "docz:build": "docz build",
+    "docz:build": "rm -rf ./docs .docz/.cache && docz build",
     "docz:serve": "docz serve",
     "publish": "npm publish"
   },
