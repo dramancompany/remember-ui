@@ -23,7 +23,7 @@ export const BaseButton = ({
   color = 'yellow',
   fill = false,
   borderless = false,
-  size,
+  size = 'small',
   width,
   isLoading,
   children,

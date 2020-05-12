@@ -6,13 +6,11 @@ import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
 
-import pkg from './package.json';
-
 process.env.BABEL_ENV = 'production';
 
 const outputData = [
   {
-    file: pkg.module,
+    file: 'dist/index.js',
     format: 'es',
   },
 ];
