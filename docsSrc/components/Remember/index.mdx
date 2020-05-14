@@ -29,6 +29,7 @@ import { PopoverItem } from '../Control/PopoverItem/PopoverItem';
 
 import { Chip } from '../Chip/Chip.js';
 import { Spinner } from '../Spinner/Spinner';
+import { Pagination } from '../Pagination/Pagination';
 
 import { DoczContainer } from 'remember-ui';
 
@@ -352,4 +353,21 @@ yarn add remember-ui
     <Spinner width={10} height={10} borderWeight={2} />
   </DoczContainer>
 
+  Pagination
+  <DoczContainer direction="column">
+    <Pagination
+      onChangePage={()=>{}}
+      activePage={1}
+      totalItemCount={56}
+      pageRangeDisplayed={10}
+      itemCountPerPage={10}
+    />
+    <Pagination
+      onChangePage={()=>{}}
+      activePage={2}
+      totalItemCount={56}
+      pageRangeDisplayed={2}
+      itemCountPerPage={10}
+    />
+  </DoczContainer>
 </Playground>
