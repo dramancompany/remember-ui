@@ -5,7 +5,7 @@ menu: Components/Button
 
 import { Playground, Props } from 'docz';
 import { LinkButton } from './LinkButton';
-import { Container } from '../../Container/Container';
+import { DoczContainer } from 'remember-ui';
 
 # LinkButton
 
@@ -16,12 +16,17 @@ import { Container } from '../../Container/Container';
 ## Basic usage
 
 <Playground>
-  <Container direction="column">
+  <DoczContainer direction="row">
     <LinkButton>Default</LinkButton>
     <LinkButton showAddress={false}>Default</LinkButton>
-    <LinkButton address="https://career.rememberapp.co.kr">Career</LinkButton>
     <LinkButton showAddress={false} address="https://career.rememberapp.co.kr">
-      Career
+      Career Link
     </LinkButton>
-  </Container>
+    <LinkButton showAddress={false} address="https://dramancompany.github.io/remember-ui/">
+      Remember UI
+    </LinkButton>
+
+    <LinkButton address="https://career.rememberapp.co.kr" />
+    <LinkButton address="https://github.com/dramancompany/remember-ui" />
+  </DoczContainer>
 </Playground>

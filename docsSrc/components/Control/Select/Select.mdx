@@ -5,7 +5,6 @@ menu: Components/Control
 
 import { Playground, Props } from 'docz';
 import { Select } from './Select';
-import { Container } from '../../Container/Container';
 
 # Select
 
@@ -33,16 +32,43 @@ import { Container } from '../../Container/Container';
         label: '인재검색 200',
         value: '200',
       },
+      {
+        id: 4,
+        label: '인재검색 500',
+        value: '500',
+      },
     ];
     const [current, setCurrent] = React.useState(options[0].id);
     return (
-      <Select
-        className="pass-type"
-        label="상품 종류"
-        value={current}
-        onChange={setCurrent}
-        options={options}
-      />
+      <>
+        <Select
+          className="pass-type"
+          label="상품 종류"
+          value={current}
+          onChange={setCurrent}
+          options={options}
+        /> 
+        <br/>
+        <Select
+          className="pass-type2"
+          label="상품 종류1"
+          value={current}
+          onChange={setCurrent}
+          options={options}
+          required
+          isFixedSelect
+        />
+        <br />
+        <Select
+          className="pass-type2"
+          label="상품 종류2"
+          value={current}
+          onChange={setCurrent}
+          options={options}
+          required
+          maxHeight={100}
+        />
+      </>
     );
   }}
 </Playground>

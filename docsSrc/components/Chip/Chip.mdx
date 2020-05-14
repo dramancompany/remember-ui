@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 import { Chip } from './Chip';
-import { Container } from '../Container/Container';
+import { DoczContainer } from 'remember-ui';
 
 # Chip
 
@@ -16,7 +16,7 @@ import { Container } from '../Container/Container';
 ## Basic usage
 
 <Playground>
-  <Container>
+  <DoczContainer direction="row">
     <Chip>Some message1</Chip>
     <Chip>Some message2</Chip>
     <Chip>Some message3</Chip>
@@ -25,5 +25,5 @@ import { Container } from '../Container/Container';
       Blah blah~
       BlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblahBlahblah
     </Chip>
-  </Container>
+  </DoczContainer>
 </Playground>

@@ -5,8 +5,8 @@ menu: Components/Modal
 
 import { Playground, Props } from 'docz';
 import { ConfirmModal } from './ConfirmModal';
-import { Container } from '../../Container/Container';
 import { BaseButton } from '../../Button/BaseButton/BaseButton';
+import { DoczContainer } from 'remember-ui';
 
 # ConfirmModal
 
@@ -24,7 +24,7 @@ import { BaseButton } from '../../Button/BaseButton/BaseButton';
       alert("보냈습니다")
     }
     return (
-      <Container>
+      <DoczContainer direction="row">
         <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen1(true)}>Open Success Modal</BaseButton>
         <ConfirmModal 
           isOpen={isOpen1}
@@ -47,7 +47,7 @@ import { BaseButton } from '../../Button/BaseButton/BaseButton';
           onOk={() => handleSubmit()}
           onClose={()=>setIsOpen2(false)}
         />
-      </Container>
+      </DoczContainer>
     );
   }}
 </Playground>

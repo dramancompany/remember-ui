@@ -5,7 +5,8 @@ menu: Components/Tooltip
 
 import { Playground, Props } from 'docz';
 import { Tooltip } from './Tooltip';
-import { Container } from '../../Container/Container';
+import { DoczContainer } from 'remember-ui';
+
 
 # Tooltip
 
@@ -16,7 +17,7 @@ import { Container } from '../../Container/Container';
 ## Basic usage
 
 <Playground>
-  <Container>
+  <DoczContainer direction="row">
     <Tooltip 
       content={
         <span>
@@ -47,5 +48,5 @@ import { Container } from '../../Container/Container';
         </div>
       }
     />
-  </Container>
+  </DoczContainer>
 </Playground>

@@ -5,7 +5,7 @@ menu: Components/Input
 
 import { Playground, Props } from 'docz';
 import { DoubleInput } from './DoubleInput';
-import { Container } from '../../Container/Container';
+import { DoczContainer } from 'remember-ui';
 
 # DoubleInput
 
@@ -20,7 +20,7 @@ import { Container } from '../../Container/Container';
     const [month, setMonth] = React.useState('');
     const [year, setYear] = React.useState('');
     return (
-      <Container>
+      <DoczContainer>
         <DoubleInput
           label1="유효 기간"
           value1={month}
@@ -44,7 +44,7 @@ import { Container } from '../../Container/Container';
           maxLength={2}
           onlyNumber
         />
-      </Container>
+      </DoczContainer>
     );
   }}
 </Playground>

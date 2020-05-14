@@ -5,8 +5,8 @@ menu: Components/Input
 
 import { Playground, Props } from 'docz'
 import { BaseInput } from './BaseInput'
-import { Container } from '../../Container/Container'
 import { Checkbox } from '../../Control/Checkbox/Checkbox'
+import { DoczContainer } from 'remember-ui';
 
 # BaseInput
 
@@ -22,7 +22,7 @@ import { Checkbox } from '../../Control/Checkbox/Checkbox'
     const [phoneNo, setPhoneNo] = React.useState();
     return (
       <>
-        <Container>
+        <DoczContainer direction="row">
           <BaseInput
             type="text"
             name="test1"
@@ -35,9 +35,9 @@ import { Checkbox } from '../../Control/Checkbox/Checkbox'
             name="test2"
             disabled
           />
-        </Container>
+        </DoczContainer>
         <br />
-        <Container>
+        <DoczContainer direction="row">
           <BaseInput
             name="test2"
             label="제목"
@@ -88,7 +88,7 @@ import { Checkbox } from '../../Control/Checkbox/Checkbox'
               </div>
             }
           />
-        </Container>
+        </DoczContainer>
       </>
     );
   }}

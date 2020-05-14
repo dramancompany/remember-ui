@@ -6,7 +6,7 @@ menu: Components/Button
 import { Playground, Props } from 'docz';
 import { MoreButton } from './MoreButton';
 import { BaseButton } from '../BaseButton/BaseButton';
-import { Container } from '../../Container/Container';
+import { DoczContainer } from 'remember-ui';
 
 # MoreButton
 
@@ -22,9 +22,9 @@ import { Container } from '../../Container/Container';
     const toggle = () => setIsShow(!isShow);
     return (
       <>
-        <Container direction="column">
-          <div>MoreButton Show/Hide</div>
-          <Container direction="row">
+        <DoczContainer direction="column">
+          <div>MoreButton Show/Hide( Static )</div>
+          <DoczContainer direction="row">
             <BaseButton color="black">
               Show
               <MoreButton />
@@ -41,18 +41,18 @@ import { Container } from '../../Container/Container';
               Hide
               <MoreButton value size="large" />
             </BaseButton>
-          </Container>
-        </Container>
+          </DoczContainer>
+        </DoczContainer>
         
-        <Container direction="column">
-          <div>MoreButton onClick Event Bind</div>
-          <Container direction="row">
+        <DoczContainer direction="column">
+          <div>MoreButton onClick Event Bind( Dynamic )</div>
+          <DoczContainer direction="row">
             <BaseButton fill onClick={toggle}>
               {isShow ? 'Hide':'Show'}
               <MoreButton size="large" value={isShow} />
             </BaseButton>
-          </Container>
-        </Container>
+          </DoczContainer>
+        </DoczContainer>
       </>
     );
   }}

@@ -5,7 +5,7 @@ menu: Components/Control
 
 import { Playground, Props } from 'docz';
 import { PopoverItem } from './PopoverItem';
-import { Container } from '../../Container/Container';
+import { DoczContainer } from 'remember-ui';
 
 # PopoverItem
 
@@ -18,7 +18,7 @@ import { Container } from '../../Container/Container';
 <Playground>
   {() => {
     return (
-      <Container>
+      <DoczContainer direction="row">
         <PopoverItem onClick={() => alert("Pop!")}>
           쿠폰 등록
         </PopoverItem>
@@ -28,7 +28,7 @@ import { Container } from '../../Container/Container';
         <PopoverItem bold onClick={() => alert("Pop!")}>
           쿠폰 등록
         </PopoverItem>
-      </Container>
+      </DoczContainer>
     );
   }}
 </Playground>

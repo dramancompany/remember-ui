@@ -5,7 +5,7 @@ menu: Components/Tooltip
 
 import { Playground, Props } from 'docz';
 import { InfoTooltip } from './InfoTooltip';
-import { Container } from '../../Container/Container';
+import { DoczContainer } from 'remember-ui';
 
 # InfoTooltip
 
@@ -16,7 +16,8 @@ import { Container } from '../../Container/Container';
 ## Basic usage
 
 <Playground>
-  <Container>
+  <DoczContainer>
+    <div>ToolTip</div>
     <InfoTooltip 
       target="info1"
       content={
@@ -26,5 +27,5 @@ import { Container } from '../../Container/Container';
         </span>
       }
     />
-  </Container>
+  </DoczContainer>
 </Playground>

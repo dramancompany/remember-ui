@@ -19,12 +19,24 @@ import { BaseButton } from '../../Button/BaseButton/BaseButton';
 <Playground>
   {() => {
     const [isOpen, setIsOpen] = React.useState(false);
+    const [currentCount, setCurrentCount] = React.useState(1);
+    const openModal = () => {
+      setIsOpen(true);
+      const interval =  setInterval(()=>{
+        setCurrentCount((prev)=>prev+1);
+      },500);
+      setTimeout(()=>{
+        clearInterval(interval);
+        setCurrentCount(1);
+        setIsOpen(false);
+      },2500);
+    }
     return (
       <Container>
-        <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen(true)}>Open Progress Modal</BaseButton>
+        <BaseButton fill width={250} size={"large"} onClick={openModal}>Open Progress Modal</BaseButton>
         <ProgressModal 
           isOpen={isOpen}
-          currentCount={4}
+          currentCount={currentCount}
           totalCount={5}
           title={(currentCount, totalCount) =>
             `${currentCount} / ${totalCount}명에게 메시지 전송 중`

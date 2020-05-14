@@ -5,7 +5,7 @@ menu: Components/Button
 
 import { Playground, Props } from 'docz';
 import { BaseButton } from './BaseButton';
-import { Container } from '../../Container/Container';
+import { DoczContainer } from 'remember-ui';
 
 # BaseButton
 
@@ -16,18 +16,21 @@ import { Container } from '../../Container/Container';
 ## Basic usage
 
 <Playground>
-  <Container direction="column">
+  <DoczContainer direction="row">
     <BaseButton>Default</BaseButton>
     <BaseButton fill>Fill</BaseButton>
-    <BaseButton rounded={false} disabled>
+    <BaseButton rounded={false} disabled width={150}>
       No Rounded
     </BaseButton>
     <BaseButton isLoading>isLoading</BaseButton>
+    <BaseButton isLoading color="black" size="large" width={150}>
+      isLoading
+    </BaseButton>
     <BaseButton color="blue" size="large" width={150}>
       Large blue
     </BaseButton>
     <BaseButton fill color="plus" size="xlarge" width={150}>
       plus
     </BaseButton>
-  </Container>
+  </DoczContainer>
 </Playground>

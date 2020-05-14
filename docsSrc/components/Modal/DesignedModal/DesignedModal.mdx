@@ -8,6 +8,7 @@ import { DesignedModal } from './DesignedModal';
 import { Container } from '../../Container/Container';
 import { BaseButton } from '../../Button/BaseButton/BaseButton';
 import { Radio } from '../../Control/Radio/Radio';
+import { DoczContainer } from 'remember-ui';
 
 # DesignedModal
 
@@ -28,7 +29,7 @@ import { Radio } from '../../Control/Radio/Radio';
     }
     return (
       <Container>
-        <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen1(true)}>Open Designed Modal</BaseButton>
+        <BaseButton fill width={250} size={"large"} onClick={()=>setIsOpen1(true)}>Open Designed Modal</BaseButton>
         <DesignedModal 
           isOpen={isOpen1}
           title={`구매`}
@@ -41,14 +42,13 @@ import { Radio } from '../../Control/Radio/Radio';
           submitButtonDisabled={isProcessing}
           isLoading={isProcessing}
         >
-          <div style={{display:"flex", justifyContent:"center", flexDirection:"column", alignItems:"center"}}>
+          <DoczContainer direction="row">
             <div>Radio onClick Event Bind</div>
-            <div>
-              <Radio isChecked={radioId===1} onClick={() => setRadio(1)} /><span>옵션1</span> 
-              <Radio isChecked={radioId===2} onClick={() => setRadio(2)} /><span>옵션2</span>
-            </div>
-            <br />
-          </div>
+          </DoczContainer>
+          <DoczContainer direction="row">
+            <Radio isChecked={radioId===1} onClick={() => setRadio(1)} /><span>옵션1</span> 
+            <Radio isChecked={radioId===2} onClick={() => setRadio(2)} /><span>옵션2</span>
+          </DoczContainer>
         </DesignedModal>
       </Container>
     );
