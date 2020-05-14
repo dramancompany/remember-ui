@@ -2,20 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  border-radius: 4px;
-  margin: 4px 0;
-  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid rgba(16, 22, 26, 0.2);
+  margin: 5px 0;
+  padding: 5px 10px;
   background-color: ${props => props.backgroundColor};
   color: ${props => props.color || '#fff'};
-  cursor: pointer;
   transition: all 0.1s cubic-bezier(0.4, 1, 0.75, 0.9);
-  border: 1px solid rgba(16, 22, 26, 0.2);
   &::after {
     content: "${props => props.content}";
   }
   &:hover {
     border: 1px solid rgba(16, 22, 26, 0.2);
-    box-shadow: inset 0 0 0 1px rgba(16, 22, 26, 0.2), 0 2px 4px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
     &::after {
       content: "Click to copy hex code";
     }
