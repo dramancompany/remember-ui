@@ -18,6 +18,8 @@ Textarea.propTypes = {
   required: t.oneOf([false, true]),
   blankLabel: t.oneOf([false, true]),
 
+  countLength: t.oneOf([false, true]),
+
   onChange: t.func,
 };
 
@@ -27,5 +29,6 @@ Textarea.defaultProps = {
   required: false,
   blankLabel: false,
   first: false,
+  countLength: false,
   onChange: () => {},
 };

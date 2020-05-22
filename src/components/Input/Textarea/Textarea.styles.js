@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { requiredIcon } from '../../../assets';
 
@@ -6,6 +6,7 @@ import {
   gray,
   gray100,
   gray150,
+  gray400,
   red100,
   text,
   font,
@@ -61,3 +62,16 @@ export const Text = styled.textarea.attrs()`
     border: 1px solid ${gray150};
   }
 `;
+
+export const TextCount = styled.div`
+  font-size: 12px;
+  text-align: right;
+  color: ${gray150};
+`
+
+TextCount.Progress = styled.span`
+  ${({ inProgress }) => inProgress && css`
+    color: ${gray400};
+  `}
+`
+TextCount.Max = styled.span``

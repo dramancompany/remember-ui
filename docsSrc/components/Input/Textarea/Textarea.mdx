@@ -27,7 +27,7 @@ import { Checkbox } from '../../Control/Checkbox/Checkbox'
             type="text"
             name="message"
             maxLength={1500}
-            onChange={e => setContent(e.target.value)}
+            onChange={value => setContent(value)}
             value={content}
             placeholder={"1500자 내로 문의 내용을 적어 주세요."}
             required
