@@ -13,6 +13,10 @@ const outputData = [
     file: 'dist/index.js',
     format: 'es',
   },
+  {
+    file: 'dist/index.cjm.js',
+    format: 'cjs'
+  }
 ];
 
 const plugins = [
