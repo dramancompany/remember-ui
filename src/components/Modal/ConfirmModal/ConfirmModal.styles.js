@@ -21,7 +21,7 @@ export const Container = styled.div`
 export const Body = styled.div`
   ${flexCenterY};
   flex-direction: column;
-  padding: 48px 30px;
+  padding: 48px 20px;
   box-sizing: border-box;
 `;
 
