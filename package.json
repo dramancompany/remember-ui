@@ -1,11 +1,11 @@
 {
   "name": "remember-ui",
-  "version": "0.0.8",
+  "version": "0.0.8-beta.0",
   "description": "Remember UI Components",
   "homepage": "https://github.com/dramancompany/remember-ui",
   "author": "DramanCompany",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/index.cjm.js",
   "module": "dist/index.js",
   "sideEffects": false,
   "files": [
@@ -17,8 +17,7 @@
     "build:all": "yarn build && yarn docz:build",
     "docz:dev": "docz dev",
     "docz:build": "rm -rf ./docs .docz/.cache && docz build",
-    "docz:serve": "docz serve",
-    "publish": "npm publish"
+    "docz:serve": "docz serve"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
