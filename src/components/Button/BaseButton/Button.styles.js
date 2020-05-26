@@ -97,7 +97,8 @@ export const Container = styled.div`
 export const BlackButton = styled(Container)`
   border-color: ${gray100};
   color: ${gray450};
-      
+  background-color: ${white};
+
   ${({ fillColor }) =>
     fillColor &&
     css`
@@ -113,7 +114,7 @@ export const BlackButton = styled(Container)`
         background-color: ${gray50};
       }
     `}
-  
+
   ${({ fillColor, large }) =>
     fillColor &&
     large &&
