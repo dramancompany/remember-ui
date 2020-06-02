@@ -10,6 +10,7 @@ export const BaseModal = ({
   onAfterOpen = () => {},
   allowKeyExit = true,
   children,
+  className = 'dc-modal',
 }) => {
   return (
     <Modal
@@ -18,7 +19,7 @@ export const BaseModal = ({
         afterOpen: 'dc-modal-overlay--open',
         beforeClose: 'dc-modal-overlay--close',
       }}
-      className="dc-modal"
+      className={className}
       isOpen={isOpen}
       onRequestClose={onClose}
       onAfterOpen={() => {

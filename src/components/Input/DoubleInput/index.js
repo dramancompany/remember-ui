@@ -23,6 +23,7 @@ export const DoubleInput = ({
   maxLength,
   onlyNumber,
   width,
+  className,
 }) => {
   const [error, setError] = useState('');
   const inputRef = useRef();
@@ -38,7 +39,7 @@ export const DoubleInput = ({
     setError(_error);
   };
   return (
-    <Container width={width}>
+    <Container width={width} className={className}>
       <Inputs onBlur={() => _validate(value1, value2)}>
         <Input
           name={name1}

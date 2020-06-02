@@ -5,7 +5,13 @@ import { useStorageHook } from '../../../hooks';
 
 import { Tooltip } from './InfoTooltip.styles';
 
-export const InfoTooltip = ({ target, children, content, defaultDisabled }) => {
+export const InfoTooltip = ({
+  target,
+  children,
+  content,
+  defaultDisabled,
+  className,
+}) => {
   const [isShown, setIsShown] = useStorageHook(`${target}-tooltip-shown`);
 
   const isDisabled = isShown === 'true' || defaultDisabled;
@@ -26,6 +32,7 @@ export const InfoTooltip = ({ target, children, content, defaultDisabled }) => {
    */
   return (
     <Tooltip
+      className={className}
       content={<div onClick={hideTooltip}>{content}</div>}
       visible={visible}
       interactive

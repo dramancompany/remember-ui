@@ -18,8 +18,9 @@ export const ProgressModal = ({
   totalCount = 1,
   message,
   isOpen,
+  className,
 }) => (
-  <BaseModal isOpen={isOpen} allowKeyExit={false}>
+  <BaseModal className={className} isOpen={isOpen} allowKeyExit={false}>
     <Container>
       <Body>
         {icon && <Icon src={icon} alt="icon" />}

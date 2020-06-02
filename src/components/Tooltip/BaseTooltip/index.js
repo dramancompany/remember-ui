@@ -32,8 +32,10 @@ export const BaseTooltip = ({
   theme = 'dclight',
   placement = 'bottom',
   textAlign = 'center',
+  className,
 }) => (
   <Tooltip
+    className={className}
     offset={offset}
     placement={placement}
     arrow={arrow}

@@ -47,6 +47,7 @@ export const DcNewPagination = ({
   pageRangeDisplayed,
   onChangePage,
   itemCountPerPage,
+  className,
 }) => {
   const { firstPage, lastPage, totalPages } = getPaginationInfo({
     activePage,
@@ -62,7 +63,7 @@ export const DcNewPagination = ({
   const rightDisabled = nextPageSet > totalPages;
 
   return (
-    <Container>
+    <Container className={className}>
       <List>
         <Button
           disabled={leftDisabled}

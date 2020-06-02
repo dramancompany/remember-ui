@@ -25,9 +25,15 @@ export const DesignedModal = ({
   headerButton,
   isLoading = false,
   onAfterOpen = () => {},
+  className,
 }) => {
   return (
-    <Container isOpen={isOpen} onClose={onClose} onAfterOpen={onAfterOpen}>
+    <Container
+      className={className}
+      isOpen={isOpen}
+      onClose={onClose}
+      onAfterOpen={onAfterOpen}
+    >
       <Modal>
         <Modal.Header>
           <Modal.Header.Content>

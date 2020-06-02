@@ -13,10 +13,16 @@ export const MoreButton = ({
   value = false,
   size = 'small',
   onClick = () => {},
+  className,
 }) => {
   const lessIcon = size === 'small' ? expandLessSmallIcon : expandLessLargeIcon;
   const moreIcon = size === 'small' ? expandMoreSmallIcon : expandMoreLargeIcon;
   return (
-    <Icon size={size} onClick={onClick} src={value ? lessIcon : moreIcon} />
+    <Icon
+      className={className}
+      size={size}
+      onClick={onClick}
+      src={value ? lessIcon : moreIcon}
+    />
   );
 };

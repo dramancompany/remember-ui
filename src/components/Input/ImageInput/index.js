@@ -11,7 +11,7 @@ import {
   InputFile,
 } from './ImageInput.styles';
 
-export const ImageInput = ({ id, onChange, label }) => {
+export const ImageInput = ({ id, onChange, label, className }) => {
   const [imageName, setImageName] = useState('');
 
   const changeCompanyLogo = e => {
@@ -33,7 +33,7 @@ export const ImageInput = ({ id, onChange, label }) => {
     }
   };
   return (
-    <Container>
+    <Container className={className}>
       {label && <Title>{label}</Title>}
       <Image>
         <label htmlFor={id}>

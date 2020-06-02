@@ -56,11 +56,17 @@ export const ConfirmModal = ({
   showClose = true,
   children,
   onCloseAction,
+  className,
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
 
   return (
-    <BaseModal isOpen={isOpen} onClose={onClose} allowKeyExit={false}>
+    <BaseModal
+      className={className}
+      isOpen={isOpen}
+      onClose={onClose}
+      allowKeyExit={false}
+    >
       <Container>
         <Body>
           {icon && <Icon src={getIconSrc(icon)} alt="icon" />}

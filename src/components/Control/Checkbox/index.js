@@ -14,8 +14,17 @@ const getIconImg = (state, disabled = false) => {
   return checkboxOutline;
 };
 
-export const Checkbox = ({ state = 'off', onClick = () => {}, disabled }) => (
-  <Container disabled={disabled} onClick={(e) => !disabled && onClick(e)}>
+export const Checkbox = ({
+  state = 'off',
+  onClick = () => {},
+  disabled,
+  className,
+}) => (
+  <Container
+    className={className}
+    disabled={disabled}
+    onClick={e => !disabled && onClick(e)}
+  >
     <Icon src={getIconImg(state, disabled)} alt="checkbox-img" />
   </Container>
 );
