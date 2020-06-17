@@ -12,9 +12,9 @@ export const InfoTooltip = ({ ...rest }) => {
 };
 
 InfoTooltip.propTypes = {
-  target: t.string,
   content: t.object,
-  defaultDisabled: t.oneOf([false, true]),
+  visible: t.oneOf([false, true]),
+  onClick: t.func,
 };
 
 InfoTooltip.defaultProps = {};

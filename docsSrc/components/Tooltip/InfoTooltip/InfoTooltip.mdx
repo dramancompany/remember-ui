@@ -3,6 +3,7 @@ name: InfoTooltip
 menu: Components/Tooltip
 ---
 
+import {useState} from 'react'
 import { Playground, Props } from 'docz';
 import { InfoTooltip } from './InfoTooltip';
 import { DoczContainer } from 'remember-ui';
@@ -16,16 +17,24 @@ import { DoczContainer } from 'remember-ui';
 ## Basic usage
 
 <Playground>
-  <DoczContainer>
-    <div>ToolTip</div>
-    <InfoTooltip 
-      target="info1"
-      content={
-        <span>
-          툴팁을 클릭하면, 다시 보지 않게 됩니다.<br /> 
-          로컬스토리지에서 툴팁을 닫았는지 확인 후 보여줍니다.
-        </span>
-      }
-    />
-  </DoczContainer>
+  {()=> {
+    const [visible, setVisible] =useState(true);
+    const onClickToolTip = ()=>{
+      setVisible(false);
+    }
+    return( 
+      <DoczContainer>
+        <div>ToolTip</div>
+        <InfoTooltip 
+          visible={visible}
+          content={
+            <span>
+              툴팁을 클릭하면, 다시 보지 않게 됩니다.
+            </span>
+          }
+          onClick={onClickToolTip}
+        />
+      </DoczContainer>
+    );
+    }}
 </Playground>
