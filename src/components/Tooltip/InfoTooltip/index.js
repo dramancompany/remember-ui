@@ -1,29 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'tippy.js/dist/tippy.css';
-
-import { useStorageHook } from '../../../hooks';
 
 import { Tooltip } from './InfoTooltip.styles';
 
 export const InfoTooltip = ({
-  target,
   children,
   content,
-  defaultDisabled,
   className,
+  onClick,
+  visible,
 }) => {
-  const [isShown, setIsShown] = useStorageHook(`${target}-tooltip-shown`);
-
-  const isDisabled = isShown === 'true' || defaultDisabled;
-  const [visible, setVisible] = useState(true);
-
-  const hideTooltip = () => {
-    setVisible(false);
-    setIsShown(true);
-  };
-
-  if (isDisabled) return <>{children}</>;
-
   /**
    * @description
    * @tippy.js/react 라이브러리의 작동 원리상
@@ -33,7 +19,7 @@ export const InfoTooltip = ({
   return (
     <Tooltip
       className={className}
-      content={<div onClick={hideTooltip}>{content}</div>}
+      content={<div onClick={onClick}>{content}</div>}
       visible={visible}
       interactive
       arrow
@@ -43,7 +29,7 @@ export const InfoTooltip = ({
       theme="dcblue"
       placement="bottom-center"
     >
-      <div onClick={hideTooltip}>{children}</div>
+      <div onClick={onClick}>{children}</div>
     </Tooltip>
   );
 };
