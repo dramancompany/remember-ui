@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Container } from './Chip.styles';
+import { Container, ChipContent } from './Chip.styles';
 
 export const Chip = ({ children, className, isOverflowed = false }) => (
   <Container className={className} isOverflowed={isOverflowed}>
-    {children}
+    <ChipContent>{children}</ChipContent>
   </Container>
 );

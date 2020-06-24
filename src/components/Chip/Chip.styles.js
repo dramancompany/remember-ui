@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
 import { yellow50, brown100 } from '../../core/GlobalStyle/variable';
-import { textSmall, textEllipsis } from '../../core/GlobalStyle/mixin';
+import { font, textEllipsis } from '../../core/GlobalStyle/mixin';
 
 export const Container = styled.div`
-  ${textSmall({ color: brown100 })};
+  ${font({ size: '13px', color: brown100 })};
   background-color: ${yellow50};
 
   ${({ isOverflowed }) =>
@@ -16,10 +16,18 @@ export const Container = styled.div`
     `}
 
   margin-right: 4px;
-  padding: 1px 6px;
-  height: 24px;
-  border-radius: 2px;
+  padding: 6px 10px;
+  height: 28px;
+  min-width: 54px;
+  border-radius: 14px;
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f5ebe0; /* yello60 */
   white-space: nowrap;
+`;
+
+export const ChipContent = styled.div`
+  margin-bottom: 1px;
 `;
