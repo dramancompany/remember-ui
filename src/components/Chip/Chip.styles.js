@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { yellow50, brown100 } from '../../core/GlobalStyle/variable';
+import { yellow50, yellow60, brown100 } from '../../core/GlobalStyle/variable';
 import { font, textEllipsis } from '../../core/GlobalStyle/mixin';
 
 export const Container = styled.div`
@@ -24,7 +24,7 @@ export const Container = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #f5ebe0; /* yello60 */
+  border: 1px solid ${yellow60};
   white-space: nowrap;
 `;
 
