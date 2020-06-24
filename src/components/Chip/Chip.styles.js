@@ -7,14 +7,6 @@ export const Container = styled.div`
   ${font({ size: '13px', color: brown100 })};
   background-color: ${yellow50};
 
-  ${({ isOverflowed }) =>
-    isOverflowed &&
-    css`
-      ${textEllipsis};
-      min-width: 14px;
-      margin: 0px !important;
-    `}
-
   margin-right: 4px;
   padding: 6px 10px;
   height: 28px;
@@ -26,8 +18,20 @@ export const Container = styled.div`
   justify-content: center;
   border: 1px solid ${yellow60};
   white-space: nowrap;
+
+  ${({ isOverflowed }) =>
+    isOverflowed &&
+    css`
+      max-width: 100%;
+    `}
 `;
 
 export const ChipContent = styled.div`
+  ${({ isOverflowed }) =>
+    isOverflowed &&
+    css`
+      ${textEllipsis};
+    `}
+
   margin-bottom: 1px;
 `;
