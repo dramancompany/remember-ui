@@ -1,0 +1,28 @@
+---
+name: ProfileAvatar
+menu: Components/Icon
+---
+
+import { Playground, Props } from 'docz';
+import { ProfileAvatar } from './ProfileAvatar';
+import { DoczContainer, yellow100, red100, brown100 } from 'remember-ui';
+
+# ProfileAvatar
+
+## Properties
+
+<Props of={ProfileAvatar} />
+
+## Basic usage
+
+<Playground>
+  {() => {
+    return (
+      <DoczContainer direction="row">
+        <ProfileAvatar color={yellow100} width={34} />
+        <ProfileAvatar color={red100} width={68} />
+        <ProfileAvatar color={brown100} width={128} />
+      </DoczContainer>
+    );
+  }}
+</Playground>

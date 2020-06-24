@@ -7,5 +7,6 @@ export * from './Modal';
 export * from './Pagination';
 export * from './Spinner';
 export * from './Tooltip';
+export * from './Icon';
 
 export * from './DoczContainer';
