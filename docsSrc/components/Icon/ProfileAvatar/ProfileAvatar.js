@@ -1,6 +1,6 @@
 import React from 'react';
 import t from 'prop-types';
-import { ProfileAvatar as Component } from 'remember-ui';
+import { ProfileAvatar as Component, gray150 } from 'remember-ui';
 
 export const ProfileAvatar = ({ ...rest }) => <Component {...rest} />;
 
@@ -10,6 +10,6 @@ ProfileAvatar.propTypes = {
 };
 
 ProfileAvatar.defaultProps = {
-  color: '#333333',
+  color: gray150,
   width: 68,
 };
