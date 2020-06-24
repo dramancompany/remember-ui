@@ -1,6 +1,9 @@
 {
   "name": "remember-ui",
   "version": "1.0.0",
+  "engines": {
+    "node": ">= 12.13.0"
+  },
   "description": "Remember UI Components",
   "homepage": "https://github.com/dramancompany/remember-ui",
   "author": "DramanCompany",
