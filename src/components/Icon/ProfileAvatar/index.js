@@ -4,8 +4,8 @@ import { gray150 } from '../../../core/GlobalStyle';
 
 import { Container, Svg } from './ProfileAvatar.styles';
 
-export const ProfileAvatar = ({ color = gray150, width = 68 }) => (
-  <Container width={width}>
+export const ProfileAvatar = ({ className, color = gray150, width = 68 }) => (
+  <Container className={className} width={width}>
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
