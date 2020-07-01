@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { gray100, yellow100 } from '../../../core/GlobalStyle';
+import { gray100, yellow100, white } from '../../../core/GlobalStyle';
 
 export const Container = styled.div`
   display: inline-flex;
@@ -14,7 +14,7 @@ export const Span = styled.span`
   height: 14px;
   border-radius: 50%;
   transition: 0.2s;
-  background: #fff;
+  background: ${white};
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
 `;
 
@@ -31,7 +31,7 @@ export const Label = styled.label`
   transition: background-color 0.2s;
 
   &:active ${Span} {
-    width: 60px;
+    width: 18px;
   }
 `;
 
