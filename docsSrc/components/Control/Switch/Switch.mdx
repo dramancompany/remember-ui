@@ -1,0 +1,33 @@
+---
+name: Switch
+menu: Components/Control
+---
+
+import { Playground, Props } from 'docz';
+import { Switch } from './Switch';
+import { DoczContainer } from 'remember-ui';
+
+# Switch
+
+## Properties
+
+<Props of={Switch} />
+
+## Basic usage
+
+<Playground>
+  {() => {
+    const [isChecked, setIsChecked] = React.useState(true);
+    const toggle = () => setIsChecked(!isChecked);
+    return (
+      <>
+        <DoczContainer direction="column">
+          <div>스위치</div>
+          <DoczContainer direction="row">
+            <Switch checked={isChecked} onClick={toggle} />
+          </DoczContainer>
+        </DoczContainer>
+      </>
+    );
+  }}
+</Playground>
