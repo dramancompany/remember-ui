@@ -1,0 +1,14 @@
+import React from 'react';
+import t from 'prop-types';
+import { Switch as Component } from 'remember-ui';
+
+export const Switch = ({ ...rest }) => <Component {...rest} />;
+
+Switch.propTypes = {
+  checked: t.bool.isRequired,
+  onClick: t.func,
+};
+
+Switch.defaultProps = {
+  onClick: () => {},
+};
