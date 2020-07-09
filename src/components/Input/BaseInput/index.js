@@ -35,6 +35,7 @@ export const BaseInput = ({
   readOnly = false,
   marginBottom,
   outerRef,
+  ...rest
 }) => {
   const [error, setError] = useState('');
 
@@ -77,6 +78,7 @@ export const BaseInput = ({
             onEnter && onEnter();
           }
         }}
+        {...rest}
       />
 
       {footer}
