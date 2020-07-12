@@ -20,7 +20,8 @@ export const Label = styled.div`
   ${textSmall({ color: gray200 })}
   display: flex;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: ${({ marginBottom }) =>
+    marginBottom ? `${marginBottom}px` : '6px'};
 `;
 
 Label.Text = styled.span``;
