@@ -24,6 +24,7 @@ export const Select = ({
   isFixedSelect,
   maxHeight,
   placeholder = '포지션을 선택하세요',
+  marginBottom,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,7 +46,7 @@ export const Select = ({
   return (
     <Container className={className}>
       {label && (
-        <Label>
+        <Label marginBottom={marginBottom}>
           <Label.Text>{label}</Label.Text>
           {required && <Label.Mark src={requiredIcon} alt="mark" />}
         </Label>
