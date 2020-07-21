@@ -23,6 +23,8 @@ export const Select = ({
   required,
   isFixedSelect,
   maxHeight,
+  placeholder = '포지션을 선택하세요',
+  marginBottom,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,12 +41,12 @@ export const Select = ({
     return isOpen ? closeExample() : openExample();
   };
 
-  const selectedOption = options.find(option => option.id === value);
+  const selectedOption = options.find((option) => option.id === value);
 
   return (
     <Container className={className}>
       {label && (
-        <Label>
+        <Label marginBottom={marginBottom}>
           <Label.Text>{label}</Label.Text>
           {required && <Label.Mark src={requiredIcon} alt="mark" />}
         </Label>
@@ -55,7 +57,7 @@ export const Select = ({
             {selectedOption ? (
               selectedOption.label
             ) : (
-              <Selected.Unselected>포지션을 선택하세요</Selected.Unselected>
+              <Selected.Unselected>{placeholder}</Selected.Unselected>
             )}
             {!isFixedSelect && <MoreButton value={isOpen} />}
           </Selected>
