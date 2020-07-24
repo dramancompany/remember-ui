@@ -6,6 +6,7 @@ import {
   text,
   flexCenter,
   font,
+  white,
 } from '../../core/GlobalStyle';
 
 export const Container = styled.ul`
@@ -39,6 +40,7 @@ export const Button = styled.div`
     css`
       border: solid 1px ${gray100};
       border-radius: 2px;
+      background-color: ${white};
     `}
 
   box-sizing: border-box;
