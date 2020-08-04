@@ -69,7 +69,7 @@ export const Select = ({
                     key={`option-${index}`}
                     custom={id === 'custom'}
                     selected={value === id}
-                    disabled={disabled}
+                    disable={disabled}
                     onClick={() => {
                       if (!disabled) {
                         id !== 'custom' ? onChange(id) : changeInputMode();
