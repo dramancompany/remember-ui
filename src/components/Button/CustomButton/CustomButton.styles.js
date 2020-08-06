@@ -1,33 +1,5 @@
 import styled, { css } from 'styled-components';
-import {
-  white,
-  gray100,
-  gray120,
-  gray200,
-  gray450,
-  yellow100,
-  red100,
-  flexCenter,
-} from '../../../core/GlobalStyle';
-
-const THEME_COLOR = {
-  yellow: {
-    main: yellow100,
-    sub: yellow100,
-  },
-  red: {
-    main: red100,
-    sub: red100,
-  },
-  gray: {
-    main: gray200,
-    sub: gray200,
-  },
-  light: {
-    main: gray450,
-    sub: gray100,
-  },
-};
+import { white, gray100, gray120, flexCenter } from '../../../core/GlobalStyle';
 
 export const Inner = styled.div`
   display: flex;
@@ -54,19 +26,12 @@ export const Container = styled.div`
     (size === 'large' && '15px') ||
     (size === 'xLarge' && '16px')};
 
-  font-weight: ${({ size }) => (size === 'xLarge' ? 'bold' : 400)};
+  font-weight: ${({ customStyle }) => customStyle.fontWeight};
   border-radius: ${({ size }) => (size === 'small' ? '2px' : '4px')};
 
-  border: 1px solid ${({ theme }) => THEME_COLOR[theme].sub};
-  background-color: ${({ theme }) => THEME_COLOR[theme].sub};
-  color: ${white};
-
-  ${({ outline }) =>
-    outline &&
-    css`
-      background-color: ${white};
-      color: ${({ theme }) => THEME_COLOR[theme].main};
-    `}
+  border: 1px solid ${({ customStyle }) => customStyle.borderColor};
+  background-color: ${({ customStyle }) => customStyle.backgroundColor};
+  color: ${({ customStyle }) => customStyle.fontColor};
 
   ${({ disabled }) =>
     disabled &&
