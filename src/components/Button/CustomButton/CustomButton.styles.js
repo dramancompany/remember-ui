@@ -17,14 +17,20 @@ export const Container = styled.div`
   height: ${({ size }) =>
     (size === 'small' && '32px') ||
     (size === 'medium' && '36px') ||
-    (size === 'large' && '48px') ||
-    (size === 'xLarge' && '52px')};
+    (size === 'large' && '40px') ||
+    (size === 'xlarge' && '48px')};
 
   font-size: ${({ size }) =>
     (size === 'small' && '13px') ||
-    (size === 'medium' && '14px') ||
-    (size === 'large' && '15px') ||
-    (size === 'xLarge' && '16px')};
+    (size === 'medium' && '13px') ||
+    (size === 'large' && '14px') ||
+    (size === 'xlarge' && '15px')};
+
+  min-width: ${({ size }) =>
+    (size === 'small' && '66px') ||
+    (size === 'medium' && '74px') ||
+    (size === 'large' && '108px') ||
+    (size === 'xlarge' && '116px')};
 
   font-weight: ${({ customStyle }) => customStyle.fontWeight};
   border-radius: ${({ size }) => (size === 'small' ? '2px' : '4px')};
