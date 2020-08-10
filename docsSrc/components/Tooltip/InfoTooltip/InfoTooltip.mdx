@@ -30,7 +30,17 @@ import { DoczContainer } from 'remember-ui';
           content={<span>툴팁을 클릭하면, 다시 보지 않게 됩니다.</span>}
           onClick={onClickToolTip}
         />
+
+        <div>ToolTip with onMount Animation</div>
+        <InfoTooltip
+          visible={visible}
+          content={<span>HeadShake Animation</span>}
+          onClick={onClickToolTip}
+          customAnimation="headShake"
+        />
       </DoczContainer>
     );
-  }}
+
+}}
+
 </Playground>

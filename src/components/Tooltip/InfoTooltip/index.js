@@ -9,6 +9,7 @@ export const InfoTooltip = ({
   className,
   onClick,
   visible,
+  customAnimation,
 }) => {
   /**
    * @description
@@ -28,6 +29,7 @@ export const InfoTooltip = ({
       zIndex={200}
       theme="dcblue"
       placement="bottom-center"
+      customAnimation={customAnimation}
     >
       <div onClick={onClick}>{children}</div>
     </Tooltip>
