@@ -127,8 +127,8 @@ export const OptionItem = styled.div`
     `}
   ${({ custom }) =>
     custom && font({ size: '15px', weight: 'bold', color: yellow100 })}
-  ${({ disabled }) =>
-    disabled &&
+  ${({ disable }) =>
+    disable &&
     css`
       cursor: default;
       opacity: 0.3;
