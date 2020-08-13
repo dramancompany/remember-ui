@@ -5,4 +5,7 @@ export const Link = styled.a`
   ${textSmall({ color: blue100 })}
 
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
