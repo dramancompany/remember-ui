@@ -6,29 +6,32 @@ import {
   checkboxDisabled,
   checkboxHovered,
 } from '../../../assets';
-
+import useHover from '../../../hooks/useHover';
 import { Container, Icon } from './Checkbox.styles';
-
-const getIconImg = (state, disabled = false) => {
-  if (disabled) return checkboxDisabled;
-  if (state === 'hover') return checkboxHovered;
-  if (state === 'on') return checkboxChecked;
-  return checkboxOutline;
-};
 
 export const Checkbox = ({
   state = 'off',
   onClick = () => {},
-  disabled,
+  disabled = false,
   className,
 }) => {
+  const [hoverRef, isHovered] = useHover();
+
+  const getIconImg = () => {
+    if (disabled) return checkboxDisabled;
+    if (state === 'on') return checkboxChecked;
+    if (isHovered) return checkboxHovered;
+    return checkboxOutline;
+  };
+
   return (
     <Container
+      ref={hoverRef}
       className={className}
       disabled={disabled}
       onClick={(e) => !disabled && onClick(e)}
     >
-      <Icon src={getIconImg(state, disabled)} alt="checkbox-img" />
+      <Icon src={getIconImg()} alt="checkbox-img" />
     </Container>
   );
 };
