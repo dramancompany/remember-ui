@@ -6,7 +6,6 @@ import {
   gray120,
   gray200,
   gray400,
-  gray450,
   blue100,
   red100,
   yellow100,
@@ -25,7 +24,7 @@ export const Container = styled.div`
   ${flexCenter};
   ${textSmall({ weight: 400 })};
 
-  border: 1px solid ${gray450};
+  border: 1px solid ${gray400};
   box-sizing: border-box;
   cursor: pointer;
 
@@ -96,15 +95,15 @@ export const Container = styled.div`
 
 export const BlackButton = styled(Container)`
   border-color: ${gray100};
-  color: ${gray450};
+  color: ${gray400};
   background-color: ${white};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
       color: ${white};
-      border-color: ${gray450};
-      background-color: ${gray450};
+      border-color: ${gray400};
+      background-color: ${gray400};
     `}
 
   ${({ large }) =>
@@ -120,7 +119,7 @@ export const BlackButton = styled(Container)`
     large &&
     css`
       &:hover {
-        background-color: ${gray450};
+        background-color: ${gray400};
         opacity: 0.8;
       }
     `}
