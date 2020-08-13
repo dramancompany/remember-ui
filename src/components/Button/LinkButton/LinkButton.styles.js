@@ -4,5 +4,8 @@ import { textSmall, blue100 } from '../../../core/GlobalStyle';
 export const Link = styled.a`
   ${textSmall({ color: blue100 })}
 
-  text-decoration: underline;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
