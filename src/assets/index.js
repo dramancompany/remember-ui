@@ -10,6 +10,7 @@ export { default as radioHovered } from './icons/radio-hovered.png';
 
 export { default as helpIcon } from './icons/icon-help.png';
 export { default as plusIcon } from './icons/icon-plus.png';
+export { default as moreIcon } from './icons/icon-more.png';
 
 export { default as requiredIcon } from './icons/icon-required.png';
 

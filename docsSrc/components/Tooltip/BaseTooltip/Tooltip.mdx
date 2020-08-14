@@ -7,7 +7,6 @@ import { Playground, Props } from 'docz';
 import { Tooltip } from './Tooltip';
 import { DoczContainer } from 'remember-ui';
 
-
 # Tooltip
 
 ## Properties
@@ -18,7 +17,7 @@ import { DoczContainer } from 'remember-ui';
 
 <Playground>
   <DoczContainer direction="row">
-    <Tooltip 
+    <Tooltip
       content={
         <span>
           제안을 보낸 후보자는 포지션에서
@@ -26,6 +25,7 @@ import { DoczContainer } from 'remember-ui';
         </span>
       }
     />
+    <Tooltip content="더보기" type="more" />
     <Tooltip
       offset="4, 20"
       arrow={false}
@@ -43,9 +43,7 @@ import { DoczContainer } from 'remember-ui';
       placement="right"
       type="plus"
       customComponent={
-        <div style={{marginLeft: '20px', cursor:'pointer'}}>
-          전체보기
-        </div>
+        <div style={{ marginLeft: '20px', cursor: 'pointer' }}>전체보기</div>
       }
     />
   </DoczContainer>
