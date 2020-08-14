@@ -19,7 +19,7 @@ Tooltip.propTypes = {
   iconStyle: t.object,
 
   size: t.oneOf(['small', 'medium']),
-  type: t.oneOf(['help', 'plus']),
+  type: t.oneOf(['help', 'plus', 'more']),
   theme: t.oneOf(['dclight', 'dcdark', 'dcblue']),
   placement: t.oneOf(['bottom', 'top', 'right', 'left']),
   textAlign: t.oneOf(['center', 'left', 'right']),

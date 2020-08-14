@@ -1,13 +1,15 @@
 import React from 'react';
 
-import { helpIcon, plusIcon } from '../../../assets';
+import { helpIcon, plusIcon, moreIcon } from '../../../assets';
 import { Icon, Tooltip } from './BaseTooltip.styles';
 import 'tippy.js/dist/tippy.css';
 
-const getImgFromType = type => {
+const getImgFromType = (type) => {
   switch (type) {
     case 'plus':
       return plusIcon;
+    case 'more':
+      return moreIcon;
     case 'help':
     default:
       return helpIcon;
@@ -16,7 +18,7 @@ const getImgFromType = type => {
 
 /**
  * @name Tooltip
- * @param { 'help' | 'plus' } type
+ * @param { 'help' | 'plus' | 'more' } type
  * @param { 'small' | 'medium' } size
  * @param { 'dclight', 'dcdark', 'dcblue' } theme
  */
