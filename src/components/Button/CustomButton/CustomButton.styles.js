@@ -27,10 +27,16 @@ export const Container = styled.div`
     (size === 'xlarge' && '15px')};
 
   min-width: ${({ size }) =>
-    (size === 'small' && '66px') ||
-    (size === 'medium' && '74px') ||
+    (size === 'small' && '68px') ||
+    (size === 'medium' && '78px') ||
     (size === 'large' && '108px') ||
     (size === 'xlarge' && '116px')};
+
+  padding: ${({ size }) =>
+    (size === 'small' && '0 16px') ||
+    (size === 'medium' && '0 20px') ||
+    (size === 'large' && '0 20px') ||
+    (size === 'xlarge' && '0 24px')};
 
   font-weight: ${({ customStyle }) => customStyle.fontWeight};
   border-radius: ${({ size }) => (size === 'small' ? '2px' : '4px')};
