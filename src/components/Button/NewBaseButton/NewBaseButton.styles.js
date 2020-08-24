@@ -67,6 +67,12 @@ export const Container = styled.div`
   background-color: ${({ theme }) => THEME_COLOR[theme].sub};
   color: ${white};
 
+  ${({ block }) =>
+    block &&
+    css`
+      width: 100%;
+    `}
+
   ${({ outline }) =>
     outline &&
     css`

@@ -15,13 +15,14 @@ export const CustomButton = ({
     borderColor: yellow100,
     backgroundColor: yellow100,
   },
+  block = false,
   outline = false,
   size = 'small',
   isLoading = false,
   children,
   testId,
 }) => {
-  const _onClick = e => {
+  const _onClick = (e) => {
     if (disabled) return;
     if (isLoading) return;
     onClick(e);
@@ -37,6 +38,7 @@ export const CustomButton = ({
       onClick={_onClick}
       isLoading={isLoading}
       data-testid={testId}
+      block={block}
     >
       <Inner size={size}>
         {!isLoading && children}

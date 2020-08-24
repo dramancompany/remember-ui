@@ -52,6 +52,17 @@ import { DoczContainer } from 'remember-ui';
     </DoczContainer>
   </DoczContainer>
   <DoczContainer direction="column">
+    <div>Block Level Buttons (width: 100%)</div>
+    <DoczContainer direction="row">
+      <NewBaseButton size="large" block>
+        Yellow
+      </NewBaseButton>
+      <NewBaseButton size="large" block theme="light" outline>
+        Light
+      </NewBaseButton>
+    </DoczContainer>
+  </DoczContainer>
+  <DoczContainer direction="column">
     <div>Disabled State</div>
     <DoczContainer direction="row">
       <NewBaseButton size="medium" disabled>

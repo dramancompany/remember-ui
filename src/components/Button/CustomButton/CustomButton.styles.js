@@ -39,6 +39,12 @@ export const Container = styled.div`
   background-color: ${({ customStyle }) => customStyle.backgroundColor};
   color: ${({ customStyle }) => customStyle.fontColor};
 
+  ${({ block }) =>
+    block &&
+    css`
+      width: 100%;
+    `}
+
   ${({ disabled }) =>
     disabled &&
     css`

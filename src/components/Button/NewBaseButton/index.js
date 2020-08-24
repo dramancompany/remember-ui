@@ -12,10 +12,11 @@ export const NewBaseButton = ({
   outline = false,
   size = 'small',
   isLoading = false,
+  block = false,
   children,
   testId,
 }) => {
-  const _onClick = e => {
+  const _onClick = (e) => {
     if (disabled) return;
     if (isLoading) return;
     onClick(e);
@@ -28,6 +29,7 @@ export const NewBaseButton = ({
       theme={theme}
       outline={outline}
       disabled={disabled}
+      block={block}
       onClick={_onClick}
       isLoading={isLoading}
       data-testid={testId}

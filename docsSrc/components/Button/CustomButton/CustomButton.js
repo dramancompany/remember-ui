@@ -11,6 +11,7 @@ CustomButton.propTypes = {
   outline: t.bool,
   disabled: t.bool,
   isLoading: t.bool,
+  block: t.bool,
   size: t.oneOf(['small', 'medium', 'large', 'xlarge']),
   customStyle: t.shape({
     fontColor: t.string,
@@ -26,6 +27,7 @@ CustomButton.defaultProps = {
   outline: false,
   disabled: false,
   isLoading: false,
+  block: false,
   customStyle: {
     fontColor: 'white',
     fontWeight: 400,
