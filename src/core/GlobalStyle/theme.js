@@ -1,3 +1,5 @@
+import { yellow100, red100, gray100, gray200, gray450 } from './variable';
+
 const THEME_COLOR = {
   yellow: {
     main: yellow100,
