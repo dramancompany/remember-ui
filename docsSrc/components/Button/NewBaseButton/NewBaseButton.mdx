@@ -54,13 +54,18 @@ import { DoczContainer } from 'remember-ui';
   <DoczContainer direction="column">
     <div>Block Level Buttons (width: 100%)</div>
     <DoczContainer direction="row">
-      <NewBaseButton size="large" block>
-        Yellow
-      </NewBaseButton>
-      <NewBaseButton size="large" block theme="light" outline>
-        Light
-      </NewBaseButton>
+      <div style={{ width: '300px' }}>
+        <NewBaseButton size="large" block>
+          Yellow
+        </NewBaseButton>
+      </div>
+      <div style={{ width: '300px' }}>
+        <NewBaseButton size="large" block theme="light" outline>
+          Light
+        </NewBaseButton>
+      </div>
     </DoczContainer>
+
   </DoczContainer>
   <DoczContainer direction="column">
     <div>Disabled State</div>
