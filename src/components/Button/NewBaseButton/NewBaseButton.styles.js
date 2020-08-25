@@ -1,33 +1,6 @@
 import styled, { css } from 'styled-components';
-import {
-  white,
-  gray100,
-  gray120,
-  gray200,
-  gray450,
-  yellow100,
-  red100,
-  flexCenter,
-} from '../../../core/GlobalStyle';
-
-const THEME_COLOR = {
-  yellow: {
-    main: yellow100,
-    sub: yellow100,
-  },
-  red: {
-    main: red100,
-    sub: red100,
-  },
-  gray: {
-    main: gray200,
-    sub: gray200,
-  },
-  light: {
-    main: gray450,
-    sub: gray100,
-  },
-};
+import { white, gray100, gray120, flexCenter } from '../../../core/GlobalStyle';
+import { THEME_COLOR } from '../../../core/GlobalStyle/theme';
 
 export const Inner = styled.div`
   display: flex;
