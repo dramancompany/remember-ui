@@ -1,6 +1,6 @@
 {
   "name": "remember-ui",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Remember UI Components",
   "homepage": "https://github.com/dramancompany/remember-ui",
   "author": "DramanCompany",
@@ -10,7 +10,8 @@
   "sideEffects": false,
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "index.d.ts"
   ],
   "scripts": {
     "build": "rollup -c",
