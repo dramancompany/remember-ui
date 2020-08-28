@@ -108,7 +108,7 @@ declare module 'remember-ui' {
   ) => FlattenSimpleInterpolation;
 
   export type ScreenSizeFunction = (
-    cssContent: FlattenInterpolation
+    cssContent: FlattenSimpleInterpolation
   ) => FlattenSimpleInterpolation;
 
   export const mobileSmallOnly: ScreenSizeFunction;
