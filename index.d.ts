@@ -130,3 +130,18 @@ export interface LinkButtonProps {
   className?: string;
 }
 export const LinkButton: React.FC<LinkButtonProps>;
+
+export interface BaseButtonProps {
+  className?: string;
+  disabled?: boolean;
+  onClick?: (event: Event) => void;
+  rounded?: boolean;
+  color?: string;
+  fill?: boolean;
+  borderless?: boolean;
+  size?: string;
+  width?: number;
+  isLoading?: boolean;
+}
+
+export const BaseButton: React.FC<BaseButtonProps>;
