@@ -145,3 +145,11 @@ export interface BaseButtonProps {
 }
 
 export const BaseButton: React.FC<BaseButtonProps>;
+
+export interface ProfileAvatarProps {
+  className?: string;
+  color?: string;
+  width?: number;
+}
+
+export const ProfileAvatar: React.FC<ProfileAvatarProps>;
