@@ -185,10 +185,10 @@ export interface DesignedModalProps {
   onClose: Function;
   title: string;
   subTitle: string;
-  customText: string;
   submitText: string;
   submit: Function;
   close: Function;
+  customText?: string;
   submitButtonDisabled?: boolean;
   isLoading?: boolean;
   closeText?: string;
