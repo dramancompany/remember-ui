@@ -153,3 +153,57 @@ export interface ProfileAvatarProps {
 }
 
 export const ProfileAvatar: React.FC<ProfileAvatarProps>;
+
+export interface BaseModalProps {
+  isOpen?: boolean;
+  onClose?: Function;
+  onAfterOpen?: Function;
+  allowKeyExit?: boolean;
+}
+
+export const BaseModal: React.FC<BaseModalProps>;
+
+export interface ConfirmModalProps {
+  title: string;
+  message: string;
+  okText: string;
+  closeText: string;
+  isOpen: boolean;
+  onOk: Function;
+  onAfterOpen: Function;
+  onCloseAction: Function;
+  icon?: 'warning' | 'success';
+  type?: 'delete' | 'ok';
+  showClose?: boolean;
+  onClose?: Function;
+}
+
+export const ConfirmModal: React.FC<ConfirmModalProps>;
+
+export interface DesignedModalProps {
+  isOpen: boolean;
+  onClose: Function;
+  title: string;
+  subTitle: string;
+  customText: string;
+  submitText: string;
+  submit: Function;
+  close: Function;
+  submitButtonDisabled?: boolean;
+  isLoading?: boolean;
+  closeText?: string;
+  onAfterOpen?: Function;
+  headerButton?: JSX.Element | React.FC;
+  className?: string;
+}
+
+export const DesignedModal: React.FC<DesignedModalProps>;
+
+export interface ProgressModal {
+  icon: string;
+  title: (currentCount: number, totalCount: number) => string;
+  message: string;
+  isOpen: boolean;
+  currentCount?: number;
+  totalCount?: number;
+}
