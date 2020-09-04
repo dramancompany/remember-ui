@@ -201,12 +201,12 @@ declare module 'remember-ui' {
     submitText: string;
     submit: Function;
     close: Function;
-    customText?: string;
+    customText?: React.ReactNode;
     submitButtonDisabled?: boolean;
     isLoading?: boolean;
     closeText?: string;
     onAfterOpen?: Function;
-    headerButton?: JSX.Element | React.FC;
+    headerButton?: React.ReactNode;
     className?: string;
   }
 
