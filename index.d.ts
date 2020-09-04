@@ -251,3 +251,30 @@ declare module 'remember-ui' {
 
   export const Spinner: React.FC<SpinnerProps>;
 }
+
+export interface BaseInputProps {
+  type?: string;
+  name: string;
+  value: string;
+  placeholder: string;
+  label: string;
+  maxLength: number;
+  marginBottom: number;
+  outerRef: string;
+  footer: React.ReactNode;
+  className?: string;
+  autoFocus?: boolean;
+  required?: boolean;
+  disabled?: boolean;
+  useError?: boolean;
+  errorMark?: boolean;
+  onlyNumber?: boolean;
+  blankLabel?: boolean;
+  readOnly?: boolean;
+  onChange: Function;
+  onClick: Function;
+  onEnter: Function;
+  validate: Function;
+}
+
+export const BaseInput: React.FC<BaseInputProps>;
