@@ -198,7 +198,7 @@ declare module 'remember-ui' {
 
   export const DesignedModal: React.FC<DesignedModalProps>;
 
-  export interface ProgressModal {
+  export interface ProgressModalProps {
     icon: string;
     title: (currentCount: number, totalCount: number) => string;
     message: string;
@@ -207,7 +207,9 @@ declare module 'remember-ui' {
     totalCount?: number;
   }
 
-  export interface NewBaseButton {
+  export const ProgressModal: React.FC<ProgressModalProps>;
+
+  export interface NewBaseButtonProps {
     className?: string;
     disabled?: boolean;
     onClick?: (event: Event) => void;
@@ -219,7 +221,9 @@ declare module 'remember-ui' {
     children: React.ReactChild | React.ReactChildren;
   }
 
-  export interface CustomButton {
+  export const NewBaseButton: React.FC<NewBaseButtonProps>;
+
+  export interface CustomButtonProps {
     className?: string;
     disabled?: boolean;
     onClick?: (event: Event) => void;
@@ -236,10 +240,14 @@ declare module 'remember-ui' {
     };
   }
 
-  export interface Spinner {
+  export const CustomButton: React.FC<CustomButtonProps>;
+
+  export interface SpinnerProps {
     width?: number;
     height?: number;
     borderWeight?: number;
     className?: string;
   }
+
+  export const Spinner: React.FC<SpinnerProps>;
 }
