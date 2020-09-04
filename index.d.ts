@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import {
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
@@ -120,6 +120,11 @@ declare module 'remember-ui' {
   export const minHeightFix: (direction?: string) => FlattenSimpleInterpolation;
   export const minHeightFixChild: FlattenSimpleInterpolation;
 
+  export const textEllipsis: FlattenSimpleInterpolation;
+  export const textBreak: FlattenSimpleInterpolation;
+  export const textBreakPre: FlattenSimpleInterpolation;
+  export const textLink: FlattenSimpleInterpolation;
+
   // components
   export const GlobalTheme: GlobalStyleComponent;
   export interface LinkButtonProps {
@@ -145,6 +150,15 @@ declare module 'remember-ui' {
 
   export const BaseButton: React.FC<BaseButtonProps>;
 
+  export interface MoreButtonProps {
+    className?: string;
+    value?: boolean;
+    size?: string;
+    onClick?: React.MouseEventHandler;
+  }
+
+  export const MoreButton: React.Fc<MoreButtonProps>;
+
   export interface ProfileAvatarProps {
     className?: string;
     color?: string;
@@ -169,8 +183,8 @@ declare module 'remember-ui' {
     closeText: string;
     isOpen: boolean;
     onOk: Function;
-    onAfterOpen: Function;
-    onCloseAction: Function;
+    onAfterOpen?: Function;
+    onCloseAction?: Function;
     icon?: 'warning' | 'success';
     type?: 'delete' | 'ok';
     showClose?: boolean;
@@ -294,3 +308,27 @@ export interface TextareaProps {
 }
 
 export const Textarea: React.FC<TextareaProps>;
+
+export interface PopoverProps {
+  content: ReactNode;
+  onPopoverOpenChange?: Function;
+  className?: string;
+  customElement?: ReactNode;
+  size?: string;
+  onOpen?: Function;
+  distance?: number;
+  trigger?: string;
+  placement?: string;
+  disabled?: boolean;
+}
+
+export const BasePopover: React.FC<PopoverProps>;
+
+export interface PopoverItemProps {
+  selected?: boolean;
+  warning?: boolean;
+  bold?: boolean;
+  onClick: React.MouseEventHandler;
+}
+
+export const PopoverItem: React.FC<PopoverItemProps>;
