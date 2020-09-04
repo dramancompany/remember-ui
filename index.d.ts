@@ -138,7 +138,7 @@ declare module 'remember-ui' {
   export interface BaseButtonProps {
     className?: string;
     disabled?: boolean;
-    onClick?: (event: Event) => void;
+    onClick?: Function;
     rounded?: boolean;
     color?: string;
     fill?: boolean;
@@ -154,7 +154,7 @@ declare module 'remember-ui' {
     className?: string;
     value?: boolean;
     size?: string;
-    onClick?: React.MouseEventHandler;
+    onClick?: Function;
   }
 
   export const MoreButton: React.Fc<MoreButtonProps>;
@@ -226,7 +226,7 @@ declare module 'remember-ui' {
   export interface NewBaseButtonProps {
     className?: string;
     disabled?: boolean;
-    onClick?: (event: Event) => void;
+    onClick?: Function;
     theme?: string;
     outline?: boolean;
     size?: string;
@@ -240,7 +240,7 @@ declare module 'remember-ui' {
   export interface CustomButtonProps {
     className?: string;
     disabled?: boolean;
-    onClick?: (event: Event) => void;
+    onClick?: Function;
     outline?: boolean;
     size?: string;
     isLoading?: boolean;
