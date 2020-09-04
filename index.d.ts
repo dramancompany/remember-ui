@@ -264,71 +264,71 @@ declare module 'remember-ui' {
   }
 
   export const Spinner: React.FC<SpinnerProps>;
+
+  export interface BaseInputProps {
+    name: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    outerRef?: string;
+    footer?: React.ReactNode;
+    placeholder?: string;
+    maxLength?: number;
+    marginBottom?: number;
+    type?: string;
+    label?: string;
+    className?: string;
+    autoFocus?: boolean;
+    required?: boolean;
+    disabled?: boolean;
+    useError?: boolean;
+    errorMark?: boolean;
+    onlyNumber?: boolean;
+    blankLabel?: boolean;
+    readOnly?: boolean;
+    onClick?: Function;
+    onEnter?: Function;
+    validate?: Function;
+  }
+
+  export const BaseInput: React.FC<BaseInputProps>;
+
+  export interface TextareaProps {
+    name: string;
+    value: string;
+    onChange: (value: string) => void;
+    type?: string;
+    placeholder?: string;
+    label?: string;
+    maxLength?: number;
+    first?: boolean;
+    required?: boolean;
+    blankLabel?: boolean;
+    countLenth?: boolean;
+  }
+
+  export const Textarea: React.FC<TextareaProps>;
+
+  export interface PopoverProps {
+    content: ReactNode;
+    onPopoverOpenChange?: Function;
+    className?: string;
+    customElement?: ReactNode;
+    size?: string;
+    onOpen?: Function;
+    distance?: number;
+    trigger?: string;
+    placement?: string;
+    disabled?: boolean;
+  }
+
+  export const BasePopover: React.FC<PopoverProps>;
+
+  export interface PopoverItemProps {
+    selected?: boolean;
+    warning?: boolean;
+    bold?: boolean;
+    onClick: React.MouseEventHandler;
+  }
+
+  export const PopoverItem: React.FC<PopoverItemProps>;
 }
-
-export interface BaseInputProps {
-  name: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  outerRef?: string;
-  footer?: React.ReactNode;
-  placeholder?: string;
-  maxLength?: number;
-  marginBottom?: number;
-  type?: string;
-  label?: string;
-  className?: string;
-  autoFocus?: boolean;
-  required?: boolean;
-  disabled?: boolean;
-  useError?: boolean;
-  errorMark?: boolean;
-  onlyNumber?: boolean;
-  blankLabel?: boolean;
-  readOnly?: boolean;
-  onClick?: Function;
-  onEnter?: Function;
-  validate?: Function;
-}
-
-export const BaseInput: React.FC<BaseInputProps>;
-
-export interface TextareaProps {
-  name: string;
-  value: string;
-  onChange: (value: string) => void;
-  type?: string;
-  placeholder?: string;
-  label?: string;
-  maxLength?: number;
-  first?: boolean;
-  required?: boolean;
-  blankLabel?: boolean;
-  countLenth?: boolean;
-}
-
-export const Textarea: React.FC<TextareaProps>;
-
-export interface PopoverProps {
-  content: ReactNode;
-  onPopoverOpenChange?: Function;
-  className?: string;
-  customElement?: ReactNode;
-  size?: string;
-  onOpen?: Function;
-  distance?: number;
-  trigger?: string;
-  placement?: string;
-  disabled?: boolean;
-}
-
-export const BasePopover: React.FC<PopoverProps>;
-
-export interface PopoverItemProps {
-  selected?: boolean;
-  warning?: boolean;
-  bold?: boolean;
-  onClick: React.MouseEventHandler;
-}
-
-export const PopoverItem: React.FC<PopoverItemProps>;
