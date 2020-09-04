@@ -119,91 +119,127 @@ declare module 'remember-ui' {
 
   export const minHeightFix: (direction?: string) => FlattenSimpleInterpolation;
   export const minHeightFixChild: FlattenSimpleInterpolation;
-}
 
-// components
-export const GlobalTheme: GlobalStyleComponent;
-export interface LinkButtonProps {
-  address?: string;
-  showAddress?: boolean;
-  children: React.ReactChild | React.ReactChildren;
-  className?: string;
-}
-export const LinkButton: React.FC<LinkButtonProps>;
+  // components
+  export const GlobalTheme: GlobalStyleComponent;
+  export interface LinkButtonProps {
+    address?: string;
+    showAddress?: boolean;
+    children: React.ReactChild | React.ReactChildren;
+    className?: string;
+  }
+  export const LinkButton: React.FC<LinkButtonProps>;
 
-export interface BaseButtonProps {
-  className?: string;
-  disabled?: boolean;
-  onClick?: (event: Event) => void;
-  rounded?: boolean;
-  color?: string;
-  fill?: boolean;
-  borderless?: boolean;
-  size?: string;
-  width?: number;
-  isLoading?: boolean;
-}
+  export interface BaseButtonProps {
+    className?: string;
+    disabled?: boolean;
+    onClick?: (event: Event) => void;
+    rounded?: boolean;
+    color?: string;
+    fill?: boolean;
+    borderless?: boolean;
+    size?: string;
+    width?: number;
+    isLoading?: boolean;
+  }
 
-export const BaseButton: React.FC<BaseButtonProps>;
+  export const BaseButton: React.FC<BaseButtonProps>;
 
-export interface ProfileAvatarProps {
-  className?: string;
-  color?: string;
-  width?: number;
-}
+  export interface ProfileAvatarProps {
+    className?: string;
+    color?: string;
+    width?: number;
+  }
 
-export const ProfileAvatar: React.FC<ProfileAvatarProps>;
+  export const ProfileAvatar: React.FC<ProfileAvatarProps>;
 
-export interface BaseModalProps {
-  isOpen?: boolean;
-  onClose?: Function;
-  onAfterOpen?: Function;
-  allowKeyExit?: boolean;
-}
+  export interface BaseModalProps {
+    isOpen?: boolean;
+    onClose?: Function;
+    onAfterOpen?: Function;
+    allowKeyExit?: boolean;
+  }
 
-export const BaseModal: React.FC<BaseModalProps>;
+  export const BaseModal: React.FC<BaseModalProps>;
 
-export interface ConfirmModalProps {
-  title: string;
-  message: string;
-  okText: string;
-  closeText: string;
-  isOpen: boolean;
-  onOk: Function;
-  onAfterOpen: Function;
-  onCloseAction: Function;
-  icon?: 'warning' | 'success';
-  type?: 'delete' | 'ok';
-  showClose?: boolean;
-  onClose?: Function;
-}
+  export interface ConfirmModalProps {
+    title: string;
+    message: string;
+    okText: string;
+    closeText: string;
+    isOpen: boolean;
+    onOk: Function;
+    onAfterOpen: Function;
+    onCloseAction: Function;
+    icon?: 'warning' | 'success';
+    type?: 'delete' | 'ok';
+    showClose?: boolean;
+    onClose?: Function;
+  }
 
-export const ConfirmModal: React.FC<ConfirmModalProps>;
+  export const ConfirmModal: React.FC<ConfirmModalProps>;
 
-export interface DesignedModalProps {
-  isOpen: boolean;
-  onClose: Function;
-  title: string;
-  subTitle: string;
-  submitText: string;
-  submit: Function;
-  close: Function;
-  customText?: string;
-  submitButtonDisabled?: boolean;
-  isLoading?: boolean;
-  closeText?: string;
-  onAfterOpen?: Function;
-  headerButton?: JSX.Element | React.FC;
-  className?: string;
-}
+  export interface DesignedModalProps {
+    isOpen: boolean;
+    onClose: Function;
+    title: string;
+    subTitle: string;
+    submitText: string;
+    submit: Function;
+    close: Function;
+    customText?: string;
+    submitButtonDisabled?: boolean;
+    isLoading?: boolean;
+    closeText?: string;
+    onAfterOpen?: Function;
+    headerButton?: JSX.Element | React.FC;
+    className?: string;
+  }
 
-export const DesignedModal: React.FC<DesignedModalProps>;
+  export const DesignedModal: React.FC<DesignedModalProps>;
 
-export interface ProgressModal {
-  icon: string;
-  title: (currentCount: number, totalCount: number) => string;
-  message: string;
-  isOpen: boolean;
-  currentCount?: number;
-  totalCount?: number;
+  export interface ProgressModal {
+    icon: string;
+    title: (currentCount: number, totalCount: number) => string;
+    message: string;
+    isOpen: boolean;
+    currentCount?: number;
+    totalCount?: number;
+  }
+
+  export interface NewBaseButton {
+    className?: string;
+    disabled?: boolean;
+    onClick?: (event: Event) => void;
+    theme?: string;
+    outline?: boolean;
+    size?: string;
+    isLoading?: boolean;
+    block?: boolean;
+    children: React.ReactChild | React.ReactChildren;
+  }
+
+  export interface CustomButton {
+    className?: string;
+    disabled?: boolean;
+    onClick?: (event: Event) => void;
+    outline?: boolean;
+    size?: string;
+    isLoading?: boolean;
+    block?: boolean;
+    children: React.ReactChild | React.ReactChildren;
+    customStyle: {
+      fontWeight: number | string;
+      fontColor: string;
+      borderColor: string;
+      backgroundColor: string;
+    };
+  }
+
+  export interface Spinner {
+    width?: number;
+    height?: number;
+    borderWeight?: number;
+    className?: string;
+  }
 }
