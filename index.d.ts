@@ -331,4 +331,13 @@ declare module 'remember-ui' {
   }
 
   export const PopoverItem: React.FC<PopoverItemProps>;
+
+  export interface CheckboxProps {
+    state?: 'on' | 'off';
+    onClick?: Function;
+    disabled?: boolean;
+    className?: string;
+  }
+
+  export const Checkbox: React.FC<CheckboxProps>;
 }
