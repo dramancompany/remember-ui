@@ -253,15 +253,16 @@ declare module 'remember-ui' {
 }
 
 export interface BaseInputProps {
-  type?: string;
   name: string;
   value: string;
-  placeholder: string;
-  label: string;
-  maxLength: number;
-  marginBottom: number;
-  outerRef: string;
-  footer: React.ReactNode;
+  onChange: Function;
+  outerRef?: string;
+  footer?: React.ReactNode;
+  placeholder?: string;
+  maxLength?: number;
+  marginBottom?: number;
+  type?: string;
+  label?: string;
   className?: string;
   autoFocus?: boolean;
   required?: boolean;
@@ -271,10 +272,9 @@ export interface BaseInputProps {
   onlyNumber?: boolean;
   blankLabel?: boolean;
   readOnly?: boolean;
-  onChange: Function;
-  onClick: Function;
-  onEnter: Function;
-  validate: Function;
+  onClick?: Function;
+  onEnter?: Function;
+  validate?: Function;
 }
 
 export const BaseInput: React.FC<BaseInputProps>;
