@@ -255,7 +255,7 @@ declare module 'remember-ui' {
 export interface BaseInputProps {
   name: string;
   value: string;
-  onChange: Function;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   outerRef?: string;
   footer?: React.ReactNode;
   placeholder?: string;
@@ -278,3 +278,19 @@ export interface BaseInputProps {
 }
 
 export const BaseInput: React.FC<BaseInputProps>;
+
+export interface TextareaProps {
+  name: string;
+  value: string;
+  onChange: (value: string) => void;
+  type?: string;
+  placeholder?: string;
+  label?: string;
+  maxLength?: number;
+  first?: boolean;
+  required?: boolean;
+  blankLabel?: boolean;
+  countLenth?: boolean;
+}
+
+export const Textarea: React.FC<TextareaProps>;
