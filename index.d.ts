@@ -358,4 +358,6 @@ declare module 'remember-ui' {
     isFixedSelect?: boolean;
     maxHeight?: number;
   }
+
+  export const Select: React.FC<SelectProps>;
 }
