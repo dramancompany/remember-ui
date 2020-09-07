@@ -340,4 +340,22 @@ declare module 'remember-ui' {
   }
 
   export const Checkbox: React.FC<CheckboxProps>;
+
+  export interface SelectOption {
+    id: number;
+    label: string;
+    value: string;
+  }
+
+  export interface SelectProps {
+    options: SelectOption[];
+    onChange: Function;
+    value?: number;
+    className?: string;
+    label?: string;
+    changeInputMode?: Function;
+    required?: boolean;
+    isFixedSelect?: boolean;
+    maxHeight?: number;
+  }
 }
