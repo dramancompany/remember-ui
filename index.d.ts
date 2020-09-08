@@ -269,7 +269,7 @@ declare module 'remember-ui' {
     name: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    outerRef?: string;
+    outerRef?: RefObject<HTMLInputElement>;
     footer?: React.ReactNode;
     placeholder?: string;
     maxLength?: number;
@@ -295,8 +295,8 @@ declare module 'remember-ui' {
   export interface TextareaProps {
     name: string;
     value: string;
-    onChange: (value: string) => void;
     ref?: RefObject<HTMLTextAreaElement>;
+    onChange: (value: string) => void;
     type?: string;
     placeholder?: string;
     label?: string;

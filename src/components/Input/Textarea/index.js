@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 
-import useCustomSetInput from '../../../hooks/useCustomSetInput'
+import useCustomSetInput from '../../../hooks/useCustomSetInput';
 
 import { Container, Label, Text, TextCount } from './Textarea.styles';
 
 export const Textarea = ({
+  outerRef,
   value,
   type,
   name,
@@ -19,7 +20,12 @@ export const Textarea = ({
   countLength = false,
 }) => {
   const textareaRef = useRef(null);
-  const _onChange = useCustomSetInput(textareaRef, value, onChange, maxLength);
+  const _onChange = useCustomSetInput(
+    outerRef || textareaRef,
+    value,
+    onChange,
+    maxLength
+  );
 
   return (
     <Container>
@@ -31,7 +37,7 @@ export const Textarea = ({
         </Label>
       )}
       <Text
-        ref={textareaRef}
+        ref={outerRef || textareaRef}
         className={className}
         value={value}
         type={type}
