@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, RefObject } from 'react';
 import {
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
@@ -296,6 +296,7 @@ declare module 'remember-ui' {
     name: string;
     value: string;
     onChange: (value: string) => void;
+    ref?: RefObject<HTMLTextAreaElement>;
     type?: string;
     placeholder?: string;
     label?: string;

@@ -13,6 +13,7 @@ Textarea.propTypes = {
   placeholder: t.string,
   label: t.string,
   maxLength: t.number,
+  ref: t.shape({ current: t.any }),
 
   first: t.oneOf([false, true]),
   required: t.oneOf([false, true]),
