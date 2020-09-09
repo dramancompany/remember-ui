@@ -44,7 +44,7 @@ Label.Notice = styled.span`
   float: right;
 `;
 
-export const Text = styled.textarea.attrs()`
+export const Text = styled.textarea`
   ${font({ size: '15px', color: text })}
   ${placeholderColor(gray150)}
 
@@ -67,11 +67,13 @@ export const TextCount = styled.div`
   font-size: 12px;
   text-align: right;
   color: ${gray150};
-`
+`;
 
 TextCount.Progress = styled.span`
-  ${({ inProgress }) => inProgress && css`
-    color: ${gray400};
-  `}
-`
-TextCount.Max = styled.span``
+  ${({ inProgress }) =>
+    inProgress &&
+    css`
+      color: ${gray400};
+    `}
+`;
+TextCount.Max = styled.span``;
