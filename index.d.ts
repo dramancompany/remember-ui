@@ -295,7 +295,7 @@ declare module 'remember-ui' {
   export interface TextareaProps {
     name: string;
     value: string;
-    ref?: RefObject<HTMLTextAreaElement>;
+    outerRef?: RefObject<HTMLTextAreaElement>;
     onChange: (value: string) => void;
     type?: string;
     placeholder?: string;
