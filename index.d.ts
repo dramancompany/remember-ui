@@ -363,4 +363,15 @@ declare module 'remember-ui' {
   }
 
   export const Select: React.FC<SelectProps>;
+
+  export interface InfoTooltipProps {
+    children: React.ReactChild | React.ReactChildren;
+    content: ReactNode;
+    className: string;
+    onClick: Function;
+    visible: boolean;
+    customAnimation: string;
+  }
+
+  export const InfoTooltip: React.FC<InfoTooltipProps>;
 }
