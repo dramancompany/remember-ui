@@ -297,6 +297,7 @@ declare module 'remember-ui' {
     value: string;
     outerRef?: RefObject<HTMLTextAreaElement>;
     onChange: (value: string) => void;
+    textareaOnClick?: Function;
     type?: string;
     placeholder?: string;
     label?: string;

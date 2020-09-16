@@ -22,6 +22,7 @@ Textarea.propTypes = {
   countLength: t.oneOf([false, true]),
 
   onChange: t.func,
+  textareaOnClick: t.func,
 };
 
 Textarea.defaultProps = {
@@ -32,4 +33,5 @@ Textarea.defaultProps = {
   first: false,
   countLength: false,
   onChange: () => {},
+  textareaOnClick: () => {},
 };
