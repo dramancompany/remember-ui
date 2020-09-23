@@ -375,4 +375,21 @@ declare module 'remember-ui' {
   }
 
   export const InfoTooltip: React.FC<InfoTooltipProps>;
+
+  export interface BaseTooltipProps {
+    customComponent?: ReactNode;
+    offset?: string;
+    arrow?: boolean;
+    onClick?: Function;
+    content: ReactNode;
+    iconStyle?: object;
+    size?: string;
+    type?: string;
+    theme?: string;
+    placement?: string;
+    textAlign?: string;
+    className?: string;
+  }
 }
+
+export const BaseTooltip: React.FC<BaseTooltipProps>;
