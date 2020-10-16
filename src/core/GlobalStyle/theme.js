@@ -1,4 +1,11 @@
-import { yellow100, red100, gray100, gray200, gray450 } from './variable';
+import {
+  yellow100,
+  red100,
+  gray100,
+  gray200,
+  gray450,
+  blue100,
+} from './variable';
 
 const THEME_COLOR = {
   yellow: {
@@ -16,6 +23,10 @@ const THEME_COLOR = {
   light: {
     main: gray450,
     sub: gray100,
+  },
+  blue: {
+    main: blue100,
+    sub: blue100,
   },
 };
 
