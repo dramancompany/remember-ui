@@ -10,6 +10,7 @@ import {
   gray50,
   gray150,
   yellow100,
+  red100,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div`
@@ -58,6 +59,12 @@ export const Content = styled.div`
   border-radius: 4px;
   border: 1px solid ${gray100};
   background-color: ${white};
+
+  ${({ error }) =>
+    error &&
+    css`
+      border-color: ${red100};
+    `}
 
   ${({ active }) =>
     active &&
@@ -133,4 +140,11 @@ export const OptionItem = styled.div`
       cursor: default;
       opacity: 0.3;
     `}
+`;
+
+export const Message = styled.div`
+  ${font({ size: '13px', color: red100 })};
+
+  min-height: 19px;
+  margin-top: 4px;
 `;

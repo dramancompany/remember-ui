@@ -13,6 +13,8 @@ Select.propTypes = {
   required: t.oneOf([false, true]),
   isFixedSelect: t.oneOf([false, true]),
   maxHeight: t.number,
+  error: t.bool,
+  errorMessage: t.string,
 };
 
 Select.defaultProps = {

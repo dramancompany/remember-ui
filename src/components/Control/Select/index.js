@@ -11,6 +11,7 @@ import {
   Selected,
   Options,
   OptionItem,
+  Message,
 } from './Select.styles';
 
 export const Select = ({
@@ -25,6 +26,8 @@ export const Select = ({
   maxHeight,
   placeholder = '포지션을 선택하세요',
   marginBottom,
+  errorMessage,
+  error,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -51,7 +54,7 @@ export const Select = ({
           {required && <Label.Mark src={requiredIcon} alt="mark" />}
         </Label>
       )}
-      <Content isFixed={isFixedSelect} active={isOpen}>
+      <Content isFixed={isFixedSelect} active={isOpen} error={error}>
         <OutsideClickHandler onOutsideClick={closeExample}>
           <Selected onClick={selectHandler}>
             {selectedOption ? (
@@ -85,6 +88,7 @@ export const Select = ({
           )}
         </OutsideClickHandler>
       </Content>
+      {errorMessage && <Message>{errorMessage}</Message>}
     </Container>
   );
 };

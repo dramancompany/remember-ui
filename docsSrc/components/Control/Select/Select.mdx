@@ -47,8 +47,8 @@ import { Select } from './Select';
           value={current}
           onChange={setCurrent}
           options={options}
-        /> 
-        <br/>
+        />
+        <br />
         <Select
           className="pass-type2"
           label="상품 종류1"
@@ -67,6 +67,37 @@ import { Select } from './Select';
           options={options}
           required
           maxHeight={100}
+        />
+        <br />
+        <Select
+          className="pass-type3"
+          label="상품 종류3"
+          value={current}
+          onChange={setCurrent}
+          options={options}
+          maxHeight={100}
+          error
+        />
+        <br />
+        <Select
+          className="pass-type4"
+          label="상품 종류4"
+          value={current}
+          onChange={setCurrent}
+          options={options}
+          maxHeight={100}
+          errorMessage="error meesage만 설정 할 수 있습니다."
+        />
+        <br />
+        <Select
+          className="pass-type5"
+          label="상품 종류5"
+          value={current}
+          onChange={setCurrent}
+          options={options}
+          maxHeight={100}
+          error
+          errorMessage="border와 error message 둘 다 설정 할 수 있습니다."
         />
       </>
     );

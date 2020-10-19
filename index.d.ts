@@ -361,6 +361,8 @@ declare module 'remember-ui' {
     maxHeight?: number;
     placeholder?: string;
     marginBottom?: number;
+    error?: boolean;
+    errorMessage?: string;
   }
 
   export const Select: React.FC<SelectProps>;
