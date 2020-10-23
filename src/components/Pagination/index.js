@@ -80,7 +80,7 @@ export const DcNewPagination = ({
         </Button>
       </List>
       <Numbers>
-        {range(firstPage, lastPage).map(_page => (
+        {range(firstPage, lastPage).map((_page) => (
           <Numbers.Button key={_page}>
             <Button
               selected={_page === activePage}
@@ -111,3 +111,5 @@ export const DcNewPagination = ({
     </Container>
   );
 };
+
+export const Pagination = DcNewPagination;

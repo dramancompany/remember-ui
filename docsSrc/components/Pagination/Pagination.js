@@ -1,6 +1,6 @@
 import React from 'react';
 import t from 'prop-types';
-import { DcNewPagination as Component } from 'remember-ui';
+import { Pagination as Component } from 'remember-ui';
 
 export const Pagination = ({ ...rest }) => <Component {...rest} />;
 
