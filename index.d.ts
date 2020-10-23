@@ -157,7 +157,7 @@ declare module 'remember-ui' {
     onClick?: Function;
   }
 
-  export const MoreButton: React.Fc<MoreButtonProps>;
+  export const MoreButton: React.FC<MoreButtonProps>;
 
   export interface ProfileAvatarProps {
     className?: string;
@@ -392,6 +392,17 @@ declare module 'remember-ui' {
     textAlign?: string;
     className?: string;
   }
-}
+  export const BaseTooltip: React.FC<BaseTooltipProps>;
 
-export const BaseTooltip: React.FC<BaseTooltipProps>;
+  export interface PaginationProps {
+    activePage: number;
+    totalItemCount: number;
+    pageRangeDisplayed: number;
+    onChangePage: (page: number) => void;
+    itemCountPerPage: number;
+    className: string;
+  }
+
+  export const Pagination: React.FC<Partial<PaginationProps>>;
+  export const DcNewPagination: typeof Pagination;
+}
