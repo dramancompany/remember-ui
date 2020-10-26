@@ -117,6 +117,11 @@ declare module 'remember-ui' {
   export const landingMobileOnly: ScreenSizeFunction;
   export const landingWebOnly: ScreenSizeFunction;
 
+  export const placeholderColor: (
+    color: string,
+    center?: boolean
+  ) => FlattenSimpleInterpolation;
+
   export const minHeightFix: (direction?: string) => FlattenSimpleInterpolation;
   export const minHeightFixChild: FlattenSimpleInterpolation;
 
