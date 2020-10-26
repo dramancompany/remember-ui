@@ -405,4 +405,12 @@ declare module 'remember-ui' {
 
   export const Pagination: React.FC<Partial<PaginationProps>>;
   export const DcNewPagination: typeof Pagination;
+
+  export interface RadioProps {
+    isChecked: boolean;
+    onClick?: Function;
+    className?: string;
+  }
+
+  export const Radio: React.FC<RadioProps>;
 }
