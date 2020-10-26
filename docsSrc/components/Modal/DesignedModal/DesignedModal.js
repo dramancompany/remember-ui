@@ -19,6 +19,7 @@ DesignedModal.propTypes = {
   submitText: t.string,
 
   isOpen: t.oneOf([false, true]),
+  isDraggable: t.oneOf([false, true]),
   isLoading: t.oneOf([false, true]),
   submitButtonDisabled: t.oneOf([false, true]),
 
@@ -34,5 +35,6 @@ DesignedModal.defaultProps = {
   closeText: '닫기',
   submitButtonDisabled: false,
   isLoading: false,
+  isDraggable: false,
   onAfterOpen: () => {},
 };

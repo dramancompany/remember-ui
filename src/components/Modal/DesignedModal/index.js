@@ -24,6 +24,7 @@ export const DesignedModal = ({
   submitButtonDisabled = false,
   headerButton,
   isLoading = false,
+  isDraggable = false,
   onAfterOpen = () => {},
   className,
 }) => {
@@ -33,6 +34,7 @@ export const DesignedModal = ({
       isOpen={isOpen}
       onClose={onClose}
       onAfterOpen={onAfterOpen}
+      isDraggable={isDraggable}
     >
       <Modal>
         <Modal.Header>

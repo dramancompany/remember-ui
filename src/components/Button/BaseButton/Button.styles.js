@@ -45,7 +45,8 @@ export const Container = styled.div`
     (size === 'large' && '15px') ||
     (size === 'xlarge' && '16px')};
 
-  font-weight: ${({ size }) => size === 'xlarge' && 'bold'};
+  font-weight: ${({ size }) =>
+    (size === 'large' || size === 'xlarge') && 'bold'};
 
   ${({ rounded }) =>
     rounded &&

@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
+import Draggable from 'react-draggable';
 
 Modal.setAppElement('body');
 
@@ -10,6 +11,7 @@ export const BaseModal = ({
   onAfterOpen = () => {},
   allowKeyExit = true,
   children,
+  isDraggable = false,
 }) => {
   return (
     <Modal
@@ -35,7 +37,8 @@ export const BaseModal = ({
        */
       shouldCloseOnEsc={allowKeyExit}
     >
-      {children}
+      {isDraggable && <Draggable>{children}</Draggable>}
+      {!isDraggable && children}
     </Modal>
   );
 };

@@ -13,6 +13,7 @@ export const BaseModal = ({ children, ...rest }) => {
 
 BaseModal.propTypes = {
   isOpen: t.oneOf([false, true]),
+  isDraggable: t.oneOf([false, true]),
   allowKeyExit: t.oneOf([false, true]),
   onClose: t.func,
   onAfterOpen: t.func,
@@ -20,6 +21,7 @@ BaseModal.propTypes = {
 
 BaseModal.defaultProps = {
   isOpen: false,
+  isDraggable: false,
   allowKeyExit: true,
   onClose: () => {},
   onAfterOpen: () => {},

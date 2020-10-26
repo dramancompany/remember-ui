@@ -49,6 +49,7 @@ export const ConfirmModal = ({
   message,
   type = 'ok',
   isOpen,
+  isDraggable = false,
   onClose = () => {},
   onOk = '확인',
   okText,
@@ -66,6 +67,7 @@ export const ConfirmModal = ({
       isOpen={isOpen}
       onClose={onClose}
       allowKeyExit={false}
+      isDraggable={isDraggable}
     >
       <Container>
         <Body>

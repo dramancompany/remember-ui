@@ -19,8 +19,14 @@ export const ProgressModal = ({
   message,
   isOpen,
   className,
+  isDraggable = false,
 }) => (
-  <BaseModal className={className} isOpen={isOpen} allowKeyExit={false}>
+  <BaseModal
+    className={className}
+    isOpen={isOpen}
+    allowKeyExit={false}
+    isDraggable={isDraggable}
+  >
     <Container>
       <Body>
         {icon && <Icon src={icon} alt="icon" />}

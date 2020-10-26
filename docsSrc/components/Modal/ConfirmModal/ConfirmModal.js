@@ -22,6 +22,7 @@ ConfirmModal.propTypes = {
 
   isOpen: t.oneOf([false, true]),
   showClose: t.oneOf([false, true]),
+  isDraggable: t.oneOf([false, true]),
 
   onClose: t.func,
   onOk: t.func,
@@ -33,5 +34,6 @@ ConfirmModal.defaultProps = {
   icon: 'success',
   type: 'ok',
   showClose: true,
+  isDraggable: false,
   onClose: () => {},
 };
