@@ -18,9 +18,11 @@ ProgressModal.propTypes = {
   totalCount: t.number,
   message: t.string,
   isOpen: t.oneOf([false, true]),
+  isDraggable: t.oneOf([false, true]),
 };
 
 ProgressModal.defaultProps = {
   currentCount: 0,
   totalCount: 1,
+  isDraggable: false,
 };
