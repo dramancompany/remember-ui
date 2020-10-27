@@ -3,6 +3,8 @@ import Modal from 'react-modal';
 import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
 import Draggable from 'react-draggable';
 
+import { Container } from './BaseModal.styles';
+
 Modal.setAppElement('body');
 
 export const BaseModal = ({
@@ -37,8 +39,12 @@ export const BaseModal = ({
        */
       shouldCloseOnEsc={allowKeyExit}
     >
-      {isDraggable && <Draggable>{children}</Draggable>}
-      {!isDraggable && children}
+      {isDraggable && (
+        <Draggable>
+          <Container isDraggable={isDraggable}>{children}</Container>
+        </Draggable>
+      )}
+      {!isDraggable && <Container>{children}</Container>}
     </Modal>
   );
 };
