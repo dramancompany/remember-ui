@@ -202,10 +202,10 @@ declare module 'remember-ui' {
     isOpen: boolean;
     onClose: Function;
     title: string;
-    subTitle: string;
-    submitText: string;
-    submit: Function;
     close: Function;
+    subTitle?: string;
+    submitText?: string;
+    submit?: Function;
     customText?: React.ReactNode;
     submitButtonDisabled?: boolean;
     isLoading?: boolean;
