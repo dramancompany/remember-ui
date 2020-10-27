@@ -14,15 +14,23 @@ export const BaseModal = ({ children, ...rest }) => {
 BaseModal.propTypes = {
   isOpen: t.oneOf([false, true]),
   isDraggable: t.oneOf([false, true]),
+  isDragBounded: t.oneOf([false, true]),
   allowKeyExit: t.oneOf([false, true]),
   onClose: t.func,
   onAfterOpen: t.func,
+  dragOnStart: t.func,
+  dragOnStop: t.func,
+  dragOnDrag: t.func,
 };
 
 BaseModal.defaultProps = {
   isOpen: false,
   isDraggable: false,
+  isDragBounded: true,
   allowKeyExit: true,
   onClose: () => {},
   onAfterOpen: () => {},
+  dragOnStart: () => {},
+  dragOnStop: () => {},
+  dragOnDrag: () => {},
 };

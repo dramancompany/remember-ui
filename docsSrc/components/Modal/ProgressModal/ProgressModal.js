@@ -19,10 +19,18 @@ ProgressModal.propTypes = {
   message: t.string,
   isOpen: t.oneOf([false, true]),
   isDraggable: t.oneOf([false, true]),
+  isDragBounded: t.oneOf([false, true]),
+  dragOnStart: t.func,
+  dragOnStop: t.func,
+  dragOnDrag: t.func,
 };
 
 ProgressModal.defaultProps = {
   currentCount: 0,
   totalCount: 1,
   isDraggable: false,
+  isDragBounded: true,
+  dragOnStart: () => {},
+  dragOnStop: () => {},
+  dragOnDrag: () => {},
 };

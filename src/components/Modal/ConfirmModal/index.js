@@ -50,6 +50,7 @@ export const ConfirmModal = ({
   type = 'ok',
   isOpen,
   isDraggable = false,
+  isDragBounded = true,
   onClose = () => {},
   onOk = '확인',
   okText,
@@ -58,6 +59,9 @@ export const ConfirmModal = ({
   children,
   onCloseAction,
   className,
+  dragOnStart = () => {},
+  dragOnStop = () => {},
+  dragOnDrag = () => {},
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
 
@@ -68,6 +72,10 @@ export const ConfirmModal = ({
       onClose={onClose}
       allowKeyExit={false}
       isDraggable={isDraggable}
+      isDragBounded={isDragBounded}
+      dragOnStart={dragOnStart}
+      dragOnStop={dragOnStop}
+      dragOnDrag={dragOnDrag}
     >
       <Container>
         <Body>

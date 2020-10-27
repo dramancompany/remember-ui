@@ -14,12 +14,18 @@ export const BaseModal = ({
   allowKeyExit = true,
   children,
   isDraggable = false,
+  isDragBounded = true,
+  dragOnStart = () => {},
+  dragOnStop = () => {},
+  dragOnDrag = () => {},
 }) => {
+  const dragBounds = isDraggable && isDragBounded ? '.dc-modal-overlay' : '';
+
   return (
     <Modal
       overlayClassName={{
         base: 'dc-modal-overlay',
-        afterOpen: 'dc-modal-overlay--open',
+        afterOpen: isDraggable ? '' : 'dc-modal-overlay--open',
         beforeClose: 'dc-modal-overlay--close',
       }}
       className="dc-modal"
@@ -40,7 +46,12 @@ export const BaseModal = ({
       shouldCloseOnEsc={allowKeyExit}
     >
       {isDraggable && (
-        <Draggable>
+        <Draggable
+          bounds={dragBounds}
+          onStart={dragOnStart}
+          onStop={dragOnStop}
+          onDrag={dragOnDrag}
+        >
           <Container isDraggable={isDraggable}>{children}</Container>
         </Draggable>
       )}

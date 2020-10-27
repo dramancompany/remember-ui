@@ -20,6 +20,7 @@ DesignedModal.propTypes = {
 
   isOpen: t.oneOf([false, true]),
   isDraggable: t.oneOf([false, true]),
+  isDragBounded: t.oneOf([false, true]),
   isLoading: t.oneOf([false, true]),
   submitButtonDisabled: t.oneOf([false, true]),
 
@@ -29,6 +30,9 @@ DesignedModal.propTypes = {
   onAfterOpen: t.func,
 
   headerButton: t.object,
+  dragOnStart: t.func,
+  dragOnStop: t.func,
+  dragOnDrag: t.func,
 };
 
 DesignedModal.defaultProps = {
@@ -36,5 +40,9 @@ DesignedModal.defaultProps = {
   submitButtonDisabled: false,
   isLoading: false,
   isDraggable: false,
+  isDragBounded: true,
   onAfterOpen: () => {},
+  dragOnStart: () => {},
+  dragOnStop: () => {},
+  dragOnDrag: () => {},
 };

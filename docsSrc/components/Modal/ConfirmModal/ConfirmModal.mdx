@@ -20,32 +20,58 @@ import { DoczContainer } from 'remember-ui';
   {() => {
     const [isOpen1, setIsOpen1] = React.useState(false);
     const [isOpen2, setIsOpen2] = React.useState(false);
-    const handleSubmit = () =>{
-      alert("보냈습니다")
-    }
+    const handleSubmit = () => {
+      alert('보냈습니다');
+    };
     return (
       <DoczContainer direction="row">
-        <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen1(true)}>Open Success Modal</BaseButton>
-        <ConfirmModal 
+        <BaseButton
+          fill
+          width={150}
+          size={'large'}
+          onClick={() => setIsOpen1(true)}
+        >
+          Open Success Modal
+        </BaseButton>
+        <ConfirmModal
+          isDraggable={true}
+          isDragBounded={true}
+          dragOnStart={() => {
+            console.log('Drag Start');
+          }}
+          dragOnStop={() => {
+            console.log('Drag Stop');
+          }}
+          dragOnDrag={(e) => {
+            const { x, y } = e;
+            console.log(`x:${x} / y:${y}`);
+          }}
           isOpen={isOpen1}
           title={`000 님에게 메시지를 보내시겠습니까?`}
-          message={"테스트 메시지 영역"}
+          message={'테스트 메시지 영역'}
           okText="보내기"
           closeText="취소"
           onOk={() => handleSubmit()}
-          onClose={()=>setIsOpen1(false)}
+          onClose={() => setIsOpen1(false)}
         />
-        <BaseButton fill width={150} size={"large"} onClick={()=>setIsOpen2(true)}>Open Waring Modal</BaseButton>
-        <ConfirmModal 
-          icon={"warning"}
-          type={"delete"}
+        <BaseButton
+          fill
+          width={150}
+          size={'large'}
+          onClick={() => setIsOpen2(true)}
+        >
+          Open Waring Modal
+        </BaseButton>
+        <ConfirmModal
+          icon={'warning'}
+          type={'delete'}
           isOpen={isOpen2}
           title={`000 님에게 메시지를 보내시겠습니까?`}
-          message={"테스트 메시지 영역"}
+          message={'테스트 메시지 영역'}
           okText="보내기"
           closeText="취소"
           onOk={() => handleSubmit()}
-          onClose={()=>setIsOpen2(false)}
+          onClose={() => setIsOpen2(false)}
         />
       </DoczContainer>
     );

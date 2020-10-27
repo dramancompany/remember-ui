@@ -30,9 +30,14 @@ export const Modal = styled.div`
   `)}
 
   background-color: ${white};
-
   border-radius: 10px;
   width: 635px;
+
+  ${({ isDraggable }) =>
+    isDraggable &&
+    css`
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    `}
 `;
 
 Modal.Header = styled.div`

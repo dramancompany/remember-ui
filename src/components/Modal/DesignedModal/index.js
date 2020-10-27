@@ -25,8 +25,12 @@ export const DesignedModal = ({
   headerButton,
   isLoading = false,
   isDraggable = false,
+  isDragBounded = true,
   onAfterOpen = () => {},
   className,
+  dragOnStart = () => {},
+  dragOnStop = () => {},
+  dragOnDrag = () => {},
 }) => {
   return (
     <Container
@@ -35,8 +39,12 @@ export const DesignedModal = ({
       onClose={onClose}
       onAfterOpen={onAfterOpen}
       isDraggable={isDraggable}
+      isDragBounded={isDragBounded}
+      dragOnStart={dragOnStart}
+      dragOnStop={dragOnStop}
+      dragOnDrag={dragOnDrag}
     >
-      <Modal>
+      <Modal isDraggable={isDraggable}>
         <Modal.Header>
           <Modal.Header.Content>
             <Title>{title}</Title>

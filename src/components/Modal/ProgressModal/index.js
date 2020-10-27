@@ -20,12 +20,20 @@ export const ProgressModal = ({
   isOpen,
   className,
   isDraggable = false,
+  isDragBounded = true,
+  dragOnStart = () => {},
+  dragOnStop = () => {},
+  dragOnDrag = () => {},
 }) => (
   <BaseModal
     className={className}
     isOpen={isOpen}
     allowKeyExit={false}
     isDraggable={isDraggable}
+    isDragBounded={isDragBounded}
+    dragOnStart={dragOnStart}
+    dragOnStop={dragOnStop}
+    dragOnDrag={dragOnDrag}
   >
     <Container>
       <Body>
