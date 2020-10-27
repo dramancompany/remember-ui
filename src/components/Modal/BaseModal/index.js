@@ -32,6 +32,7 @@ export const BaseModal = ({
       isOpen={isOpen}
       onRequestClose={onClose}
       onAfterOpen={() => {
+        if (isDraggable) return;
         onAfterOpen();
         disableBodyScroll(document.querySelector('body'));
       }}
