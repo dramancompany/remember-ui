@@ -20,6 +20,7 @@ export const BaseModal = ({
   dragOnDrag = () => {},
 }) => {
   const dragBounds = isDraggable && isDragBounded ? '.dc-modal-overlay' : '';
+  const dragCancelTarget = 'input, textarea';
 
   return (
     <Modal
@@ -49,6 +50,7 @@ export const BaseModal = ({
       {isDraggable && (
         <Draggable
           bounds={dragBounds}
+          cancel={dragCancelTarget}
           onStart={dragOnStart}
           onStop={dragOnStop}
           onDrag={dragOnDrag}
