@@ -34,7 +34,6 @@ export const DesignedModal = ({
   mobileWidth = '90vw',
   mobileHeight,
 }) => {
-  console.log(mobileHeight);
   return (
     <Container
       className={className}
