@@ -62,6 +62,8 @@ export const ConfirmModal = ({
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
+  mobileWidth = '90vw',
+  mobileHeight,
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
 
@@ -77,7 +79,7 @@ export const ConfirmModal = ({
       dragOnStop={dragOnStop}
       dragOnDrag={dragOnDrag}
     >
-      <Container>
+      <Container mobileWidth={mobileWidth} mobileHeight={mobileHeight}>
         <Body>
           {icon && <Icon src={getIconSrc(icon)} alt="icon" />}
           {title && <TitleText hasIcon={icon}>{title}</TitleText>}

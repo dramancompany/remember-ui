@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
   gray200,
@@ -10,6 +10,7 @@ import {
   textBreak,
   textSmall,
   textBreakPre,
+  mobileOnly,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div`
@@ -18,6 +19,18 @@ export const Container = styled.div`
   border-radius: 10px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
   background-color: white;
+
+  ${mobileOnly(css`
+    min-width: ${({ mobileWidth }) =>
+      (mobileWidth && `${mobileWidth}`) || '90vw'};
+    max-width: ${({ mobileWidth }) =>
+      (mobileWidth && `${mobileWidth}`) || '90vw'};
+    ${({ mobileHeight }) =>
+      mobileHeight &&
+      css`
+        height: ${mobileHeight};
+      `}
+  `)}
 `;
 
 export const Body = styled.div`

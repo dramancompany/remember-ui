@@ -31,7 +31,10 @@ export const DesignedModal = ({
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
+  mobileWidth = '90vw',
+  mobileHeight,
 }) => {
+  console.log(mobileHeight);
   return (
     <Container
       className={className}
@@ -44,7 +47,11 @@ export const DesignedModal = ({
       dragOnStop={dragOnStop}
       dragOnDrag={dragOnDrag}
     >
-      <Modal isDraggable={isDraggable}>
+      <Modal
+        isDraggable={isDraggable}
+        mobileWidth={mobileWidth}
+        mobileHeight={mobileHeight}
+      >
         <Modal.Header>
           <Modal.Header.Content>
             <Title>{title}</Title>

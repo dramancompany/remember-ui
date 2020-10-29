@@ -24,6 +24,8 @@ export const ProgressModal = ({
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
+  mobileWidth = '90vw',
+  mobileHeight,
 }) => (
   <BaseModal
     className={className}
@@ -35,7 +37,7 @@ export const ProgressModal = ({
     dragOnStop={dragOnStop}
     dragOnDrag={dragOnDrag}
   >
-    <Container>
+    <Container mobileWidth={mobileWidth} mobileHeight={mobileHeight}>
       <Body>
         {icon && <Icon src={icon} alt="icon" />}
         {title && (

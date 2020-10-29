@@ -24,11 +24,6 @@ export const Container = styled(BaseModal)`
 `;
 
 export const Modal = styled.div`
-  ${mobileOnly(css`
-    min-width: 90vw;
-    max-width: 90vw;
-  `)}
-
   background-color: ${white};
   border-radius: 10px;
   width: 635px;
@@ -38,6 +33,18 @@ export const Modal = styled.div`
     css`
       box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
     `}
+
+  ${mobileOnly(css`
+    min-width: ${({ mobileWidth }) =>
+      (mobileWidth && `${mobileWidth}`) || '90vw'};
+    max-width: ${({ mobileWidth }) =>
+      (mobileWidth && `${mobileWidth}`) || '90vw'};
+    ${({ mobileHeight }) =>
+      mobileHeight &&
+      css`
+        height: ${mobileHeight};
+      `}
+  `)}
 `;
 
 Modal.Header = styled.div`

@@ -23,6 +23,8 @@ ProgressModal.propTypes = {
   dragOnStart: t.func,
   dragOnStop: t.func,
   dragOnDrag: t.func,
+  mobileWidth: t.string,
+  mobileHeight: t.string,
 };
 
 ProgressModal.defaultProps = {
@@ -33,4 +35,5 @@ ProgressModal.defaultProps = {
   dragOnStart: () => {},
   dragOnStop: () => {},
   dragOnDrag: () => {},
+  mobileWidth: '90vw',
 };

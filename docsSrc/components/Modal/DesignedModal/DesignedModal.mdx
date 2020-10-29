@@ -23,6 +23,7 @@ import { DoczContainer } from 'remember-ui';
 <Playground>
   {() => {
     const [isOpen1, setIsOpen1] = React.useState(false);
+    const [isOpen2, setIsOpen2] = React.useState(false);
     const [isProcessing, setIsProcessing] = React.useState(false);
     const [radioId, setRadioId] = React.useState(1);
     const setRadio = (id) => setRadioId(id);
@@ -38,7 +39,15 @@ import { DoczContainer } from 'remember-ui';
           size={'large'}
           onClick={() => setIsOpen1(true)}
         >
-          Open Designed Modal
+          Open Designed Modal1
+        </BaseButton>
+        <BaseButton
+          fill
+          width={250}
+          size={'large'}
+          onClick={() => setIsOpen2(true)}
+        >
+          Open Designed Modal2
         </BaseButton>
         <DesignedModal
           isOpen={isOpen1}
@@ -55,12 +64,36 @@ import { DoczContainer } from 'remember-ui';
           isLoading={isProcessing}
         >
           <DoczContainer direction="row">
+            <div>Radio onClick Event Bind</div>
+          </DoczContainer>
+          <DoczContainer direction="row">
+            <Radio isChecked={radioId === 1} onClick={() => setRadio(1)} />
+            <span>옵션1</span>
+            <Radio isChecked={radioId === 2} onClick={() => setRadio(2)} />
+            <span>옵션2</span>
+          </DoczContainer>
+        </DesignedModal>
+        <DesignedModal
+          isOpen={isOpen2}
+          title={`구매`}
+          subTitle={'이용권 구매하기'}
+          submitText="확인"
+          closeText="취소"
+          submit={() => handleSubmit()}
+          onClose={() => setIsOpen2(false)}
+          close={() => setIsOpen2(false)}
+          submitButtonDisabled={isProcessing}
+          isLoading={isProcessing}
+          mobileWidth="100vw"
+          mobileHeight="100vh"
+        >
+          <DoczContainer direction="row">
             <BaseInput
               name="buyerName"
               label="구매자"
               placeholder="구매자명을 입력하세요"
               value={buyerName}
-              onChange={e => setBuyerName(e.target.value)}
+              onChange={(e) => setBuyerName(e.target.value)}
               maxLength={150}
               marginBottom={10}
               autoFocus
@@ -73,27 +106,16 @@ import { DoczContainer } from 'remember-ui';
           </DoczContainer>
           <DoczContainer direction="row">
             <Textarea
-              label={"문의내용"}
+              label={'문의내용'}
               type="text"
               name="message"
               maxLength={1500}
-              placeholder={"1500자 내로 문의 내용을 적어 주세요."}
+              placeholder={'1500자 내로 문의 내용을 적어 주세요.'}
               required
             />
-          </DoczContainer>
-          <DoczContainer direction="row">
-            <div>Radio onClick Event Bind</div>
-          </DoczContainer>
-          <DoczContainer direction="row">
-            <Radio isChecked={radioId === 1} onClick={() => setRadio(1)} />
-            <span>옵션1</span>
-            <Radio isChecked={radioId === 2} onClick={() => setRadio(2)} />
-            <span>옵션2</span>
           </DoczContainer>
         </DesignedModal>
       </Container>
     );
-  }
-}
-
+  }}
 </Playground>

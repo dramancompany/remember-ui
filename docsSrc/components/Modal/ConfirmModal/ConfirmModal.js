@@ -32,6 +32,8 @@ ConfirmModal.propTypes = {
   dragOnStart: t.func,
   dragOnStop: t.func,
   dragOnDrag: t.func,
+  mobileWidth: t.string,
+  mobileHeight: t.string,
 };
 
 ConfirmModal.defaultProps = {
@@ -44,4 +46,5 @@ ConfirmModal.defaultProps = {
   dragOnStart: () => {},
   dragOnStop: () => {},
   dragOnDrag: () => {},
+  mobileWidth: '90vw',
 };

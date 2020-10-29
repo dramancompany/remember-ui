@@ -33,6 +33,8 @@ DesignedModal.propTypes = {
   dragOnStart: t.func,
   dragOnStop: t.func,
   dragOnDrag: t.func,
+  mobileWidth: t.string,
+  mobileHeight: t.string,
 };
 
 DesignedModal.defaultProps = {
@@ -45,4 +47,5 @@ DesignedModal.defaultProps = {
   dragOnStart: () => {},
   dragOnStop: () => {},
   dragOnDrag: () => {},
+  mobileWidth: '90vw',
 };
