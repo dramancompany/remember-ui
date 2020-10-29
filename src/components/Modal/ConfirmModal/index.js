@@ -89,7 +89,7 @@ export const ConfirmModal = ({
         <Footer showClose={showClose}>
           {showClose && (
             <BaseButton
-              className="footer--btn"
+              className="footer--btn not-draggable"
               color="gray"
               fill
               size="large"
@@ -102,7 +102,7 @@ export const ConfirmModal = ({
             color={confirmColor}
             fill
             size="large"
-            className="footer--btn"
+            className="footer--btn not-draggable"
             onClick={() => _onOk(onOk).then(onClose)}
           >
             {okText || confirmText}

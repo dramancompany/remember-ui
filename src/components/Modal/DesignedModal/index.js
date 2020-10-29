@@ -65,6 +65,7 @@ export const DesignedModal = ({
           <Buttons>
             {close && (
               <Button
+                className="not-draggable"
                 color="gray"
                 size="large"
                 fill
@@ -77,6 +78,7 @@ export const DesignedModal = ({
             )}
             {submit && (
               <Button
+                className="not-draggable"
                 color="yellow"
                 size="large"
                 fill
