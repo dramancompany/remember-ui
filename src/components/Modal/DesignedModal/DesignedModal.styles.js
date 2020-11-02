@@ -42,7 +42,8 @@ export const Modal = styled.div`
     ${({ mobileHeight }) =>
       mobileHeight &&
       css`
-        height: ${mobileHeight};
+        min-height: ${mobileHeight};
+        max-height: ${mobileHeight};
       `}
   `)}
 `;
