@@ -33,9 +33,9 @@ export const BaseModal = ({
       isOpen={isOpen}
       onRequestClose={onClose}
       onAfterOpen={() => {
-        if (isDraggable) return;
         onAfterOpen();
-        disableBodyScroll(document.querySelector('body'));
+        if (isDraggable) return;
+        disableBodyScroll(document.querySelector('.App-body'));
       }}
       onAfterClose={clearAllBodyScrollLocks}
       shouldCloseOnOverlayClick={false}
