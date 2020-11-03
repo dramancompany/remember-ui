@@ -21,6 +21,7 @@ export const BaseModal = ({
 }) => {
   const dragBounds = isDraggable && isDragBounded ? '.dc-modal-overlay' : '';
   const dragCancelTarget = 'input, textarea, .not-draggable';
+  const modalId = Math.floor(Math.random() * 1000);
 
   return (
     <Modal
@@ -29,13 +30,14 @@ export const BaseModal = ({
         afterOpen: isDraggable ? '' : 'dc-modal-overlay--open',
         beforeClose: 'dc-modal-overlay--close',
       }}
+      id={`dcModal${modalId}`}
       className="dc-modal"
       isOpen={isOpen}
       onRequestClose={onClose}
       onAfterOpen={() => {
         onAfterOpen();
         if (isDraggable) return;
-        disableBodyScroll(document.querySelector('.App-body'));
+        disableBodyScroll(document.querySelector(`dcModal${modalId}`));
       }}
       onAfterClose={clearAllBodyScrollLocks}
       shouldCloseOnOverlayClick={false}
