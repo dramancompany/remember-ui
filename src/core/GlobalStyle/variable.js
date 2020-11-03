@@ -7,6 +7,7 @@ export const gray120 = '#ccc';
 export const gray150 = '#aaa';
 export const gray200 = '#858585';
 export const gray300 = '#666';
+export const gray350 = '#4d4d4d';
 export const gray400 = '#333';
 export const gray450 = '#222';
 export const gold50 = '#f4f2ec';

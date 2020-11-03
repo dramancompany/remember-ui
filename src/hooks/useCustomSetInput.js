@@ -6,7 +6,7 @@ export default function useCustomSetInput(
   onChange = () => {},
   maxLength = 2000
 ) {
-  const callback = useRef(onChange);
+  // const callback = useRef(onChange);
   const [notifier, setNotifier] = useState(false);
   const cursorPos = useRef(0);
 
@@ -36,10 +36,10 @@ export default function useCustomSetInput(
       ) {
         setNotifier((prev) => !prev);
       } else {
-        callback.current(target.value);
+        onChange(target.value);
       }
     },
-    [value, maxLength]
+    [value, maxLength, onChange]
   );
 
   return changeInput;

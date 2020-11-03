@@ -15,6 +15,7 @@ declare module 'remember-ui' {
   export const gray150: string;
   export const gray200: string;
   export const gray300: string;
+  export const gray350: string;
   export const gray400: string;
   export const gray450: string;
   export const gold50: string;
