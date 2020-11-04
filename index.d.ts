@@ -349,15 +349,15 @@ declare module 'remember-ui' {
 
   export const Checkbox: React.FC<CheckboxProps>;
 
-  export interface SelectOption<T = number> {
-    id: T;
+  export interface SelectOption {
+    id: string | number;
     label: string;
-    value?: T;
+    value?: string | number;
   }
 
-  export interface SelectProps<T = number> {
-    options: SelectOption<T>[];
-    value?: T;
+  export interface SelectProps {
+    options: SelectOption[];
+    value?: string | number;
     onChange: Function;
     className?: string;
     label?: string;
@@ -371,7 +371,7 @@ declare module 'remember-ui' {
     errorMessage?: string;
   }
 
-  export function Select<T>(props: SelectProps<T>): React.FC<SelectProps<T>>;
+  export const Select: React.FC<SelectProps>;
 
   export interface InfoTooltipProps {
     children: React.ReactChild | React.ReactChildren;
