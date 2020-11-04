@@ -350,9 +350,9 @@ declare module 'remember-ui' {
   export const Checkbox: React.FC<CheckboxProps>;
 
   export interface SelectOption {
-    id: number;
+    id: number | string;
     label: string;
-    value: number | string;
+    value?: number | string;
   }
 
   export interface SelectProps {
