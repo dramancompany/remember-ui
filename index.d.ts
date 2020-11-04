@@ -352,7 +352,7 @@ declare module 'remember-ui' {
   export interface SelectOption {
     id: number;
     label: string;
-    value: number;
+    value: number | string;
   }
 
   export interface SelectProps {
