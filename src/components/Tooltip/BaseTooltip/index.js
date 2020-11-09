@@ -37,6 +37,7 @@ export const BaseTooltip = ({
   className,
 }) => (
   <Tooltip
+    sticky={true}
     className={className}
     offset={offset}
     placement={placement}

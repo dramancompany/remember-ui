@@ -74,6 +74,10 @@ const TippyTheme = css`
 
     ${arrowMixin('dcblue', blue100)}
   }
+
+  .tippy-touch {
+    cursor: pointer !important;
+  }
 `;
 
 const ModalTheme = css`

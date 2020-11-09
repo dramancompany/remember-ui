@@ -7,6 +7,7 @@ export const LinkButton = ({
   showAddress = true,
   children,
   className,
+  target = '_blank',
 }) => {
   let link = address;
   if (!link.startsWith('http://') && !link.startsWith('https://')) {
@@ -15,7 +16,7 @@ export const LinkButton = ({
 
   if (showAddress) {
     return (
-      <Link className={className} href={link}>
+      <Link className={className} href={link} target={target}>
         {address}
       </Link>
     );
@@ -24,7 +25,7 @@ export const LinkButton = ({
       <Link
         className={className}
         href={address}
-        target="_blank"
+        target={target}
         rel="noreferrer noopener"
       >
         {children}
