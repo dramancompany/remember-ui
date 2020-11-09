@@ -15,6 +15,7 @@ InfoTooltip.propTypes = {
   content: t.object,
   visible: t.oneOf([false, true]),
   onClick: t.func,
+  onShow: t.func,
   customAnimation: t.oneOf(['headShake']),
 };
 

@@ -16,6 +16,7 @@ Tooltip.propTypes = {
   offset: t.string,
   arrow: t.oneOf([false, true]),
   onClick: t.func,
+  onShow: t.func,
   iconStyle: t.object,
 
   size: t.oneOf(['small', 'medium']),
@@ -29,6 +30,7 @@ Tooltip.defaultProps = {
   offset: '0,0',
   arrow: true,
   onClick: () => {},
+  onShow: () => {},
   size: 'small',
   type: 'help',
   theme: 'dclight',
