@@ -37,7 +37,7 @@ export const BaseModal = ({
       onAfterOpen={() => {
         onAfterOpen();
         if (isDraggable) return;
-        disableBodyScroll(document.querySelector(`dcModal${modalId}`));
+        disableBodyScroll(document.querySelector(`#dcModal${modalId}`));
       }}
       onAfterClose={clearAllBodyScrollLocks}
       shouldCloseOnOverlayClick={false}
