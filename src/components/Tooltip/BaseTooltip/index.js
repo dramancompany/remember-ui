@@ -27,6 +27,7 @@ export const BaseTooltip = ({
   offset = '0,0',
   arrow = true,
   onClick = () => {},
+  onShow = () => {},
   content,
   iconStyle,
   size = 'small',
@@ -37,7 +38,6 @@ export const BaseTooltip = ({
   className,
 }) => (
   <Tooltip
-    sticky={true}
     className={className}
     offset={offset}
     placement={placement}
@@ -53,6 +53,7 @@ export const BaseTooltip = ({
     }}
     content={content}
     theme={theme}
+    onShow={onShow}
   >
     {customComponent || (
       <Icon

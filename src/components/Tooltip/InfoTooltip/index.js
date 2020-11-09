@@ -8,6 +8,7 @@ export const InfoTooltip = ({
   content,
   className,
   onClick,
+  onShow = () => {},
   visible,
   customAnimation,
 }) => {
@@ -30,6 +31,7 @@ export const InfoTooltip = ({
       theme="dcblue"
       placement="bottom-center"
       customAnimation={customAnimation}
+      onShow={onShow}
     >
       <div onClick={onClick}>{children}</div>
     </Tooltip>
