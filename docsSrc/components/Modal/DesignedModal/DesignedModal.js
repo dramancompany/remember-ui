@@ -35,6 +35,7 @@ DesignedModal.propTypes = {
   dragOnDrag: t.func,
   mobileWidth: t.string,
   mobileHeight: t.string,
+  bodyScrollLockTargetId: t.string,
 };
 
 DesignedModal.defaultProps = {

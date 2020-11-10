@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { enableBodyScroll } from 'body-scroll-lock';
 
 import {
   Container,
@@ -33,7 +34,26 @@ export const DesignedModal = ({
   dragOnDrag = () => {},
   mobileWidth = '90vw',
   mobileHeight,
+  bodyScrollLockTargetId,
 }) => {
+  const [modalId, setModalId] = useState(null);
+  const [bodyScrollLockTarget, setBodyScrollLockTarget] = useState(null);
+
+  useEffect(() => {
+    const id = Math.floor(Math.random() * 1000);
+    setModalId(id);
+    const target = bodyScrollLockTargetId
+      ? `#${bodyScrollLockTargetId}`
+      : `#designedModal${id}`;
+
+    setBodyScrollLockTarget(target);
+  }, [bodyScrollLockTargetId]);
+
+  const enableBodyScrollLock = useCallback(() => {
+    if (bodyScrollLockTarget)
+      enableBodyScroll(document.querySelector(bodyScrollLockTarget));
+  }, [bodyScrollLockTarget]);
+
   return (
     <Container
       className={className}
@@ -45,6 +65,7 @@ export const DesignedModal = ({
       dragOnStart={dragOnStart}
       dragOnStop={dragOnStop}
       dragOnDrag={dragOnDrag}
+      bodyScrollLockTarget={bodyScrollLockTarget}
     >
       <Modal
         isDraggable={isDraggable}
@@ -58,7 +79,9 @@ export const DesignedModal = ({
           </Modal.Header.Content>
           <Modal.Header.Content>{headerButton}</Modal.Header.Content>
         </Modal.Header>
-        <Modal.Body>{children}</Modal.Body>
+        <Modal.Body id={modalId && `designedModal${modalId}`}>
+          {children}
+        </Modal.Body>
         <Modal.Footer>
           {customText}
           <Block />
@@ -70,7 +93,10 @@ export const DesignedModal = ({
                 size="large"
                 fill
                 rounded
-                onClick={close}
+                onClick={() => {
+                  enableBodyScrollLock();
+                  close();
+                }}
                 disabled={isLoading}
               >
                 {closeText}
@@ -83,7 +109,10 @@ export const DesignedModal = ({
                 size="large"
                 fill
                 rounded
-                onClick={submit}
+                onClick={() => {
+                  enableBodyScrollLock();
+                  submit();
+                }}
                 disabled={submitButtonDisabled}
                 isLoading={isLoading}
               >

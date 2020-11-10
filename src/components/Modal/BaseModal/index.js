@@ -1,6 +1,10 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
+import {
+  clearAllBodyScrollLocks,
+  disableBodyScroll,
+  enableBodyScroll,
+} from 'body-scroll-lock';
 import Draggable from 'react-draggable';
 
 import { Container } from './BaseModal.styles';
@@ -18,11 +22,10 @@ export const BaseModal = ({
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
+  bodyScrollLockTarget = '',
 }) => {
   const dragBounds = isDraggable && isDragBounded ? '.dc-modal-overlay' : '';
   const dragCancelTarget = 'input, textarea, .not-draggable';
-  const modalId = Math.floor(Math.random() * 1000);
-
   return (
     <Modal
       overlayClassName={{
@@ -30,16 +33,27 @@ export const BaseModal = ({
         afterOpen: isDraggable ? '' : 'dc-modal-overlay--open',
         beforeClose: 'dc-modal-overlay--close',
       }}
-      id={`dcModal${modalId}`}
       className="dc-modal"
       isOpen={isOpen}
-      onRequestClose={onClose}
+      onRequestClose={() => {
+        if (bodyScrollLockTarget)
+          enableBodyScroll(document.querySelector(bodyScrollLockTarget));
+        onClose();
+      }}
       onAfterOpen={() => {
         onAfterOpen();
         if (isDraggable) return;
-        disableBodyScroll(document.querySelector(`#dcModal${modalId}`));
+        if (bodyScrollLockTarget)
+          disableBodyScroll(document.querySelector(bodyScrollLockTarget));
       }}
-      onAfterClose={clearAllBodyScrollLocks}
+      onAfterClose={() => {
+        const modalNodes = document.querySelector('.dc-modal-overlay--open');
+        if (modalNodes === null) {
+          if (document.querySelector('body').getAttribute('style')) {
+            clearAllBodyScrollLocks();
+          }
+        }
+      }}
       shouldCloseOnOverlayClick={false}
       /**
        * Reference: http://reactcommunity.org/react-modal/#usage

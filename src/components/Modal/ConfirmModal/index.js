@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { enableBodyScroll } from 'body-scroll-lock';
 
 import { BaseModal } from '../BaseModal';
 import { BaseButton } from '../../Button';
@@ -13,7 +14,7 @@ import {
   MessageText,
 } from './ConfirmModal.styles';
 
-function defaultTypeProps(type) {
+const defaultTypeProps = (type) => {
   switch (type) {
     case 'delete':
       return { confirmColor: 'red', confirmText: '삭제' };
@@ -21,9 +22,9 @@ function defaultTypeProps(type) {
     default:
       return { confirmColor: 'yellow', confirmText: '확인' };
   }
-}
+};
 
-function getIconSrc(icon) {
+const getIconSrc = (icon) => {
   switch (icon) {
     case 'warning':
       return warningIcon;
@@ -31,17 +32,7 @@ function getIconSrc(icon) {
     default:
       return successIcon;
   }
-}
-
-function _onOk(onOk) {
-  onOk();
-  return Promise.resolve();
-}
-
-function _onClose(onCloseAction) {
-  onCloseAction && onCloseAction();
-  return Promise.resolve();
-}
+};
 
 export const ConfirmModal = ({
   icon,
@@ -66,7 +57,38 @@ export const ConfirmModal = ({
   mobileHeight,
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
+  const [modalId, setModalId] = useState(null);
+  const [bodyScrollLockTarget, setBodyScrollLockTarget] = useState(null);
 
+  useEffect(() => {
+    const id = Math.floor(Math.random() * 1000);
+    setModalId(id);
+    const target = `#confirmModal${id}`;
+    setBodyScrollLockTarget(target);
+  }, []);
+
+  const enableBodyScrollLock = useCallback(() => {
+    if (bodyScrollLockTarget)
+      enableBodyScroll(document.querySelector(bodyScrollLockTarget));
+  }, [bodyScrollLockTarget]);
+
+  const _onOk = useCallback(
+    (onOk) => {
+      enableBodyScrollLock();
+      onOk();
+      return Promise.resolve();
+    },
+    [enableBodyScrollLock]
+  );
+
+  const _onClose = useCallback(
+    (onCloseAction) => {
+      enableBodyScrollLock();
+      onCloseAction && onCloseAction();
+      return Promise.resolve();
+    },
+    [enableBodyScrollLock]
+  );
   return (
     <BaseModal
       className={className}
@@ -78,9 +100,10 @@ export const ConfirmModal = ({
       dragOnStart={dragOnStart}
       dragOnStop={dragOnStop}
       dragOnDrag={dragOnDrag}
+      bodyScrollLockTarget={bodyScrollLockTarget}
     >
       <Container mobileWidth={mobileWidth} mobileHeight={mobileHeight}>
-        <Body>
+        <Body id={`confirmModal${modalId}`}>
           {icon && <Icon src={getIconSrc(icon)} alt="icon" />}
           {title && <TitleText hasIcon={icon}>{title}</TitleText>}
           {message && <MessageText>{message}</MessageText>}
@@ -93,7 +116,11 @@ export const ConfirmModal = ({
               color="gray"
               fill
               size="large"
-              onClick={() => _onClose(onCloseAction).then(onClose)}
+              onClick={() =>
+                _onClose(onCloseAction).then(() => {
+                  onClose();
+                })
+              }
             >
               {closeText || '취소'}
             </BaseButton>
@@ -103,7 +130,11 @@ export const ConfirmModal = ({
             fill
             size="large"
             className="footer--btn not-draggable"
-            onClick={() => _onOk(onOk).then(onClose)}
+            onClick={() =>
+              _onOk(onOk).then(() => {
+                onClose();
+              })
+            }
           >
             {okText || confirmText}
           </BaseButton>
