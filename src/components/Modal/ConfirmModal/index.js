@@ -55,6 +55,7 @@ export const ConfirmModal = ({
   dragOnDrag = () => {},
   mobileWidth = '90vw',
   mobileHeight,
+  bodyScrollLockTargetId,
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
   const [modalId, setModalId] = useState(null);
@@ -63,9 +64,12 @@ export const ConfirmModal = ({
   useEffect(() => {
     const id = Math.floor(Math.random() * 1000);
     setModalId(id);
-    const target = `#confirmModal${id}`;
+    const target = bodyScrollLockTargetId
+      ? `#${bodyScrollLockTargetId}`
+      : `#confirmModal${id}`;
+
     setBodyScrollLockTarget(target);
-  }, []);
+  }, [bodyScrollLockTargetId]);
 
   const enableBodyScrollLock = useCallback(() => {
     if (bodyScrollLockTarget)
@@ -103,7 +107,7 @@ export const ConfirmModal = ({
       bodyScrollLockTarget={bodyScrollLockTarget}
     >
       <Container mobileWidth={mobileWidth} mobileHeight={mobileHeight}>
-        <Body id={`confirmModal${modalId}`}>
+        <Body id={modalId && `confirmModal${modalId}`}>
           {icon && <Icon src={getIconSrc(icon)} alt="icon" />}
           {title && <TitleText hasIcon={icon}>{title}</TitleText>}
           {message && <MessageText>{message}</MessageText>}
