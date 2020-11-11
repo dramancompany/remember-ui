@@ -53,9 +53,10 @@ export const ConfirmModal = ({
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
-  mobileWidth = '90vw',
+  mobileWidth = '100vw',
   mobileHeight,
   bodyScrollLockTargetId,
+  delegateCloseControl = false,
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
   const [modalId, setModalId] = useState(null);
@@ -67,14 +68,14 @@ export const ConfirmModal = ({
     const target = bodyScrollLockTargetId
       ? `#${bodyScrollLockTargetId}`
       : `#confirmModal${id}`;
-
     setBodyScrollLockTarget(target);
   }, [bodyScrollLockTargetId]);
 
   const enableBodyScrollLock = useCallback(() => {
-    if (bodyScrollLockTarget)
+    if (!delegateCloseControl && bodyScrollLockTarget) {
       enableBodyScroll(document.querySelector(bodyScrollLockTarget));
-  }, [bodyScrollLockTarget]);
+    }
+  }, [delegateCloseControl, bodyScrollLockTarget]);
 
   const _onOk = useCallback(
     (onOk) => {

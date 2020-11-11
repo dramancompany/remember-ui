@@ -32,9 +32,10 @@ export const DesignedModal = ({
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
-  mobileWidth = '90vw',
+  mobileWidth = '100vw',
   mobileHeight,
   bodyScrollLockTargetId,
+  delegateCloseControl = false,
 }) => {
   const [modalId, setModalId] = useState(null);
   const [bodyScrollLockTarget, setBodyScrollLockTarget] = useState(null);
@@ -45,14 +46,14 @@ export const DesignedModal = ({
     const target = bodyScrollLockTargetId
       ? `#${bodyScrollLockTargetId}`
       : `#designedModal${id}`;
-
     setBodyScrollLockTarget(target);
   }, [bodyScrollLockTargetId]);
 
   const enableBodyScrollLock = useCallback(() => {
-    if (bodyScrollLockTarget)
+    if (!delegateCloseControl && bodyScrollLockTarget) {
       enableBodyScroll(document.querySelector(bodyScrollLockTarget));
-  }, [bodyScrollLockTarget]);
+    }
+  }, [delegateCloseControl, bodyScrollLockTarget]);
 
   return (
     <Container
