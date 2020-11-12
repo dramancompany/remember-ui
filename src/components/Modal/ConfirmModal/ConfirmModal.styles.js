@@ -36,6 +36,9 @@ export const Body = styled.div`
   flex-direction: column;
   padding: 48px 20px;
   box-sizing: border-box;
+
+  max-height: 60vh;
+  overflow-y: auto;
 `;
 
 export const Icon = styled.img`

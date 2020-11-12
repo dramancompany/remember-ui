@@ -57,7 +57,10 @@ Modal.Header = styled.div`
 
 Modal.Header.Content = styled.div``;
 
-Modal.Body = styled.div``;
+Modal.Body = styled.div`
+  max-height: 60vh;
+  overflow-y: auto;
+`;
 
 Modal.Footer = styled.div`
   ${flexCenterY}
