@@ -18,6 +18,7 @@ export const BaseModal = ({
   allowKeyExit = true,
   children,
   isDraggable = false,
+  isDragDisabled = false,
   isDragBounded = true,
   dragOnStart = () => {},
   dragOnStop = () => {},
@@ -49,9 +50,7 @@ export const BaseModal = ({
       onAfterClose={() => {
         const modalNodes = document.querySelector('.dc-modal-overlay--open');
         if (modalNodes === null) {
-          if (document.querySelector('body').getAttribute('style')) {
-            clearAllBodyScrollLocks();
-          }
+          clearAllBodyScrollLocks();
         }
       }}
       shouldCloseOnOverlayClick={false}
@@ -70,8 +69,11 @@ export const BaseModal = ({
           onStart={dragOnStart}
           onStop={dragOnStop}
           onDrag={dragOnDrag}
+          disabled={isDragDisabled}
         >
-          <Container isDraggable={isDraggable}>{children}</Container>
+          <Container isDraggable={isDraggable && !isDragDisabled}>
+            {children}
+          </Container>
         </Draggable>
       )}
       {!isDraggable && <Container>{children}</Container>}

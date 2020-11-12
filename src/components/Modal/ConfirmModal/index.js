@@ -41,6 +41,7 @@ export const ConfirmModal = ({
   type = 'ok',
   isOpen,
   isDraggable = false,
+  isDragDisabled = false,
   isDragBounded = true,
   onClose = () => {},
   onOk = '확인',
@@ -101,6 +102,7 @@ export const ConfirmModal = ({
       onClose={onClose}
       allowKeyExit={false}
       isDraggable={isDraggable}
+      isDragDisabled={isDragDisabled}
       isDragBounded={isDragBounded}
       dragOnStart={dragOnStart}
       dragOnStop={dragOnStop}

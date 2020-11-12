@@ -26,6 +26,7 @@ export const DesignedModal = ({
   headerButton,
   isLoading = false,
   isDraggable = false,
+  isDragDisabled = false,
   isDragBounded = true,
   onAfterOpen = () => {},
   className,
@@ -62,6 +63,7 @@ export const DesignedModal = ({
       onClose={onClose}
       onAfterOpen={onAfterOpen}
       isDraggable={isDraggable}
+      isDragDisabled={isDragDisabled}
       isDragBounded={isDragBounded}
       dragOnStart={dragOnStart}
       dragOnStop={dragOnStop}
