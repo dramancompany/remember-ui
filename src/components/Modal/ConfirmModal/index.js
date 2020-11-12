@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { enableBodyScroll } from 'body-scroll-lock';
+import React from 'react';
+import { enableBodyScrollLock } from '../../../utils/common';
+import useScrollLock from '../../../hooks/useScrollLock';
 
 import { BaseModal } from '../BaseModal';
 import { BaseButton } from '../../Button';
@@ -14,6 +15,7 @@ import {
   MessageText,
 } from './ConfirmModal.styles';
 
+const modalType = 'confirmModal';
 const defaultTypeProps = (type) => {
   switch (type) {
     case 'delete':
@@ -60,41 +62,23 @@ export const ConfirmModal = ({
   delegateCloseControl = false,
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
-  const [modalId, setModalId] = useState(null);
-  const [bodyScrollLockTarget, setBodyScrollLockTarget] = useState(null);
-
-  useEffect(() => {
-    const id = Math.floor(Math.random() * 1000);
-    setModalId(id);
-    const target = bodyScrollLockTargetId
-      ? `#${bodyScrollLockTargetId}`
-      : `#confirmModal${id}`;
-    setBodyScrollLockTarget(target);
-  }, [bodyScrollLockTargetId]);
-
-  const enableBodyScrollLock = useCallback(() => {
-    if (!delegateCloseControl && bodyScrollLockTarget) {
-      enableBodyScroll(document.querySelector(bodyScrollLockTarget));
-    }
-  }, [delegateCloseControl, bodyScrollLockTarget]);
-
-  const _onOk = useCallback(
-    (onOk) => {
-      enableBodyScrollLock();
-      onOk();
-      return Promise.resolve();
-    },
-    [enableBodyScrollLock]
+  const { modalId, bodyScrollLockTarget } = useScrollLock(
+    bodyScrollLockTargetId,
+    modalType
   );
 
-  const _onClose = useCallback(
-    (onCloseAction) => {
-      enableBodyScrollLock();
-      onCloseAction && onCloseAction();
-      return Promise.resolve();
-    },
-    [enableBodyScrollLock]
-  );
+  const _onOk = (onOk) => {
+    enableBodyScrollLock(bodyScrollLockTarget, delegateCloseControl);
+    onOk();
+    return Promise.resolve();
+  };
+
+  const _onClose = (onCloseAction) => {
+    enableBodyScrollLock(bodyScrollLockTarget, delegateCloseControl);
+    onCloseAction && onCloseAction();
+    return Promise.resolve();
+  };
+
   return (
     <BaseModal
       className={className}
@@ -110,7 +94,7 @@ export const ConfirmModal = ({
       bodyScrollLockTarget={bodyScrollLockTarget}
     >
       <Container mobileWidth={mobileWidth} mobileHeight={mobileHeight}>
-        <Body id={modalId && `confirmModal${modalId}`}>
+        <Body id={modalId && `${modalType}${modalId}`}>
           {icon && <Icon src={getIconSrc(icon)} alt="icon" />}
           {title && <TitleText hasIcon={icon}>{title}</TitleText>}
           {message && <MessageText>{message}</MessageText>}

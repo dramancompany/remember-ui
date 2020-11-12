@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { enableBodyScroll } from 'body-scroll-lock';
+import React from 'react';
+import { enableBodyScrollLock } from '../../../utils/common';
+import useScrollLock from '../../../hooks/useScrollLock';
 
 import {
   Container,
@@ -10,6 +11,8 @@ import {
   Buttons,
   Button,
 } from './DesignedModal.styles';
+
+const modalType = 'designedModal';
 
 export const DesignedModal = ({
   isOpen,
@@ -38,23 +41,10 @@ export const DesignedModal = ({
   bodyScrollLockTargetId,
   delegateCloseControl = false,
 }) => {
-  const [modalId, setModalId] = useState(null);
-  const [bodyScrollLockTarget, setBodyScrollLockTarget] = useState(null);
-
-  useEffect(() => {
-    const id = Math.floor(Math.random() * 1000);
-    setModalId(id);
-    const target = bodyScrollLockTargetId
-      ? `#${bodyScrollLockTargetId}`
-      : `#designedModal${id}`;
-    setBodyScrollLockTarget(target);
-  }, [bodyScrollLockTargetId]);
-
-  const enableBodyScrollLock = useCallback(() => {
-    if (!delegateCloseControl && bodyScrollLockTarget) {
-      enableBodyScroll(document.querySelector(bodyScrollLockTarget));
-    }
-  }, [delegateCloseControl, bodyScrollLockTarget]);
+  const { modalId, bodyScrollLockTarget } = useScrollLock(
+    bodyScrollLockTargetId,
+    modalType
+  );
 
   return (
     <Container
@@ -82,7 +72,7 @@ export const DesignedModal = ({
           </Modal.Header.Content>
           <Modal.Header.Content>{headerButton}</Modal.Header.Content>
         </Modal.Header>
-        <Modal.Body id={modalId && `designedModal${modalId}`}>
+        <Modal.Body id={modalId && `${modalType}${modalId}`}>
           {children}
         </Modal.Body>
         <Modal.Footer>
@@ -97,7 +87,10 @@ export const DesignedModal = ({
                 fill
                 rounded
                 onClick={() => {
-                  enableBodyScrollLock();
+                  enableBodyScrollLock(
+                    bodyScrollLockTarget,
+                    delegateCloseControl
+                  );
                   close();
                 }}
                 disabled={isLoading}
@@ -113,7 +106,10 @@ export const DesignedModal = ({
                 fill
                 rounded
                 onClick={() => {
-                  enableBodyScrollLock();
+                  enableBodyScrollLock(
+                    bodyScrollLockTarget,
+                    delegateCloseControl
+                  );
                   submit();
                 }}
                 disabled={submitButtonDisabled}

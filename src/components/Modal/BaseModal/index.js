@@ -1,12 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
-import {
-  clearAllBodyScrollLocks,
-  disableBodyScroll,
-  enableBodyScroll,
-} from 'body-scroll-lock';
+import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
 import Draggable from 'react-draggable';
 
+import { enableBodyScrollLock } from '../../../utils/common';
 import { Container } from './BaseModal.styles';
 
 Modal.setAppElement('body');
@@ -37,8 +34,7 @@ export const BaseModal = ({
       className="dc-modal"
       isOpen={isOpen}
       onRequestClose={() => {
-        if (bodyScrollLockTarget)
-          enableBodyScroll(document.querySelector(bodyScrollLockTarget));
+        enableBodyScrollLock(bodyScrollLockTarget);
         onClose();
       }}
       onAfterOpen={() => {
