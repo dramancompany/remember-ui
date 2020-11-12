@@ -19,6 +19,7 @@ export const Textarea = ({
   blankLabel = false,
   countLength = false,
   textareaOnClick = () => {},
+  resize = false,
 }) => {
   const textareaRef = useRef(null);
   const _onChange = useCustomSetInput(
@@ -47,6 +48,7 @@ export const Textarea = ({
         maxLength={maxLength}
         placeholder={placeholder}
         onClick={textareaOnClick}
+        resize={resize}
       />
       {countLength && (
         <TextCount>

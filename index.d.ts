@@ -312,6 +312,7 @@ declare module 'remember-ui' {
     required?: boolean;
     blankLabel?: boolean;
     countLenth?: boolean;
+    resize?: boolean;
   }
 
   export const Textarea: React.FC<TextareaProps>;
