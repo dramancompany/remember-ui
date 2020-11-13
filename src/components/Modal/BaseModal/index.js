@@ -40,8 +40,12 @@ export const BaseModal = ({
       onAfterOpen={() => {
         onAfterOpen();
         if (isDraggable) return;
-        if (bodyScrollLockTarget)
-          disableBodyScroll(document.querySelector(bodyScrollLockTarget));
+        if (bodyScrollLockTarget) {
+          const targetNode = document.querySelector(bodyScrollLockTarget);
+          if (targetNode !== null) {
+            disableBodyScroll(targetNode);
+          }
+        }
       }}
       onAfterClose={() => {
         const modalNodes = document.querySelector('.dc-modal-overlay--open');
