@@ -1,4 +1,6 @@
 import React from 'react';
+import { enableBodyScrollLock } from '../../../utils/common';
+import useScrollLock from '../../../hooks/useScrollLock';
 
 import { BaseModal } from '../BaseModal';
 import { BaseButton } from '../../Button';
@@ -13,7 +15,8 @@ import {
   MessageText,
 } from './ConfirmModal.styles';
 
-function defaultTypeProps(type) {
+const modalType = 'confirmModal';
+const defaultTypeProps = (type) => {
   switch (type) {
     case 'delete':
       return { confirmColor: 'red', confirmText: '삭제' };
@@ -21,9 +24,9 @@ function defaultTypeProps(type) {
     default:
       return { confirmColor: 'yellow', confirmText: '확인' };
   }
-}
+};
 
-function getIconSrc(icon) {
+const getIconSrc = (icon) => {
   switch (icon) {
     case 'warning':
       return warningIcon;
@@ -31,17 +34,7 @@ function getIconSrc(icon) {
     default:
       return successIcon;
   }
-}
-
-function _onOk(onOk) {
-  onOk();
-  return Promise.resolve();
-}
-
-function _onClose(onCloseAction) {
-  onCloseAction && onCloseAction();
-  return Promise.resolve();
-}
+};
 
 export const ConfirmModal = ({
   icon,
@@ -50,6 +43,7 @@ export const ConfirmModal = ({
   type = 'ok',
   isOpen,
   isDraggable = false,
+  isDragDisabled = false,
   isDragBounded = true,
   onClose = () => {},
   onOk = '확인',
@@ -62,10 +56,28 @@ export const ConfirmModal = ({
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
-  mobileWidth = '90vw',
+  mobileWidth = '100vw',
   mobileHeight,
+  bodyScrollLockTargetId,
+  delegateCloseControl = false,
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
+  const { modalId, bodyScrollLockTarget } = useScrollLock(
+    bodyScrollLockTargetId,
+    modalType
+  );
+
+  const _onOk = (onOk) => {
+    enableBodyScrollLock(bodyScrollLockTarget, delegateCloseControl);
+    onOk();
+    return Promise.resolve();
+  };
+
+  const _onClose = (onCloseAction) => {
+    enableBodyScrollLock(bodyScrollLockTarget, delegateCloseControl);
+    onCloseAction && onCloseAction();
+    return Promise.resolve();
+  };
 
   return (
     <BaseModal
@@ -74,13 +86,15 @@ export const ConfirmModal = ({
       onClose={onClose}
       allowKeyExit={false}
       isDraggable={isDraggable}
+      isDragDisabled={isDragDisabled}
       isDragBounded={isDragBounded}
       dragOnStart={dragOnStart}
       dragOnStop={dragOnStop}
       dragOnDrag={dragOnDrag}
+      bodyScrollLockTarget={bodyScrollLockTarget}
     >
       <Container mobileWidth={mobileWidth} mobileHeight={mobileHeight}>
-        <Body>
+        <Body id={modalId && `${modalType}${modalId}`}>
           {icon && <Icon src={getIconSrc(icon)} alt="icon" />}
           {title && <TitleText hasIcon={icon}>{title}</TitleText>}
           {message && <MessageText>{message}</MessageText>}
@@ -93,7 +107,11 @@ export const ConfirmModal = ({
               color="gray"
               fill
               size="large"
-              onClick={() => _onClose(onCloseAction).then(onClose)}
+              onClick={() =>
+                _onClose(onCloseAction).then(() => {
+                  onClose();
+                })
+              }
             >
               {closeText || '취소'}
             </BaseButton>
@@ -103,7 +121,11 @@ export const ConfirmModal = ({
             fill
             size="large"
             className="footer--btn not-draggable"
-            onClick={() => _onOk(onOk).then(onClose)}
+            onClick={() =>
+              _onOk(onOk).then(() => {
+                onClose();
+              })
+            }
           >
             {okText || confirmText}
           </BaseButton>

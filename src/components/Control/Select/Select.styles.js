@@ -119,6 +119,7 @@ export const OptionItem = styled.div`
   ${font({ size: '15px', color: text })}
 
   overflow-x: hidden;
+  overflow-y: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;

@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
 import Draggable from 'react-draggable';
 
+import { enableBodyScrollLock } from '../../../utils/common';
 import { Container } from './BaseModal.styles';
 
 Modal.setAppElement('body');
@@ -14,15 +15,15 @@ export const BaseModal = ({
   allowKeyExit = true,
   children,
   isDraggable = false,
+  isDragDisabled = false,
   isDragBounded = true,
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
+  bodyScrollLockTarget = '',
 }) => {
   const dragBounds = isDraggable && isDragBounded ? '.dc-modal-overlay' : '';
   const dragCancelTarget = 'input, textarea, .not-draggable';
-  const modalId = Math.floor(Math.random() * 1000);
-
   return (
     <Modal
       overlayClassName={{
@@ -30,16 +31,28 @@ export const BaseModal = ({
         afterOpen: isDraggable ? '' : 'dc-modal-overlay--open',
         beforeClose: 'dc-modal-overlay--close',
       }}
-      id={`dcModal${modalId}`}
       className="dc-modal"
       isOpen={isOpen}
-      onRequestClose={onClose}
+      onRequestClose={() => {
+        enableBodyScrollLock(bodyScrollLockTarget);
+        onClose();
+      }}
       onAfterOpen={() => {
         onAfterOpen();
         if (isDraggable) return;
-        disableBodyScroll(document.querySelector(`#dcModal${modalId}`));
+        if (bodyScrollLockTarget) {
+          const targetNode = document.querySelector(bodyScrollLockTarget);
+          if (targetNode !== null) {
+            disableBodyScroll(targetNode);
+          }
+        }
       }}
-      onAfterClose={clearAllBodyScrollLocks}
+      onAfterClose={() => {
+        const modalNodes = document.querySelector('.dc-modal-overlay--open');
+        if (modalNodes === null) {
+          clearAllBodyScrollLocks();
+        }
+      }}
       shouldCloseOnOverlayClick={false}
       /**
        * Reference: http://reactcommunity.org/react-modal/#usage
@@ -56,8 +69,11 @@ export const BaseModal = ({
           onStart={dragOnStart}
           onStop={dragOnStop}
           onDrag={dragOnDrag}
+          disabled={isDragDisabled}
         >
-          <Container isDraggable={isDraggable}>{children}</Container>
+          <Container isDraggable={isDraggable && !isDragDisabled}>
+            {children}
+          </Container>
         </Draggable>
       )}
       {!isDraggable && <Container>{children}</Container>}

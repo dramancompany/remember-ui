@@ -1,3 +1,5 @@
+import { enableBodyScroll } from 'body-scroll-lock';
+
 export const range = (start, end) =>
   Array(end - start + 1)
     .fill()
@@ -25,4 +27,16 @@ export const createUUID = () => {
   s[8] = s[13] = s[18] = s[23] = '-';
 
   return s.join('');
+};
+
+export const enableBodyScrollLock = (
+  bodyScrollLockTarget,
+  delegateCloseControl = false
+) => {
+  if (!delegateCloseControl && bodyScrollLockTarget) {
+    const targetNode = document.querySelector(bodyScrollLockTarget);
+    if (targetNode !== null) {
+      enableBodyScroll(targetNode);
+    }
+  }
 };
