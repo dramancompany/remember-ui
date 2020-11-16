@@ -23,6 +23,7 @@ ConfirmModal.propTypes = {
   isOpen: t.oneOf([false, true]),
   showClose: t.oneOf([false, true]),
   isDraggable: t.oneOf([false, true]),
+  isDragDisabled: t.oneOf([false, true]),
   isDragBounded: t.oneOf([false, true]),
 
   onClose: t.func,
@@ -35,6 +36,7 @@ ConfirmModal.propTypes = {
   mobileWidth: t.string,
   mobileHeight: t.string,
   bodyScrollLockTargetId: t.string,
+  delegateCloseControl: t.oneOf([false, true]),
 };
 
 ConfirmModal.defaultProps = {
@@ -42,7 +44,9 @@ ConfirmModal.defaultProps = {
   type: 'ok',
   showClose: true,
   isDraggable: false,
+  isDragDisabled: false,
   isDragBounded: true,
+  delegateCloseControl: false,
   onClose: () => {},
   dragOnStart: () => {},
   dragOnStop: () => {},

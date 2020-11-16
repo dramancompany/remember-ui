@@ -20,6 +20,7 @@ DesignedModal.propTypes = {
 
   isOpen: t.oneOf([false, true]),
   isDraggable: t.oneOf([false, true]),
+  isDragDisabled: t.oneOf([false, true]),
   isDragBounded: t.oneOf([false, true]),
   isLoading: t.oneOf([false, true]),
   submitButtonDisabled: t.oneOf([false, true]),
@@ -36,6 +37,7 @@ DesignedModal.propTypes = {
   mobileWidth: t.string,
   mobileHeight: t.string,
   bodyScrollLockTargetId: t.string,
+  delegateCloseControl: t.oneOf([false, true]),
 };
 
 DesignedModal.defaultProps = {
@@ -43,7 +45,9 @@ DesignedModal.defaultProps = {
   submitButtonDisabled: false,
   isLoading: false,
   isDraggable: false,
+  isDragDisabled: false,
   isDragBounded: true,
+  delegateCloseControl: false,
   onAfterOpen: () => {},
   dragOnStart: () => {},
   dragOnStop: () => {},
