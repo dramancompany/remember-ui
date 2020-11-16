@@ -55,7 +55,7 @@ export const Text = styled.textarea`
   padding: 11px 12px;
   box-sizing: border-box;
   outline: none;
-  resize: none;
+  resize: ${({ resize }) => (resize ? 'vertical' : 'none')};
   -webkit-appearance: none;
 
   &:focus {

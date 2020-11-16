@@ -312,6 +312,7 @@ declare module 'remember-ui' {
     required?: boolean;
     blankLabel?: boolean;
     countLenth?: boolean;
+    resize?: boolean;
   }
 
   export const Textarea: React.FC<TextareaProps>;
@@ -419,4 +420,13 @@ declare module 'remember-ui' {
   }
 
   export const Radio: React.FC<RadioProps>;
+
+  export interface ChipProps {
+    children: React.ReactChild | React.ReactChildren;
+    className?: string;
+    isOverflowed?: boolean;
+    onClick: Function;
+  }
+
+  export const Chip: React.FC<ChipProps>;
 }
