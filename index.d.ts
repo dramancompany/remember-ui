@@ -294,6 +294,9 @@ declare module 'remember-ui' {
     onClick?: Function;
     onEnter?: Function;
     validate?: Function;
+    onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    enableKeyDown?: boolean;
   }
 
   export const BaseInput: React.FC<BaseInputProps>;
