@@ -23,7 +23,7 @@ export const mobileSubTitle16 = ({ color, opacity, ...rest }) => css`
   ${font({
     size: '16px',
     weight: 'bold',
-    lineHeight: '22px%',
+    lineHeight: '22px',
     color,
     opacity,
     ...rest,

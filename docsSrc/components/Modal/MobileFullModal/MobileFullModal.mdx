@@ -1,0 +1,112 @@
+---
+name: MobileFullModal
+menu: Components/Modal
+---
+
+import { Playground, Props } from 'docz';
+import { MobileFullModal } from './MobileFullModal';
+import { Container } from '../../Container/Container';
+import { BaseButton } from '../../Button/BaseButton/BaseButton';
+import { Radio } from '../../Control/Radio/Radio';
+import { BaseInput } from '../../Input/BaseInput/BaseInput';
+import { Textarea } from '../../Input/Textarea/Textarea';
+import { DoczContainer } from 'remember-ui';
+
+# MobileFullModal
+
+## Properties
+
+<Props of={MobileFullModal} />
+
+## Basic usage
+
+<Playground>
+  {() => {
+    const [isOpen1, setIsOpen1] = React.useState(false);
+    const [isOpen2, setIsOpen2] = React.useState(false);
+    const [isProcessing, setIsProcessing] = React.useState(false);
+    const [radioId, setRadioId] = React.useState(1);
+    const setRadio = (id) => setRadioId(id);
+    const [buyerName, setBuyerName] = React.useState('');
+    const handleSubmit = () => {
+      alert('보냈습니다');
+      setIsOpen1(false);
+    };
+    return (
+      <Container>
+        <BaseButton
+          fill
+          width={250}
+          size={'large'}
+          onClick={() => setIsOpen1(true)}
+        >
+          Open Designed Modal1
+        </BaseButton>
+        <BaseButton
+          fill
+          width={250}
+          size={'large'}
+          onClick={() => setIsOpen2(true)}
+        >
+          Open Designed Modal2
+        </BaseButton>
+        <MobileFullModal
+          isOpen={isOpen1}
+          title="채용 포지션 저장 (바OO)"
+          headerButtonText="포지션 추가"
+          submitText="저장"
+          submit={() => handleSubmit()}
+          onHeaderButtonClick={() => {
+            alert('포지션 추가 버튼 클릭');
+          }}
+          onClose={() => setIsOpen1(false)}
+          submitButtonDisabled={isProcessing}
+          isLoading={isProcessing}
+        >
+          <DoczContainer direction="row">
+            <div>Radio onClick Event Bind</div>
+            <Radio isChecked={radioId === 1} onClick={() => setRadio(1)} />
+            <span>옵션1</span>
+            <Radio isChecked={radioId === 2} onClick={() => setRadio(2)} />
+            <span>옵션2</span>
+          </DoczContainer>
+        </MobileFullModal>
+        <MobileFullModal
+          isOpen={isOpen2}
+          title="채용 포지션 저장 (바OO)"
+          onClose={() => setIsOpen2(false)}
+          submitButtonDisabled={isProcessing}
+          isLoading={isProcessing}
+        >
+          <DoczContainer direction="row">
+            <BaseInput
+              name="buyerName"
+              label="구매자"
+              placeholder="구매자명을 입력하세요"
+              value={buyerName}
+              onChange={(e) => setBuyerName(e.target.value)}
+              maxLength={150}
+              marginBottom={10}
+              autoFocus
+              required
+              useError
+              validate={(name) => {
+                if (!name) return '구매자명을 입력하세요';
+              }}
+            />
+          </DoczContainer>
+          <DoczContainer direction="row">
+            <Textarea
+              label={'문의내용'}
+              type="text"
+              name="message"
+              maxLength={1500}
+              placeholder={'1500자 내로 문의 내용을 적어 주세요.'}
+              required
+            />
+          </DoczContainer>
+        </MobileFullModal>
+      </Container>
+    );
+  }}
+</Playground>
