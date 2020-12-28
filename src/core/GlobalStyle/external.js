@@ -101,7 +101,7 @@ const ModalTheme = css`
     }
 
     ${mobileOnly(css`
-      z-index: 10000;
+      z-index: 9999;
     `)}
   }
 

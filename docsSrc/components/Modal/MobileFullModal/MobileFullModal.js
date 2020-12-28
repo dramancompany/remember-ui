@@ -27,7 +27,6 @@ MobileFullModal.propTypes = {
   onAfterOpen: t.func,
   onHeaderButtonClick: t.func,
 
-  headerButton: t.object,
   bodyScrollLockTargetId: t.string,
   delegateCloseControl: t.oneOf([false, true]),
 };
