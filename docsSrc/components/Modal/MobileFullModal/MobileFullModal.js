@@ -12,7 +12,7 @@ export const MobileFullModal = ({ children, ...rest }) => {
 };
 
 MobileFullModal.propTypes = {
-  topNavbarOffset: t.number,
+  topNavbarOffset: t.string,
 
   title: t.string,
   headerButtonText: t.string,
@@ -32,7 +32,7 @@ MobileFullModal.propTypes = {
 };
 
 MobileFullModal.defaultProps = {
-  topNavbarOffset: '48px',
+  topNavbarOffset: '0px',
   headerButtonText: '',
   submitButtonDisabled: false,
   isLoading: false,

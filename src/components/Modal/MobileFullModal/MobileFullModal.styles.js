@@ -15,12 +15,14 @@ import {
   mobileSubTitle16,
 } from '../../../core/GlobalStyle';
 
-export const Container = styled(BaseModal)``;
+export const Container = styled(BaseModal)`
+  position: relative;
+`;
 
 export const Modal = styled.div`
   top: ${({ topNavbarOffset }) => topNavbarOffset && `${topNavbarOffset}`};
   height: ${({ topNavbarOffset }) =>
-    topNavbarOffset && `calc(100vh - ${topNavbarOffset})`};
+    topNavbarOffset && `calc(100% - ${topNavbarOffset})`};
   background-color: ${white};
 
   position: fixed;
@@ -71,21 +73,26 @@ Header.Right = styled.div`
 Header.Right.Button = styled.span`
   ${mobileBody12({ color: white })};
 
-  padding: 10px 16px 10px;
+  padding: 10px 15px 10px 5px;
 `;
 
 export const Body = styled.div`
-  height: ${({ topNavbarOffset, hasFooter }) =>
-    (topNavbarOffset &&
-      hasFooter &&
-      `calc(100vh - 48px - 72px - ${topNavbarOffset})`) ||
-    (topNavbarOffset && `calc(100vh - 48px - ${topNavbarOffset})`)};
+  width: 100%;
+
+  height: ${({ topNavbarOffset }) =>
+    topNavbarOffset && `calc(100% - 48px - ${topNavbarOffset})`};
+`;
+
+Body.Main = styled.div`
+  height: ${({ hasFooter }) => (hasFooter ? `calc(100% - 72px)` : `100%`)};
 
   overflow-y: auto;
 `;
 
 export const Footer = styled.div`
   ${flexCenterY};
+
+  width: 100%;
 
   box-shadow: inset 0 1px 0 0 ${gray120};
   background-color: ${gray70};

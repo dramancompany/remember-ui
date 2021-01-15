@@ -11,6 +11,7 @@ import {
   gray150,
   yellow100,
   red100,
+  mobileOnly,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div`
@@ -49,6 +50,12 @@ export const Selected = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
+
+  ${mobileOnly(css`
+    ${font({ size: '13px', color: text })};
+    height: 36px;
+    padding: 11px 10px;
+  `)};
 `;
 
 Selected.Unselected = styled.span`
@@ -141,6 +148,13 @@ export const OptionItem = styled.div`
       cursor: default;
       opacity: 0.3;
     `}
+
+  
+  ${mobileOnly(css`
+    ${font({ size: '13px', color: text })};
+    height: 36px;
+    padding: 11px 10px;
+  `)};
 `;
 
 export const Message = styled.div`

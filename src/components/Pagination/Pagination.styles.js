@@ -7,6 +7,7 @@ import {
   flexCenter,
   font,
   white,
+  mobileOnly,
 } from '../../core/GlobalStyle';
 
 export const Container = styled.ul`
@@ -52,6 +53,13 @@ export const Button = styled.div`
   &:focus {
     outline: 0;
   }
+
+  ${mobileOnly(css`
+    min-width: 24px;
+    height: 24px;
+    line-height: 24px;
+  `)}
+
 `;
 
 export const Icon = styled.img.attrs({

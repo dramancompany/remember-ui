@@ -14,7 +14,7 @@ import {
 const modalType = 'mobileFullModal';
 
 export const MobileFullModal = ({
-  topNavbarOffset = '48px',
+  topNavbarOffset = '0px',
 
   isOpen,
   onClose,
@@ -61,31 +61,30 @@ export const MobileFullModal = ({
         <Body
           id={modalId && `${modalType}${modalId}`}
           topNavbarOffset={topNavbarOffset}
-          hasFooter={!!submit}
         >
-          {children}
+          <Body.Main hasFooter={!!submit}>{children}</Body.Main>
+          {submit && (
+            <Footer>
+              <Button
+                className="not-draggable"
+                theme="yellow"
+                size="large"
+                block
+                onClick={() => {
+                  enableBodyScrollLock(
+                    bodyScrollLockTarget,
+                    delegateCloseControl
+                  );
+                  submit();
+                }}
+                disabled={submitButtonDisabled}
+                isLoading={isLoading}
+              >
+                {submitText}
+              </Button>
+            </Footer>
+          )}
         </Body>
-        {submit && (
-          <Footer>
-            <Button
-              className="not-draggable"
-              theme="yellow"
-              size="large"
-              block
-              onClick={() => {
-                enableBodyScrollLock(
-                  bodyScrollLockTarget,
-                  delegateCloseControl
-                );
-                submit();
-              }}
-              disabled={submitButtonDisabled}
-              isLoading={isLoading}
-            >
-              {submitText}
-            </Button>
-          </Footer>
-        )}
       </Modal>
     </Container>
   );
