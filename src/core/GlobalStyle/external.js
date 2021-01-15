@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 import { blue100, white, gray100, gray400 } from './variable';
-import { flexCenter } from './mixin';
+import { flexCenter, mobileOnly } from './mixin';
 
 const arrowMixin = (name, color) => css`
   ${name === 'dclight' &&
@@ -99,6 +99,10 @@ const ModalTheme = css`
     &--close {
       background-color: rgba(33, 33, 33, 0);
     }
+
+    ${mobileOnly(css`
+      z-index: 9800;
+    `)}
   }
 
   .dc-modal {

@@ -26,3 +26,5 @@ export { default as arrowBackActiveIcon } from './icons/icon-arrow-back-active.p
 export { default as arrowBackInactiveIcon } from './icons/icon-arrow-back-inactive.png';
 export { default as arrowForwardActiveIcon } from './icons/icon-arrow-forward-active.png';
 export { default as arrowForwardInactiveIcon } from './icons/icon-arrow-forward-inactive.png';
+
+export { default as closeIcon } from './icons/icon-close.svg';

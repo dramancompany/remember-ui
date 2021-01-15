@@ -56,7 +56,7 @@ export const ConfirmModal = ({
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
-  mobileWidth = '100vw',
+  mobileWidth = '90vw',
   mobileHeight,
   bodyScrollLockTargetId,
   delegateCloseControl = false,

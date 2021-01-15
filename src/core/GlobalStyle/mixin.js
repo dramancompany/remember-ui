@@ -68,14 +68,13 @@ export const font = ({
   weight = 'normal',
   color = 'black',
   opacity = false,
+  lineHeight = 'normal',
 }) => css`
   font-size: ${size};
   font-weight: ${weight};
   color: ${color};
-
   opacity: ${opacity};
-
-  line-height: normal;
+  line-height: ${lineHeight};
 `;
 
 /**
