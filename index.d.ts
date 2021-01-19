@@ -429,4 +429,24 @@ declare module 'remember-ui' {
   }
 
   export const Chip: React.FC<ChipProps>;
+
+  export interface MobileFullModalProps {
+    topNavbarOffset?: string;
+    isOpen: boolean;
+    onClose: Function;
+    onAfterOpen?: Function;
+    title: string;
+    headerButtonText?: string;
+    onHeaderButtonClick?: Function;
+    submit?: Function;
+    submitText?: string;
+    submitButtonDisabled?: boolean;
+    isLoading?: boolean;
+    bodyScrollLockTargetId: string;
+    delegateCloseControl?: boolean;
+    children: React.ReactChild | React.ReactChildren;
+    className?: string;
+  }
+
+  export const MobileFullModal: React.FC<MobileFullModalProps>;
 }
