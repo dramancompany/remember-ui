@@ -15,6 +15,7 @@ MobileFullModal.propTypes = {
   topNavbarOffset: t.string,
 
   title: t.string,
+  subTitle: t.string,
   headerButtonText: t.string,
   submitText: t.string,
 

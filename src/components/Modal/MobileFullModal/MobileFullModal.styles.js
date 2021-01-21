@@ -5,12 +5,15 @@ import { NewBaseButton } from '../../Button';
 import { closeIcon } from '../../../assets';
 
 import {
+  textEllipsis,
   white,
   gray70,
   gray120,
   gray450,
   flexCenterY,
+  flexContainer,
   mobileBody12,
+  mobileSubTitle12,
   mobileSubTitle14,
   mobileSubTitle16,
 } from '../../../core/GlobalStyle';
@@ -42,7 +45,8 @@ export const Header = styled.div`
 `;
 
 Header.Left = styled.div`
-  min-width: 25%;
+  width: 90px;
+  max-width: 90px;
   text-align: left;
 `;
 
@@ -58,15 +62,37 @@ Header.Left.Icon = styled.img.attrs({
   vertical-align: middle;
 `;
 
-Header.Title = styled.span`
-  ${mobileSubTitle16({ color: white })};
+Header.Title = styled.div`
+  ${flexContainer('center', 'flex-start', 'column')};
 
-  min-width: 50%;
+  // 좌우 영역 각각 90px
+  width: calc(100vw - 180px);
+  max-width: calc(100vw - 180px);
   text-align: center;
 `;
 
+Header.Title.Text = styled.div`
+  ${mobileSubTitle16({ color: white })};
+  ${textEllipsis};
+
+  width: 100%;
+`;
+
+Header.SubTitle = styled.div`
+  ${mobileSubTitle12({ color: '#999' })};
+  ${flexContainer('center', 'center')};
+
+  width: 100%;
+`;
+
+Header.SubTitle.Text = styled.div`
+  ${mobileSubTitle12({ color: '#999' })};
+  ${textEllipsis};
+`;
+
 Header.Right = styled.div`
-  min-width: 25%;
+  width: 90px;
+  max-width: 90px;
   text-align: right;
 `;
 

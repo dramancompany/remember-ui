@@ -21,6 +21,7 @@ export const MobileFullModal = ({
   onAfterOpen = () => {},
 
   title,
+  subTitle = '',
   headerButtonText = '',
   onHeaderButtonClick = () => {},
   submit,
@@ -51,7 +52,14 @@ export const MobileFullModal = ({
           <Header.Left>
             <Header.Left.Icon onClick={onClose} />
           </Header.Left>
-          <Header.Title>{title}</Header.Title>
+          <Header.Title>
+            <Header.Title.Text>{title}</Header.Title.Text>
+            {subTitle && (
+              <Header.SubTitle>
+                (<Header.SubTitle.Text>{subTitle}</Header.SubTitle.Text>)
+              </Header.SubTitle>
+            )}
+          </Header.Title>
           <Header.Right>
             <Header.Right.Button onClick={onHeaderButtonClick}>
               {headerButtonText}
