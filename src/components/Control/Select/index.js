@@ -58,7 +58,7 @@ export const Select = ({
         <OutsideClickHandler onOutsideClick={closeExample}>
           <Selected onClick={selectHandler}>
             {selectedOption ? (
-              selectedOption.label
+              <Selected.Text>{selectedOption.label}</Selected.Text>
             ) : (
               <Selected.Unselected>{placeholder}</Selected.Unselected>
             )}
@@ -80,7 +80,7 @@ export const Select = ({
                       closeExample();
                     }}
                   >
-                    {label}
+                    <OptionItem.Text>{label}</OptionItem.Text>
                   </OptionItem>
                 );
               })}

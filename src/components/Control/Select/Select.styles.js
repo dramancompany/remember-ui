@@ -12,6 +12,7 @@ import {
   yellow100,
   red100,
   mobileOnly,
+  textEllipsis,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div`
@@ -56,6 +57,11 @@ export const Selected = styled.div`
     height: 36px;
     padding: 11px 10px;
   `)};
+`;
+
+Selected.Text = styled.div`
+  ${textEllipsis};
+  width: 95%;
 `;
 
 Selected.Unselected = styled.span`
@@ -155,6 +161,11 @@ export const OptionItem = styled.div`
     height: 36px;
     padding: 11px 10px;
   `)};
+`;
+
+OptionItem.Text = styled.div`
+  ${textEllipsis};
+  width: 95%;
 `;
 
 export const Message = styled.div`
