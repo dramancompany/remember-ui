@@ -12,6 +12,9 @@ import {
   textSmall,
   textDoubleExtraLarge,
   mobileOnly,
+  mobileSubTitle16,
+  mobileSubTitle14,
+  mobileSubTitle13,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled(BaseModal)`
@@ -45,14 +48,18 @@ export const Modal = styled.div`
         min-height: ${mobileHeight};
         max-height: ${mobileHeight};
       `}
-  `)}
+  `)};
 `;
 
 Modal.Header = styled.div`
-  ${flexCenterY}
+  ${flexCenterY};
 
   justify-content: space-between;
   padding: 24px 30px;
+
+  ${mobileOnly(css`
+    padding: 15px;
+  `)};
 `;
 
 Modal.Header.Content = styled.div``;
@@ -91,16 +98,28 @@ Modal.Footer = styled.div`
     ${textSmall({ color: gray200 })}
     ${flexCenterY}
   }
+
+  ${mobileOnly(css`
+    padding: 12px;
+  `)};
 `;
 
 export const Title = styled.span`
   ${textDoubleExtraLarge({ weight: 'bold', color: text })}
   margin-right: 8px;
   letter-spacing: -1px;
+
+  ${mobileOnly(css`
+    ${mobileSubTitle16({ color: text })};
+  `)};
 `;
 
 export const SubTitle = styled.span`
-  ${textSmall({ color: gray200 })}
+  ${textSmall({ color: gray200 })};
+
+  ${mobileOnly(css`
+    ${mobileSubTitle13({ weight: 'normal', color: gray200 })};
+  `)};
 `;
 
 export const Block = styled.div`
@@ -110,6 +129,11 @@ export const Block = styled.div`
 export const Buttons = styled.div`
   display: flex;
   justify-content: flex-end;
+
+  ${mobileOnly(css`
+    width: 100%;
+    justify-content: space-between;
+  `)};
 `;
 
 export const Button = styled(BaseButton)`
@@ -118,4 +142,10 @@ export const Button = styled(BaseButton)`
   &:last-child {
     margin-left: 6px;
   }
+
+  ${mobileOnly(css`
+    ${mobileSubTitle14({ color: white })};
+
+    width: 50%;
+  `)};
 `;
