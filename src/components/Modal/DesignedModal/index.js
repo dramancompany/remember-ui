@@ -45,7 +45,7 @@ export const DesignedModal = ({
     bodyScrollLockTargetId,
     modalType
   );
-
+  const buttonCount = submit && close ? 2 : 1;
   return (
     <Container
       className={className}
@@ -94,6 +94,7 @@ export const DesignedModal = ({
                   close();
                 }}
                 disabled={isLoading}
+                buttonCount={buttonCount}
               >
                 {closeText}
               </Button>
@@ -114,6 +115,7 @@ export const DesignedModal = ({
                 }}
                 disabled={submitButtonDisabled}
                 isLoading={isLoading}
+                buttonCount={buttonCount}
               >
                 {submitText}
               </Button>

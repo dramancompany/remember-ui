@@ -146,6 +146,14 @@ export const Button = styled(BaseButton)`
   ${mobileOnly(css`
     ${mobileSubTitle14({ color: white })};
 
-    width: 50%;
+    width: ${({ buttonCount }) => (buttonCount === 2 ? '50%' : '100%')};
+
+    ${({ buttonCount }) =>
+      buttonCount !== 2 &&
+      css`
+        &:last-child {
+          margin-left: 0px;
+        }
+      `}
   `)};
 `;

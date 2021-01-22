@@ -69,7 +69,7 @@ export const Text = styled.textarea`
   }
 
   ${mobileOnly(css`
-    ${mobileSubTitle13({ color: gray150, weight: 'normal' })};
+    ${mobileSubTitle13({ color: text, weight: 'normal' })};
 
     padding: 10px;
   `)};
