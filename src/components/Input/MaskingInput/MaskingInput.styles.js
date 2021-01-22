@@ -10,6 +10,8 @@ import {
   font,
   textSmall,
   placeholderColor,
+  mobileSubTitle13,
+  mobileOnly,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div``;
@@ -22,6 +24,10 @@ export const Label = styled.div`
   margin-bottom: ${({ marginBottom }) =>
     marginBottom ? `${marginBottom}px` : '8px'};
   min-height: 20px;
+
+  ${mobileOnly(css`
+    ${mobileSubTitle13({ color: gray200, weight: 'normal' })};
+  `)};
 `;
 
 export const Mark = styled.img`
@@ -59,4 +65,10 @@ export const Input = styled(MaskedInput)`
     css`
       border: 1px solid ${red100};
     `}
+
+  ${mobileOnly(css`
+    ${mobileSubTitle13({ color: gray400, weight: 'normal' })};
+
+    padding: 10px;
+  `)};
 `;

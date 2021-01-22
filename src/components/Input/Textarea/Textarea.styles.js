@@ -14,6 +14,8 @@ import {
   textExtraSmall,
   flexCenterY,
   placeholderColor,
+  mobileOnly,
+  mobileSubTitle13,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div``;
@@ -24,6 +26,10 @@ export const Label = styled.div`
 
   margin-bottom: 8px;
   min-height: 20px;
+
+  ${mobileOnly(css`
+    ${mobileSubTitle13({ color: gray, weight: 'normal' })};
+  `)};
 `;
 
 Label.Title = styled.span``;
@@ -61,6 +67,12 @@ export const Text = styled.textarea`
   &:focus {
     border: 1px solid ${gray150};
   }
+
+  ${mobileOnly(css`
+    ${mobileSubTitle13({ color: gray150, weight: 'normal' })};
+
+    padding: 10px;
+  `)};
 `;
 
 export const TextCount = styled.div`
