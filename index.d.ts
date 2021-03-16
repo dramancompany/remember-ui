@@ -311,7 +311,7 @@ declare module 'remember-ui' {
     first?: boolean;
     required?: boolean;
     blankLabel?: boolean;
-    countLenth?: boolean;
+    countLength?: boolean;
     resize?: boolean;
   }
 
