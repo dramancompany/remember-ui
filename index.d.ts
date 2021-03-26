@@ -1,4 +1,4 @@
-import React, { ReactNode, RefObject } from 'react';
+import React, { MouseEventHandler, ReactNode, RefObject } from 'react';
 import {
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
@@ -449,4 +449,12 @@ declare module 'remember-ui' {
   }
 
   export const MobileFullModal: React.FC<MobileFullModalProps>;
+
+  export interface SwitchProps {
+    className?: string;
+    checked?: boolean;
+    onClick: MouseEventHandler;
+  }
+
+  export const Switch: React.FC<SwitchProps>;
 }
