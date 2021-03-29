@@ -50,7 +50,7 @@ export const MobileFullModal = ({
       <Modal topNavbarOffset={topNavbarOffset}>
         <Header>
           <Header.Left>
-            <Header.Left.Icon onClick={onClose} />
+            <Header.Left.Icon onClick={() => onClose()} />
           </Header.Left>
           <Header.Title>
             <Header.Title.Text>{title}</Header.Title.Text>
