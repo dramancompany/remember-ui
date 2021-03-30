@@ -21,10 +21,14 @@ import { DoczContainer } from 'remember-ui';
     const toggle = () => setIsChecked(!isChecked);
     return (
       <>
-        <DoczContainer direction="column">
-          <div>스위치</div>
-          <DoczContainer direction="row">
+        <DoczContainer direction="row">
+          <DoczContainer direction="column">
+            <div>medium</div>
             <Switch checked={isChecked} onClick={toggle} />
+          </DoczContainer>
+          <DoczContainer direction="column">
+            <div>large</div>
+            <Switch checked={isChecked} onClick={toggle} size="large" />
           </DoczContainer>
         </DoczContainer>
       </>

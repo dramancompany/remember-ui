@@ -8,10 +8,10 @@ export const Container = styled.div`
 export const Span = styled.span`
   content: '';
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 14px;
-  height: 14px;
+  top: ${({ size }) => (size === 'medium' ? 3 : 4)}px;
+  left: ${({ size }) => (size === 'medium' ? 3 : 4)}px;
+  width: ${({ size }) => (size === 'medium' ? 14 : 28)}px;
+  height: ${({ size }) => (size === 'medium' ? 14 : 28)}px;
   border-radius: 50%;
   transition: 0.2s;
   background: ${white};
@@ -23,10 +23,10 @@ export const Label = styled.label`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  width: 36px;
-  height: 20px;
+  width: ${({ size }) => (size === 'medium' ? 36 : 64)}px;
+  height: ${({ size }) => (size === 'medium' ? 20 : 36)}px;
   background: ${({ checked }) => (checked ? yellow100 : gray100)};
-  border-radius: 10px;
+  border-radius: ${({ size }) => (size === 'medium' ? 10 : 20)}px;
   position: relative;
   transition: background-color 0.2s;
 
@@ -41,7 +41,7 @@ export const Input = styled.input`
   display: none;
 
   &:checked + ${Label} ${Span} {
-    left: calc(100% - 3px);
+    left: calc(100% - ${({ size }) => (size === 'medium' ? 3 : 4)}px);
     transform: translateX(-100%);
   }
 `;
