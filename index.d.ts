@@ -454,7 +454,7 @@ declare module 'remember-ui' {
     className?: string;
     checked?: boolean;
     onClick: MouseEventHandler;
-    size?: 'medium' | 'large';
+    size?: 'small' | 'large';
   }
 
   export const Switch: React.FC<SwitchProps>;

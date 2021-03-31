@@ -4,7 +4,7 @@ import { createUUID } from '../../../utils/common';
 
 import { Container, Input, Label, Span } from './Switch.styles';
 
-export const Switch = ({ className, checked, onClick, size = 'medium' }) => {
+export const Switch = ({ className, checked, onClick, size = 'small' }) => {
   const { current: target } = useRef(createUUID());
 
   return (
