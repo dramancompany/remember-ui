@@ -7,8 +7,10 @@ export const Switch = ({ ...rest }) => <Component {...rest} />;
 Switch.propTypes = {
   checked: t.bool.isRequired,
   onClick: t.func,
+  size: t.oneOf(['small', 'large']),
 };
 
 Switch.defaultProps = {
   onClick: () => {},
+  size: 'small',
 };
