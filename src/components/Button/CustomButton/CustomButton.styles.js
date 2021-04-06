@@ -4,7 +4,6 @@ import { white, gray100, gray120, flexCenter } from '../../../core/GlobalStyle';
 export const Inner = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1px;
 `;
 
 export const Container = styled.div`
