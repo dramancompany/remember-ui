@@ -51,13 +51,14 @@ Header.Left = styled.div`
 `;
 
 Header.Left.Icon = styled.img.attrs({
-  width: 14,
-  height: 14,
   src: closeIcon,
   alt: 'close',
 })`
   color: ${white};
 
+  box-sizing: content-box;
+  width: 14px;
+  height: 14px;
   padding: 10px 10px 10px 16px;
   vertical-align: middle;
 `;
