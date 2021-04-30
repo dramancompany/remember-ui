@@ -106,8 +106,7 @@ Header.Right.Button = styled.span`
 export const Body = styled.div`
   width: 100%;
 
-  height: ${({ topNavbarOffset }) =>
-    topNavbarOffset && `calc(100% - 48px - ${topNavbarOffset})`};
+  height: calc(100% - 48px);
 `;
 
 Body.Main = styled.div`
