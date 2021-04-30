@@ -5,7 +5,6 @@ import { THEME_COLOR } from '../../../core/GlobalStyle/theme';
 export const Inner = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1px;
 `;
 
 export const Container = styled.div`
