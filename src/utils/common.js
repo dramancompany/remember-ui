@@ -34,9 +34,11 @@ export const enableBodyScrollLock = (
   delegateCloseControl = false
 ) => {
   if (!delegateCloseControl && bodyScrollLockTarget) {
-    const targetNode = document.querySelector(bodyScrollLockTarget);
-    if (targetNode !== null) {
-      enableBodyScroll(targetNode);
-    }
+    const targetNodes = document.querySelectorAll(bodyScrollLockTarget);
+    targetNodes.forEach((el) => {
+      if (el !== null) {
+        enableBodyScroll(el);
+      }
+    });
   }
 };

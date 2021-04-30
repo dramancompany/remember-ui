@@ -41,10 +41,12 @@ export const BaseModal = ({
         onAfterOpen();
         if (isDraggable) return;
         if (bodyScrollLockTarget) {
-          const targetNode = document.querySelector(bodyScrollLockTarget);
-          if (targetNode !== null) {
-            disableBodyScroll(targetNode);
-          }
+          const targetNodes = document.querySelectorAll(bodyScrollLockTarget);
+          targetNodes.forEach((el) => {
+            if (el !== null) {
+              disableBodyScroll(el);
+            }
+          });
         }
       }}
       onAfterClose={() => {
