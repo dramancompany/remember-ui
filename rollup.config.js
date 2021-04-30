@@ -13,21 +13,17 @@ const outputData = [
     file: 'dist/index.js',
     format: 'es',
   },
-  {
-    file: 'dist/index.cjm.js',
-    format: 'cjs'
-  }
 ];
 
 const plugins = [
   peerDepsExternal(),
   image(),
   postcss(),
+  commonjs({ exclude: 'src/**' }),
   babel({
     exclude: 'node_modules/**',
     runtimeHelpers: true,
   }),
-  commonjs(),
   resolve(),
   terser(),
 ];
