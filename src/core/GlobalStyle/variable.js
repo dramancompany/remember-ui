@@ -1,5 +1,5 @@
 // deprecated colors
-export const gray10 = '#fcfcfc';
+export const gray10 = '#fcfcfc'; // complete
 export const gray50 = '#f9f9f9';
 export const gray70 = '#f5f5f5';
 export const gray80 = '#eee';
@@ -38,7 +38,7 @@ export const gray = gray200;
 // new colors
 export const primary01 = '#212322';
 export const primary02 = '#ffffff';
-export const secondary = '#e0a526';
+export const secondary01 = '#e0a526';
 export const contents00 = '#212322';
 export const contents01 = '#646464';
 export const contents02 = '#aeaeae';
