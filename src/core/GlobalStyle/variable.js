@@ -1,3 +1,4 @@
+// deprecated colors
 export const gray10 = '#fcfcfc';
 export const gray50 = '#f9f9f9';
 export const gray70 = '#f5f5f5';
@@ -33,6 +34,20 @@ export const white = '#ffffff';
 export const text = gray400;
 export const borderColor = gray120;
 export const gray = gray200;
+
+// new colors
+export const primary01 = '#212322';
+export const primary02 = '#ffffff';
+export const secondary = '#e0a526';
+export const contents00 = '#212322';
+export const contents01 = '#646464';
+export const contents02 = '#aeaeae';
+export const contents03 = '#cccccc';
+export const contents04 = '#ebebeb';
+export const contents05 = '#f5f5f5';
+export const disable = '#c7c7cd';
+export const accent01 = '#ea5128';
+export const accent02 = '#1b8ee4';
 
 export const mobileSizeBreak = '768px';
 export const mobileSmallSizeBreak = '320px';
