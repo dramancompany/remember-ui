@@ -39,6 +39,20 @@ declare module 'remember-ui' {
   export const text: string;
   export const borderColor: string;
   export const gray: string;
+
+  export const primary01: string;
+  export const primary02: string;
+  export const secondary: string;
+  export const contents00: string;
+  export const contents01: string;
+  export const contents02: string;
+  export const contents03: string;
+  export const contents04: string;
+  export const contents05: string;
+  export const disable: string;
+  export const accent01: string;
+  export const accent02: string;
+
   export const mobileSizeBreak: string;
   export const mobileSmallSizeBreak: string;
   export const landingMobileSizeBreak: string;
