@@ -5,6 +5,8 @@ import {
   gray200,
   gray450,
   blue100,
+  primary01,
+  disable,
 } from './variable';
 
 const THEME_COLOR = {
@@ -27,6 +29,14 @@ const THEME_COLOR = {
   blue: {
     main: blue100,
     sub: blue100,
+  },
+  primary: {
+    main: primary01,
+    sub: primary01,
+  },
+  disable: {
+    main: disable,
+    sub: disable,
   },
 };
 
