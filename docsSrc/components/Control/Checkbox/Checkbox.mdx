@@ -22,26 +22,22 @@ import { DoczContainer } from 'remember-ui';
     return (
       <>
         <DoczContainer direction="column">
-          <div>체크박스 on/off/disabled( Static )</div>
+          <div>체크박스 on/off/disabled(disabled는 deprecate 될 예정)</div>
           <DoczContainer direction="row">
             <Checkbox state="on" />
             <Checkbox state="off" />
             <Checkbox state="on" disabled />
           </DoczContainer>
         </DoczContainer>
-        
         <DoczContainer direction="column">
-          <div>체크박스 onClick Event Bind( Dynamic )</div>
+          <div>Round 체크박스 on/off</div>
           <DoczContainer direction="row">
-            <Checkbox state={isChecked ? 'on' : 'off'} onClick={toggle} />
-            <Checkbox
-              state={isChecked ? 'on' : 'off'}
-              onClick={toggle}
-              disabled
-            />
+            <Checkbox round state="on" />
+            <Checkbox round state="off" />
           </DoczContainer>
         </DoczContainer>
       </>
     );
-  }}
+}}
+
 </Playground>

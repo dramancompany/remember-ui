@@ -360,6 +360,7 @@ declare module 'remember-ui' {
     onClick?: Function;
     disabled?: boolean;
     className?: string;
+    round?: boolean;
   }
 
   export const Checkbox: React.FC<CheckboxProps>;

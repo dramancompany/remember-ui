@@ -3,6 +3,8 @@ export { default as checkboxChecked } from './icons/checkbox-checked.png';
 export { default as checkboxDisabled } from './icons/checkbox-disabled.png';
 export { default as checkboxHovered } from './icons/checkbox-hovered.png';
 export { default as checkboxOutline } from './icons/checkbox-outline.png';
+export { default as checkboxRoundOn } from './icons/checkbox-round-on.svg';
+export { default as checkboxRoundOff } from './icons/checkbox-round-off.svg';
 
 export { default as radioChecked } from './icons/radio-checked.png';
 export { default as radioUnchecked } from './icons/radio-unchecked.png';
