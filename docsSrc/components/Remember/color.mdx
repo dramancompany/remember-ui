@@ -1,5 +1,5 @@
 ---
-name: Career Color
+name: Color
 menu: Remember UI
 ---
 
@@ -7,93 +7,87 @@ import { Playground } from 'docz';
 
 import { ColorItem } from './ColorItem';
 import {
-  gray10,
-  gray50,
-  gray70,
-  gray80,
-  gray100,
-  gray120,
-  gray150,
-  gray200,
-  gray300,
-  gray350,
-  gray400,
-  gray450,
-  gold50,
-  gold100,
-  gold150,
-  gold200,
-  yellow10,
-  yellow50,
-  yellow60,
-  yellow70,
-  yellow100,
-  blue30,
-  blue100,
-  blue450,
-  red50,
-  red100,
-  green50,
-  green70,
-  green100,
-  brown100,
-  orange100,
-  white,
-  text,
-  borderColor,
-  gray,
+  primary01,
+  primary02,
+  secondary01,
+  contents00,
+  contents01,
+  contents02,
+  contents03,
+  contents04,
+  contents05,
+  disable,
+  accent01,
+  accent02,
 } from 'remember-ui';
 
 # Colors
 
-Career Colors
-
-## Gray scale
+## Primary
 
 <Playground>
-  <ColorItem colorName="gray10" backgroundColor={gray10} />
-  <ColorItem colorName="gray50" backgroundColor={gray50} />
-  <ColorItem colorName="gray70" backgroundColor={gray70} />
-  <ColorItem colorName="gray80" backgroundColor={gray80} />
-  <ColorItem colorName="gray100" backgroundColor={gray100} />
-  <ColorItem colorName="gray120" backgroundColor={gray120} />
-  <ColorItem colorName="gray150" backgroundColor={gray150} />
-  <ColorItem colorName="gray200" backgroundColor={gray200} />
-  <ColorItem colorName="gray" backgroundColor={gray} />
-  <ColorItem colorName="gray300" backgroundColor={gray300} />
-  <ColorItem colorName="gray350" backgroundColor={gray350} />
-  <ColorItem colorName="gray400" backgroundColor={gray400} />
-  <ColorItem colorName="gray450" backgroundColor={gray450} />
+  <ColorItem
+    colorName="primary01"
+    backgroundColor={primary01}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="primary02"
+    backgroundColor={primary02}
+    invertTextColor
+  />
 </Playground>
 
-## Gold Scale
+## Secondary
 
 <Playground>
-  <ColorItem colorName="gold50" backgroundColor={gold50} />
-  <ColorItem colorName="gold100" backgroundColor={gold100} />
-  <ColorItem colorName="gold150" backgroundColor={gold150} />
-  <ColorItem colorName="gold200" backgroundColor={gold200} />
-  <ColorItem colorName="yellow10" backgroundColor={yellow10} />
-  <ColorItem colorName="yellow50" backgroundColor={yellow50} />
-  <ColorItem colorName="yellow60" backgroundColor={yellow60} />
-  <ColorItem colorName="yellow70" backgroundColor={yellow70} />
-  <ColorItem colorName="yellow100" backgroundColor={yellow100} />
+  <ColorItem colorName="secondary01" backgroundColor={secondary01} />
 </Playground>
 
-## Basic Scale
+## Contents
 
 <Playground>
-  <ColorItem colorName="blue30" backgroundColor={blue30} />
-  <ColorItem colorName="blue100" backgroundColor={blue100} />
-  <ColorItem colorName="blue450" backgroundColor={blue450} />
-  <ColorItem colorName="red50" backgroundColor={red50} />
-  <ColorItem colorName="red100" backgroundColor={red100} />
-  <ColorItem colorName="green50" backgroundColor={green50} />
-  <ColorItem colorName="green70" backgroundColor={green70} />
-  <ColorItem colorName="green100" backgroundColor={green100} />
-  <ColorItem colorName="brown100" backgroundColor={brown100} />
-  <ColorItem colorName="orange100" backgroundColor={orange100} />
-  <ColorItem colorName="white" backgroundColor={white} />
-  <ColorItem colorName="text" backgroundColor={text} />
-  <ColorItem colorName="borderColor" backgroundColor={borderColor} />
+  <ColorItem
+    colorName="contents00"
+    backgroundColor={contents00}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="contents01"
+    backgroundColor={contents01}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="contents02"
+    backgroundColor={contents02}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="contents03"
+    backgroundColor={contents03}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="contents04"
+    backgroundColor={contents04}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="contents05"
+    backgroundColor={contents05}
+    invertTextColor
+  />
+</Playground>
+
+## Disable
+
+<Playground>
+  <ColorItem colorName="disable" backgroundColor={disable} invertTextColor />
+</Playground>
+
+## Accent
+
+<Playground>
+  <ColorItem colorName="accent01" backgroundColor={accent01} />
+  <ColorItem colorName="accent02" backgroundColor={accent02} />
 </Playground>
