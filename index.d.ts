@@ -42,7 +42,7 @@ declare module 'remember-ui' {
 
   export const primary01: string;
   export const primary02: string;
-  export const secondary: string;
+  export const secondary01: string;
   export const contents00: string;
   export const contents01: string;
   export const contents02: string;
