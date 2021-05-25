@@ -38,7 +38,7 @@ export const Checkbox = ({
       onClick={(e) => !disabled && onClick(e)}
       isRound={round}
     >
-      <Icon src={getIconImg()} alt="checkbox-img" isRound={round} />
+      <Icon src={getIconImg()} alt={`checkbox-${state}`} isRound={round} />
     </Container>
   );
 };
