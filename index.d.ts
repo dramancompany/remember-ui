@@ -209,6 +209,7 @@ declare module 'remember-ui' {
     type?: 'delete' | 'ok';
     showClose?: boolean;
     onClose?: Function;
+    testId?: string;
   }
 
   export const ConfirmModal: React.FC<ConfirmModalProps>;

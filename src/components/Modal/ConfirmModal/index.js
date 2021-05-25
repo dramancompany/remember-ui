@@ -60,6 +60,7 @@ export const ConfirmModal = ({
   mobileHeight,
   bodyScrollLockTargetId,
   delegateCloseControl = false,
+  testId,
 }) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
   const { modalId, bodyScrollLockTarget } = useScrollLock(
@@ -104,6 +105,7 @@ export const ConfirmModal = ({
           {showClose && (
             <BaseButton
               className="footer--btn not-draggable"
+              testId={`${testId}-cancel`}
               color="gray"
               fill
               size="large"
@@ -121,6 +123,7 @@ export const ConfirmModal = ({
             fill
             size="large"
             className="footer--btn not-draggable"
+            testId={`${testId}-confirm`}
             onClick={() =>
               _onOk(onOk).then(() => {
                 onClose();
