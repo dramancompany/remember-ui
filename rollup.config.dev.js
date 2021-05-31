@@ -37,7 +37,7 @@ const plugins = [
  * External Dependencies
  */
 const dependencies = [
-  '@tippy.js/react',
+  '@tippyjs/react',
   'react-toastify',
   'react-outside-click-handler',
   'react-text-mask',

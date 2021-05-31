@@ -15,8 +15,8 @@ const outputData = [
   },
   {
     file: 'dist/index.cjm.js',
-    format: 'cjs'
-  }
+    format: 'cjs',
+  },
 ];
 
 const plugins = [
@@ -36,7 +36,7 @@ const plugins = [
  * External Dependencies
  */
 const dependencies = [
-  '@tippy.js/react',
+  '@tippyjs/react',
   'react-toastify',
   'react-outside-click-handler',
   'react-text-mask',
