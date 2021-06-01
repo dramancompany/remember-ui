@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
-import Tippy from '@tippyjs/react';
+import Tippy from '@tippy.js/react';
 
 const headShake = keyframes`
   0% {

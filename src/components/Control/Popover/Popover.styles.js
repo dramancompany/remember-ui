@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Tippy from '@tippyjs/react';
+import Tippy from '@tippy.js/react';
 
 export const Popover = styled(Tippy)`
   border-radius: 10px !important;

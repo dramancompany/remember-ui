@@ -17,7 +17,7 @@ Popover.propTypes = {
   customElement: t.object,
   content: t.object,
   size: t.string,
-  trigger: t.oneOf(['click', 'focus', 'mouseenter', 'mouseenter focus']),
+  trigger: t.oneOf(['click', 'focus']),
   className: t.string,
   distance: t.number,
   placement: t.oneOf([
