@@ -418,15 +418,15 @@ declare module 'remember-ui' {
   export const BaseTooltip: React.FC<BaseTooltipProps>;
 
   export interface PaginationProps {
-    activePage: number;
-    totalItemCount: number;
+    activePage?: number;
+    totalItemCount?: number;
     pageRangeDisplayed: number;
     onChangePage: (page: number) => void;
     itemCountPerPage: number;
-    className: string;
+    className?: string;
   }
 
-  export const Pagination: React.FC<Partial<PaginationProps>>;
+  export const Pagination: React.FC<PaginationProps>;
   export const DcNewPagination: typeof Pagination;
 
   export interface RadioProps {
