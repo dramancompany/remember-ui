@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
 
 import {
-  gray150,
-  gray100,
-  text,
+  contents00,
   flexCenter,
   font,
-  white,
   mobileOnly,
+  primary02,
+  contents03,
+  gray150,
 } from '../../core/GlobalStyle';
 
 export const Container = styled.ul`
@@ -23,7 +23,7 @@ export const List = styled.li``;
 
 export const Button = styled.div`
   ${flexCenter}
-  ${font({ size: '13px', color: text, weight: 'normal' })}
+  ${font({ size: '14px', color: contents00, weight: 'normal' })}
 
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}px` : '0px')};
   margin-right: ${({ marginRight }) =>
@@ -39,16 +39,16 @@ export const Button = styled.div`
   ${({ selected }) =>
     selected &&
     css`
-      border: solid 1px ${gray100};
-      border-radius: 2px;
-      background-color: ${white};
+      border: solid 1px ${contents03};
+      border-radius: 4px;
+      background-color: ${primary02};
     `}
 
   box-sizing: border-box;
-  min-width: 32px;
-  height: 32px;
+  min-width: 34px;
+  height: 34px;
   cursor: pointer;
-  line-height: 32px;
+  line-height: 34px;
 
   &:focus {
     outline: 0;
@@ -74,10 +74,4 @@ export const Numbers = styled.span`
   display: inherit;
 `;
 
-Numbers.Button = styled.li`
-  margin-right: 4px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-`;
+Numbers.Button = styled.li``;
