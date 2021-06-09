@@ -466,6 +466,18 @@ declare module 'remember-ui' {
 
   export const MobileFullModal: React.FC<MobileFullModalProps>;
 
+  export interface MessageModalProps {
+    isOpen: boolean;
+    message: string | JSX.Element;
+    onConfirm?: () => void;
+    onCancel?: () => void;
+    onClose: () => void;
+    confirmText?: string;
+    cancelText?: string;
+  }
+
+  export const MessageModal: React.FC<MessageModalProps>;
+
   export interface SwitchProps {
     className?: string;
     checked?: boolean;
