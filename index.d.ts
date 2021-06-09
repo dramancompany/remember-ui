@@ -66,7 +66,9 @@ declare module 'remember-ui' {
   }
 
   export const flexContainer: (
-    params: FlexParams
+    mainAxis?: string | false,
+    crossAxis?: string | false,
+    direction?: string | false
   ) => FlattenSimpleInterpolation;
 
   export const flexCenter: FlattenSimpleInterpolation;
@@ -287,8 +289,8 @@ declare module 'remember-ui' {
   export const Spinner: React.FC<SpinnerProps>;
 
   export interface BaseInputProps {
-    name: string;
-    value: string;
+    name?: string;
+    value?: string | number;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     outerRef?: RefObject<HTMLInputElement>;
     footer?: React.ReactNode;
@@ -368,7 +370,7 @@ declare module 'remember-ui' {
 
   export interface SelectOption {
     id: string | number;
-    label: string;
+    label: string | number;
     value?: string | number;
   }
 
@@ -489,11 +491,36 @@ declare module 'remember-ui' {
 
   export interface ImageInputProps {
     id: string;
-    label: string;
+    label: ReactNode;
     onChange: (data: string) => void;
+    className?: string;
   }
 
   export const ImageInput: React.FC<ImageInputProps>;
+
+  export interface MaskingInputProps {
+    type?: string;
+    name: stirng;
+    value: string | null | undefined;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    mask: (string | RegExp)[];
+    label?: string;
+    marginBottom?: number;
+    footer?: string;
+    className?: string;
+    placeholder?: string;
+    autoFocus?: boolean;
+    required?: boolean;
+    disabled?: boolean;
+    useError?: boolean;
+    errorMark?: boolean;
+    blankLabe?: boolean;
+    onClick?: React.MouseEventHandler<HTMLInputElement>;
+    onEnter?: () => void;
+    validate?: (value: string | null | undefined) => string;
+  }
+
+  export const MaskingInput: React.FC<MaskingInputProps>;
 
   export interface AccordianMenu {
     title: string;
