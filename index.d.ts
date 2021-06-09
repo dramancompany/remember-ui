@@ -468,7 +468,7 @@ declare module 'remember-ui' {
 
   export interface MessageModalProps {
     isOpen: boolean;
-    message: string | JSX.Element;
+    children: ReactNode;
     onConfirm?: () => void;
     onCancel?: () => void;
     onClose: () => void;
