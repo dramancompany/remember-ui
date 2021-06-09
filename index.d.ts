@@ -486,4 +486,26 @@ declare module 'remember-ui' {
   }
 
   export const Switch: React.FC<SwitchProps>;
+
+  export interface ImageInputProps {
+    id: string;
+    label: string;
+    onChange: (data: string) => void;
+  }
+
+  export const ImageInput: React.FC<ImageInputProps>;
+
+  export interface AccordianMenu {
+    title: string;
+    list: { title: string; value: string; onClick?: (value: string) => void }[];
+  }
+
+  export interface AccordianProps {
+    menus: AccordianMenu[];
+    hasCheckBox?: boolean;
+    onClickItem?: (value: string) => void;
+    onCheckItem?: (title: string, value: string) => void;
+    isCheckedItem?: (title: string, value: string) => boolean;
+  }
+  export const Accordian: React.FC<AccordianProps>;
 }
