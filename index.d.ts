@@ -85,6 +85,7 @@ declare module 'remember-ui' {
     weight?: string;
     color?: string;
     opacity?: number;
+    lineHeight?: string;
   }
 
   export const font: (params: FontParams) => FlattenSimpleInterpolation;
