@@ -48,6 +48,10 @@ export const contents05 = '#f5f5f5';
 export const disable = '#c7c7cd';
 export const accent01 = '#ea5128';
 export const accent02 = '#1b8ee4';
+export const background01 = '#ffffff';
+export const background02 = '#f5f5f5';
+export const background03 = '#ebebeb';
+export const backgroundAccent01 = '#faece8';
 
 export const mobileSizeBreak = '768px';
 export const mobileSmallSizeBreak = '320px';
