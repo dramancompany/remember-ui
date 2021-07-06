@@ -35,6 +35,9 @@ export const BaseInput = ({
   readOnly = false,
   marginBottom,
   outerRef,
+  onKeyPress,
+  onKeyDown,
+  enableKeyDown = false,
   ...rest
 }) => {
   const [error, setError] = useState('');
@@ -49,6 +52,18 @@ export const BaseInput = ({
       return;
     if (maxLength) return handleInputLength(onChange, e, maxLength);
     onChange(e);
+  };
+
+  const _onKeyPress = (event) => {
+    if (onKeyPress) {
+      onKeyPress(event);
+    } else if (onKeyDown) {
+      onKeyDown(event);
+    } else {
+      if (event.key === 'Enter') {
+        onEnter && onEnter();
+      }
+    }
   };
 
   return (
@@ -73,11 +88,8 @@ export const BaseInput = ({
         autoFocus={autoFocus}
         readOnly={readOnly || disabled}
         onBlur={validate && _validate}
-        onKeyPress={({ key }) => {
-          if (key === 'Enter') {
-            onEnter && onEnter();
-          }
-        }}
+        onKeyPress={!enableKeyDown && _onKeyPress}
+        onKeyDown={enableKeyDown && _onKeyPress}
         {...rest}
       />
 
