@@ -1,9 +1,8 @@
 import {
-  yellow100,
+  secondary100,
   accent100,
-  gray100,
-  gray200,
-  gray450,
+  contents100,
+  contents300,
   accent200,
   primary100,
   disable,
@@ -11,20 +10,20 @@ import {
 
 const THEME_COLOR = {
   yellow: {
-    main: yellow100,
-    sub: yellow100,
+    main: secondary100,
+    sub: secondary100,
   },
   red: {
     main: accent100,
     sub: accent100,
   },
   gray: {
-    main: gray200,
-    sub: gray200,
+    main: contents100,
+    sub: contents100,
   },
   light: {
-    main: gray450,
-    sub: gray100,
+    main: primary100,
+    sub: contents300,
   },
   blue: {
     main: accent200,

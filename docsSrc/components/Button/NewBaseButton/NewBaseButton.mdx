@@ -57,17 +57,17 @@ import { DoczContainer } from 'remember-ui';
   <DoczContainer direction="column">
     <div>Buttons Sizes</div>
     <DoczContainer direction="row">
-      <NewBaseButton size="xlarge">xlarge</NewBaseButton>
-      <NewBaseButton size="large">Large</NewBaseButton>
-      <NewBaseButton size="medium">Medium</NewBaseButton>
-      <NewBaseButton size="small">Small</NewBaseButton>
+      <NewBaseButton size="xlarge" theme="primary">xlarge</NewBaseButton>
+      <NewBaseButton size="large" theme="primary">Large</NewBaseButton>
+      <NewBaseButton size="medium" theme="primary">Medium</NewBaseButton>
+      <NewBaseButton size="small" theme="primary">Small</NewBaseButton>
     </DoczContainer>
   </DoczContainer>
   <DoczContainer direction="column">
     <div>Block Level Buttons (width: 100%)</div>
     <DoczContainer direction="row">
       <div style={{ width: '300px' }}>
-        <NewBaseButton size="large" block>
+        <NewBaseButton size="large" theme="primary"block>
           Yellow
         </NewBaseButton>
       </div>
@@ -113,7 +113,7 @@ import { DoczContainer } from 'remember-ui';
   <DoczContainer direction="column">
     <div>Real World Usage</div>
     <DoczContainer direction="row">
-      <NewBaseButton size="xlarge">불러오기</NewBaseButton>
+      <NewBaseButton size="xlarge" theme="primary">불러오기</NewBaseButton>
       <NewBaseButton size="small" outline theme="light">
         직무 선택
       </NewBaseButton>

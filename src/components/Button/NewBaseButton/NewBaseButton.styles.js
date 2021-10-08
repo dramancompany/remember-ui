@@ -17,13 +17,13 @@ export const Container = styled.div`
   height: ${({ size }) =>
     (size === 'small' && '32px') ||
     (size === 'medium' && '36px') ||
-    (size === 'large' && '40px') ||
-    (size === 'xlarge' && '48px')};
+    (size === 'large' && '44px') ||
+    (size === 'xlarge' && '52px')};
 
   font-size: ${({ size }) =>
-    (size === 'small' && '13px') ||
+    (size === 'small' && '12px') ||
     (size === 'medium' && '14px') ||
-    (size === 'large' && '15px') ||
+    (size === 'large' && '16px') ||
     (size === 'xlarge' && '16px')};
 
   min-width: ${({ size }) =>
@@ -39,7 +39,7 @@ export const Container = styled.div`
     (size === 'xlarge' && '0 24px')};
 
   font-weight: 400;
-  border-radius: ${({ size }) => (size === 'small' ? '2px' : '4px')};
+  border-radius: 4px;
 
   border: 1px solid ${({ theme }) => THEME_COLOR[theme].sub};
   background-color: ${({ theme }) => THEME_COLOR[theme].sub};
