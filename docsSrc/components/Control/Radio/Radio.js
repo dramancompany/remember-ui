@@ -6,10 +6,12 @@ export const Radio = ({ ...rest }) => <Component {...rest} />;
 
 Radio.propTypes = {
   isChecked: t.oneOf([false, true]),
+  theme: t.oneOf(['yellow', 'black']),
   onClick: t.func,
 };
 
 Radio.defaultProps = {
   isChecked: false,
+  theme: 'yellow',
   onClick: () => {},
 };
