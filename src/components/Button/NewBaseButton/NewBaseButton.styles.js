@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { white, gray100, gray120, flexCenter } from '../../../core/GlobalStyle';
+import { disable, flexCenter, primary200 } from '../../../core/GlobalStyle';
 import { THEME_COLOR } from '../../../core/GlobalStyle/theme';
 
 export const Inner = styled.div`
@@ -43,7 +43,7 @@ export const Container = styled.div`
 
   border: 1px solid ${({ theme }) => THEME_COLOR[theme].sub};
   background-color: ${({ theme }) => THEME_COLOR[theme].sub};
-  color: ${white};
+  color: ${primary200};
 
   ${({ block }) =>
     block &&
@@ -54,24 +54,24 @@ export const Container = styled.div`
   ${({ outline }) =>
     outline &&
     css`
-      background-color: ${white};
+      background-color: ${primary200};
       color: ${({ theme }) => THEME_COLOR[theme].main};
     `}
 
   ${({ disabled }) =>
     disabled &&
     css`
-      color: ${white};
-      border: 1px solid ${gray120};
-      background-color: ${gray120};
+      color: ${primary200};
+      border: 1px solid ${disable};
+      background-color: ${disable};
     `};
 
   ${({ disabled, outline }) =>
     disabled &&
     outline &&
     css`
-      border-color: ${gray100};
-      color: ${gray120};
-      background-color: ${white};
+      border-color: ${disable};
+      color: ${disable};
+      background-color: ${primary200};
     `}
 `;
