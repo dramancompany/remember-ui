@@ -1,4 +1,9 @@
-import React, { MouseEventHandler, ReactNode, RefObject } from 'react';
+import React, {
+  ChangeEvent,
+  MouseEventHandler,
+  ReactNode,
+  RefObject,
+} from 'react';
 import {
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
@@ -438,10 +443,16 @@ declare module 'remember-ui' {
   export const Pagination: React.FC<PaginationProps>;
   export const DcNewPagination: typeof Pagination;
 
+  enum RadioTheme {
+    YELLOW = 'yellow',
+    BLACK = 'black',
+  }
+
   export interface RadioProps {
     isChecked: boolean;
     onClick?: Function;
     className?: string;
+    theme: RadioTheme;
   }
 
   export const Radio: React.FC<RadioProps>;
@@ -507,7 +518,7 @@ declare module 'remember-ui' {
 
   export interface MaskingInputProps {
     type?: string;
-    name: stirng;
+    name: string;
     value: string | null | undefined;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     mask: (string | RegExp)[];
