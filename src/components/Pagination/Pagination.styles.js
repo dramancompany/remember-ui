@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 
 import {
-  contents00,
+  contents000,
   flexCenter,
   font,
   mobileOnly,
-  primary02,
-  contents03,
+  primary200,
+  contents300,
   gray150,
 } from '../../core/GlobalStyle';
 
@@ -23,7 +23,7 @@ export const List = styled.li``;
 
 export const Button = styled.div`
   ${flexCenter}
-  ${font({ size: '14px', color: contents00, weight: 'normal' })}
+  ${font({ size: '14px', color: contents000, weight: 'normal' })}
 
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}px` : '0px')};
   margin-right: ${({ marginRight }) =>
@@ -39,9 +39,9 @@ export const Button = styled.div`
   ${({ selected }) =>
     selected &&
     css`
-      border: solid 1px ${contents03};
+      border: solid 1px ${contents300};
       border-radius: 4px;
-      background-color: ${primary02};
+      background-color: ${primary200};
     `}
 
   box-sizing: border-box;

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
