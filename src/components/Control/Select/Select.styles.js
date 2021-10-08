@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import {
   textSmall,
   font,
-  gray200,
+  contents100,
   gray100,
   white,
   text,
@@ -20,7 +20,8 @@ export const Container = styled.div`
 `;
 
 export const Label = styled.div`
-  ${textSmall({ color: gray200 })}
+  ${textSmall({ color: contents100 })};
+
   display: flex;
   align-items: center;
   margin-bottom: ${({ marginBottom }) =>
@@ -38,7 +39,7 @@ Label.Mark = styled.img`
 `;
 
 export const Selected = styled.div`
-  ${font({ size: '15px', color: text })}
+  ${font({ size: '15px', color: text })};
 
   display: flex;
   justify-content: space-between;
@@ -155,7 +156,7 @@ export const OptionItem = styled.div`
       opacity: 0.3;
     `}
 
-  
+
   ${mobileOnly(css`
     ${font({ size: '13px', color: text })};
     height: 36px;

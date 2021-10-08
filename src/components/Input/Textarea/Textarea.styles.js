@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { requiredIcon } from '../../../assets';
 
 import {
-  gray,
+  contents100,
   gray100,
   gray150,
   gray400,
@@ -22,13 +22,13 @@ export const Container = styled.div``;
 
 export const Label = styled.div`
   ${flexCenterY}
-  ${textSmall({ color: gray })};
+  ${textSmall({ color: contents100 })};
 
   margin-bottom: 8px;
   min-height: 20px;
 
   ${mobileOnly(css`
-    ${mobileSubTitle13({ color: gray, weight: 'normal' })};
+    ${mobileSubTitle13({ color: contents100, weight: 'normal' })};
   `)};
 `;
 

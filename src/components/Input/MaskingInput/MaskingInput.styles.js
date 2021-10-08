@@ -4,7 +4,7 @@ import MaskedInput from 'react-text-mask';
 import {
   gray100,
   gray150,
-  gray200,
+  contents100,
   gray400,
   red100,
   font,
@@ -17,7 +17,7 @@ import {
 export const Container = styled.div``;
 
 export const Label = styled.div`
-  ${textSmall({ color: gray200 })};
+  ${textSmall({ color: contents100 })};
 
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@ export const Label = styled.div`
   min-height: 20px;
 
   ${mobileOnly(css`
-    ${mobileSubTitle13({ color: gray200, weight: 'normal' })};
+    ${mobileSubTitle13({ color: contents100, weight: 'normal' })};
   `)};
 `;
 
