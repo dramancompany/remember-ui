@@ -442,17 +442,11 @@ declare module 'remember-ui' {
 
   export const Pagination: React.FC<PaginationProps>;
   export const DcNewPagination: typeof Pagination;
-
-  enum RadioTheme {
-    YELLOW = 'yellow',
-    BLACK = 'black',
-  }
-
   export interface RadioProps {
     isChecked: boolean;
     onClick?: Function;
     className?: string;
-    theme: RadioTheme;
+    theme: 'yellow' | 'black';
   }
 
   export const Radio: React.FC<RadioProps>;
