@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Content, Message, Buttons, CancelButton } from './MessageModal.styles';
+import { Content, Body, Buttons, CancelButton } from './MessageModal.styles';
 import { NewBaseButton } from '../../Button';
 import { BaseModal } from '../BaseModal';
 
@@ -16,7 +16,7 @@ export const MessageModal = ({
   return (
     <BaseModal isOpen={isOpen}>
       <Content>
-        <Message>{children}</Message>
+        <Body>{children}</Body>
         <Buttons>
           {onConfirm && (
             <CancelButton
