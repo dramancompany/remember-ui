@@ -61,8 +61,8 @@ declare module 'remember-ui' {
   export const background100: string;
   export const background200: string;
   export const background300: string;
-  export const backgroundAccent01: string;
-  export const backgroundNew01: string;
+  export const backgroundAccent100: string;
+  export const backgroundNew100: string;
 
   export const mobileSizeBreak: string;
   export const mobileSmallSizeBreak: string;
