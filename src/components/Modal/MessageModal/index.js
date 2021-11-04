@@ -12,6 +12,7 @@ export const MessageModal = ({
   onClose,
   confirmText,
   cancelText,
+  isLoading = false,
 }) => {
   return (
     <BaseModal isOpen={isOpen}>
@@ -44,6 +45,7 @@ export const MessageModal = ({
             theme="primary"
             size={onConfirm === undefined ? 'xlarge' : 'large'}
             block
+            isLoading={isLoading}
           >
             {confirmText || '확인'}
           </NewBaseButton>

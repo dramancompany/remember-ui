@@ -488,6 +488,7 @@ declare module 'remember-ui' {
     onClose: () => void;
     confirmText?: string;
     cancelText?: string;
+    isLoading?: boolean;
   }
 
   export const MessageModal: React.FC<MessageModalProps>;
