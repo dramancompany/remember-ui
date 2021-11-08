@@ -22,7 +22,7 @@ NewBaseButton.defaultProps = {
   disabled: false,
   isLoading: false,
   block: false,
-  theme: 'primary',
+  theme: 'yellow',
   size: 'small',
   className: '',
   onClick: () => {},

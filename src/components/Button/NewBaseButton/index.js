@@ -22,6 +22,14 @@ export const NewBaseButton = ({
     onClick(e);
   };
 
+  const spinnerTheme = () => {
+    console.log(theme, outline);
+    if (theme === 'primary' && outline) return 'gray';
+    if (theme === 'primary') return 'white';
+
+    return 'gray';
+  };
+
   return (
     <Container
       className={className}
@@ -36,7 +44,14 @@ export const NewBaseButton = ({
     >
       <Inner size={size}>
         {!isLoading && children}
-        {isLoading && <Spinner width={18} height={18} borderWeight={3} />}
+        {isLoading && (
+          <Spinner
+            width={18}
+            height={18}
+            borderWeight={3}
+            theme={spinnerTheme()}
+          />
+        )}
       </Inner>
     </Container>
   );
