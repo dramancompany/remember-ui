@@ -23,7 +23,6 @@ export const NewBaseButton = ({
   };
 
   const spinnerTheme = () => {
-    console.log(theme, outline);
     if (theme === 'primary' && outline) return 'gray';
     if (theme === 'primary') return 'white';
 
