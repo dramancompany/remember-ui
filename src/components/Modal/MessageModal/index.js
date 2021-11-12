@@ -27,7 +27,7 @@ export const MessageModal = ({
                 }
                 onClose();
               }}
-              theme="primary"
+              theme="light"
               outline
               size="large"
               block
