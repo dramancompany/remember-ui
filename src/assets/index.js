@@ -9,6 +9,8 @@ export { default as checkboxRoundOff } from './icons/checkbox-round-off.svg';
 export { default as radioChecked } from './icons/radio-checked.png';
 export { default as radioUnchecked } from './icons/radio-unchecked.png';
 export { default as radioHovered } from './icons/radio-hovered.png';
+export { default as radioBlackChecked } from './icons/control_radio_on.svg';
+export { default as radioBlackUnchecked } from './icons/control_radio_off.svg';
 
 export { default as helpIcon } from './icons/icon-help.png';
 export { default as plusIcon } from './icons/icon-plus.png';

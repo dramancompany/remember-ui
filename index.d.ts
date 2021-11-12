@@ -1,4 +1,9 @@
-import React, { MouseEventHandler, ReactNode, RefObject } from 'react';
+import React, {
+  ChangeEvent,
+  MouseEventHandler,
+  ReactNode,
+  RefObject,
+} from 'react';
 import {
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
@@ -40,20 +45,24 @@ declare module 'remember-ui' {
   export const borderColor: string;
   export const gray: string;
 
-  export const primary01: string;
-  export const primary02: string;
-  export const secondary01: string;
-  export const contents00: string;
-  export const contents01: string;
-  export const contents02: string;
-  export const contents03: string;
+  export const primary100: string;
+  export const primary200: string;
+  export const secondary100: string;
+  export const contents000: string;
+  export const contents100: string;
+  export const contents150: string;
+  export const contents200: string;
+  export const contents300: string;
   export const disable: string;
-  export const accent01: string;
-  export const accent02: string;
-  export const background01: string;
-  export const background02: string;
-  export const background03: string;
-  export const backgroundAccent01: string;
+  export const disableAccent100: string;
+  export const disableAccent200: string;
+  export const accent100: string;
+  export const accent200: string;
+  export const background100: string;
+  export const background200: string;
+  export const background300: string;
+  export const backgroundAccent100: string;
+  export const backgroundNew100: string;
 
   export const mobileSizeBreak: string;
   export const mobileSmallSizeBreak: string;
@@ -433,11 +442,11 @@ declare module 'remember-ui' {
 
   export const Pagination: React.FC<PaginationProps>;
   export const DcNewPagination: typeof Pagination;
-
   export interface RadioProps {
     isChecked: boolean;
     onClick?: Function;
     className?: string;
+    theme: 'yellow' | 'black';
   }
 
   export const Radio: React.FC<RadioProps>;
@@ -479,6 +488,7 @@ declare module 'remember-ui' {
     onClose: () => void;
     confirmText?: string;
     cancelText?: string;
+    isLoading?: boolean;
   }
 
   export const MessageModal: React.FC<MessageModalProps>;
@@ -503,7 +513,7 @@ declare module 'remember-ui' {
 
   export interface MaskingInputProps {
     type?: string;
-    name: stirng;
+    name: string;
     value: string | null | undefined;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     mask: (string | RegExp)[];

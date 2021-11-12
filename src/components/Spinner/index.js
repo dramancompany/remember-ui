@@ -6,6 +6,7 @@ export const Spinner = ({
   width = 32,
   height = 32,
   borderWeight = 5,
+  theme = 'gray',
   className,
 }) => (
   <Container
@@ -13,5 +14,6 @@ export const Spinner = ({
     width={width}
     height={height}
     borderWeight={borderWeight}
+    theme={theme}
   />
 );

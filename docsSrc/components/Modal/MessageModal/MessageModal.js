@@ -18,6 +18,7 @@ MessageModal.propTypes = {
   onClose: t.func,
   confirmText: t.string,
   cancelText: t.string,
+  isLoading: t.oneOf([false, true]),
 };
 
 MessageModal.defaultProps = {

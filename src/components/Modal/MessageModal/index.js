@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Content, Message, Buttons, CancelButton } from './MessageModal.styles';
+import { Content, Body, Buttons, CancelButton } from './MessageModal.styles';
 import { NewBaseButton } from '../../Button';
 import { BaseModal } from '../BaseModal';
 
@@ -12,11 +12,12 @@ export const MessageModal = ({
   onClose,
   confirmText,
   cancelText,
+  isLoading = false,
 }) => {
   return (
     <BaseModal isOpen={isOpen}>
       <Content>
-        <Message>{children}</Message>
+        <Body>{children}</Body>
         <Buttons>
           {onConfirm && (
             <CancelButton
@@ -44,6 +45,7 @@ export const MessageModal = ({
             theme="primary"
             size={onConfirm === undefined ? 'xlarge' : 'large'}
             block
+            isLoading={isLoading}
           >
             {confirmText || '확인'}
           </NewBaseButton>

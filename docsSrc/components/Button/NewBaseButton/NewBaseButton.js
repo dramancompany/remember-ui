@@ -11,7 +11,7 @@ NewBaseButton.propTypes = {
   disabled: t.bool,
   isLoading: t.bool,
   block: t.bool,
-  theme: t.oneOf(['yellow', 'gray', 'red', 'blue', 'light']),
+  theme: t.oneOf(['yellow', 'gray', 'red', 'blue', 'light', 'primary']),
   size: t.oneOf(['small', 'medium', 'large', 'xlarge']),
   className: t.string,
   onClick: t.func,

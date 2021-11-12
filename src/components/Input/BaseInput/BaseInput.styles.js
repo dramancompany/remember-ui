@@ -7,17 +7,17 @@ import {
   gray50,
   gray100,
   gray150,
-  gray200,
   gray400,
   red100,
   mobileOnly,
   mobileSubTitle13,
+  contents100,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div``;
 
 export const Label = styled.div`
-  ${textSmall({ color: gray200 })};
+  ${textSmall({ color: contents100 })};
 
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@ export const Label = styled.div`
   min-height: 20px;
 
   ${mobileOnly(css`
-    ${mobileSubTitle13({ color: gray200, weight: 'normal' })};
+    ${mobileSubTitle13({ color: contents100, weight: 'normal' })};
   `)};
 `;
 
@@ -47,7 +47,7 @@ export const ErrorMessage = styled.div`
 export const Input = styled.input`
   ${font({ size: '15px', color: gray400 })}
   ${placeholderColor(gray150)}
-  
+
   height: 44px;
   width: 100%;
   border-radius: 4px;

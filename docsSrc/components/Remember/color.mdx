@@ -7,22 +7,24 @@ import { Playground } from 'docz';
 
 import { ColorItem } from './ColorItem';
 import {
-  primary01,
-  primary02,
-  secondary01,
-  contents00,
-  contents01,
-  contents02,
-  contents03,
-  contents04,
-  contents05,
+  primary100,
+  primary200,
+  secondary100,
+  contents000,
+  contents100,
+  contents150,
+  contents200,
+  contents300,
   disable,
-  accent01,
-  accent02,
-  background01,
-  background02,
-  background03,
-  backgroundAccent01,
+  disableAccent100,
+  disableAccent200,
+  accent100,
+  accent200,
+  background100,
+  background200,
+  background300,
+  backgroundAccent100,
+  backgroundNew100,
 } from 'remember-ui';
 
 # Colors
@@ -31,13 +33,13 @@ import {
 
 <Playground>
   <ColorItem
-    colorName="primary01"
-    backgroundColor={primary01}
+    colorName="primary100"
+    backgroundColor={primary100}
     invertTextColor
   />
   <ColorItem
-    colorName="primary02"
-    backgroundColor={primary02}
+    colorName="primary200"
+    backgroundColor={primary200}
     invertTextColor
   />
 </Playground>
@@ -45,30 +47,35 @@ import {
 ## Secondary
 
 <Playground>
-  <ColorItem colorName="secondary01" backgroundColor={secondary01} />
+  <ColorItem colorName="secondary100" backgroundColor={secondary100} />
 </Playground>
 
 ## Contents
 
 <Playground>
   <ColorItem
-    colorName="contents00"
-    backgroundColor={contents00}
+    colorName="contents000"
+    backgroundColor={contents000}
     invertTextColor
   />
   <ColorItem
-    colorName="contents01"
-    backgroundColor={contents01}
+    colorName="contents100"
+    backgroundColor={contents100}
     invertTextColor
   />
   <ColorItem
-    colorName="contents02"
-    backgroundColor={contents02}
+    colorName="contents150"
+    backgroundColor={contents150}
     invertTextColor
   />
   <ColorItem
-    colorName="contents03"
-    backgroundColor={contents03}
+    colorName="contents200"
+    backgroundColor={contents200}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="contents300"
+    backgroundColor={contents300}
     invertTextColor
   />
 </Playground>
@@ -77,36 +84,59 @@ import {
 
 <Playground>
   <ColorItem colorName="disable" backgroundColor={disable} invertTextColor />
+  <ColorItem
+    colorName="disableAccent100"
+    backgroundColor={disableAccent100}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="disableAccent200"
+    backgroundColor={disableAccent200}
+    invertTextColor
+  />
 </Playground>
 
 ## Accent
 
 <Playground>
-  <ColorItem colorName="accent01" backgroundColor={accent01} invertTextColor />
-  <ColorItem colorName="accent02" backgroundColor={accent02} invertTextColor />
+  <ColorItem
+    colorName="accent100"
+    backgroundColor={accent100}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="accent200"
+    backgroundColor={accent200}
+    invertTextColor
+  />
 </Playground>
 
 ## Background
 
 <Playground>
   <ColorItem
-    colorName="background01"
-    backgroundColor={background01}
+    colorName="background100"
+    backgroundColor={background100}
     invertTextColor
   />
   <ColorItem
-    colorName="background02"
-    backgroundColor={background02}
+    colorName="background200"
+    backgroundColor={background200}
     invertTextColor
   />
   <ColorItem
-    colorName="background03"
-    backgroundColor={background03}
+    colorName="background300"
+    backgroundColor={background300}
     invertTextColor
   />
   <ColorItem
-    colorName="backgroundAccent01"
-    backgroundColor={backgroundAccent01}
+    colorName="backgroundAccent100"
+    backgroundColor={backgroundAccent100}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="backgroundNew100"
+    backgroundColor={backgroundNew100}
     invertTextColor
   />
 </Playground>
