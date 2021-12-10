@@ -35,8 +35,8 @@ export const Tooltip = styled(Tippy)`
     text-align: center;
   }
 
-  ${({ customAnimation }) =>
-    customAnimation === 'headShake' &&
+  ${({ $customAnimation }) =>
+    $customAnimation === 'headShake' &&
     css`
       animation: ${headShake} 1s 3 ease-in-out;
     `}

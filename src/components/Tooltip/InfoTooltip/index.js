@@ -30,7 +30,7 @@ export const InfoTooltip = ({
       zIndex={200}
       theme="dcblue"
       placement="bottom-center"
-      customAnimation={customAnimation}
+      $customAnimation={customAnimation}
       onShow={onShow}
     >
       <div onClick={onClick}>{children}</div>

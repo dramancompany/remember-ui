@@ -42,8 +42,8 @@ export const BaseTooltip = ({
     offset={offset}
     placement={placement}
     arrow={arrow}
-    textAlign={textAlign}
-    size={size}
+    $textAlign={textAlign}
+    $size={size}
     popperOptions={{
       modifiers: {
         preventOverflow: {

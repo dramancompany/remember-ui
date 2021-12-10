@@ -17,7 +17,7 @@ export const BasePopover = ({
 }) => {
   const [instance, setInstance] = useState(undefined);
 
-  if (disabled) return <>{children}</>;
+  if (disabled) return <React.Fragment>{children}</React.Fragment>;
 
   return (
     <Popover
@@ -34,7 +34,7 @@ export const BasePopover = ({
       content={
         <div
           className={`${className}-popover-inner-wrapper`}
-          onClick={e => {
+          onClick={(e) => {
             e.preventDefault();
             instance && instance.hide();
           }}
@@ -48,9 +48,9 @@ export const BasePopover = ({
         e.preventDefault();
       }}
       hideOnClick={!!trigger.includes('click')}
-      onMount={inst => setInstance(inst)}
+      onMount={(inst) => setInstance(inst)}
       arrow={false}
-      size={size}
+      $size={size}
       onShow={() => {
         onPopoverOpenChange(true);
         onOpen();
