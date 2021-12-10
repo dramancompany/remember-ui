@@ -262,7 +262,7 @@ declare module 'remember-ui' {
     className?: string;
     disabled?: boolean;
     onClick?: Function;
-    theme?: 'yellow' | 'gray' | 'red' | 'blue' | 'light' | 'primary';
+    theme?: 'yellow' | 'red' | 'blue' | 'gray' | 'light' | 'primary';
     outline?: boolean;
     size?: 'small' | 'medium' | 'large' | 'xlarge';
     isLoading?: boolean;
