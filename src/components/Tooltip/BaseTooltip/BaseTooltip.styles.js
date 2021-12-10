@@ -11,9 +11,9 @@ export const Tooltip = styled(Tippy)`
   border-radius: ${({ $size = 'small' }) => ($size ? '2px' : '6px')} !important;
 
   .tippy-content {
-    text-align: ${({ _textAlign }) => _textAlign};
-    ${({ _size = 'small' }) =>
-      _size === 'small'
+    text-align: ${({ $textAlign }) => _textAlign};
+    ${({ $size = 'small' }) =>
+      $size === 'small'
         ? css`
             border-radius: 2px;
             font-size: 12px;
