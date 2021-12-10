@@ -53,6 +53,7 @@ export const background100 = '#ffffff';
 export const background200 = '#f5f5f5';
 export const background300 = '#ebebeb';
 export const backgroundAccent100 = '#faece8';
+export const backgroundAccent200 = '#eaf0fe';
 export const backgroundNew100 = '#fff9e5';
 
 export const mobileSizeBreak = '768px';
