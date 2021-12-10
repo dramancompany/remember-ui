@@ -422,11 +422,11 @@ declare module 'remember-ui' {
     onClick?: Function;
     content: ReactNode;
     iconStyle?: object;
-    size?: string;
-    type?: string;
-    theme?: string;
-    placement?: string;
-    textAlign?: string;
+    size?: 'small' | 'medium';
+    type?: 'help' | 'plus' | 'more';
+    theme?: 'dclight' | 'dcdark' | 'dcblue';
+    placement?: 'bottom' | 'top' | 'right' | 'left';
+    textAlign?: 'center' | 'left' | 'right';
     className?: string;
   }
   export const BaseTooltip: React.FC<BaseTooltipProps>;
