@@ -50,7 +50,7 @@ export const BasePopover = ({
       hideOnClick={!!trigger.includes('click')}
       onMount={(inst) => setInstance(inst)}
       arrow={false}
-      _size={size}
+      $size={size}
       onShow={() => {
         onPopoverOpenChange(true);
         onOpen();
