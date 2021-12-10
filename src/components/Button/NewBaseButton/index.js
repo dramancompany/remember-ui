@@ -8,7 +8,7 @@ export const NewBaseButton = ({
   className = '',
   disabled = false,
   onClick = () => {},
-  theme = 'yellow',
+  theme = 'primary',
   outline = false,
   size = 'small',
   isLoading = false,
