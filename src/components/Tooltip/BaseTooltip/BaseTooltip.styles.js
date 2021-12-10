@@ -8,7 +8,7 @@ export const Icon = styled.img`
 `;
 
 export const Tooltip = styled(Tippy)`
-  border-radius: ${({ _size = 'small' }) => (_size ? '2px' : '6px')} !important;
+  border-radius: ${({ $size = 'small' }) => ($size ? '2px' : '6px')} !important;
 
   .tippy-content {
     text-align: ${({ _textAlign }) => _textAlign};
