@@ -262,9 +262,9 @@ declare module 'remember-ui' {
     className?: string;
     disabled?: boolean;
     onClick?: Function;
-    theme?: string;
+    theme?: 'yellow' | 'gray' | 'red' | 'blue' | 'light' | 'primary';
     outline?: boolean;
-    size?: string;
+    size?: 'small' | 'medium' | 'large' | 'xlarge';
     isLoading?: boolean;
     block?: boolean;
     children: React.ReactChild | React.ReactChildren;
