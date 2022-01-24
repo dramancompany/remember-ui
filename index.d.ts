@@ -263,9 +263,9 @@ declare module 'remember-ui' {
     className?: string;
     disabled?: boolean;
     onClick?: Function;
-    theme?: string;
+    theme?: 'yellow' | 'red' | 'blue' | 'gray' | 'light' | 'primary';
     outline?: boolean;
-    size?: string;
+    size?: 'small' | 'medium' | 'large' | 'xlarge';
     isLoading?: boolean;
     block?: boolean;
     children: React.ReactChild | React.ReactChildren;
@@ -423,11 +423,11 @@ declare module 'remember-ui' {
     onClick?: Function;
     content: ReactNode;
     iconStyle?: object;
-    size?: string;
-    type?: string;
-    theme?: string;
-    placement?: string;
-    textAlign?: string;
+    size?: 'small' | 'medium';
+    type?: 'help' | 'plus' | 'more';
+    theme?: 'dclight' | 'dcdark' | 'dcblue';
+    placement?: 'bottom' | 'top' | 'right' | 'left';
+    textAlign?: 'center' | 'left' | 'right';
     className?: string;
   }
   export const BaseTooltip: React.FC<BaseTooltipProps>;
