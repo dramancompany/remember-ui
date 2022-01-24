@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { gray100, yellow100, white } from '../../../core/GlobalStyle';
+import { gray100, white } from '../../../core/GlobalStyle';
 
 export const Container = styled.div`
   display: inline-flex;
@@ -25,7 +25,7 @@ export const Label = styled.label`
   cursor: pointer;
   width: ${({ size }) => (size === 'small' ? 36 : 64)}px;
   height: ${({ size }) => (size === 'small' ? 20 : 36)}px;
-  background: ${({ checked }) => (checked ? yellow100 : gray100)};
+  background: ${({ checked, color }) => (checked ? color : gray100)};
   border-radius: ${({ size }) => (size === 'small' ? 10 : 20)}px;
   position: relative;
   transition: background-color 0.2s;
