@@ -5,7 +5,7 @@ menu: Components/Control
 
 import { Playground, Props } from 'docz';
 import { Switch } from './Switch';
-import { DoczContainer } from 'remember-ui';
+import { DoczContainer, primary100 } from 'remember-ui';
 
 # Switch
 
@@ -29,6 +29,21 @@ import { DoczContainer } from 'remember-ui';
           <DoczContainer direction="column">
             <div>large</div>
             <Switch checked={isChecked} onClick={toggle} size="large" />
+          </DoczContainer>
+        </DoczContainer>
+        <DoczContainer direction="row">
+          <DoczContainer direction="column">
+            <div>small black</div>
+            <Switch checked={isChecked} onClick={toggle} color={primary100} />
+          </DoczContainer>
+          <DoczContainer direction="column">
+            <div>large black</div>
+            <Switch
+              checked={isChecked}
+              onClick={toggle}
+              size="large"
+              color={primary100}
+            />
           </DoczContainer>
         </DoczContainer>
       </>
