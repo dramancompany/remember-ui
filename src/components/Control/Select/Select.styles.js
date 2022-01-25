@@ -3,16 +3,16 @@ import styled, { css } from 'styled-components';
 import {
   textSmall,
   font,
+  contents000,
   contents100,
-  gray100,
-  white,
-  text,
-  gray50,
-  gray150,
+  contents200,
+  contents300,
+  primary200,
+  background200,
   yellow100,
-  red100,
   mobileOnly,
   textEllipsis,
+  accent100,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div`
@@ -39,7 +39,7 @@ Label.Mark = styled.img`
 `;
 
 export const Selected = styled.div`
-  ${font({ size: '15px', color: text })};
+  ${font({ size: '15px', color: contents000 })};
 
   display: flex;
   justify-content: space-between;
@@ -54,7 +54,7 @@ export const Selected = styled.div`
   cursor: pointer;
 
   ${mobileOnly(css`
-    ${font({ size: '13px', color: text })};
+    ${font({ size: '13px', color: contents000 })};
     height: 36px;
     padding: 11px 10px;
   `)};
@@ -62,43 +62,44 @@ export const Selected = styled.div`
 
 Selected.Text = styled.div`
   ${textEllipsis};
+
   width: 95%;
 `;
 
 Selected.Unselected = styled.span`
-  color: ${gray150};
+  color: ${contents200};
 `;
 
 export const Content = styled.div`
   border-radius: 4px;
-  border: 1px solid ${gray100};
-  background-color: ${white};
+  border: 1px solid ${contents300};
+  background-color: ${primary200};
 
   ${({ error }) =>
     error &&
     css`
-      border-color: ${red100};
+      border-color: ${accent100};
     `}
 
   ${({ active }) =>
     active &&
     css`
       border-radius: 0;
-      border-left: 1px solid ${gray100};
-      border-right: 1px solid ${gray100};
-      border-top: 1px solid ${gray100};
+      border-left: 1px solid ${contents300};
+      border-right: 1px solid ${contents300};
+      border-top: 1px solid ${contents300};
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
-      height: 44px;
+      height: 42px;
     `}
 
   ${({ isFixed }) =>
     isFixed &&
     css`
-      background-color: ${gray50};
+      background-color: ${background200};
 
       ${Selected} {
-        color: ${gray150};
+        color: ${contents200};
         cursor: default;
       }
     `}
@@ -113,8 +114,8 @@ export const Options = styled.div`
     css`
       position: absolute;
       width: 100%;
-      background-color: ${white};
-      border: 1px solid ${gray100};
+      background-color: ${primary200};
+      border: 1px solid ${contents300};
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
       right: 0px;
@@ -125,13 +126,13 @@ export const Options = styled.div`
 `;
 
 export const OptionItem = styled.div`
+  ${font({ size: '15px', color: contents000 })};
+
   box-sizing: border-box;
-  height: 44px;
+  height: 42px;
   padding: 11px 12px;
   display: flex;
   align-items: center;
-  ${font({ size: '15px', color: text })}
-
   overflow-x: hidden;
   overflow-y: hidden;
   text-overflow: ellipsis;
@@ -139,13 +140,13 @@ export const OptionItem = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: #f9f9f9;
+    background-color: ${background200};
   }
 
   ${({ selected }) =>
     selected &&
     css`
-      background-color: #f9f9f9;
+      background-color: ${background200};
     `}
   ${({ custom }) =>
     custom && font({ size: '15px', weight: 'bold', color: yellow100 })}
@@ -158,7 +159,8 @@ export const OptionItem = styled.div`
 
 
   ${mobileOnly(css`
-    ${font({ size: '13px', color: text })};
+    ${font({ size: '13px', color: contents000 })};
+
     height: 36px;
     padding: 11px 10px;
   `)};
@@ -170,7 +172,7 @@ OptionItem.Text = styled.div`
 `;
 
 export const Message = styled.div`
-  ${font({ size: '13px', color: red100 })};
+  ${font({ size: '13px', color: accent100 })};
 
   min-height: 19px;
   margin-top: 4px;
