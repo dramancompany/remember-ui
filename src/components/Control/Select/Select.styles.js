@@ -7,7 +7,7 @@ import {
   contents100,
   contents200,
   contents300,
-  primary200,
+  contents999,
   background200,
   yellow100,
   mobileOnly,
@@ -73,7 +73,7 @@ Selected.Unselected = styled.span`
 export const Content = styled.div`
   border-radius: 4px;
   border: 1px solid ${contents300};
-  background-color: ${primary200};
+  background-color: ${contents999};
 
   ${({ error }) =>
     error &&
@@ -114,7 +114,7 @@ export const Options = styled.div`
     css`
       position: absolute;
       width: 100%;
-      background-color: ${primary200};
+      background-color: ${contents999};
       border: 1px solid ${contents300};
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;

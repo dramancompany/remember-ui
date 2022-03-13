@@ -34,16 +34,17 @@ export const white = '#ffffff';
 export const text = gray400;
 export const borderColor = gray120;
 export const gray = gray200;
-
-// new colors
 export const primary100 = '#212322';
 export const primary200 = '#ffffff';
 export const secondary100 = '#e0a526';
+
+// new colors
 export const contents000 = '#212322';
 export const contents100 = '#646464';
 export const contents150 = '#8c8c8c';
 export const contents200 = '#aeaeae';
 export const contents300 = '#cccccc';
+export const contents999 = '#ffffff';
 export const disable = '#c7c7cd';
 export const disableAccent100 = '#ffbca6';
 export const disableAccent200 = '#a6c4ff';

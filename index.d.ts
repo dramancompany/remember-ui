@@ -11,6 +11,7 @@ import {
 
 declare module 'remember-ui' {
   // variables
+  // TODO: deprecated 타입 분리
   export const gray10: string;
   export const gray50: string;
   export const gray70: string;
