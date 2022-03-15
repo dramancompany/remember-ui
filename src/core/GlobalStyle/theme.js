@@ -1,17 +1,16 @@
 import {
-  secondary100,
   accent100,
   contents100,
   contents300,
   accent200,
-  primary100,
+  contents000,
   disable,
 } from './variable';
 
 const THEME_COLOR = {
   yellow: {
-    main: secondary100,
-    sub: secondary100,
+    main: '#E0A526',
+    sub: '#E0A526',
   },
   red: {
     main: accent100,
@@ -22,7 +21,7 @@ const THEME_COLOR = {
     sub: contents100,
   },
   light: {
-    main: primary100,
+    main: contents000,
     sub: contents300,
   },
   blue: {
@@ -30,8 +29,8 @@ const THEME_COLOR = {
     sub: accent200,
   },
   primary: {
-    main: primary100,
-    sub: primary100,
+    main: contents000,
+    sub: contents000,
   },
   disable: {
     main: disable,

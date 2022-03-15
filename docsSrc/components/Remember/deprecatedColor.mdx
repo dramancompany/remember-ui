@@ -42,6 +42,9 @@ import {
   text,
   borderColor,
   gray,
+  primary100,
+  primary200,
+  secondary100,
 } from 'remember-ui';
 
 # Deprecated Colors
@@ -104,6 +107,36 @@ import {
   <ColorItem
     colorName="borderColor"
     backgroundColor={borderColor}
+    invertTextColor
+  />
+</Playground>
+
+## [Deprecated] Primary Scale
+
+- 기존 Primary 색상은 리멤버 브랜딩 색상으로 대체되어 CI에만 사용되며, 서비스에서는 Contents 색상을 사용합니다.
+- `primary100` -> `contents000`으로, `primary200` -> `contents999`로 대체하여 사용합니다.
+
+<Playground>
+  <ColorItem
+    colorName="primary100"
+    backgroundColor={primary100}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="primary200"
+    backgroundColor={primary200}
+    invertTextColor
+  />
+</Playground>
+
+## [Deprecated] Secondary Scale
+
+- Secondary는 사용하지 않으며, 기존 `secondary100` 색상은 hex 코드(`e0a526`)를 직접 사용합니다.
+
+<Playground>
+  <ColorItem
+    colorName="secondary100"
+    backgroundColor={secondary100}
     invertTextColor
   />
 </Playground>
