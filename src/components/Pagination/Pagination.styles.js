@@ -5,7 +5,7 @@ import {
   flexCenter,
   font,
   mobileOnly,
-  primary200,
+  contents999,
   contents300,
   gray150,
 } from '../../core/GlobalStyle';
@@ -41,7 +41,7 @@ export const Button = styled.div`
     css`
       border: solid 1px ${contents300};
       border-radius: 4px;
-      background-color: ${primary200};
+      background-color: ${contents999};
     `}
 
   box-sizing: border-box;

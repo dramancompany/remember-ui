@@ -7,14 +7,12 @@ import { Playground } from 'docz';
 
 import { ColorItem } from './ColorItem';
 import {
-  primary100,
-  primary200,
-  secondary100,
   contents000,
   contents100,
   contents150,
   contents200,
   contents300,
+  contents999,
   disable,
   disableAccent100,
   disableAccent200,
@@ -29,27 +27,6 @@ import {
 } from 'remember-ui';
 
 # Colors
-
-## Primary
-
-<Playground>
-  <ColorItem
-    colorName="primary100"
-    backgroundColor={primary100}
-    invertTextColor
-  />
-  <ColorItem
-    colorName="primary200"
-    backgroundColor={primary200}
-    invertTextColor
-  />
-</Playground>
-
-## Secondary
-
-<Playground>
-  <ColorItem colorName="secondary100" backgroundColor={secondary100} />
-</Playground>
 
 ## Contents
 
@@ -77,6 +54,11 @@ import {
   <ColorItem
     colorName="contents300"
     backgroundColor={contents300}
+    invertTextColor
+  />
+  <ColorItem
+    colorName="contents999"
+    backgroundColor={contents999}
     invertTextColor
   />
 </Playground>
