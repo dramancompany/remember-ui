@@ -175,13 +175,13 @@ export const body1_M = ({ weight, color, opacity, ...rest }) => css`
 `;
 
 /**
- * @description size 12px / lineHeight 19px / weight 700
+ * @description size 12px / lineHeight 19px / weight 600
  */
 export const body2_B = ({ weight, color, opacity, ...rest }) => css`
   ${font({
     size: '12px',
     lineHeight: '19px',
-    weight: 700,
+    weight: 600,
     color: contents000,
     opacity,
     ...rest,
