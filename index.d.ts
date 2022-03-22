@@ -104,39 +104,68 @@ declare module 'remember-ui' {
 
   export const font: (params: FontParams) => FlattenSimpleInterpolation;
 
-  export interface TypograhyParams {
+  export interface TypographyParams {
     weight?: string;
     color?: string;
     opacity?: number;
     rest?: any;
   }
 
+  export const headline2_B: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+  export const headline3_B: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+  export const headline4_B: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+  export const headline4_M: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+  export const body1_B: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+  export const body1_M: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+  export const body2_B: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+  export const body2_M: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+  export const caption_B: (
+    params: TypographyParams
+  ) => FlattenSimpleInterpolation;
+
+  // deprecated
   export const textExtraSmall: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   export const textSmall: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   export const textMedium: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   export const textLarge: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   export const textExtraLarge: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   export const textDoubleExtraLarge: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   export const textTripleExtraLarge: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   export type ScreenSizeFunction = (

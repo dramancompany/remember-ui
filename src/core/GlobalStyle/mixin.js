@@ -4,6 +4,7 @@ import {
   mobileSizeBreak,
   mobileSmallSizeBreak,
   landingMobileSizeBreak,
+  contents000,
 } from './variable';
 
 /**
@@ -77,6 +78,142 @@ export const font = ({
   line-height: ${lineHeight};
 `;
 
+/**
+ * @description size 24px / lineHeight 34px / weight 600
+ */
+export const headline2_B = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '24px',
+    lineHeight: '34px',
+    weight: 600,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+/**
+ * @description size 20px / lineHeight 26px / weight 600
+ */
+export const headline3_B = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '20px',
+    lineHeight: '26px',
+    weight: 600,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+/**
+ * @description size 16px / lineHeight 26px / weight 600
+ */
+export const headline4_B = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '16px',
+    lineHeight: '26px',
+    weight: 600,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+/**
+ * @description size 16px / lineHeight 26px / weight 400
+ */
+export const headline4_M = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '16px',
+    lineHeight: '26px',
+    weight: 400,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+/**
+ * @description size 14px / lineHeight 24px / weight 600
+ */
+export const body1_B = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '14px',
+    lineHeight: '24px',
+    weight: 600,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+/**
+ * @description size 14px / lineHeight 24px / weight 400
+ */
+export const body1_M = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '14px',
+    lineHeight: '24px',
+    weight: 400,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+/**
+ * @description size 12px / lineHeight 19px / weight 700
+ */
+export const body2_B = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '12px',
+    lineHeight: '19px',
+    weight: 700,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+/**
+ * @description size 12px / lineHeight 19px / weight 400
+ */
+export const body2_M = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '12px',
+    lineHeight: '19px',
+    weight: 400,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+/**
+ * @description size 10px / lineHeight 14px / weight 600
+ */
+export const caption_B = ({ weight, color, opacity, ...rest }) => css`
+  ${font({
+    size: '10px',
+    lineHeight: '14px',
+    weight: 600,
+    color: contents000,
+    opacity,
+    ...rest,
+  })};
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+`;
+
+// Deprecated
 /**
  * @description size 12px
  */

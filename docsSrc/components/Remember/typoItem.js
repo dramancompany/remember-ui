@@ -3,109 +3,69 @@ import styled, { css } from 'styled-components';
 
 import {
   text,
-  font,
-  textExtraSmall,
-  textSmall,
-  textMedium,
-  textLarge,
-  textExtraLarge,
-  textDoubleExtraLarge,
-  textTripleExtraLarge,
-  mobileTitle,
-  mobileSubTitle16,
-  mobileSubTitle14,
-  mobileSubTitle13,
-  mobileSubTitle12,
-  mobileBody15,
-  mobileBody13,
-  mobileBody12,
-  mobileSubCaption,
+  headline2_B,
+  headline3_B,
+  headline4_B,
+  headline4_M,
+  body1_B,
+  body1_M,
+  body2_B,
+  body2_M,
+  caption_B,
 } from 'remember-ui';
 
 const Container = styled.div`
   margin: 10px 0;
   ${({ typo }) =>
-    (typo === 'textExtraSmall' &&
+    (typo === 'headline2_B' &&
       css`
-        ${textExtraSmall({ color: text })};
+        ${headline2_B({ color: text })};
       `) ||
-    (typo === 'textSmall' &&
+    (typo === 'headline3_B' &&
       css`
-        ${textSmall({ color: text })};
+        ${headline3_B({ color: text })};
       `) ||
-    (typo === 'textMedium' &&
+    (typo === 'headline4_B' &&
       css`
-        ${textMedium({ color: text })};
+        ${headline4_B({ color: text })};
       `) ||
-    (typo === 'textLarge' &&
+    (typo === 'headline4_M' &&
       css`
-        ${textLarge({ color: text })};
+        ${headline4_M({ color: text })};
       `) ||
-    (typo === 'textExtraLarge' &&
+    (typo === 'body1_B' &&
       css`
-        ${textExtraLarge({ color: text })};
+        ${body1_B({ color: text })};
       `) ||
-    (typo === 'textDoubleExtraLarge' &&
+    (typo === 'body1_M' &&
       css`
-        ${textDoubleExtraLarge({ color: text })};
+        ${body1_M({ color: text })};
       `) ||
-    (typo === 'textTripleExtraLarge' &&
+    (typo === 'body2_B' &&
       css`
-        ${textTripleExtraLarge({ color: text })};
+        ${body2_B({ color: text })};
       `) ||
-    (typo === 'mobileTitle' &&
+    (typo === 'body2_M' &&
       css`
-        ${mobileTitle({ color: text })};
+        ${body2_M({ color: text })};
       `) ||
-    (typo === 'mobileSubTitle16' &&
+    (typo === 'caption_B' &&
       css`
-        ${mobileSubTitle16({ color: text })};
-      `) ||
-    (typo === 'mobileSubTitle14' &&
-      css`
-        ${mobileSubTitle14({ color: text })};
-      `) ||
-    (typo === 'mobileSubTitle13' &&
-      css`
-        ${mobileSubTitle13({ color: text })};
-      `) ||
-    (typo === 'mobileSubTitle12' &&
-      css`
-        ${mobileSubTitle12({ color: text })};
-      `) ||
-    (typo === 'mobileBody15' &&
-      css`
-        ${mobileBody15({ color: text })};
-      `) ||
-    (typo === 'mobileBody13' &&
-      css`
-        ${mobileBody13({ color: text })};
-      `) ||
-    (typo === 'mobileBody12' &&
-      css`
-        ${mobileBody12({ color: text })};
-      `) ||
-    (typo === 'mobileSubCaption' &&
-      css`
-        ${mobileSubCaption({ color: text })};
-      `) ||
-    (typo === 'font' &&
-      css`
-        ${font({ color: text })};
+        ${caption_B({ color: text })};
       `)}
 `;
 
 export const Title = styled.div`
-  ${textTripleExtraLarge({ color: text })};
+  ${headline2_B({ color: text })};
 
   margin: 0 0 20px;
   padding: 10px 0px;
   border-bottom: 1px solid ${text};
 `;
 
-export const TypeItem = ({ typo, ...rest }) => (
+export const TypeItem = ({ typo, children, ...rest }) => (
   <Container typo={typo} {...rest}>
-    {typo}
+    {children}
   </Container>
 );
 
