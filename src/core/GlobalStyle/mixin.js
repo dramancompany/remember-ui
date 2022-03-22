@@ -8,6 +8,12 @@ import {
 } from './variable';
 
 /**
+ * {@link https://github.com/orioncactus/pretendard#html-1}
+ */
+
+const PRETENDARD_FONT_FAMILY = "Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif"
+
+/**
  * flexbox 관련 설정 믹스인
  * @param { boolean | string } horizontal: `justify-content`
  * @param { boolean | string } vertical: `align-items`
@@ -90,7 +96,7 @@ export const headline2_B = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY};
 `;
 
 /**
@@ -105,7 +111,7 @@ export const headline3_B = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY};
 `;
 
 /**
@@ -120,7 +126,7 @@ export const headline4_B = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY};
 `;
 
 /**
@@ -135,7 +141,7 @@ export const headline4_M = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY};
 `;
 
 /**
@@ -150,7 +156,7 @@ export const body1_B = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY};
 `;
 
 /**
@@ -165,7 +171,7 @@ export const body1_M = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY};
 `;
 
 /**
@@ -180,7 +186,7 @@ export const body2_B = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY};
 `;
 
 /**
@@ -195,7 +201,7 @@ export const body2_M = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY};
 `;
 
 /**
@@ -210,7 +216,7 @@ export const caption_B = ({ weight, color, opacity, ...rest }) => css`
     opacity,
     ...rest,
   })};
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-family: ${PRETENDARD_FONT_FAMILY}
 `;
 
 // Deprecated
