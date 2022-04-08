@@ -11,7 +11,8 @@ import {
  * {@link https://github.com/orioncactus/pretendard#html-1}
  */
 
-const PRETENDARD_FONT_FAMILY = "Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif"
+const PRETENDARD_FONT_FAMILY =
+  "Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif";
 
 /**
  * flexbox 관련 설정 믹스인
@@ -62,6 +63,28 @@ export const flexColumnCenterAll = css`
   ${flexContainer('center', 'center', 'column')}
 `;
 
+export const TYPOGRAPHY_STYLES = {
+  Headline2_B: [24, 34, 600],
+  Headline3_B: [20, 26, 600],
+  Headline4_B: [16, 26, 600],
+  Headline4_M: [16, 26, 400],
+  Body1_B: [14, 24, 600],
+  Body1_M: [14, 24, 400],
+  Body2_B: [12, 19, 600],
+  Body2_M: [12, 19, 400],
+  Caption_B: [10, 14, 600],
+}; // [font-size, line-height, font-weight]
+
+export const getTypographyStyles = (typography) => {
+  const [fontSize, lineHeight, fontWeight] = TYPOGRAPHY_STYLES[typography];
+  return css`
+    font-size: ${fontSize}px;
+    line-height: ${lineHeight}px;
+    font-weight: ${fontWeight};
+    font-family: ${PRETENDARD_FONT_FAMILY};
+  `;
+};
+
 /**
  * 텍스트 폰트 관련 설정 믹스인
  * @param { { size / weight / color / opacity } } params
@@ -82,141 +105,6 @@ export const font = ({
   color: ${color};
   opacity: ${opacity};
   line-height: ${lineHeight};
-`;
-
-/**
- * @description size 24px / lineHeight 34px / weight 600
- */
-export const headline2_B = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '24px',
-    lineHeight: '34px',
-    weight: 600,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY};
-`;
-
-/**
- * @description size 20px / lineHeight 26px / weight 600
- */
-export const headline3_B = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '20px',
-    lineHeight: '26px',
-    weight: 600,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY};
-`;
-
-/**
- * @description size 16px / lineHeight 26px / weight 600
- */
-export const headline4_B = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '16px',
-    lineHeight: '26px',
-    weight: 600,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY};
-`;
-
-/**
- * @description size 16px / lineHeight 26px / weight 400
- */
-export const headline4_M = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '16px',
-    lineHeight: '26px',
-    weight: 400,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY};
-`;
-
-/**
- * @description size 14px / lineHeight 24px / weight 600
- */
-export const body1_B = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '14px',
-    lineHeight: '24px',
-    weight: 600,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY};
-`;
-
-/**
- * @description size 14px / lineHeight 24px / weight 400
- */
-export const body1_M = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '14px',
-    lineHeight: '24px',
-    weight: 400,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY};
-`;
-
-/**
- * @description size 12px / lineHeight 19px / weight 600
- */
-export const body2_B = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '12px',
-    lineHeight: '19px',
-    weight: 600,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY};
-`;
-
-/**
- * @description size 12px / lineHeight 19px / weight 400
- */
-export const body2_M = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '12px',
-    lineHeight: '19px',
-    weight: 400,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY};
-`;
-
-/**
- * @description size 10px / lineHeight 14px / weight 600
- */
-export const caption_B = ({ weight, color, opacity, ...rest }) => css`
-  ${font({
-    size: '10px',
-    lineHeight: '14px',
-    weight: 600,
-    color: contents000,
-    opacity,
-    ...rest,
-  })};
-  font-family: ${PRETENDARD_FONT_FAMILY}
 `;
 
 // Deprecated
