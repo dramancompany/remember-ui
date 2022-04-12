@@ -214,19 +214,28 @@ declare module 'remember-ui' {
   export const BaseModal: React.FC<BaseModalProps>;
 
   export interface ConfirmModalProps {
-    title: string;
-    message: string;
-    okText: string;
-    closeText: string;
-    isOpen: boolean;
-    onOk: Function;
-    onAfterOpen?: Function;
-    onCloseAction?: Function;
     icon?: 'warning' | 'success';
     type?: 'delete' | 'ok';
+    title: string;
+    message: string;
+    okText?: string;
+    closeText?: string;
+    isOpen: boolean;
     showClose?: boolean;
+    isDraggable?: boolean;
+    isDragDisabled?: boolean;
+    isDragBounded?: boolean;
+    onOk: Function;
     onClose?: Function;
-    testId?: string;
+    onAfterOpen?: Function;
+    onCloseAction?: Function;
+    dragOnStart?: Function;
+    dragOnStop?: Function;
+    dragOnDrag?: Function;
+    mobileWidth?: string;
+    mobileHeight?: string;
+    bodyScrollLockTargetId?: string;
+    delegateCloseControl?: boolean;
   }
 
   export const ConfirmModal: React.FC<ConfirmModalProps>;
