@@ -480,6 +480,7 @@ declare module 'remember-ui' {
     onClose: Function;
     onAfterOpen?: Function;
     title: string;
+    subTitle?: string;
     headerButtonText?: string;
     onHeaderButtonClick?: Function;
     submit?: Function;
