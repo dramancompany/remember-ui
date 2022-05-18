@@ -396,6 +396,7 @@ declare module 'remember-ui' {
     id: string | number;
     label: string | number;
     value?: string | number;
+    disabled?: boolean;
   }
 
   export interface SelectProps {
@@ -432,6 +433,7 @@ declare module 'remember-ui' {
     offset?: string;
     arrow?: boolean;
     onClick?: Function;
+    onShow?: Function;
     content: ReactNode;
     iconStyle?: object;
     size?: 'small' | 'medium';
@@ -478,6 +480,7 @@ declare module 'remember-ui' {
     onClose: Function;
     onAfterOpen?: Function;
     title: string;
+    subTitle?: string;
     headerButtonText?: string;
     onHeaderButtonClick?: Function;
     submit?: Function;
