@@ -9,7 +9,7 @@ import {
   GlobalStyleComponent,
 } from 'styled-components';
 
-declare module 'remember-ui' {
+declare module '@dramancompany/remember-ui' {
   // variables
   /** @deprecated */
   export const gray10: string;
