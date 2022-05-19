@@ -1,0 +1,17 @@
+addReviewers: true
+
+addAssignees: author
+
+numberOfReviewers: 2
+
+useReviewGroups: false
+
+reviewers:
+  - qkraudghgh
+  - JeongminSung
+  - kwanwooi25
+  - yongsk0066
+  - kimjeongwonn
+  - saengmotmi
+
+useAssigneeGroups: false
