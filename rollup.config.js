@@ -15,8 +15,8 @@ const outputData = [
   },
   {
     file: 'dist/index.cjm.js',
-    format: 'cjs'
-  }
+    format: 'cjs',
+  },
 ];
 
 const plugins = [
@@ -45,7 +45,7 @@ const dependencies = [
 ];
 
 export default outputData.map(({ file, format }) => ({
-  input: 'src/index.js',
+  input: 'src/index.ts',
   plugins,
   output: {
     file: file,

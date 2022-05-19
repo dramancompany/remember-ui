@@ -10,6 +10,7 @@ dotenv.config();
 
 process.env.BABEL_ENV = 'production';
 
+// TODO: 환경 변수 파일
 const outputData = [
   {
     file: `${process.env.DIRECTORY}/dist/index.js`,
@@ -46,7 +47,7 @@ const dependencies = [
 ];
 
 export default outputData.map(({ file, format }) => ({
-  input: 'src/index.js',
+  input: 'src/index.ts',
   plugins,
   output: {
     file: file,
