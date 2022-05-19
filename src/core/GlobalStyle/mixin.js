@@ -64,19 +64,55 @@ export const flexColumnCenterAll = css`
 `;
 
 export const TYPOGRAPHY_STYLES = {
-  Headline2_B: [24, 34, 600],
-  Headline3_B: [20, 26, 600],
-  Headline4_B: [16, 26, 600],
-  Headline4_M: [16, 26, 400],
-  Body1_B: [14, 24, 600],
-  Body1_M: [14, 24, 400],
-  Body2_B: [12, 19, 600],
-  Body2_M: [12, 19, 400],
-  Caption_B: [10, 14, 600],
-}; // [font-size, line-height, font-weight]
+  Headline2_B: {
+    fontSize: 20,
+    lineHeight: 24,
+    fontWeight: 600
+  },
+  Headline3_B: {
+    fontSize: 20,
+    lineHeight: 26,
+    fontWeight: 600
+  },
+  Headline4_B: {
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: 600
+  },
+  Headline4_M: {
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: 400
+  },
+  Body1_B: {
+    fontSize: 14,
+    lineHeight: 24,
+    fontWeight: 600
+  },
+  Body1_M: {
+    fontSize: 14,
+    lineHeight: 24,
+    fontWeight: 400
+  },
+  Body2_B: {
+    fontSize: 12,
+    lineHeight: 19,
+    fontWeight: 600
+  },
+  Body2_M: {
+    fontSize: 12,
+    lineHeight: 19,
+    fontWeight: 400
+  },
+  Caption_B: {
+    fontSize: 10,
+    lineHeight: 14,
+    fontWeight: 600
+  }
+}
 
 export const getTypographyStyles = (typography) => {
-  const [fontSize, lineHeight, fontWeight] = TYPOGRAPHY_STYLES[typography];
+  const { fontSize, lineHeight, fontWeight } = TYPOGRAPHY_STYLES[typography];
   return css`
     font-size: ${fontSize}px;
     line-height: ${lineHeight}px;

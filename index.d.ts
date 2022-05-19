@@ -8,7 +8,7 @@ import {
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
 } from 'styled-components';
-import { TYPOGRAPHY_STYLES } from './src/core/GlobalStyle/mixin';
+// import { TYPOGRAPHY_STYLES } from './src/core/GlobalStyle/mixin';
 
 declare module 'remember-ui' {
   // variables
@@ -94,6 +94,54 @@ declare module 'remember-ui' {
   export const flexColumnCenterX: FlattenSimpleInterpolation;
   export const flexColumnCenterY: FlattenSimpleInterpolation;
   export const flexColumnCenterAll: FlattenSimpleInterpolation;
+
+  export const TYPOGRAPHY_STYLES = {
+    Headline2_B: {
+      fontSize: 20,
+      lineHeight: 24,
+      fontWeight: 600
+    },
+    Headline3_B: {
+      fontSize: 20,
+      lineHeight: 26,
+      fontWeight: 600
+    },
+    Headline4_B: {
+      fontSize: 16,
+      lineHeight: 26,
+      fontWeight: 600
+    },
+    Headline4_M: {
+      fontSize: 16,
+      lineHeight: 26,
+      fontWeight: 400
+    },
+    Body1_B: {
+      fontSize: 14,
+      lineHeight: 24,
+      fontWeight: 600
+    },
+    Body1_M: {
+      fontSize: 14,
+      lineHeight: 24,
+      fontWeight: 400
+    },
+    Body2_B: {
+      fontSize: 12,
+      lineHeight: 19,
+      fontWeight: 600
+    },
+    Body2_M: {
+      fontSize: 12,
+      lineHeight: 19,
+      fontWeight: 400
+    },
+    Caption_B: {
+      fontSize: 10,
+      lineHeight: 14,
+      fontWeight: 600
+    }
+  } as const
 
   export type TypographyStylesType = keyof typeof TYPOGRAPHY_STYLES;
   export const getTypographyStyles: (
