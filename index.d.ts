@@ -10,44 +10,79 @@ import {
 } from 'styled-components';
 // import { TYPOGRAPHY_STYLES } from './src/core/GlobalStyle/mixin';
 
-declare module 'remember-ui' {
+declare module '@dramancompany/remember-ui' {
   // variables
-  // TODO: deprecated 타입 분리
+  /** @deprecated */
   export const gray10: string;
+  /** @deprecated */
   export const gray50: string;
+  /** @deprecated */
   export const gray70: string;
+  /** @deprecated */
   export const gray80: string;
+  /** @deprecated */
   export const gray100: string;
+  /** @deprecated */
   export const gray120: string;
+  /** @deprecated */
   export const gray150: string;
+  /** @deprecated */
   export const gray200: string;
+  /** @deprecated */
   export const gray300: string;
+  /** @deprecated */
   export const gray350: string;
+  /** @deprecated */
   export const gray400: string;
+  /** @deprecated */
   export const gray450: string;
+  /** @deprecated */
   export const gold50: string;
+  /** @deprecated */
   export const gold100: string;
+  /** @deprecated */
   export const gold150: string;
+  /** @deprecated */
   export const gold200: string;
+  /** @deprecated */
   export const yellow10: string;
+  /** @deprecated */
   export const yellow50: string;
+  /** @deprecated */
   export const yellow60: string;
+  /** @deprecated */
   export const yellow70: string;
+  /** @deprecated */
   export const yellow100: string;
+  /** @deprecated */
   export const blue30: string;
+  /** @deprecated */
   export const blue100: string;
+  /** @deprecated */
   export const red50: string;
+  /** @deprecated */
   export const red100: string;
+  /** @deprecated */
   export const green50: string;
+  /** @deprecated */
   export const green100: string;
+  /** @deprecated */
   export const brown100: string;
+  /** @deprecated */
   export const orange100: string;
+  /** @deprecated */
   export const white: string;
+  /** @deprecated */
   export const text: string;
+  /** @deprecated */
   export const borderColor: string;
+  /** @deprecated */
   export const gray: string;
+  /** @deprecated */
   export const primary100: string;
+  /** @deprecated */
   export const primary200: string;
+  /** @deprecated */
   export const secondary100: string;
 
   export const contents000: string;
@@ -157,38 +192,46 @@ declare module 'remember-ui' {
   }
 
   export const font: (params: FontParams) => FlattenSimpleInterpolation;
-  export interface TypographyParams {
+
+  /** @deprecated 새로운 Typography로 교체 필요 */
+  export interface TypograhyParams {
     weight?: string;
     color?: string;
     opacity?: number;
     rest?: any;
   }
 
-  // deprecated
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textExtraSmall: (
     params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textSmall: (
     params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textMedium: (
     params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textLarge: (
     params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textExtraLarge: (
     params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textDoubleExtraLarge: (
     params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textTripleExtraLarge: (
     params: TypographyParams
   ) => FlattenSimpleInterpolation;
@@ -226,6 +269,7 @@ declare module 'remember-ui' {
   }
   export const LinkButton: React.FC<LinkButtonProps>;
 
+  /** @deprecated */
   export interface BaseButtonProps {
     className?: string;
     disabled?: boolean;
@@ -239,6 +283,7 @@ declare module 'remember-ui' {
     isLoading?: boolean;
   }
 
+  /** @deprecated */
   export const BaseButton: React.FC<BaseButtonProps>;
 
   export interface MoreButtonProps {
@@ -267,24 +312,36 @@ declare module 'remember-ui' {
 
   export const BaseModal: React.FC<BaseModalProps>;
 
+  /** @deprecated */
   export interface ConfirmModalProps {
-    title: string;
-    message: string;
-    okText: string;
-    closeText: string;
-    isOpen: boolean;
-    onOk: Function;
-    onAfterOpen?: Function;
-    onCloseAction?: Function;
     icon?: 'warning' | 'success';
     type?: 'delete' | 'ok';
+    title: string;
+    message: string;
+    okText?: string;
+    closeText?: string;
+    isOpen: boolean;
     showClose?: boolean;
+    isDraggable?: boolean;
+    isDragDisabled?: boolean;
+    isDragBounded?: boolean;
+    onOk: Function;
     onClose?: Function;
-    testId?: string;
+    onAfterOpen?: Function;
+    onCloseAction?: Function;
+    dragOnStart?: Function;
+    dragOnStop?: Function;
+    dragOnDrag?: Function;
+    mobileWidth?: string;
+    mobileHeight?: string;
+    bodyScrollLockTargetId?: string;
+    delegateCloseControl?: boolean;
   }
 
+  /** @deprecated MessageModal로 교체 */
   export const ConfirmModal: React.FC<ConfirmModalProps>;
 
+  /** @deprecated 디자인팀에서 전체적으로 교체하려고 준비중 */
   export interface DesignedModalProps {
     isOpen: boolean;
     onClose: Function;
@@ -302,6 +359,7 @@ declare module 'remember-ui' {
     className?: string;
   }
 
+  /** @deprecated 디자인팀에서 전체적으로 교체하려고 준비중 */
   export const DesignedModal: React.FC<DesignedModalProps>;
 
   export interface ProgressModalProps {
@@ -441,6 +499,7 @@ declare module 'remember-ui' {
     id: string | number;
     label: string | number;
     value?: string | number;
+    disabled?: boolean;
   }
 
   export interface SelectProps {
@@ -477,6 +536,7 @@ declare module 'remember-ui' {
     offset?: string;
     arrow?: boolean;
     onClick?: Function;
+    onShow?: Function;
     content: ReactNode;
     iconStyle?: object;
     size?: 'small' | 'medium';
@@ -507,14 +567,14 @@ declare module 'remember-ui' {
   }
 
   export const Radio: React.FC<RadioProps>;
-
+  /** @deprecated */
   export interface ChipProps {
     children: React.ReactChild | React.ReactChildren;
     className?: string;
     isOverflowed?: boolean;
     onClick: Function;
   }
-
+  /** @deprecated */
   export const Chip: React.FC<ChipProps>;
 
   export interface MobileFullModalProps {
@@ -523,6 +583,7 @@ declare module 'remember-ui' {
     onClose: Function;
     onAfterOpen?: Function;
     title: string;
+    subTitle?: string;
     headerButtonText?: string;
     onHeaderButtonClick?: Function;
     submit?: Function;
