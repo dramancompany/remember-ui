@@ -139,6 +139,7 @@ declare module '@dramancompany/remember-ui' {
 
   export const font: (params: FontParams) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export interface TypograhyParams {
     weight?: string;
     color?: string;
@@ -146,30 +147,37 @@ declare module '@dramancompany/remember-ui' {
     rest?: any;
   }
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textExtraSmall: (
     params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textSmall: (
     params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textMedium: (
     params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textLarge: (
     params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textExtraLarge: (
     params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textDoubleExtraLarge: (
     params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
+  /** @deprecated 새로운 Typography로 교체 필요 */
   export const textTripleExtraLarge: (
     params: TypograhyParams
   ) => FlattenSimpleInterpolation;
@@ -207,6 +215,7 @@ declare module '@dramancompany/remember-ui' {
   }
   export const LinkButton: React.FC<LinkButtonProps>;
 
+  /** @deprecated */
   export interface BaseButtonProps {
     className?: string;
     disabled?: boolean;
@@ -220,6 +229,7 @@ declare module '@dramancompany/remember-ui' {
     isLoading?: boolean;
   }
 
+  /** @deprecated */
   export const BaseButton: React.FC<BaseButtonProps>;
 
   export interface MoreButtonProps {
@@ -248,6 +258,7 @@ declare module '@dramancompany/remember-ui' {
 
   export const BaseModal: React.FC<BaseModalProps>;
 
+  /** @deprecated */
   export interface ConfirmModalProps {
     icon?: 'warning' | 'success';
     type?: 'delete' | 'ok';
@@ -273,8 +284,10 @@ declare module '@dramancompany/remember-ui' {
     delegateCloseControl?: boolean;
   }
 
+  /** @deprecated MessageModal로 교체 */
   export const ConfirmModal: React.FC<ConfirmModalProps>;
 
+  /** @deprecated 디자인팀에서 전체적으로 교체하려고 준비중 */
   export interface DesignedModalProps {
     isOpen: boolean;
     onClose: Function;
@@ -292,6 +305,7 @@ declare module '@dramancompany/remember-ui' {
     className?: string;
   }
 
+  /** @deprecated 디자인팀에서 전체적으로 교체하려고 준비중 */
   export const DesignedModal: React.FC<DesignedModalProps>;
 
   export interface ProgressModalProps {
@@ -499,14 +513,14 @@ declare module '@dramancompany/remember-ui' {
   }
 
   export const Radio: React.FC<RadioProps>;
-
+  /** @deprecated */
   export interface ChipProps {
     children: React.ReactChild | React.ReactChildren;
     className?: string;
     isOverflowed?: boolean;
     onClick: Function;
   }
-
+  /** @deprecated */
   export const Chip: React.FC<ChipProps>;
 
   export interface MobileFullModalProps {
