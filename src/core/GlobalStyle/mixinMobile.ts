@@ -1,11 +1,12 @@
 import { css } from 'styled-components';
 
 import { font } from './mixin';
+import type { FontProps } from './mixin';
 
 /**
  * @description size 18px
  */
-export const mobileTitle = ({ color, opacity, ...rest }) => css`
+export const mobileTitle = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '18px',
     weight: 'bold',
@@ -19,7 +20,7 @@ export const mobileTitle = ({ color, opacity, ...rest }) => css`
 /**
  * @description size 16px
  */
-export const mobileSubTitle16 = ({ color, opacity, ...rest }) => css`
+export const mobileSubTitle16 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '16px',
     weight: 'bold',
@@ -33,7 +34,7 @@ export const mobileSubTitle16 = ({ color, opacity, ...rest }) => css`
 /**
  * @description size 14px
  */
-export const mobileSubTitle14 = ({ color, opacity, ...rest }) => css`
+export const mobileSubTitle14 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '14px',
     weight: 'bold',
@@ -47,7 +48,7 @@ export const mobileSubTitle14 = ({ color, opacity, ...rest }) => css`
 /**
  * @description size 13px
  */
-export const mobileSubTitle13 = ({ color, opacity, ...rest }) => css`
+export const mobileSubTitle13 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '13px',
     weight: 'bold',
@@ -61,7 +62,7 @@ export const mobileSubTitle13 = ({ color, opacity, ...rest }) => css`
 /**
  * @description size 12px
  */
-export const mobileSubTitle12 = ({ color, opacity, ...rest }) => css`
+export const mobileSubTitle12 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '12px',
     weight: 'bold',
@@ -75,7 +76,7 @@ export const mobileSubTitle12 = ({ color, opacity, ...rest }) => css`
 /**
  * @description size 15px
  */
-export const mobileBody15 = ({ color, opacity, ...rest }) => css`
+export const mobileBody15 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '15px',
     weight: 'normal',
@@ -89,7 +90,7 @@ export const mobileBody15 = ({ color, opacity, ...rest }) => css`
 /**
  * @description size 13px
  */
-export const mobileBody13 = ({ color, opacity, ...rest }) => css`
+export const mobileBody13 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '13px',
     weight: 'normal',
@@ -103,7 +104,7 @@ export const mobileBody13 = ({ color, opacity, ...rest }) => css`
 /**
  * @description size 12px
  */
-export const mobileBody12 = ({ color, opacity, ...rest }) => css`
+export const mobileBody12 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '12px',
     weight: 'normal',
@@ -117,7 +118,7 @@ export const mobileBody12 = ({ color, opacity, ...rest }) => css`
 /**
  * @description size 11px
  */
-export const mobileSubCaption = ({ color, opacity, ...rest }) => css`
+export const mobileSubCaption = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
     size: '11px',
     weight: 'normal',

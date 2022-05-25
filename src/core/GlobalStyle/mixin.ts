@@ -131,7 +131,7 @@ export const getTypographyStyles = (
  * color: color
  * opacity: opacity
  */
-interface FontProps {
+export interface FontProps {
   size?: `${number}px`;
   weight?: CSSProperties['fontWeight'];
   color?: CSSProperties['color'];
