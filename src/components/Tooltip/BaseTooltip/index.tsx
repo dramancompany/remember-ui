@@ -39,7 +39,6 @@ interface Props {
   placement?: Placement
   textAlign?: CSSProperties['textAlign']
   className?: string
-
 }
 
 export const BaseTooltip = ({

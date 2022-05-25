@@ -1,4 +1,5 @@
 import React from 'react';
+import { Instance, Props as TippyProps } from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 
 import { Tooltip } from './InfoTooltip.styles';
@@ -9,7 +10,7 @@ interface Props {
   visible?: boolean;
   className: string;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
-  onShow?: () => void;
+  onShow?: (instance: Instance<TippyProps>) => false | void;
   customAnimation?: 'headShake';
 }
 
