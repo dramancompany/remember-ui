@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import styled, { css } from 'styled-components';
 import {
   mobileOnly,
@@ -5,7 +6,9 @@ import {
   minHeightFixChild,
 } from '../../core/GlobalStyle/mixin';
 
-export const Container = styled.div`
+export const Container = styled.div<{
+  direction: CSSProperties['flexDirection'];
+}>`
   ${({ direction }) => minHeightFix(direction || 'column')}
   ${minHeightFixChild}
 
