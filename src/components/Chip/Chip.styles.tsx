@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { yellow50, yellow60, brown100 } from '../../core/GlobalStyle/variable';
 import { font, textEllipsis } from '../../core/GlobalStyle/mixin';
 
-export const Container = styled.div`
+export const Container = styled.div<{ isOverflowed: boolean }>`
   ${font({ size: '13px', color: brown100 })};
   background-color: ${yellow50};
 
@@ -26,7 +26,7 @@ export const Container = styled.div`
     `}
 `;
 
-export const ChipContent = styled.div`
+export const ChipContent = styled.div<{ isOverflowed: boolean }>`
   ${({ isOverflowed }) =>
     isOverflowed &&
     css`
