@@ -27,7 +27,9 @@ const headShake = keyframes`
   }
 `;
 
-export const Tooltip = styled(Tippy)`
+export const Tooltip = styled(Tippy)<{
+  $customAnimation?: 'headShake';
+}>`
   .tippy-content {
     font-size: 13px;
     padding: 13px 33px !important;
