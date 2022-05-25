@@ -3,7 +3,7 @@ import { createGlobalStyle, css } from 'styled-components';
 import { blue100, white, gray100, gray400 } from './variable';
 import { flexCenter, mobileOnly } from './mixin';
 
-const arrowMixin = (name, color) => css`
+const arrowMixin = (name: string, color: string) => css`
   ${name === 'dclight' &&
   css`
     &[data-placement^='bottom'] .tippy-arrow {

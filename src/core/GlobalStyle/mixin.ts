@@ -1,10 +1,10 @@
-import { css } from 'styled-components';
+import type { CSSProperties } from 'react';
+import { css,  FlattenSimpleInterpolation } from 'styled-components';
 
 import {
   mobileSizeBreak,
   mobileSmallSizeBreak,
   landingMobileSizeBreak,
-  contents000,
 } from './variable';
 
 /**
@@ -21,9 +21,9 @@ const PRETENDARD_FONT_FAMILY =
  * @param { boolean | string } direction: `flex-direction`
  */
 export const flexContainer = (
-  horizontal = false,
-  vertical = false,
-  direction = false
+  horizontal: CSSProperties['justifyContent'] | null = 'normal',
+  vertical: CSSProperties['alignItems'] | null = 'normal',
+  direction: CSSProperties['flexDirection'] | null = 'row'
 ) => css`
   display: flex;
   flex-direction: ${direction};
@@ -36,27 +36,27 @@ export const flexCenter = css`
 `;
 
 export const flexCenterX = css`
-  ${flexContainer('center', false)}
+  ${flexContainer('center', null)}
 `;
 
 export const flexCenterY = css`
-  ${flexContainer(false, 'center')}
+  ${flexContainer(null, 'center')}
 `;
 
 export const flexEndY = css`
-  ${flexContainer(false, 'flex-end')}
+  ${flexContainer(null, 'flex-end')}
 `;
 
 export const flexColumnCenter = css`
-  ${flexContainer(false, 'center', 'column')}
+  ${flexContainer(null, 'center', 'column')}
 `;
 
 export const flexColumnCenterX = css`
-  ${flexContainer(false, 'center', 'column')}
+  ${flexContainer(null, 'center', 'column')}
 `;
 
 export const flexColumnCenterY = css`
-  ${flexContainer('center', false, 'column')}
+  ${flexContainer('center', null, 'column')}
 `;
 
 export const flexColumnCenterAll = css`
@@ -67,51 +67,53 @@ export const TYPOGRAPHY_STYLES = {
   Headline2_B: {
     fontSize: 20,
     lineHeight: 24,
-    fontWeight: 600
+    fontWeight: 600,
   },
   Headline3_B: {
     fontSize: 20,
     lineHeight: 26,
-    fontWeight: 600
+    fontWeight: 600,
   },
   Headline4_B: {
     fontSize: 16,
     lineHeight: 26,
-    fontWeight: 600
+    fontWeight: 600,
   },
   Headline4_M: {
     fontSize: 16,
     lineHeight: 26,
-    fontWeight: 400
+    fontWeight: 400,
   },
   Body1_B: {
     fontSize: 14,
     lineHeight: 24,
-    fontWeight: 600
+    fontWeight: 600,
   },
   Body1_M: {
     fontSize: 14,
     lineHeight: 24,
-    fontWeight: 400
+    fontWeight: 400,
   },
   Body2_B: {
     fontSize: 12,
     lineHeight: 19,
-    fontWeight: 600
+    fontWeight: 600,
   },
   Body2_M: {
     fontSize: 12,
     lineHeight: 19,
-    fontWeight: 400
+    fontWeight: 400,
   },
   Caption_B: {
     fontSize: 10,
     lineHeight: 14,
-    fontWeight: 600
-  }
-}
+    fontWeight: 600,
+  },
+};
 
-export const getTypographyStyles = (typography) => {
+export const getTypographyStyles = (
+  typography: keyof typeof TYPOGRAPHY_STYLES
+) => {
   const { fontSize, lineHeight, fontWeight } = TYPOGRAPHY_STYLES[typography];
   return css`
     font-size: ${fontSize}px;
@@ -129,13 +131,21 @@ export const getTypographyStyles = (typography) => {
  * color: color
  * opacity: opacity
  */
+interface FontProps {
+  size?: `${number}px`;
+  weight?: CSSProperties['fontWeight'];
+  color?: CSSProperties['color'];
+  opacity?: CSSProperties['opacity'] | null
+  lineHeight?: CSSProperties['lineHeight']
+}
+
 export const font = ({
   size = '12px',
   weight = 'normal',
   color = 'black',
-  opacity = false,
+  opacity = null,
   lineHeight = 'normal',
-}) => css`
+}: FontProps) => css`
   font-size: ${size};
   font-weight: ${weight};
   color: ${color};
@@ -147,35 +157,35 @@ export const font = ({
 /**
  * @description size 12px
  */
-export const textExtraSmall = ({ weight, color, opacity, ...rest }) => css`
+export const textExtraSmall = ({ weight, color, opacity, ...rest }: FontProps) => css`
   ${font({ size: '12px', weight, color, opacity, ...rest })};
 `;
 
 /**
  * @description size 14px
  */
-export const textSmall = ({ weight, color, opacity, ...rest }) => css`
+export const textSmall = ({ weight, color, opacity, ...rest }: FontProps) => css`
   ${font({ size: '14px', weight, color, opacity, ...rest })};
 `;
 
 /**
  * @description size 16px
  */
-export const textMedium = ({ weight, color, opacity, ...rest }) => css`
+export const textMedium = ({ weight, color, opacity, ...rest }: FontProps) => css`
   ${font({ size: '16px', weight, color, opacity, ...rest })};
 `;
 
 /**
  * @description size 18px
  */
-export const textLarge = ({ weight, color, opacity, ...rest }) => css`
+export const textLarge = ({ weight, color, opacity, ...rest }: FontProps) => css`
   ${font({ size: '18px', weight, color, opacity, ...rest })};
 `;
 
 /**
  * @description size 20px
  */
-export const textExtraLarge = ({ weight, color, opacity, ...rest }) => css`
+export const textExtraLarge = ({ weight, color, opacity, ...rest }: FontProps) => css`
   ${font({ size: '20px', weight, color, opacity, ...rest })};
 `;
 
@@ -187,7 +197,7 @@ export const textDoubleExtraLarge = ({
   color,
   opacity,
   ...rest
-}) => css`
+}: FontProps) => css`
   ${font({ size: '22px', weight, color, opacity, ...rest })};
 `;
 
@@ -199,7 +209,7 @@ export const textTripleExtraLarge = ({
   color,
   opacity,
   ...rest
-}) => css`
+}: FontProps) => css`
   ${font({ size: '30px', weight, color, opacity, ...rest })};
 `;
 
@@ -235,37 +245,37 @@ export const textLink = css`
  * breakpoint 관련 mixin
  */
 
-export const mobileSmallOnly = (cssContent) => css`
+export const mobileSmallOnly = (cssContent: string) => css`
   @media only screen and (max-width: ${mobileSmallSizeBreak}) {
     ${cssContent}
   }
 `;
 
-export const mobileOnly = (cssContent) => css`
+export const mobileOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (max-width: ${mobileSizeBreak}) {
     ${cssContent}
   }
 `;
 
-export const webOnly = (cssContent) => css`
+export const webOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (min-width: ${mobileSizeBreak}) {
     ${cssContent}
   }
 `;
 
-export const landingMobileOnly = (cssContent) => css`
+export const landingMobileOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (max-width: ${landingMobileSizeBreak}) {
     ${cssContent}
   }
 `;
 
-export const landingWebOnly = (cssContent) => css`
+export const landingWebOnly = (cssContent:FlattenSimpleInterpolation) => css`
   @media only screen and (min-width: ${landingMobileSizeBreak}) {
     ${cssContent}
   }
 `;
 
-export const placeholderColor = (color, center = false) => css`
+export const placeholderColor = (color: CSSProperties["color"], center = false) => css`
   &::placeholder {
     color: ${color};
 

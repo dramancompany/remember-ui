@@ -134,49 +134,49 @@ declare module '@dramancompany/remember-ui' {
     Headline2_B: {
       fontSize: 20,
       lineHeight: 24,
-      fontWeight: 600
+      fontWeight: 600,
     },
     Headline3_B: {
       fontSize: 20,
       lineHeight: 26,
-      fontWeight: 600
+      fontWeight: 600,
     },
     Headline4_B: {
       fontSize: 16,
       lineHeight: 26,
-      fontWeight: 600
+      fontWeight: 600,
     },
     Headline4_M: {
       fontSize: 16,
       lineHeight: 26,
-      fontWeight: 400
+      fontWeight: 400,
     },
     Body1_B: {
       fontSize: 14,
       lineHeight: 24,
-      fontWeight: 600
+      fontWeight: 600,
     },
     Body1_M: {
       fontSize: 14,
       lineHeight: 24,
-      fontWeight: 400
+      fontWeight: 400,
     },
     Body2_B: {
       fontSize: 12,
       lineHeight: 19,
-      fontWeight: 600
+      fontWeight: 600,
     },
     Body2_M: {
       fontSize: 12,
       lineHeight: 19,
-      fontWeight: 400
+      fontWeight: 400,
     },
     Caption_B: {
       fontSize: 10,
       lineHeight: 14,
-      fontWeight: 600
-    }
-  } as const
+      fontWeight: 600,
+    },
+  } as const;
 
   export type TypographyStylesType = keyof typeof TYPOGRAPHY_STYLES;
   export const getTypographyStyles: (
