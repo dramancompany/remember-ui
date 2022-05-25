@@ -21,7 +21,12 @@ export const Container = styled.ul`
 
 export const List = styled.li``;
 
-export const Button = styled.div`
+export const Button = styled.div<{
+  disabled?: boolean;
+  marginRight?: number;
+  marginLeft?: number;
+  selected?: boolean;
+}>`
   ${flexCenter}
   ${font({ size: '14px', color: contents000, weight: 'normal' })}
 
@@ -74,4 +79,4 @@ export const Numbers = styled.span`
   display: inherit;
 `;
 
-Numbers.Button = styled.li``;
+export const NumbersButton = styled.li``;
