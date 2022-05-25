@@ -4,7 +4,15 @@ import {
   mobileSizeBreak,
   mobileSmallSizeBreak,
   landingMobileSizeBreak,
+  contents000,
 } from './variable';
+
+/**
+ * {@link https://github.com/orioncactus/pretendard#html-1}
+ */
+
+const PRETENDARD_FONT_FAMILY =
+  "Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif";
 
 /**
  * flexbox 관련 설정 믹스인
@@ -55,6 +63,64 @@ export const flexColumnCenterAll = css`
   ${flexContainer('center', 'center', 'column')}
 `;
 
+export const TYPOGRAPHY_STYLES = {
+  Headline2_B: {
+    fontSize: 20,
+    lineHeight: 24,
+    fontWeight: 600
+  },
+  Headline3_B: {
+    fontSize: 20,
+    lineHeight: 26,
+    fontWeight: 600
+  },
+  Headline4_B: {
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: 600
+  },
+  Headline4_M: {
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: 400
+  },
+  Body1_B: {
+    fontSize: 14,
+    lineHeight: 24,
+    fontWeight: 600
+  },
+  Body1_M: {
+    fontSize: 14,
+    lineHeight: 24,
+    fontWeight: 400
+  },
+  Body2_B: {
+    fontSize: 12,
+    lineHeight: 19,
+    fontWeight: 600
+  },
+  Body2_M: {
+    fontSize: 12,
+    lineHeight: 19,
+    fontWeight: 400
+  },
+  Caption_B: {
+    fontSize: 10,
+    lineHeight: 14,
+    fontWeight: 600
+  }
+}
+
+export const getTypographyStyles = (typography) => {
+  const { fontSize, lineHeight, fontWeight } = TYPOGRAPHY_STYLES[typography];
+  return css`
+    font-size: ${fontSize}px;
+    line-height: ${lineHeight}px;
+    font-weight: ${fontWeight};
+    font-family: ${PRETENDARD_FONT_FAMILY};
+  `;
+};
+
 /**
  * 텍스트 폰트 관련 설정 믹스인
  * @param { { size / weight / color / opacity } } params
@@ -77,6 +143,7 @@ export const font = ({
   line-height: ${lineHeight};
 `;
 
+// Deprecated
 /**
  * @description size 12px
  */

@@ -1,0 +1,44 @@
+---
+name: Career Typography (Deprecated)
+menu: Remember UI
+---
+
+import { Playground } from 'docz';
+import { Title, TypeItem, TypeMobileItem } from './careerTypoItem.js';
+
+# Career Typography (Deprecated)
+
+Typography
+
+<Playground>
+  {() => {
+    const Text = `
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+      when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+    `;
+    return (
+      <>
+        <Title>Career Web Fonts</Title>
+        <TypeItem typo="font" />
+        <TypeItem typo="textExtraSmall" />
+        <TypeItem typo="textSmall" />
+        <TypeItem typo="textMedium" />
+        <TypeItem typo="textLarge" />
+        <TypeItem typo="textExtraLarge" />
+        <TypeItem typo="textDoubleExtraLarge" />
+        <TypeItem typo="textTripleExtraLarge" />
+        <Title>Career Mobile Fonts</Title>
+        <TypeMobileItem typo="mobileTitle">{Text}</TypeMobileItem>
+        <TypeMobileItem typo="mobileSubTitle16">{Text}</TypeMobileItem>
+        <TypeMobileItem typo="mobileSubTitle14">{Text}</TypeMobileItem>
+        <TypeMobileItem typo="mobileSubTitle13">{Text}</TypeMobileItem>
+        <TypeMobileItem typo="mobileSubTitle12">{Text}</TypeMobileItem>
+        <TypeMobileItem typo="mobileBody15">{Text}</TypeMobileItem>
+        <TypeMobileItem typo="mobileBody13">{Text}</TypeMobileItem>
+        <TypeMobileItem typo="mobileBody12">{Text}</TypeMobileItem>
+        <TypeMobileItem typo="mobileSubCaption">{Text}</TypeMobileItem>
+      </>
+    );
+  }}
+</Playground>
