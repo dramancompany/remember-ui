@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 const useHover = () => {
   const [value, setValue] = useState(false);
 
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
 
   const handleMouseOver = () => setValue(true);
   const handleMouseOut = () => setValue(false);

@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 
 import { createUUID } from '../utils/common';
 
-const useScrollLock = (bodyScrollLockTargetId, modalType = 'modal') => {
-  const [modalId, setModalId] = useState(null);
-  const [bodyScrollLockTarget, setBodyScrollLockTarget] = useState(null);
+const useScrollLock = (bodyScrollLockTargetId: string, modalType = 'modal') => {
+  const [modalId, setModalId] = useState<string | null>(null);
+  const [bodyScrollLockTarget, setBodyScrollLockTarget] = useState<
+    string | null
+  >(null);
 
   useEffect(() => {
     const id = createUUID();

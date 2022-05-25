@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 
+// TODO: Ref 타입
 export default function useCustomSetInput(
   inputRef,
   value,

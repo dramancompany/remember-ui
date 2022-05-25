@@ -1,4 +1,5 @@
 import { toast, cssTransition } from 'react-toastify';
+import type { ToastContent, ToastOptions } from 'react-toastify';
 // TODO: refactor toast.scss file
 // import './toast.scss';
 
@@ -22,14 +23,14 @@ const idStorage = {
   },
 };
 
-const defaultToastOption = {
+const defaultToastOption: ToastOptions = {
   position: 'top-center',
   hideProgressBar: true,
   closeButton: false,
   transition: Zoom,
 };
 
-export const customToast = (content) => {
+export const customToast = (content: ToastContent) => {
   toast(content, {
     ...defaultToastOption,
     className: 'DcToast',
@@ -38,7 +39,7 @@ export const customToast = (content) => {
   });
 };
 
-export const errorToast = (content) => {
+export const errorToast = (content: ToastContent) => {
   toast.error(content, {
     ...defaultToastOption,
     className: 'DcToastError',
