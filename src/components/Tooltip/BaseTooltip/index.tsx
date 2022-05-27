@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ReactChild, CSSProperties, MouseEventHandler } from "react"
-import type { Placement } from "tippy.js"
+import type { Placement,Instance, Props as TippyProps } from 'tippy.js';
 
 import { helpIcon, plusIcon, moreIcon } from '../../../assets';
 import { Icon, Tooltip } from './BaseTooltip.styles';
@@ -27,10 +27,10 @@ const getImgFromType = (type: 'plus' | 'more' | 'help') => {
 
 interface Props {
   customComponent?: JSX.Element;
-  offset?: `${string},${string}`
+  offset?: `${number},${number}`
   arrow?: boolean
   onClick?: MouseEventHandler<HTMLImageElement>
-  onShow?: () => void
+  onShow?: (instance: Instance<TippyProps>) => false | void
   content: ReactChild | ReactChild[] 
   iconStyle?: CSSProperties
   size?: 'small' | 'medium'

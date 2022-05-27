@@ -56,10 +56,10 @@ const getPaginationInfo = ({
 interface Props {
   itemCountPerPage: number;
   pageRangeDisplayed: number;
-  totalItemCount: number;
-  activePage: number;
+  totalItemCount?: number;
+  activePage?: number;
   onChangePage: (page: number) => void;
-  className: string;
+  className?: string;
 }
 
 export const DcNewPagination = ({

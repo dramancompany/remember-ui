@@ -5,9 +5,9 @@ import { Container, ChipContent } from './Chip.styles';
 
 interface Props {
   children: React.ReactNode;
-  className: string;
-  isOverflowed: boolean;
-  onClick: MouseEventHandler<HTMLDivElement>;
+  className?: string;
+  isOverflowed?: boolean;
+  onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
 export const Chip = ({

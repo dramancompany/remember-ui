@@ -9,7 +9,7 @@ import {
 export const Container = styled.div<{
   direction: CSSProperties['flexDirection'];
 }>`
-  ${({ direction }) => minHeightFix(direction || 'column')}
+  ${({ direction }) => minHeightFix(direction)}
   ${minHeightFixChild}
 
   min-width: 1110px;

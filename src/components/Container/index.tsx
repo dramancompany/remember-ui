@@ -5,12 +5,16 @@ import { Container as ContainerDiv } from './Container.styles';
 
 interface Props {
   children: React.ReactNode;
-  className: string;
-  direction: CSSProperties['flexDirection'];
+  className?: string;
+  direction?: CSSProperties['flexDirection'];
 }
 
 /** @deprecated */
-export const Container = ({ children, className, direction }: Props) => {
+export const Container = ({
+  children,
+  className,
+  direction = 'column',
+}: Props) => {
   return (
     <ContainerDiv className={className} direction={direction}>
       {children}
