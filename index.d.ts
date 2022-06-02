@@ -132,8 +132,8 @@ declare module '@dramancompany/remember-ui' {
 
   export const TYPOGRAPHY_STYLES = {
     Headline2_B: {
-      fontSize: 20,
-      lineHeight: 24,
+      fontSize: 24,
+      lineHeight: 34,
       fontWeight: 600
     },
     Headline3_B: {
