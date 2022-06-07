@@ -17,7 +17,7 @@ export interface BaseModalProps {
   allowKeyExit?: boolean;
   /** 스크롤 이벤트를 방지할 엘리먼트 셀렉터 */
   bodyScrollLockTarget?: string | null;
-  onClose: () => void;
+  onClose?: () => void;
   onAfterOpen?: () => void;
   dragOnStart?: () => void;
   dragOnStop?: () => void;
