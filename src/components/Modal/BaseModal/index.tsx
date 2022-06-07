@@ -8,7 +8,7 @@ import { Container } from './BaseModal.styles';
 
 Modal.setAppElement('body');
 
-interface Props {
+export interface BaseModalProps {
   isOpen: boolean;
   isDraggable?: boolean;
   isDragDisabled?: boolean;
@@ -16,7 +16,7 @@ interface Props {
   /** ESC 키로 모달 닫기 가능 여부 */
   allowKeyExit?: boolean;
   /** 스크롤 이벤트를 방지할 엘리먼트 셀렉터 */
-  bodyScrollLockTarget?: string;
+  bodyScrollLockTarget?: string | null;
   onClose: () => void;
   onAfterOpen?: () => void;
   dragOnStart?: () => void;
@@ -38,7 +38,7 @@ export const BaseModal = ({
   dragOnStop = () => {},
   dragOnDrag = () => {},
   bodyScrollLockTarget = '',
-}: Props) => {
+}: BaseModalProps) => {
   const dragBounds = isDraggable && isDragBounded ? '.dc-modal-overlay' : '';
   const dragCancelTarget = 'input, textarea, .not-draggable';
   return (
