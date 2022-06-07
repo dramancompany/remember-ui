@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Modal from 'react-modal';
 import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
 import Draggable from 'react-draggable';
@@ -7,6 +7,23 @@ import { enableBodyScrollLock } from '../../../utils/common';
 import { Container } from './BaseModal.styles';
 
 Modal.setAppElement('body');
+
+interface Props {
+  isOpen: boolean;
+  isDraggable?: boolean;
+  isDragDisabled?: boolean;
+  isDragBounded?: boolean;
+  /** ESC 키로 모달 닫기 가능 여부 */
+  allowKeyExit?: boolean;
+  /** 스크롤 이벤트를 방지할 엘리먼트 셀렉터 */
+  bodyScrollLockTarget?: string;
+  onClose: () => void;
+  onAfterOpen?: () => void;
+  dragOnStart?: () => void;
+  dragOnStop?: () => void;
+  dragOnDrag?: () => void;
+  children: ReactNode;
+}
 
 export const BaseModal = ({
   isOpen = false,
@@ -21,7 +38,7 @@ export const BaseModal = ({
   dragOnStop = () => {},
   dragOnDrag = () => {},
   bodyScrollLockTarget = '',
-}) => {
+}: Props) => {
   const dragBounds = isDraggable && isDragBounded ? '.dc-modal-overlay' : '';
   const dragCancelTarget = 'input, textarea, .not-draggable';
   return (
