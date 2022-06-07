@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { enableBodyScrollLock } from '../../../utils/common';
 import useScrollLock from '../../../hooks/useScrollLock';
 
@@ -10,9 +10,36 @@ import {
   SubTitle,
   Buttons,
   Button,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalHeaderContent,
 } from './DesignedModal.styles';
+import { BaseModalProps } from '../BaseModal';
 
 const modalType = 'designedModal';
+
+interface Props
+  extends Omit<
+    BaseModalProps,
+    'allowKeyExit' | 'bodyScrollLockTarget' | 'children'
+  > {
+  title?: string;
+  subTitle?: string;
+  customText?: string;
+  submit?: () => void;
+  close?: () => void;
+  submitText: string;
+  closeText?: string;
+  submitButtonDisabled?: boolean;
+  headerButton?: ReactNode;
+  isLoading?: boolean;
+  mobileWidth?: string | number;
+  mobileHeight?: string | number;
+  bodyScrollLockTargetId?: string | null;
+  delegateCloseControl?: boolean;
+  children?: ReactNode;
+}
 
 export const DesignedModal = ({
   isOpen,
@@ -32,7 +59,6 @@ export const DesignedModal = ({
   isDragDisabled = false,
   isDragBounded = true,
   onAfterOpen = () => {},
-  className,
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
@@ -40,7 +66,7 @@ export const DesignedModal = ({
   mobileHeight,
   bodyScrollLockTargetId,
   delegateCloseControl = false,
-}) => {
+}: Props) => {
   const { modalId, bodyScrollLockTarget } = useScrollLock(
     bodyScrollLockTargetId,
     modalType
@@ -48,7 +74,6 @@ export const DesignedModal = ({
   const buttonCount = submit && close ? 2 : 1;
   return (
     <Container
-      className={className}
       isOpen={isOpen}
       onClose={onClose}
       onAfterOpen={onAfterOpen}
@@ -65,17 +90,17 @@ export const DesignedModal = ({
         mobileWidth={mobileWidth}
         mobileHeight={mobileHeight}
       >
-        <Modal.Header>
-          <Modal.Header.Content>
+        <ModalHeader>
+          <ModalHeaderContent>
             <Title>{title}</Title>
             {subTitle && <SubTitle>{subTitle}</SubTitle>}
-          </Modal.Header.Content>
-          <Modal.Header.Content>{headerButton}</Modal.Header.Content>
-        </Modal.Header>
-        <Modal.Body id={modalId && `${modalType}${modalId}`}>
+          </ModalHeaderContent>
+          <ModalHeaderContent>{headerButton}</ModalHeaderContent>
+        </ModalHeader>
+        <ModalBody id={modalId ? `${modalType}${modalId}` : undefined}>
           {children}
-        </Modal.Body>
-        <Modal.Footer>
+        </ModalBody>
+        <ModalFooter>
           {customText}
           <Block />
           <Buttons>
@@ -121,7 +146,7 @@ export const DesignedModal = ({
               </Button>
             )}
           </Buttons>
-        </Modal.Footer>
+        </ModalFooter>
       </Modal>
     </Container>
   );

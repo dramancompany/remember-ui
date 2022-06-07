@@ -26,7 +26,11 @@ export const Container = styled(BaseModal)`
   border-radius: 10px;
 `;
 
-export const Modal = styled.div`
+export const Modal = styled.div<{
+  isDraggable?: boolean;
+  mobileWidth?: number | string;
+  mobileHeight?: number | string;
+}>`
   background-color: ${white};
   border-radius: 10px;
   width: 635px;
@@ -37,21 +41,20 @@ export const Modal = styled.div`
       box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
     `}
 
-  ${mobileOnly(css`
-    min-width: ${({ mobileWidth }) =>
-      (mobileWidth && `${mobileWidth}`) || '90vw'};
-    max-width: ${({ mobileWidth }) =>
-      (mobileWidth && `${mobileWidth}`) || '90vw'};
-    ${({ mobileHeight }) =>
-      mobileHeight &&
-      css`
-        min-height: ${mobileHeight};
-        max-height: ${mobileHeight};
-      `}
-  `)};
+  ${({ mobileWidth, mobileHeight }) =>
+    mobileOnly(css`
+      min-width: ${mobileWidth ?? '90vw'};
+      max-width: ${mobileWidth ?? '90vw'};
+      ${mobileHeight
+        ? css`
+            min-height: ${mobileHeight};
+            max-height: ${mobileHeight};
+          `
+        : ''}
+    `)}
 `;
 
-Modal.Header = styled.div`
+export const ModalHeader = styled.div`
   ${flexCenterY};
 
   justify-content: space-between;
@@ -62,14 +65,14 @@ Modal.Header = styled.div`
   `)};
 `;
 
-Modal.Header.Content = styled.div``;
+export const ModalHeaderContent = styled.div``;
 
-Modal.Body = styled.div`
+export const ModalBody = styled.div`
   max-height: 60vh;
   overflow-y: auto;
 `;
 
-Modal.Footer = styled.div`
+export const ModalFooter = styled.div`
   ${flexCenterY}
 
   box-shadow: inset 0 1px 0 0 ${gray80};
@@ -136,24 +139,24 @@ export const Buttons = styled.div`
   `)};
 `;
 
-export const Button = styled(BaseButton)`
+export const Button = styled(BaseButton)<{ buttonCount?: number }>`
   width: 116px;
 
   &:last-child {
     margin-left: 6px;
   }
 
-  ${mobileOnly(css`
-    ${mobileSubTitle14({ color: white })};
+  ${({ buttonCount = 1 }) =>
+    mobileOnly(css`
+      ${mobileSubTitle14({ color: white })};
 
-    width: ${({ buttonCount }) => (buttonCount === 2 ? '50%' : '100%')};
+      width: ${buttonCount === 2 ? '50%' : '100%'};
 
-    ${({ buttonCount }) =>
-      buttonCount !== 2 &&
+      ${buttonCount !== 2 &&
       css`
         &:last-child {
           margin-left: 0px;
         }
       `}
-  `)};
+    `)}
 `;
