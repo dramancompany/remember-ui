@@ -32,9 +32,9 @@ export const Label = styled.div`
   `)};
 `;
 
-Label.Title = styled.span``;
+export const Title = styled.span``;
 
-Label.Icon = styled.img.attrs({
+export const Icon = styled.img.attrs({
   width: 6,
   height: 6,
   src: requiredIcon,
@@ -45,12 +45,14 @@ Label.Icon = styled.img.attrs({
   top: 1px;
 `;
 
-Label.Notice = styled.span`
+export const Notice = styled.span`
   ${textExtraSmall({ color: red100 })};
   float: right;
 `;
 
-export const Text = styled.textarea`
+export const Text = styled.textarea<{
+  resize?: boolean;
+}>`
   ${font({ size: '15px', color: text })}
   ${placeholderColor(gray150)}
 
@@ -81,11 +83,13 @@ export const TextCount = styled.div`
   color: ${gray150};
 `;
 
-TextCount.Progress = styled.span`
+export const Progress = styled.span<{
+  inProgress: boolean;
+}>`
   ${({ inProgress }) =>
     inProgress &&
     css`
       color: ${gray400};
     `}
 `;
-TextCount.Max = styled.span``;
+export const Max = styled.span``;
