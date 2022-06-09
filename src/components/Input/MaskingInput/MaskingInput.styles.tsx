@@ -16,13 +16,13 @@ import {
 
 export const Container = styled.div``;
 
-export const Label = styled.div`
+export const Label = styled.div<{ $marginBottom?: number }>`
   ${textSmall({ color: contents100 })};
 
   display: flex;
   align-items: center;
-  margin-bottom: ${({ marginBottom }) =>
-    marginBottom ? `${marginBottom}px` : '8px'};
+  margin-bottom: ${({ $marginBottom }) =>
+    $marginBottom ? `${$marginBottom}px` : '8px'};
   min-height: 20px;
 
   ${mobileOnly(css`
@@ -44,7 +44,9 @@ export const ErrorMessage = styled.div`
   height: 19px;
 `;
 
-export const Input = styled(MaskedInput)`
+export const Input = styled(MaskedInput)<{
+  error?: boolean;
+}>`
   ${font({ size: '15px', color: gray400 })}
   ${placeholderColor(gray150)}
 
