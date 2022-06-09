@@ -1,4 +1,10 @@
-import React, { useState } from 'react';
+import React, {
+  useState,
+  ChangeEventHandler,
+  RefObject,
+  MouseEventHandler,
+  ReactNode,
+} from 'react';
 
 import { handleInputLength } from '../../../utils/string';
 
@@ -10,6 +16,31 @@ import {
   ErrorMessage,
   Input,
 } from './BaseInput.styles';
+
+interface Props {
+  name?: string;
+  value?: string | number;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  outerRef?: RefObject<HTMLInputElement>;
+  footer?: ReactNode;
+  placeholder?: string;
+  maxLength?: number;
+  marginBottom?: number;
+  type?: string;
+  label?: string;
+  className?: string;
+  autoFocus?: boolean;
+  required?: boolean;
+  disabled?: boolean;
+  useError?: boolean;
+  errorMark?: boolean;
+  onlyNumber?: boolean;
+  blankLabel?: boolean;
+  readOnly?: boolean;
+  onClick?: MouseEventHandler<HTMLInputElement>;
+  onEnter?: VoidFunction;
+  validate?: (value?: string | number) => string;
+}
 
 export const BaseInput = ({
   value,
@@ -36,15 +67,17 @@ export const BaseInput = ({
   marginBottom,
   outerRef,
   ...rest
-}) => {
+}: Props) => {
   const [error, setError] = useState('');
 
   const _validate = () => {
-    const error = validate(value);
-    setError(error);
+    if (validate) {
+      const error = validate(value);
+      setError(error);
+    }
   };
 
-  const _onChange = (e) => {
+  const _onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     if (onlyNumber && e.target.value !== '' && !/^\d+$/.test(e.target.value))
       return;
     if (maxLength) return handleInputLength(onChange, e, maxLength);
@@ -54,7 +87,7 @@ export const BaseInput = ({
   return (
     <Container className={className}>
       {(label || blankLabel) && (
-        <Label marginBottom={marginBottom}>
+        <Label $marginBottom={marginBottom}>
           <span>{label}</span>
           {required && <Mark src={requiredIcon} alt="mark" />}
         </Label>
