@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, ChangeEventHandler } from 'react';
 
 import {
   Container,
@@ -7,6 +7,24 @@ import {
   Divider,
   ErrorMsg,
 } from './DoubleInput.styles';
+
+interface Props {
+  label1?: string;
+  label2?: string;
+  value1?: string;
+  value2?: string;
+  name1?: string;
+  name2?: string;
+  placeholder1?: string;
+  placeholder2?: string;
+  onChange1: ChangeEventHandler<HTMLInputElement>;
+  onChange2: ChangeEventHandler<HTMLInputElement>;
+  validate?: (value1?: string | number, value2?: string | number) => string;
+  maxLength?: number;
+  onlyNumber?: boolean;
+  width?: number;
+  className?: string;
+}
 
 export const DoubleInput = ({
   label1,
@@ -24,22 +42,24 @@ export const DoubleInput = ({
   onlyNumber,
   width,
   className,
-}) => {
+}: Props) => {
   const [error, setError] = useState('');
-  const inputRef = useRef();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (value1.length === maxLength) {
-      inputRef.current.focus();
+    if (value1?.length === maxLength) {
+      inputRef?.current?.focus();
     }
   }, [value1, maxLength]);
 
-  const _validate = (_value1, _value2) => {
-    const _error = validate(_value1, _value2);
-    setError(_error);
+  const _validate = (_value1?: string, _value2?: string) => {
+    if (validate) {
+      const _error = validate(_value1, _value2);
+      setError(_error);
+    }
   };
   return (
-    <Container width={width} className={className}>
+    <Container $width={width} className={className}>
       <Inputs onBlur={() => _validate(value1, value2)}>
         <Input
           name={name1}
