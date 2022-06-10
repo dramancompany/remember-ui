@@ -654,17 +654,17 @@ declare module '@dramancompany/remember-ui' {
 
   export const MaskingInput: React.FC<MaskingInputProps>;
 
-  export interface AccordianMenu {
+  export interface AccordionMenu {
     title: string;
     list: { title: string; value: string; onClick?: (value: string) => void }[];
   }
 
-  export interface AccordianProps {
-    menus: AccordianMenu[];
+  export interface AccordionProps {
+    menus: AccordionMenu[];
     hasCheckBox?: boolean;
     onClickItem?: (value: string) => void;
     onCheckItem?: (title: string, value: string) => void;
     isCheckedItem?: (title: string, value: string) => boolean;
   }
-  export const Accordian: React.FC<AccordianProps>;
+  export const Accordion: React.FC<AccordionProps>;
 }

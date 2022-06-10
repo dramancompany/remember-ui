@@ -23,20 +23,20 @@ export const Menu = styled.div`
   background-color: ${white};
 `;
 
-export const Item = styled.div`
+export const Item = styled.div<{ hasToggled: boolean; height: string }>`
   width: 100%;
   display: block;
 
-  ${({ hasToggled }) =>
+  ${({ hasToggled, height = 'auto' }) =>
     !hasToggled &&
     css`
       &:first-child > .inner {
-        height: ${({ height = 'auto' }) => `${height}`};
+        height: ${height}};
       }
     `}
 `;
 
-Item.Title = styled.label`
+export const ItemTitle = styled.label`
   ${mobileBody15({ color: gray400 })};
 
   display: block;
@@ -53,22 +53,20 @@ Item.Title = styled.label`
   }
 `;
 
-Item.Checker = styled.input.attrs({
-  type: 'radio',
-})`
+export const ItemChecker = styled.input<{ height: string }>`
   display: none;
   &:checked + .inner {
     height: ${({ height = 'auto' }) => `${height}`};
   }
 `;
 
-Item.Inner = styled.div`
+export const ItemInner = styled.div`
   transition: all 0.3s;
   height: 0px;
   overflow: hidden;
 `;
 
-Item.Inner.Title = styled.div`
+export const ItemInnerTitle = styled.div`
   ${mobileBody13({ color: gray400 })};
   ${flexContainer('flex-start', 'center')};
 
@@ -83,6 +81,6 @@ Item.Inner.Title = styled.div`
   }
 `;
 
-Item.Inner.Checkbox = styled(Checkbox)`
+export const ItemInnerCheckbox = styled(Checkbox)`
   margin-right: 5px;
 `;

@@ -1,10 +1,10 @@
 import React from 'react';
 import t from 'prop-types';
-import { Accordian as Component } from 'remember-ui';
+import { Accordion as Component } from 'remember-ui';
 
-export const Accordian = ({ ...rest }) => <Component {...rest} />;
+export const Accordion = ({ ...rest }) => <Component {...rest} />;
 
-Accordian.propTypes = {
+Accordion.propTypes = {
   menus: t.array,
   hasCheckBox: t.oneOf([false, true]),
   onClickItem: t.func,
@@ -12,7 +12,7 @@ Accordian.propTypes = {
   isCheckedItem: t.func,
 };
 
-Accordian.defaultProps = {
+Accordion.defaultProps = {
   menus: [],
   onClickItem: () => {},
   onCheckItem: () => {},

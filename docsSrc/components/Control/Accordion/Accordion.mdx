@@ -1,17 +1,17 @@
 ---
-name: Accordian
+name: Accordion
 menu: Components/Control
 ---
 
 import { Playground, Props } from 'docz';
-import { Accordian } from './Accordian';
+import { Accordion } from './Accordion';
 import { DoczContainer } from 'remember-ui';
 
-# Accordian
+# Accordion
 
 ## Properties
 
-<Props of={Accordian} />
+<Props of={Accordion} />
 
 ## Basic usage
 
@@ -96,7 +96,7 @@ import { DoczContainer } from 'remember-ui';
       <>
         <DoczContainer direction="column">
           <h3>체크박스 있는 경우</h3>
-          <Accordian
+          <Accordion
             menus={menus}
             onCheckItem={onCheckItem}
             isCheckedItem={isCheckedItem}
@@ -106,14 +106,14 @@ import { DoczContainer } from 'remember-ui';
         </DoczContainer>
         <DoczContainer direction="column">
            <h3>각 menu 클릭할 경우 공통 로직 적용 되는 예제 / 현재는 console.log</h3>
-           <Accordian
+           <Accordion
             menus={menus2}
             onClickItem={(value) => console.log(value)}
           />
         </DoczContainer>
         <DoczContainer direction="column">
            <h3>각 menu 클릭할 경우 각각의 event handling 할 경우</h3>
-           <Accordian
+           <Accordion
             menus={menus3}
           />
         </DoczContainer>
