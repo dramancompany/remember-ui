@@ -21,7 +21,7 @@ interface Props {
 export const ImageInput = ({ id, onChange, label, className }: Props) => {
   const [imageName, setImageName] = useState('');
 
-  const changeCompanyLogo = (e: ChangeEvent<HTMLInputElement>) => {
+  const changeImage = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const IMAGE_SIZE_LIMIT = 1024 * 1024 * 5;
       const reader = new FileReader();
@@ -50,7 +50,7 @@ export const ImageInput = ({ id, onChange, label, className }: Props) => {
         </label>
         <FileName>{imageName}</FileName>
       </Image>
-      <InputFile id={id} onChange={changeCompanyLogo} />
+      <InputFile id={id} onChange={changeImage} />
     </Container>
   );
 };

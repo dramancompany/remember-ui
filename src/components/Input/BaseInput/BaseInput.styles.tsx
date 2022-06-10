@@ -21,8 +21,7 @@ export const Label = styled.div<{ $marginBottom?: number }>`
 
   display: flex;
   align-items: center;
-  margin-bottom: ${({ $marginBottom }) =>
-    $marginBottom ? `${$marginBottom}px` : '8px'};
+  margin-bottom: ${({ $marginBottom = 8 }) => `${$marginBottom}px`};
   min-height: 20px;
 
   ${mobileOnly(css`

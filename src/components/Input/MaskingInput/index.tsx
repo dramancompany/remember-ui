@@ -1,5 +1,6 @@
 import React, {
   ChangeEventHandler,
+  KeyboardEvent,
   KeyboardEventHandler,
   MouseEventHandler,
   ReactNode,
