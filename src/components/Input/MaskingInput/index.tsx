@@ -94,7 +94,7 @@ export const MaskingInput = ({
         autoFocus={autoFocus}
         readOnly={disabled}
         onBlur={validate && _validate}
-        onKeyPress={({ key }: { key: string }) => {
+        onKeyPress={({ key }: KeyboardEvent<HTMLInputElement>) => {
           if (key === 'Enter') {
             onEnter && onEnter();
           }
