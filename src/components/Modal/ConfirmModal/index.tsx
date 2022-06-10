@@ -102,7 +102,7 @@ export const ConfirmModal = ({
 
   const _onClose = () => {
     enableBodyScrollLock(bodyScrollLockTarget, delegateCloseControl);
-    onCloseAction?.();
+    onCloseAction();
     return Promise.resolve();
   };
 
