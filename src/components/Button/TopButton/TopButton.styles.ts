@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.img`
+export const Container = styled.img<{ show: boolean }>`
   position: fixed;
   left: 50%;
   width: 56px;
@@ -8,15 +8,9 @@ export const Container = styled.img`
   padding: 20px;
   cursor: pointer;
   margin-left: 562px;
+  transition: bottom 0.35s;
 
-  ${({ show }) =>
-    show
-      ? css`
-          bottom: 0;
-          transition: 0.35s;
-        `
-      : css`
-          bottom: -76px;
-          transition: 0.35s;
-        `}
+  ${({ show }) => css`
+    bottom: ${show ? 0 : '-76px'};
+  `}
 `;
