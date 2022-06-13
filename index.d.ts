@@ -629,7 +629,7 @@ declare module '@dramancompany/remember-ui' {
   export interface SwitchProps {
     className?: string;
     checked?: boolean;
-    onClick: MouseEventHandler;
+    onClick: React.ChangeEventHandler<HTMLInputElement>;
     size?: 'small' | 'large';
     color?: string;
   }
