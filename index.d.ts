@@ -461,16 +461,29 @@ declare module '@dramancompany/remember-ui' {
 
   export const Textarea: React.FC<TextareaProps>;
 
+  export type TippyPlaceMentType =
+    | 'top'
+    | 'top-start'
+    | 'top-end'
+    | 'right'
+    | 'right-start'
+    | 'right-end'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left'
+    | 'left-start'
+    | 'left-end';
   export interface PopoverProps {
     content: ReactNode;
     onPopoverOpenChange?: Function;
     className?: string;
     customElement?: ReactNode;
-    size?: string;
+    size?: 'small' | 'large';
     onOpen?: Function;
     distance?: number;
-    trigger?: string;
-    placement?: string;
+    trigger?: 'mouseenter' | 'click' | 'focus';
+    placement?: TippyPlaceMentType;
     disabled?: boolean;
   }
 

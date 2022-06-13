@@ -1,21 +1,49 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 
 import { Popover, Content } from './Popover.styles';
 
+type TippyPlaceMentType =
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'right'
+  | 'right-start'
+  | 'right-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'left'
+  | 'left-start'
+  | 'left-end';
+
+interface Props {
+  content: ReactNode;
+  onPopoverOpenChange?: (isChange: boolean) => void;
+  className?: string;
+  customElement?: ReactNode;
+  size?: 'small' | 'large';
+  onOpen?: () => void;
+  distance?: number;
+  trigger?: 'mouseenter' | 'click' | 'focus';
+  placement?: TippyPlaceMentType;
+  disabled?: boolean;
+  children: ReactNode;
+}
+
 export const BasePopover = ({
+  content,
   onPopoverOpenChange = () => {},
   className = 'DcPopover',
   customElement,
-  content,
-  size = 'small', // small or large
-  children,
+  size = 'small',
   onOpen = () => {},
   distance = 10,
   trigger = 'click',
   placement = 'bottom-end',
   disabled = false,
-}) => {
-  const [instance, setInstance] = useState(undefined);
+  children,
+}: Props) => {
+  const [instance, setInstance] = useState<any>(undefined);
 
   if (disabled) return <React.Fragment>{children}</React.Fragment>;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 
 import {
   checkboxChecked,
@@ -13,7 +13,7 @@ import { Container, Icon } from './Checkbox.styles';
 
 interface Props {
   state?: 'on' | 'off';
-  onClick?: Function;
+  onClick?: (e: MouseEvent<HTMLDivElement>) => void;
   disabled?: boolean;
   className?: string;
   round?: boolean;
