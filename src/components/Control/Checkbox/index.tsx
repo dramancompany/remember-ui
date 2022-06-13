@@ -11,14 +11,22 @@ import {
 import useHover from '../../../hooks/useHover';
 import { Container, Icon } from './Checkbox.styles';
 
+interface Props {
+  state?: 'on' | 'off';
+  onClick?: Function;
+  disabled?: boolean;
+  className?: string;
+  round?: boolean;
+}
+
 export const Checkbox = ({
   state = 'off',
   onClick = () => {},
   disabled = false,
   className,
   round = false,
-}) => {
-  const [hoverRef, isHovered] = useHover();
+}: Props) => {
+  const [hoverRef, isHovered] = useHover<HTMLDivElement>();
 
   const getIconImg = () => {
     if (round) {
