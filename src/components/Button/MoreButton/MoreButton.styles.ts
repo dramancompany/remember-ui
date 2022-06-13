@@ -1,22 +1,13 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { MoreButtonProps } from '.';
 
-export const Icon = styled.img.attrs({
-  width: 12,
-  height: 12,
-  alt: 'more',
-})`
-  ${({ src }) =>
-    src &&
-    css`
-      src: ${src};
-    `}
-
+export const Icon = styled.img<Pick<MoreButtonProps, 'size'>>`
   width: ${({ size }) => size === 'large' && '16px'};
   height: ${({ size }) => size === 'large' && '16px'};
   margin-top: ${({ size }) => size === 'large' && '2px'};
-    
+
   display: inline-block;
   cursor: pointer;
 
-  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+  user-select: none;
 `;
