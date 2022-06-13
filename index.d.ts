@@ -520,10 +520,10 @@ declare module '@dramancompany/remember-ui' {
   export interface SelectProps {
     options: SelectOption[];
     value?: string | number;
-    onChange: Function;
+    onChange: (value: number | string) => void;
     className?: string;
     label?: string;
-    changeInputMode?: Function;
+    changeInputMode?: () => void;
     required?: boolean;
     isFixedSelect?: boolean;
     maxHeight?: number;

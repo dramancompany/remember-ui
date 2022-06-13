@@ -7,12 +7,40 @@ import { requiredIcon } from '../../../assets';
 import {
   Container,
   Label,
+  LabelText,
+  LabelMark,
   Content,
   Selected,
+  SelectedText,
+  SelectedUnselected,
   Options,
+  OptionItemText,
   OptionItem,
   Message,
 } from './Select.styles';
+
+interface SelectOption {
+  id: string | number;
+  label: string | number;
+  value?: string | number;
+  disabled?: boolean;
+}
+
+export interface Props {
+  options: SelectOption[];
+  value?: string | number;
+  onChange: (value: number | string) => void;
+  className?: string;
+  label?: string;
+  changeInputMode?: () => void;
+  required?: boolean;
+  isFixedSelect?: boolean;
+  maxHeight?: number;
+  placeholder?: string;
+  marginBottom?: number;
+  error?: boolean;
+  errorMessage?: string;
+}
 
 export const Select = ({
   options = [],
@@ -24,11 +52,11 @@ export const Select = ({
   required,
   isFixedSelect,
   maxHeight,
-  placeholder = '포지션을 선택하세요',
+  placeholder,
   marginBottom,
   errorMessage,
   error,
-}) => {
+}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openExample = () => {
@@ -50,17 +78,17 @@ export const Select = ({
     <Container className={className}>
       {label && (
         <Label marginBottom={marginBottom}>
-          <Label.Text>{label}</Label.Text>
-          {required && <Label.Mark src={requiredIcon} alt="mark" />}
+          <LabelText>{label}</LabelText>
+          {required && <LabelMark src={requiredIcon} alt="mark" />}
         </Label>
       )}
       <Content isFixed={isFixedSelect} active={isOpen} error={error}>
         <OutsideClickHandler onOutsideClick={closeExample}>
           <Selected onClick={selectHandler}>
             {selectedOption ? (
-              <Selected.Text>{selectedOption.label}</Selected.Text>
+              <SelectedText>{selectedOption.label}</SelectedText>
             ) : (
-              <Selected.Unselected>{placeholder}</Selected.Unselected>
+              <SelectedUnselected>{placeholder}</SelectedUnselected>
             )}
             {!isFixedSelect && <MoreButton value={isOpen} />}
           </Selected>
@@ -75,12 +103,12 @@ export const Select = ({
                     disable={disabled}
                     onClick={() => {
                       if (!disabled) {
-                        id !== 'custom' ? onChange(id) : changeInputMode();
+                        id !== 'custom' ? onChange(id) : changeInputMode?.();
                       }
                       closeExample();
                     }}
                   >
-                    <OptionItem.Text>{label}</OptionItem.Text>
+                    <OptionItemText>{label}</OptionItemText>
                   </OptionItem>
                 );
               })}
