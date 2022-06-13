@@ -1,18 +1,41 @@
 import styled, { css } from 'styled-components';
 
 import {
-  gray50,
+  blue100,
+  flexCenter,
+  gold100,
   gray100,
   gray120,
   gray200,
   gray400,
-  blue100,
   red100,
-  yellow100,
-  gold100,
   white,
+  yellow100,
 } from '../../../core/GlobalStyle';
-import { flexCenter, textSmall } from '../../../core/GlobalStyle';
+import type { BaseButtonStyleType } from './Button.types';
+
+const BASE_BUTTON_SIZES = {
+  small: {
+    fontSize: '13px',
+    fontWeight: 400,
+    height: '32px',
+  },
+  medium: {
+    fontSize: '14px',
+    fontWeight: 400,
+    height: '36px',
+  },
+  large: {
+    fontSize: '15px',
+    fontWeight: 'bold',
+    height: '48px',
+  },
+  xlarge: {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    height: '52px',
+  },
+} as const;
 
 export const Inner = styled.div`
   display: flex;
@@ -20,9 +43,8 @@ export const Inner = styled.div`
   margin-bottom: 1px;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<BaseButtonStyleType>`
   ${flexCenter};
-  ${textSmall({ weight: 400 })};
 
   border: 1px solid ${gray400};
   box-sizing: border-box;
@@ -34,29 +56,12 @@ export const Container = styled.div`
       width: ${width}px;
     `}
 
-  height:  ${({ size }) =>
-    (size === 'small' && '32px') ||
-    (size === 'medium' && '36px') ||
-    (size === 'large' && '48px') ||
-    (size === 'xlarge' && '52px')};
-
-  font-size: ${({ size }) =>
-    (size === 'small' && '13px') ||
-    (size === 'large' && '15px') ||
-    (size === 'xlarge' && '16px')};
-
-  font-weight: ${({ size }) =>
-    (size === 'large' || size === 'xlarge') && 'bold'};
-
-  ${({ rounded }) =>
-    rounded &&
-    css`
-      border-radius: 4px;
-
-      &.small {
-        border-radius: 2px;
-      }
-    `}
+  ${({ size, rounded }) => css`
+    height: ${BASE_BUTTON_SIZES[size].height};
+    font-weight: ${BASE_BUTTON_SIZES[size].fontWeight};
+    font-size: ${BASE_BUTTON_SIZES[size].fontSize};
+    border-radius: ${rounded ? (size === 'small' ? '2px' : '4px') : 0};
+  `};
 
   ${({ borderless }) =>
     borderless &&
@@ -106,24 +111,6 @@ export const BlackButton = styled(Container)`
       border-color: ${gray400};
       background-color: ${gray400};
     `}
-
-  ${({ large }) =>
-    large &&
-    css`
-      &:hover {
-        background-color: ${gray50};
-      }
-    `}
-
-  ${({ fillColor, large }) =>
-    fillColor &&
-    large &&
-    css`
-      &:hover {
-        background-color: ${gray400};
-        opacity: 0.8;
-      }
-    `}
 `;
 
 export const YellowButton = styled(Container)`
@@ -136,14 +123,6 @@ export const YellowButton = styled(Container)`
       color: ${white};
       border-color: ${yellow100};
       background-color: ${yellow100};
-    `}
-
-  ${({ large }) =>
-    large &&
-    css`
-      &:hover {
-        opacity: 0.8;
-      }
     `}
 `;
 
@@ -172,15 +151,6 @@ export const GrayButton = styled(Container)`
       border-color: ${gray200};
       background-color: ${gray200};
     `}
-
-  ${({ fillColor, large }) =>
-    fillColor &&
-    large &&
-    css`
-      &:hover {
-        opacity: 0.8;
-      }
-    `}
 `;
 
 export const BlueButton = styled(Container)`
@@ -205,15 +175,6 @@ export const RedButton = styled(Container)`
       color: ${white};
       border-color: ${red100};
       background-color: ${red100};
-    `}
-
-  ${({ fillColor, large }) =>
-    fillColor &&
-    large &&
-    css`
-      &:hover {
-        opacity: 0.8;
-      }
     `}
 `;
 
