@@ -1,69 +1,79 @@
 import styled, { css } from 'styled-components';
 import { white, gray100, gray120, flexCenter } from '../../../core/GlobalStyle';
+import type { CustomButtonStyleProps } from './CustomButton.types';
+
+const CUSTOM_BUTTON_SIZES = {
+  small: {
+    fontSize: '13px',
+    height: '32px',
+    minWidth: '68px',
+    padding: '0 16px',
+  },
+  medium: {
+    fontSize: '13px',
+    height: '36px',
+    minWidth: '78px',
+    padding: '0 20px',
+  },
+  large: {
+    fontSize: '14px',
+    height: '40px',
+    minWidth: '108px',
+    padding: '0 20px',
+  },
+  xlarge: {
+    fontSize: '15px',
+    height: '48px',
+    minWidth: '116px',
+    padding: '0 24px',
+  },
+} as const;
 
 export const Inner = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<CustomButtonStyleProps>`
   ${flexCenter};
 
   box-sizing: border-box;
-  cursor: ${({ isLoading, disabled }) =>
-    isLoading || disabled ? 'default' : 'pointer'};
 
-  height: ${({ size }) =>
-    (size === 'small' && '32px') ||
-    (size === 'medium' && '36px') ||
-    (size === 'large' && '40px') ||
-    (size === 'xlarge' && '48px')};
+  ${({ size }) => css`
+    height: ${CUSTOM_BUTTON_SIZES[size].height};
+    font-size: ${CUSTOM_BUTTON_SIZES[size].fontSize};
+    min-width: ${CUSTOM_BUTTON_SIZES[size].minWidth};
+    padding: ${CUSTOM_BUTTON_SIZES[size].padding};
+    border-radius: ${size === 'small' ? '2px' : '4px'};
+  `};
 
-  font-size: ${({ size }) =>
-    (size === 'small' && '13px') ||
-    (size === 'medium' && '13px') ||
-    (size === 'large' && '14px') ||
-    (size === 'xlarge' && '15px')};
+  ${({ customStyle }) => css`
+    font-weight: ${customStyle.fontWeight};
+    border: 1px solid ${customStyle.borderColor};
+    background-color: ${customStyle.backgroundColor};
+    color: ${customStyle.fontColor};
+  `};
 
-  min-width: ${({ size }) =>
-    (size === 'small' && '68px') ||
-    (size === 'medium' && '78px') ||
-    (size === 'large' && '108px') ||
-    (size === 'xlarge' && '116px')};
-
-  padding: ${({ size }) =>
-    (size === 'small' && '0 16px') ||
-    (size === 'medium' && '0 20px') ||
-    (size === 'large' && '0 20px') ||
-    (size === 'xlarge' && '0 24px')};
-
-  font-weight: ${({ customStyle }) => customStyle.fontWeight};
-  border-radius: ${({ size }) => (size === 'small' ? '2px' : '4px')};
-
-  border: 1px solid ${({ customStyle }) => customStyle.borderColor};
-  background-color: ${({ customStyle }) => customStyle.backgroundColor};
-  color: ${({ customStyle }) => customStyle.fontColor};
-
-  ${({ block }) =>
+  ${({ block, disabled, outline, isLoading }) => [
     block &&
-    css`
-      width: 100%;
-    `}
-
-  ${({ disabled }) =>
+      css`
+        width: 100%;
+      `,
     disabled &&
-    css`
-      color: ${white};
-      border: 1px solid ${gray120};
-      background-color: ${gray120};
-    `};
-
-  ${({ disabled, outline }) =>
+      css`
+        color: ${white};
+        border: 1px solid ${gray120};
+        background-color: ${gray120};
+      `,
     disabled &&
-    outline &&
+      outline &&
+      css`
+        color: ${gray120};
+        border-color: ${gray100};
+        background-color: ${white};
+      `,
     css`
-      border-color: ${gray100};
-      color: ${gray120};
-      background-color: ${white};
-    `}
+      cursor: ${isLoading || disabled ? 'default' : 'pointer'};
+    `,
+  ]}
 `;
