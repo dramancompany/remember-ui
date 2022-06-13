@@ -7,15 +7,13 @@ import { TopBtn } from '../../../assets';
 
 interface TopButtonProps {
   className?: string;
-  afterScroll?: () => void;
 }
 
-export const TopButton = ({ className, afterScroll }: TopButtonProps) => {
+export const TopButton = ({ className }: TopButtonProps) => {
   const isScrollTop = useDetectScrollPositionTop();
 
   const handleClick = useCallback(() => {
     document.documentElement.scrollTop = 0;
-    afterScroll?.();
   }, []);
 
   return (
