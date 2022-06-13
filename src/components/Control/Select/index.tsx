@@ -26,7 +26,7 @@ interface SelectOption {
   disabled?: boolean;
 }
 
-export interface Props {
+interface Props {
   options: SelectOption[];
   value?: string | number;
   onChange: (value: number | string) => void;

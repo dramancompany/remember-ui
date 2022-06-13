@@ -10,7 +10,7 @@ import {
 import useHover from '../../../hooks/useHover';
 import { RadioButton } from './Radio.styles';
 
-export interface Props {
+interface Props {
   isChecked: boolean;
   onClick?: () => void;
   className?: string;
