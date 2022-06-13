@@ -194,7 +194,7 @@ declare module '@dramancompany/remember-ui' {
   export const font: (params: FontParams) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
-  export interface TypograhyParams {
+  export interface TypographyParams {
     weight?: string;
     color?: string;
     opacity?: number;
@@ -490,10 +490,12 @@ declare module '@dramancompany/remember-ui' {
   export const BasePopover: React.FC<PopoverProps>;
 
   export interface PopoverItemProps {
+    children: React.ReactNode;
     selected?: boolean;
     warning?: boolean;
     bold?: boolean;
     onClick: React.MouseEventHandler;
+    className: string;
   }
 
   export const PopoverItem: React.FC<PopoverItemProps>;
