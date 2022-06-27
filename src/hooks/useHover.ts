@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState, RefObject } from 'react';
 
-type UseHoverType<T extends HTMLElement> = [RefObject<T>, boolean];
+type UseHoverType<T extends HTMLElement> = {
+  ref: RefObject<T>;
+  value: boolean;
+};
 
 function useHover<T extends HTMLElement>(): UseHoverType<T> {
   const [value, setValue] = useState(false);
@@ -23,7 +26,7 @@ function useHover<T extends HTMLElement>(): UseHoverType<T> {
     }
   }, []);
 
-  return [ref, value];
+  return { ref, value };
 }
 
 export default useHover;

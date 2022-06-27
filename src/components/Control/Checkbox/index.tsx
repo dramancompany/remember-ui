@@ -1,4 +1,5 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
+import type { MouseEvent } from 'react';
 
 import {
   checkboxChecked,
@@ -26,7 +27,7 @@ export const Checkbox = ({
   className,
   round = false,
 }: Props) => {
-  const [hoverRef, isHovered] = useHover<HTMLDivElement>();
+  const { ref: hoverRef, value: isHovered } = useHover<HTMLDivElement>();
 
   const getIconImg = () => {
     if (round) {

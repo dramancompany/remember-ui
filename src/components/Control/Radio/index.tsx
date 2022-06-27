@@ -14,7 +14,7 @@ interface Props {
   isChecked: boolean;
   onClick?: () => void;
   className?: string;
-  theme: 'yellow' | 'black';
+  theme?: 'yellow' | 'black';
 }
 
 export const Radio = ({
@@ -23,7 +23,7 @@ export const Radio = ({
   className,
   theme = 'yellow',
 }: Props) => {
-  const [hoverRef, isHovered] = useHover<HTMLImageElement>();
+  const { ref: hoverRef, value: isHovered } = useHover<HTMLImageElement>();
 
   const getIconImg = () => {
     if (theme === 'yellow') {

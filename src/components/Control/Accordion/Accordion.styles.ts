@@ -23,7 +23,7 @@ export const Menu = styled.div`
   background-color: ${white};
 `;
 
-export const Item = styled.div<{ hasToggled: boolean; height: string }>`
+export const Item = styled.div<{ hasToggled?: boolean; height?: string }>`
   width: 100%;
   display: block;
 
@@ -56,7 +56,7 @@ export const ItemTitle = styled.label`
 export const ItemChecker = styled.input<{ height: string }>`
   display: none;
   &:checked + .inner {
-    height: ${({ height = 'auto' }) => `${height}`};
+    height: ${({ height }) => height};
   }
 `;
 

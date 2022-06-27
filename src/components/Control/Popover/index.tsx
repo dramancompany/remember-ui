@@ -1,20 +1,7 @@
 import React, { ReactNode, useState } from 'react';
+import type { Placement } from 'popper.js';
 
 import { Popover, Content } from './Popover.styles';
-
-type TippyPlaceMentType =
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'right'
-  | 'right-start'
-  | 'right-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end'
-  | 'left'
-  | 'left-start'
-  | 'left-end';
 
 interface Props {
   content: ReactNode;
@@ -25,7 +12,7 @@ interface Props {
   onOpen?: () => void;
   distance?: number;
   trigger?: 'mouseenter' | 'click' | 'focus';
-  placement?: TippyPlaceMentType;
+  placement?: Placement;
   disabled?: boolean;
   children: ReactNode;
 }

@@ -4,6 +4,7 @@ import React, {
   ReactNode,
   RefObject,
 } from 'react';
+import type { Placement } from 'popper.js';
 import {
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
@@ -461,19 +462,6 @@ declare module '@dramancompany/remember-ui' {
 
   export const Textarea: React.FC<TextareaProps>;
 
-  export type TippyPlaceMentType =
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end';
   export interface PopoverProps {
     content: ReactNode;
     onPopoverOpenChange?: Function;
@@ -483,7 +471,7 @@ declare module '@dramancompany/remember-ui' {
     onOpen?: Function;
     distance?: number;
     trigger?: 'mouseenter' | 'click' | 'focus';
-    placement?: TippyPlaceMentType;
+    placement?: Placement;
     disabled?: boolean;
   }
 

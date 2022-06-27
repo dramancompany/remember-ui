@@ -1,4 +1,5 @@
 import React from 'react';
+import type { MouseEventHandler } from 'react';
 
 import { Container, Popover } from './PopoverItem.styles';
 
@@ -10,7 +11,7 @@ export interface PopoverProps {
 
 interface Props extends PopoverProps {
   children: React.ReactNode;
-  onClick: React.MouseEventHandler;
+  onClick: MouseEventHandler;
   className: string;
 }
 
