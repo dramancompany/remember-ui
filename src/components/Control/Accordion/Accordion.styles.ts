@@ -31,7 +31,7 @@ export const Item = styled.div<{ hasToggled?: boolean; height?: string }>`
     !hasToggled &&
     css`
       &:first-child > .inner {
-        height: ${height}};
+        height: ${height};
       }
     `}
 `;
