@@ -41,6 +41,9 @@ export const Container = styled.div<NewBaseButtonStyleType>`
   box-sizing: border-box;
   cursor: ${({ isLoading, disabled }) =>
     isLoading || disabled ? 'default' : 'pointer'};
+  font-weight: 400;
+  border-radius: 4px;
+  color: ${contents999};
 
   ${({ size = 'small' }) => css`
     height: ${NEW_BASE_BUTTON_SIZES[size].height};
@@ -49,10 +52,6 @@ export const Container = styled.div<NewBaseButtonStyleType>`
     padding: ${NEW_BASE_BUTTON_SIZES[size].padding};
     border-radius: ${size === 'small' ? '2px' : '4px'};
   `};
-  font-weight: 400;
-  border-radius: 4px;
-
-  color: ${contents999};
 
   ${({ buttonTheme }) => css`
     border: 1px solid ${THEME_COLOR[buttonTheme].sub};
