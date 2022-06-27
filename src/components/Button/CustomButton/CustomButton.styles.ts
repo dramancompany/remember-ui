@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
-import { white, gray100, gray120, flexCenter } from '../../../core/GlobalStyle';
+import {
+  contents999,
+  contents300,
+  flexCenter,
+} from '../../../core/GlobalStyle';
 import type { CustomButtonStyleProps } from './CustomButton.types';
 
 const CUSTOM_BUTTON_SIZES = {
@@ -61,16 +65,16 @@ export const Container = styled.div<CustomButtonStyleProps>`
       `,
     disabled &&
       css`
-        color: ${white};
-        border: 1px solid ${gray120};
-        background-color: ${gray120};
+        color: ${contents999};
+        border: 1px solid ${contents300};
+        background-color: ${contents300};
       `,
     disabled &&
       outline &&
       css`
-        color: ${gray120};
-        border-color: ${gray100};
-        background-color: ${white};
+        color: ${contents300};
+        border-color: ${contents300};
+        background-color: ${contents999};
       `,
     css`
       cursor: ${isLoading || disabled ? 'default' : 'pointer'};

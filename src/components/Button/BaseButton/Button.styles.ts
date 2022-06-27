@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
-  blue100,
+  accent200,
   flexCenter,
   gold100,
   gray100,
@@ -9,7 +9,7 @@ import {
   gray200,
   gray400,
   red100,
-  white,
+  contents999,
   yellow100,
 } from '../../../core/GlobalStyle';
 import type { BaseButtonStyleType } from './Button.types';
@@ -78,7 +78,7 @@ export const Container = styled.div<BaseButtonStyleType>`
       cursor: default;
 
       &:hover {
-        background-color: ${white} !important;
+        background-color: ${contents999} !important;
       }
     `}
 
@@ -86,7 +86,7 @@ export const Container = styled.div<BaseButtonStyleType>`
     disabled &&
     fillColor &&
     css`
-      color: ${white} !important;
+      color: ${contents999} !important;
       border: 1px solid ${gray120} !important;
       background-color: ${gray120} !important;
 
@@ -102,12 +102,12 @@ export const Container = styled.div<BaseButtonStyleType>`
 export const BlackButton = styled(Container)`
   border-color: ${gray100};
   color: ${gray400};
-  background-color: ${white};
+  background-color: ${contents999};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${gray400};
       background-color: ${gray400};
     `}
@@ -120,7 +120,7 @@ export const YellowButton = styled(Container)`
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${yellow100};
       background-color: ${yellow100};
     `}
@@ -133,7 +133,7 @@ export const LightYellowButton = styled(Container)`
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${gold100};
       background-color: ${gold100};
     `}
@@ -147,22 +147,22 @@ export const GrayButton = styled(Container)`
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${gray200};
       background-color: ${gray200};
     `}
 `;
 
 export const BlueButton = styled(Container)`
-  border-color: ${blue100};
-  color: ${blue100};
+  border-color: ${accent200};
+  color: ${accent200};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
-      border-color: ${blue100};
-      background-color: ${blue100};
+      color: ${contents999};
+      border-color: ${accent200};
+      background-color: ${accent200};
     `}
 `;
 
@@ -172,7 +172,7 @@ export const RedButton = styled(Container)`
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${red100};
       background-color: ${red100};
     `}
@@ -181,12 +181,12 @@ export const RedButton = styled(Container)`
 export const LiteButton = styled(Container)`
   border-color: ${yellow100};
   color: ${gray400};
-  background-color: ${white};
+  background-color: ${contents999};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${yellow100};
       background-color: ${yellow100};
     `}
@@ -195,12 +195,12 @@ export const LiteButton = styled(Container)`
 export const PlusButton = styled(Container)`
   border-color: ${red100};
   color: ${gray400};
-  background-color: ${white};
+  background-color: ${contents999};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${red100};
       background-color: ${red100};
     `}

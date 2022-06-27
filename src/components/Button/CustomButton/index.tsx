@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Spinner } from '../../Spinner';
 
-import { yellow100 } from '../../../core/GlobalStyle';
+import { accent200 } from '../../../core/GlobalStyle';
 import { Container, Inner } from './CustomButton.styles';
 import type { CustomButtonProps } from './CustomButton.types';
 
@@ -13,8 +13,8 @@ export const CustomButton = ({
   customStyle = {
     fontWeight: 400,
     fontColor: 'white',
-    borderColor: yellow100,
-    backgroundColor: yellow100,
+    borderColor: accent200,
+    backgroundColor: accent200,
   },
   block = false,
   outline = false,
