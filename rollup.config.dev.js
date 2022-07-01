@@ -5,6 +5,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import dotenv from 'dotenv';
+import typescript from 'rollup-plugin-typescript2';
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ const plugins = [
   }),
   commonjs(),
   resolve(),
+  typescript({ tsconfig: 'tsconfig.json' }),
 ];
 
 /**
