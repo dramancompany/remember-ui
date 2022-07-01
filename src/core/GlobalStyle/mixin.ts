@@ -65,9 +65,9 @@ export const flexColumnCenterAll = css`
 
 export const TYPOGRAPHY_STYLES = {
   Headline2_B: {
-    fontSize: 20,
-    lineHeight: 24,
-    fontWeight: 600,
+    fontSize: 24,
+    lineHeight: 34,
+    fontWeight: 600
   },
   Headline3_B: {
     fontSize: 20,

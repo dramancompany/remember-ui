@@ -1,10 +1,12 @@
-import React, {
+import React from 'react';
+import type {
   ChangeEvent,
   MouseEventHandler,
   ReactNode,
   RefObject,
 } from 'react';
-import {
+import type {
+  DefaultTheme,
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
 } from 'styled-components';
@@ -130,53 +132,53 @@ declare module '@dramancompany/remember-ui' {
   export const flexColumnCenterY: FlattenSimpleInterpolation;
   export const flexColumnCenterAll: FlattenSimpleInterpolation;
 
-  export const TYPOGRAPHY_STYLES = {
+  export const TYPOGRAPHY_STYLES: {
     Headline2_B: {
-      fontSize: 20,
-      lineHeight: 24,
-      fontWeight: 600,
-    },
+      fontSize: 24;
+      lineHeight: 34;
+      fontWeight: 600;
+    };
     Headline3_B: {
-      fontSize: 20,
-      lineHeight: 26,
-      fontWeight: 600,
-    },
+      fontSize: 20;
+      lineHeight: 26;
+      fontWeight: 600;
+    };
     Headline4_B: {
-      fontSize: 16,
-      lineHeight: 26,
-      fontWeight: 600,
-    },
+      fontSize: 16;
+      lineHeight: 26;
+      fontWeight: 600;
+    };
     Headline4_M: {
-      fontSize: 16,
-      lineHeight: 26,
-      fontWeight: 400,
-    },
+      fontSize: 16;
+      lineHeight: 26;
+      fontWeight: 400;
+    };
     Body1_B: {
-      fontSize: 14,
-      lineHeight: 24,
-      fontWeight: 600,
-    },
+      fontSize: 14;
+      lineHeight: 24;
+      fontWeight: 600;
+    };
     Body1_M: {
-      fontSize: 14,
-      lineHeight: 24,
-      fontWeight: 400,
-    },
+      fontSize: 14;
+      lineHeight: 24;
+      fontWeight: 400;
+    };
     Body2_B: {
-      fontSize: 12,
-      lineHeight: 19,
-      fontWeight: 600,
-    },
+      fontSize: 12;
+      lineHeight: 19;
+      fontWeight: 600;
+    };
     Body2_M: {
-      fontSize: 12,
-      lineHeight: 19,
-      fontWeight: 400,
-    },
+      fontSize: 12;
+      lineHeight: 19;
+      fontWeight: 400;
+    };
     Caption_B: {
-      fontSize: 10,
-      lineHeight: 14,
-      fontWeight: 600,
-    },
-  } as const;
+      fontSize: 10;
+      lineHeight: 14;
+      fontWeight: 600;
+    };
+  };
 
   export type TypographyStylesType = keyof typeof TYPOGRAPHY_STYLES;
   export const getTypographyStyles: (
@@ -203,37 +205,37 @@ declare module '@dramancompany/remember-ui' {
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textExtraSmall: (
-    params: TypographyParams
+    params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textSmall: (
-    params: TypographyParams
+    params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textMedium: (
-    params: TypographyParams
+    params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textLarge: (
-    params: TypographyParams
+    params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textExtraLarge: (
-    params: TypographyParams
+    params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textDoubleExtraLarge: (
-    params: TypographyParams
+    params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textTripleExtraLarge: (
-    params: TypographyParams
+    params: TypograhyParams
   ) => FlattenSimpleInterpolation;
 
   export type ScreenSizeFunction = (
@@ -260,7 +262,7 @@ declare module '@dramancompany/remember-ui' {
   export const textLink: FlattenSimpleInterpolation;
 
   // components
-  export const GlobalTheme: GlobalStyleComponent;
+  export const GlobalTheme: GlobalStyleComponent<{}, DefaultTheme>;
   export interface LinkButtonProps {
     address?: string;
     showAddress?: boolean;
