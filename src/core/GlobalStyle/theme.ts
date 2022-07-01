@@ -36,6 +36,6 @@ const THEME_COLOR = {
     main: disable,
     sub: disable,
   },
-};
+} as const;
 
 export { THEME_COLOR };

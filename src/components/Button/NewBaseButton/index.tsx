@@ -3,11 +3,12 @@ import React from 'react';
 import { Spinner } from '../../Spinner';
 
 import { Container, Inner } from './NewBaseButton.styles';
+import type { NewBaseButtonProps } from './NewBaseButton.types';
 
 export const NewBaseButton = ({
-  className = '',
+  className,
   disabled = false,
-  onClick = () => {},
+  onClick,
   theme = 'primary',
   outline = false,
   size = 'small',
@@ -15,41 +16,32 @@ export const NewBaseButton = ({
   block = false,
   children,
   testId,
-}) => {
-  const _onClick = (e) => {
-    if (disabled) return;
-    if (isLoading) return;
-    onClick(e);
-  };
-
-  const spinnerTheme = () => {
-    if (theme === 'primary' && outline) return 'gray';
-    if (theme === 'primary') return 'white';
-
-    return 'gray';
-  };
+}: NewBaseButtonProps) => {
+  const preventOnClick = disabled || isLoading;
+  const spinnerTheme = theme === 'primary' && !outline ? 'white' : 'gray';
 
   return (
     <Container
       className={className}
       size={size}
-      theme={theme}
+      buttonTheme={theme}
       outline={outline}
       disabled={disabled}
       block={block}
-      onClick={_onClick}
+      onClick={preventOnClick ? undefined : onClick}
       isLoading={isLoading}
       data-testid={testId}
     >
-      <Inner size={size}>
-        {!isLoading && children}
-        {isLoading && (
+      <Inner>
+        {isLoading ? (
           <Spinner
             width={18}
             height={18}
             borderWeight={3}
-            theme={spinnerTheme()}
+            theme={spinnerTheme}
           />
+        ) : (
+          children
         )}
       </Inner>
     </Container>

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { textSmall, blue100 } from '../../../core/GlobalStyle';
+import { textSmall, accent200 } from '../../../core/GlobalStyle';
 
 export const Link = styled.a`
-  ${textSmall({ color: blue100 })}
+  ${textSmall({ color: accent200 })}
 
   text-decoration: none;
   &:hover {
