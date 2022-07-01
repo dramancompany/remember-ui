@@ -10,10 +10,10 @@ import {
   flexColumnCenterX,
 } from '../../../core/GlobalStyle';
 
-export const Container = styled.div`
+export const Container = styled.div<{ $width?: number }>`
   ${flexColumnCenterX}
 
-  width: ${({ width }) => (width && `${width}px`) || '100%'};
+  width: ${({ $width }) => ($width && `${$width}px`) || '100%'};
 `;
 
 export const Inputs = styled.div`

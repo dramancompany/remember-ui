@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 
 import { customToast as toast } from '../../../utils';
 import { BaseButton } from '../../Button';
@@ -11,10 +11,17 @@ import {
   InputFile,
 } from './ImageInput.styles';
 
-export const ImageInput = ({ id, onChange, label, className }) => {
+interface Props {
+  id: string;
+  onChange: (fileReaderResult?: string | ArrayBuffer | null) => void;
+  label?: string;
+  className?: string;
+}
+
+export const ImageInput = ({ id, onChange, label, className }: Props) => {
   const [imageName, setImageName] = useState('');
 
-  const changeCompanyLogo = e => {
+  const changeImage = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const IMAGE_SIZE_LIMIT = 1024 * 1024 * 5;
       const reader = new FileReader();
@@ -22,8 +29,8 @@ export const ImageInput = ({ id, onChange, label, className }) => {
       setImageName(e.target.files[0].name);
 
       if (imageSize < IMAGE_SIZE_LIMIT) {
-        reader.onload = nestedEvent => {
-          onChange(nestedEvent.target.result);
+        reader.onload = (nestedEvent) => {
+          onChange(nestedEvent.target?.result);
         };
         reader.readAsDataURL(e.target.files[0]);
       } else {
@@ -43,7 +50,7 @@ export const ImageInput = ({ id, onChange, label, className }) => {
         </label>
         <FileName>{imageName}</FileName>
       </Image>
-      <InputFile id={id} onChange={e => changeCompanyLogo(e)} />
+      <InputFile id={id} onChange={changeImage} />
     </Container>
   );
 };

@@ -1,25 +1,23 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect, useCallback, RefObject } from 'react';
 
-// TODO: Ref 타입
 export default function useCustomSetInput(
-  inputRef,
-  value,
-  onChange = () => {},
-  maxLength = 2000
+  inputRef: RefObject<HTMLInputElement | HTMLTextAreaElement>,
+  value: string,
+  onChange: (value: string) => {},
+  maxLength: number = 2000
 ) {
-  // const callback = useRef(onChange);
   const [notifier, setNotifier] = useState(false);
   const cursorPos = useRef(0);
 
   useEffect(() => {
-    if (inputRef) {
+    if (inputRef?.current) {
       if (cursorPos.current !== inputRef.current.selectionStart) {
         inputRef.current.setSelectionRange(
           cursorPos.current,
           cursorPos.current
         );
       }
-      cursorPos.current = inputRef.current.selectionStart;
+      cursorPos.current = inputRef.current.selectionStart ?? 0;
     }
   }, [notifier, inputRef]);
 

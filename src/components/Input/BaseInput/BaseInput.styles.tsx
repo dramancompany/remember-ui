@@ -1,28 +1,27 @@
 import styled, { css } from 'styled-components';
-import MaskedInput from 'react-text-mask';
 
 import {
-  gray100,
-  gray150,
-  contents100,
-  gray400,
-  red100,
   font,
   textSmall,
   placeholderColor,
-  mobileSubTitle13,
+  gray50,
+  gray100,
+  gray150,
+  gray400,
+  red100,
   mobileOnly,
+  mobileSubTitle13,
+  contents100,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div``;
 
-export const Label = styled.div`
+export const Label = styled.div<{ $marginBottom?: number }>`
   ${textSmall({ color: contents100 })};
 
   display: flex;
   align-items: center;
-  margin-bottom: ${({ marginBottom }) =>
-    marginBottom ? `${marginBottom}px` : '8px'};
+  margin-bottom: ${({ $marginBottom = 8 }) => `${$marginBottom}px`};
   min-height: 20px;
 
   ${mobileOnly(css`
@@ -44,7 +43,11 @@ export const ErrorMessage = styled.div`
   height: 19px;
 `;
 
-export const Input = styled(MaskedInput)`
+export const Input = styled.input<{
+  error?: boolean;
+  footer?: boolean;
+  disable?: boolean;
+}>`
   ${font({ size: '15px', color: gray400 })}
   ${placeholderColor(gray150)}
 
@@ -64,6 +67,24 @@ export const Input = styled(MaskedInput)`
     error &&
     css`
       border: 1px solid ${red100};
+    `}
+
+  ${({ footer }) =>
+    footer &&
+    css`
+      margin-bottom: 10px;
+    `}
+
+  ${({ disable }) =>
+    disable &&
+    css`
+      background-color: ${gray50};
+      color: ${gray150};
+      cursor: default;
+
+      &:focus {
+        border: 1px solid ${gray100};
+      }
     `}
 
   ${mobileOnly(css`

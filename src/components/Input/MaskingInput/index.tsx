@@ -1,4 +1,12 @@
-import React, { useState } from 'react';
+import React, {
+  ChangeEventHandler,
+  KeyboardEvent,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  ReactNode,
+  RefObject,
+  useState,
+} from 'react';
 
 import { requiredIcon } from '../../../assets';
 
@@ -9,6 +17,32 @@ import {
   ErrorMessage,
   Input,
 } from './MaskingInput.styles';
+
+interface Props {
+  name?: string;
+  value?: string | number;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  outerRef?: RefObject<HTMLInputElement>;
+  footer?: ReactNode;
+  placeholder?: string;
+  maxLength?: number;
+  marginBottom?: number;
+  type?: string;
+  label?: string;
+  className?: string;
+  autoFocus?: boolean;
+  required?: boolean;
+  disabled?: boolean;
+  useError?: boolean;
+  errorMark?: boolean;
+  onlyNumber?: boolean;
+  blankLabel?: boolean;
+  readOnly?: boolean;
+  onClick?: MouseEventHandler<HTMLInputElement>;
+  onEnter?: VoidFunction;
+  validate?: (value?: string | number) => string;
+  mask: boolean;
+}
 
 export const MaskingInput = ({
   value,
@@ -31,16 +65,18 @@ export const MaskingInput = ({
   mask = false,
   blankLabel = false,
   marginBottom,
-}) => {
+}: Props) => {
   const [error, setError] = useState('');
   const _validate = () => {
-    setError(validate(value));
+    if (validate) {
+      setError(validate(value));
+    }
   };
 
   return (
     <Container className={className}>
       {(label || blankLabel) && (
-        <Label marginBottom={marginBottom}>
+        <Label $marginBottom={marginBottom}>
           <span>{label}</span>
           {required && <Mark src={requiredIcon} alt="mark" />}
         </Label>
@@ -59,7 +95,7 @@ export const MaskingInput = ({
         autoFocus={autoFocus}
         readOnly={disabled}
         onBlur={validate && _validate}
-        onKeyPress={({ key }) => {
+        onKeyPress={({ key }: KeyboardEvent<HTMLInputElement>) => {
           if (key === 'Enter') {
             onEnter && onEnter();
           }
