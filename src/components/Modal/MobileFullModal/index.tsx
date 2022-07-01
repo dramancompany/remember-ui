@@ -113,7 +113,7 @@ export const MobileFullModal = ({
                 disabled={submitButtonDisabled}
                 isLoading={isLoading}
               >
-                {submitText}
+                {submitText ?? ''}
               </Button>
             </Footer>
           )}

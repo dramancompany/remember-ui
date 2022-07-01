@@ -17,7 +17,11 @@ import {
 
 const modalType = 'confirmModal';
 
-const defaultTypeProps = (type: Type) => {
+type DefaultTypeProps =
+  | { confirmColor: 'red'; confirmText: '삭제' }
+  | { confirmColor: 'yellow'; confirmText: '확인' };
+
+const defaultTypeProps = (type: Type): DefaultTypeProps => {
   switch (type) {
     case 'delete':
       return { confirmColor: 'red', confirmText: '삭제' };

@@ -1,12 +1,12 @@
 import React, {
   ChangeEventHandler,
   KeyboardEvent,
-  KeyboardEventHandler,
   MouseEventHandler,
   ReactNode,
   RefObject,
   useState,
 } from 'react';
+import type { MaskedInputProps } from 'react-text-mask';
 
 import { requiredIcon } from '../../../assets';
 
@@ -41,7 +41,7 @@ interface Props {
   onClick?: MouseEventHandler<HTMLInputElement>;
   onEnter?: VoidFunction;
   validate?: (value?: string | number) => string;
-  mask: boolean;
+  mask: MaskedInputProps['mask'];
 }
 
 export const MaskingInput = ({
