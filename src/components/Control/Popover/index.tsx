@@ -1,21 +1,36 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
+import type { Placement } from 'popper.js';
 
 import { Popover, Content } from './Popover.styles';
 
+interface Props {
+  content: ReactNode;
+  onPopoverOpenChange?: (isChange: boolean) => void;
+  className?: string;
+  customElement?: ReactNode;
+  size?: 'small' | 'large';
+  onOpen?: () => void;
+  distance?: number;
+  trigger?: 'mouseenter' | 'click' | 'focus';
+  placement?: Placement;
+  disabled?: boolean;
+  children: ReactNode;
+}
+
 export const BasePopover = ({
+  content,
   onPopoverOpenChange = () => {},
   className = 'DcPopover',
   customElement,
-  content,
-  size = 'small', // small or large
-  children,
+  size = 'small',
   onOpen = () => {},
   distance = 10,
   trigger = 'click',
   placement = 'bottom-end',
   disabled = false,
-}) => {
-  const [instance, setInstance] = useState(undefined);
+  children,
+}: Props) => {
+  const [instance, setInstance] = useState<any>(undefined);
 
   if (disabled) return <React.Fragment>{children}</React.Fragment>;
 

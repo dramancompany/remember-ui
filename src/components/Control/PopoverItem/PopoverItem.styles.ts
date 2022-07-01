@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-
 import {
   gray50,
   red100,
@@ -7,6 +6,8 @@ import {
   textSmall,
   flexCenterY,
 } from '../../../core/GlobalStyle';
+
+import { PopoverProps } from './index';
 
 export const Container = styled.div`
   ${flexCenterY}
@@ -23,7 +24,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Popover = styled.div`
+export const Popover = styled.div<PopoverProps>`
   ${textSmall({ weight: 'normal', color: text })}
 
   ${({ selected }) =>

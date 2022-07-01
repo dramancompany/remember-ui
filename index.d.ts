@@ -1,10 +1,6 @@
 import React from 'react';
-import type {
-  ChangeEvent,
-  MouseEventHandler,
-  ReactNode,
-  RefObject,
-} from 'react';
+import type { ChangeEvent, ReactNode, RefObject } from 'react';
+import type { Placement } from 'popper.js';
 import type {
   DefaultTheme,
   FlattenSimpleInterpolation,
@@ -196,7 +192,7 @@ declare module '@dramancompany/remember-ui' {
   export const font: (params: FontParams) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
-  export interface TypograhyParams {
+  export interface TypographyParams {
     weight?: string;
     color?: string;
     opacity?: number;
@@ -205,37 +201,37 @@ declare module '@dramancompany/remember-ui' {
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textExtraSmall: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textSmall: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textMedium: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textLarge: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textExtraLarge: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textDoubleExtraLarge: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   /** @deprecated 새로운 Typography로 교체 필요 */
   export const textTripleExtraLarge: (
-    params: TypograhyParams
+    params: TypographyParams
   ) => FlattenSimpleInterpolation;
 
   export type ScreenSizeFunction = (
@@ -468,21 +464,23 @@ declare module '@dramancompany/remember-ui' {
     onPopoverOpenChange?: Function;
     className?: string;
     customElement?: ReactNode;
-    size?: string;
+    size?: 'small' | 'large';
     onOpen?: Function;
     distance?: number;
-    trigger?: string;
-    placement?: string;
+    trigger?: 'mouseenter' | 'click' | 'focus';
+    placement?: Placement;
     disabled?: boolean;
   }
 
   export const BasePopover: React.FC<PopoverProps>;
 
   export interface PopoverItemProps {
+    children: React.ReactNode;
     selected?: boolean;
     warning?: boolean;
     bold?: boolean;
     onClick: React.MouseEventHandler;
+    className: string;
   }
 
   export const PopoverItem: React.FC<PopoverItemProps>;
@@ -507,10 +505,10 @@ declare module '@dramancompany/remember-ui' {
   export interface SelectProps {
     options: SelectOption[];
     value?: string | number;
-    onChange: Function;
+    onChange: (value: number | string) => void;
     className?: string;
     label?: string;
-    changeInputMode?: Function;
+    changeInputMode?: () => void;
     required?: boolean;
     isFixedSelect?: boolean;
     maxHeight?: number;
@@ -616,7 +614,7 @@ declare module '@dramancompany/remember-ui' {
   export interface SwitchProps {
     className?: string;
     checked?: boolean;
-    onClick: MouseEventHandler;
+    onClick: React.ChangeEventHandler<HTMLInputElement>;
     size?: 'small' | 'large';
     color?: string;
   }
@@ -656,17 +654,17 @@ declare module '@dramancompany/remember-ui' {
 
   export const MaskingInput: React.FC<MaskingInputProps>;
 
-  export interface AccordianMenu {
+  export interface AccordionMenu {
     title: string;
     list: { title: string; value: string; onClick?: (value: string) => void }[];
   }
 
-  export interface AccordianProps {
-    menus: AccordianMenu[];
+  export interface AccordionProps {
+    menus: AccordionMenu[];
     hasCheckBox?: boolean;
     onClickItem?: (value: string) => void;
     onCheckItem?: (title: string, value: string) => void;
     isCheckedItem?: (title: string, value: string) => boolean;
   }
-  export const Accordian: React.FC<AccordianProps>;
+  export const Accordion: React.FC<AccordionProps>;
 }

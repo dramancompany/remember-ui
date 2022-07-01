@@ -1,17 +1,39 @@
 import React, { useState } from 'react';
 import { createUUID } from '../../../utils/common';
 
-import { Container, Menu, Item } from './Accordian.styles';
+import {
+  Container,
+  Menu,
+  Item,
+  ItemTitle,
+  ItemChecker,
+  ItemInner,
+  ItemInnerTitle,
+  ItemInnerCheckbox,
+} from './Accordion.styles';
 
 const ItemHeight = 48;
 
-export const Accordian = ({
+interface AccordionMenu {
+  title: string;
+  list: { title: string; value: string; onClick?: (value: string) => void }[];
+}
+
+interface Props {
+  menus: AccordionMenu[];
+  hasCheckBox?: boolean;
+  onClickItem?: (value: string) => void;
+  onCheckItem?: (title: string, value: string) => void;
+  isCheckedItem?: (title: string, value: string) => boolean;
+}
+
+export const Accordion = ({
   menus = [],
   onClickItem = () => {},
   onCheckItem = () => {},
-  isCheckedItem = () => {},
+  isCheckedItem,
   hasCheckBox,
-}) => {
+}: Props) => {
   const [hasToggled, setHasToggled] = useState(false);
   const id = createUUID();
 
@@ -24,16 +46,17 @@ export const Accordian = ({
               hasToggled={hasToggled}
               height={`${list.length * ItemHeight}px`}
             >
-              <Item.Title for={title}>{title}</Item.Title>
-              <Item.Checker
+              <ItemTitle htmlFor={title}>{title}</ItemTitle>
+              <ItemChecker
+                type="radio"
                 onClick={() => setHasToggled(true)}
                 name={id}
                 id={title}
                 height={`${list.length * ItemHeight}px`}
               />
-              <Item.Inner className="inner">
+              <ItemInner className="inner">
                 {list.map(({ title: listTitle, value, onClick }) => (
-                  <Item.Inner.Title
+                  <ItemInnerTitle
                     onClick={() => {
                       if (hasCheckBox && onCheckItem) {
                         onCheckItem(title, value);
@@ -45,14 +68,14 @@ export const Accordian = ({
                     }}
                   >
                     {hasCheckBox && (
-                      <Item.Inner.Checkbox
-                        state={isCheckedItem(title, value) ? 'on' : 'off'}
+                      <ItemInnerCheckbox
+                        state={isCheckedItem?.(title, value) ? 'on' : 'off'}
                       />
                     )}
                     {listTitle}
-                  </Item.Inner.Title>
+                  </ItemInnerTitle>
                 ))}
-              </Item.Inner>
+              </ItemInner>
             </Item>
           ))}
       </Menu>

@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import { gray100, white } from '../../../core/GlobalStyle';
 
+import { SwitchSize } from './index';
+
 export const Container = styled.div`
   display: inline-flex;
 `;
 
-export const Span = styled.span`
+export const Span = styled.span<{ size?: SwitchSize }>`
   content: '';
   position: absolute;
   top: ${({ size }) => (size === 'small' ? 3 : 4)}px;
@@ -18,7 +20,11 @@ export const Span = styled.span`
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
 `;
 
-export const Label = styled.label`
+export const Label = styled.label<{
+  color: string;
+  size?: SwitchSize;
+  checked?: boolean;
+}>`
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -35,13 +41,13 @@ export const Label = styled.label`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<{ $size?: SwitchSize }>`
   height: 0;
   width: 0;
   display: none;
 
   &:checked + ${Label} ${Span} {
-    left: calc(100% - ${({ size }) => (size === 'small' ? 3 : 4)}px);
+    left: calc(100% - ${({ $size }) => ($size === 'small' ? 3 : 4)}px);
     transform: translateX(-100%);
   }
 `;

@@ -19,7 +19,7 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const Label = styled.div`
+export const Label = styled.div<{ marginBottom?: number }>`
   ${textSmall({ color: contents100 })};
 
   display: flex;
@@ -28,9 +28,9 @@ export const Label = styled.div`
     marginBottom ? `${marginBottom}px` : '6px'};
 `;
 
-Label.Text = styled.span``;
+export const LabelText = styled.span``;
 
-Label.Mark = styled.img`
+export const LabelMark = styled.img`
   margin-left: 4px;
   position: relative;
   top: 1px;
@@ -60,17 +60,21 @@ export const Selected = styled.div`
   `)};
 `;
 
-Selected.Text = styled.div`
+export const SelectedText = styled.div`
   ${textEllipsis};
 
   width: 95%;
 `;
 
-Selected.Unselected = styled.span`
+export const SelectedUnselected = styled.span`
   color: ${contents200};
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<{
+  active: boolean;
+  error?: boolean;
+  isFixed?: boolean;
+}>`
   border-radius: 4px;
   border: 1px solid ${contents300};
   background-color: ${contents999};
@@ -105,7 +109,7 @@ export const Content = styled.div`
     `}
 `;
 
-export const Options = styled.div`
+export const Options = styled.div<{ active: boolean; maxHeight?: number }>`
   max-height: ${({ maxHeight }) => (maxHeight ? `${maxHeight}px` : '300px')};
   overflow-y: auto;
 
@@ -125,7 +129,11 @@ export const Options = styled.div`
     `}
 `;
 
-export const OptionItem = styled.div`
+export const OptionItem = styled.div<{
+  selected: boolean;
+  custom: boolean;
+  disable?: boolean;
+}>`
   ${font({ size: '15px', color: contents000 })};
 
   box-sizing: border-box;
@@ -166,7 +174,7 @@ export const OptionItem = styled.div`
   `)};
 `;
 
-OptionItem.Text = styled.div`
+export const OptionItemText = styled.div`
   ${textEllipsis};
   width: 95%;
 `;

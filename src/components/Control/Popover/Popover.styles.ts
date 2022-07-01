@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import Tippy from '@tippy.js/react';
 
-export const Popover = styled(Tippy)`
+export const Popover = styled(Tippy)<{ $size: 'small' | 'large' }>`
   border-radius: 10px !important;
   background-color: white !important;
   box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2) !important;
@@ -13,7 +13,7 @@ export const Popover = styled(Tippy)`
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<{ customElement: boolean }>`
   ${({ customElement }) =>
     customElement
       ? css`
