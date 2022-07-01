@@ -30,7 +30,7 @@ export const createUUID = () => {
 };
 
 export const enableBodyScrollLock = (
-  bodyScrollLockTarget: string,
+  bodyScrollLockTarget?: string | null,
   delegateCloseControl = false
 ) => {
   if (!delegateCloseControl && bodyScrollLockTarget) {
