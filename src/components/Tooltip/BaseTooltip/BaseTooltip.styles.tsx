@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import styled, { css } from 'styled-components';
 import Tippy from '@tippy.js/react';
 
@@ -7,7 +8,10 @@ export const Icon = styled.img`
   cursor: pointer;
 `;
 
-export const Tooltip = styled(Tippy)`
+export const Tooltip = styled(Tippy)<{
+  $size: 'small' | 'medium';
+  $textAlign: CSSProperties['textAlign'];
+}>`
   border-radius: ${({ $size = 'small' }) => ($size ? '2px' : '6px')} !important;
 
   .tippy-content {

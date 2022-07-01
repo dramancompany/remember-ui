@@ -1,7 +1,18 @@
 import React from 'react';
+import type { Instance, Props as TippyProps } from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 
 import { Tooltip } from './InfoTooltip.styles';
+
+interface Props {
+  children: React.ReactNode;
+  content: React.ReactNode;
+  visible?: boolean;
+  className: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  onShow?: (instance: Instance<TippyProps>) => false | void;
+  customAnimation?: 'headShake';
+}
 
 export const InfoTooltip = ({
   children,
@@ -11,7 +22,7 @@ export const InfoTooltip = ({
   onShow = () => {},
   visible,
   customAnimation,
-}) => {
+}: Props) => {
   /**
    * @description
    * @tippy.js/react 라이브러리의 작동 원리상
@@ -29,7 +40,7 @@ export const InfoTooltip = ({
       duration={0}
       zIndex={200}
       theme="dcblue"
-      placement="bottom-center"
+      placement="bottom" // TODO: bottom-center에서 bottom으로 변경함 (체크 필요)
       $customAnimation={customAnimation}
       onShow={onShow}
     >

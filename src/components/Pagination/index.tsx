@@ -8,13 +8,25 @@ import {
   arrowForwardInactiveIcon,
 } from '../../assets';
 
-import { Container, List, Button, Icon, Numbers } from './Pagination.styles';
+import {
+  Container,
+  List,
+  Button,
+  Icon,
+  Numbers,
+  NumbersButton,
+} from './Pagination.styles';
 
 const getPaginationInfo = ({
   itemCountPerPage,
   pageRangeDisplayed,
   totalItemCount,
   activePage,
+}: {
+  itemCountPerPage: number;
+  pageRangeDisplayed: number;
+  totalItemCount: number;
+  activePage: number;
 }) => {
   const totalPages = Math.ceil(totalItemCount / itemCountPerPage);
   let firstPage = 0;
@@ -41,6 +53,15 @@ const getPaginationInfo = ({
   };
 };
 
+interface Props {
+  itemCountPerPage: number;
+  pageRangeDisplayed: number;
+  totalItemCount?: number;
+  activePage?: number;
+  onChangePage: (page: number) => void;
+  className?: string;
+}
+
 export const DcNewPagination = ({
   activePage = 1,
   totalItemCount = 0,
@@ -48,7 +69,7 @@ export const DcNewPagination = ({
   onChangePage,
   itemCountPerPage,
   className,
-}) => {
+}: Props) => {
   const { firstPage, lastPage, totalPages } = getPaginationInfo({
     activePage,
     totalItemCount,
@@ -81,14 +102,14 @@ export const DcNewPagination = ({
       </List>
       <Numbers>
         {range(firstPage, lastPage).map((_page) => (
-          <Numbers.Button key={_page}>
+          <NumbersButton key={_page}>
             <Button
               selected={_page === activePage}
               onClick={() => onChangePage(_page)}
             >
               {_page}
             </Button>
-          </Numbers.Button>
+          </NumbersButton>
         ))}
       </Numbers>
       <List>

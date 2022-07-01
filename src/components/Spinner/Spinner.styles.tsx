@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import type { Props as SpinnerProps } from './index';
 
-export const Container = styled.div`
+export const Container = styled.div<SpinnerProps>`
   margin: 0 auto;
   height: ${({ height }) => height}px;
   width: ${({ width }) => width}px;

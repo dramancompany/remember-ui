@@ -1,10 +1,21 @@
 import React from 'react';
+import type { CSSProperties } from 'react';
 
 import { gray150 } from '../../../core/GlobalStyle';
 
 import { Container, Svg } from './ProfileAvatar.styles';
 
-export const ProfileAvatar = ({ className, color = gray150, width = 68 }) => (
+interface Props {
+  className?: string;
+  color?: CSSProperties['color'];
+  width?: number;
+}
+
+export const ProfileAvatar = ({
+  className,
+  color = gray150,
+  width = 68,
+}: Props) => (
   <Container className={className} width={width}>
     <Svg
       xmlns="http://www.w3.org/2000/svg"
