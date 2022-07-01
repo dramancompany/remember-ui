@@ -1,18 +1,41 @@
 import styled, { css } from 'styled-components';
 
 import {
-  gray50,
+  accent200,
+  flexCenter,
+  gold100,
   gray100,
   gray120,
   gray200,
   gray400,
-  blue100,
   red100,
+  contents999,
   yellow100,
-  gold100,
-  white,
 } from '../../../core/GlobalStyle';
-import { flexCenter, textSmall } from '../../../core/GlobalStyle';
+import type { BaseButtonStyleType } from './Button.types';
+
+const BASE_BUTTON_SIZES = {
+  small: {
+    fontSize: '13px',
+    fontWeight: 400,
+    height: '32px',
+  },
+  medium: {
+    fontSize: '14px',
+    fontWeight: 400,
+    height: '36px',
+  },
+  large: {
+    fontSize: '15px',
+    fontWeight: 'bold',
+    height: '48px',
+  },
+  xlarge: {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    height: '52px',
+  },
+} as const;
 
 export const Inner = styled.div`
   display: flex;
@@ -20,9 +43,8 @@ export const Inner = styled.div`
   margin-bottom: 1px;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<BaseButtonStyleType>`
   ${flexCenter};
-  ${textSmall({ weight: 400 })};
 
   border: 1px solid ${gray400};
   box-sizing: border-box;
@@ -34,29 +56,12 @@ export const Container = styled.div`
       width: ${width}px;
     `}
 
-  height:  ${({ size }) =>
-    (size === 'small' && '32px') ||
-    (size === 'medium' && '36px') ||
-    (size === 'large' && '48px') ||
-    (size === 'xlarge' && '52px')};
-
-  font-size: ${({ size }) =>
-    (size === 'small' && '13px') ||
-    (size === 'large' && '15px') ||
-    (size === 'xlarge' && '16px')};
-
-  font-weight: ${({ size }) =>
-    (size === 'large' || size === 'xlarge') && 'bold'};
-
-  ${({ rounded }) =>
-    rounded &&
-    css`
-      border-radius: 4px;
-
-      &.small {
-        border-radius: 2px;
-      }
-    `}
+  ${({ size, rounded }) => css`
+    height: ${BASE_BUTTON_SIZES[size].height};
+    font-weight: ${BASE_BUTTON_SIZES[size].fontWeight};
+    font-size: ${BASE_BUTTON_SIZES[size].fontSize};
+    border-radius: ${rounded ? (size === 'small' ? '2px' : '4px') : 0};
+  `};
 
   ${({ borderless }) =>
     borderless &&
@@ -73,7 +78,7 @@ export const Container = styled.div`
       cursor: default;
 
       &:hover {
-        background-color: ${white} !important;
+        background-color: ${contents999} !important;
       }
     `}
 
@@ -81,7 +86,7 @@ export const Container = styled.div`
     disabled &&
     fillColor &&
     css`
-      color: ${white} !important;
+      color: ${contents999} !important;
       border: 1px solid ${gray120} !important;
       background-color: ${gray120} !important;
 
@@ -97,32 +102,14 @@ export const Container = styled.div`
 export const BlackButton = styled(Container)`
   border-color: ${gray100};
   color: ${gray400};
-  background-color: ${white};
+  background-color: ${contents999};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${gray400};
       background-color: ${gray400};
-    `}
-
-  ${({ large }) =>
-    large &&
-    css`
-      &:hover {
-        background-color: ${gray50};
-      }
-    `}
-
-  ${({ fillColor, large }) =>
-    fillColor &&
-    large &&
-    css`
-      &:hover {
-        background-color: ${gray400};
-        opacity: 0.8;
-      }
     `}
 `;
 
@@ -133,17 +120,9 @@ export const YellowButton = styled(Container)`
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${yellow100};
       background-color: ${yellow100};
-    `}
-
-  ${({ large }) =>
-    large &&
-    css`
-      &:hover {
-        opacity: 0.8;
-      }
     `}
 `;
 
@@ -154,7 +133,7 @@ export const LightYellowButton = styled(Container)`
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${gold100};
       background-color: ${gold100};
     `}
@@ -168,31 +147,22 @@ export const GrayButton = styled(Container)`
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${gray200};
       background-color: ${gray200};
-    `}
-
-  ${({ fillColor, large }) =>
-    fillColor &&
-    large &&
-    css`
-      &:hover {
-        opacity: 0.8;
-      }
     `}
 `;
 
 export const BlueButton = styled(Container)`
-  border-color: ${blue100};
-  color: ${blue100};
+  border-color: ${accent200};
+  color: ${accent200};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
-      border-color: ${blue100};
-      background-color: ${blue100};
+      color: ${contents999};
+      border-color: ${accent200};
+      background-color: ${accent200};
     `}
 `;
 
@@ -202,30 +172,21 @@ export const RedButton = styled(Container)`
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${red100};
       background-color: ${red100};
-    `}
-
-  ${({ fillColor, large }) =>
-    fillColor &&
-    large &&
-    css`
-      &:hover {
-        opacity: 0.8;
-      }
     `}
 `;
 
 export const LiteButton = styled(Container)`
   border-color: ${yellow100};
   color: ${gray400};
-  background-color: ${white};
+  background-color: ${contents999};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${yellow100};
       background-color: ${yellow100};
     `}
@@ -234,12 +195,12 @@ export const LiteButton = styled(Container)`
 export const PlusButton = styled(Container)`
   border-color: ${red100};
   color: ${gray400};
-  background-color: ${white};
+  background-color: ${contents999};
 
   ${({ fillColor }) =>
     fillColor &&
     css`
-      color: ${white};
+      color: ${contents999};
       border-color: ${red100};
       background-color: ${red100};
     `}

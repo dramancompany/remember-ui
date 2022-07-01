@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { BaseModal } from '../BaseModal';
 import { NewBaseButton } from '../../Button';
@@ -22,12 +22,13 @@ export const Container = styled(BaseModal)`
   position: relative;
 `;
 
-export const Modal = styled.div`
-  top: ${({ topNavbarOffset }) => topNavbarOffset && `${topNavbarOffset}`};
-  height: ${({ topNavbarOffset }) =>
-    topNavbarOffset && `calc(100% - ${topNavbarOffset})`};
-  background-color: ${white};
+export const Modal = styled.div<{ topNavbarOffset: string }>`
+  ${({ topNavbarOffset }) => css`
+    top: ${topNavbarOffset};
+    height: calc(100% - ${topNavbarOffset});
+  `}
 
+  background-color: ${white};
   position: fixed;
   left: 0;
   width: 100vw;
@@ -44,13 +45,13 @@ export const Header = styled.div`
   height: 16px;
 `;
 
-Header.Left = styled.div`
+export const HeaderLeft = styled.div`
   width: 90px;
   max-width: 90px;
   text-align: left;
 `;
 
-Header.Left.Icon = styled.img.attrs({
+export const HeaderLeftIcon = styled.img.attrs({
   src: closeIcon,
   alt: 'close',
 })`
@@ -63,7 +64,7 @@ Header.Left.Icon = styled.img.attrs({
   vertical-align: middle;
 `;
 
-Header.Title = styled.div`
+export const HeaderTitle = styled.div`
   ${flexContainer('center', 'flex-start', 'column')};
 
   // 좌우 영역 각각 90px
@@ -72,32 +73,32 @@ Header.Title = styled.div`
   text-align: center;
 `;
 
-Header.Title.Text = styled.div`
+export const HeaderTitleText = styled.div`
   ${mobileSubTitle16({ color: white })};
   ${textEllipsis};
 
   width: 100%;
 `;
 
-Header.SubTitle = styled.div`
+export const HeaderSubTitle = styled.div`
   ${mobileSubTitle12({ color: '#999' })};
   ${flexContainer('center', 'center')};
 
   width: 100%;
 `;
 
-Header.SubTitle.Text = styled.div`
+export const HeaderSubTitleText = styled.div`
   ${mobileSubTitle12({ color: '#999' })};
   ${textEllipsis};
 `;
 
-Header.Right = styled.div`
+export const HeaderRight = styled.div`
   width: 90px;
   max-width: 90px;
   text-align: right;
 `;
 
-Header.Right.Button = styled.span`
+export const HeaderRightButton = styled.span`
   ${mobileBody12({ color: white })};
 
   padding: 10px 15px 10px 5px;
@@ -109,7 +110,7 @@ export const Body = styled.div`
   height: calc(100% - 48px);
 `;
 
-Body.Main = styled.div`
+export const BodyMain = styled.div<{ hasFooter?: boolean }>`
   height: ${({ hasFooter }) => (hasFooter ? `calc(100% - 72px)` : `100%`)};
 
   overflow-y: auto;

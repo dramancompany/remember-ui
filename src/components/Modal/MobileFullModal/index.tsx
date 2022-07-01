@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { enableBodyScrollLock } from '../../../utils/common';
 import useScrollLock from '../../../hooks/useScrollLock';
 
@@ -9,15 +9,45 @@ import {
   Body,
   Footer,
   Button,
+  HeaderLeft,
+  HeaderLeftIcon,
+  HeaderTitle,
+  HeaderTitleText,
+  HeaderSubTitle,
+  HeaderSubTitleText,
+  HeaderRight,
+  HeaderRightButton,
+  BodyMain,
 } from './MobileFullModal.styles';
 
 const modalType = 'mobileFullModal';
 
+interface Props {
+  isOpen?: boolean;
+  isLoading?: boolean;
+  delegateCloseControl?: boolean;
+  submitButtonDisabled?: boolean;
+
+  title: string;
+  subTitle?: string;
+  submitText?: string;
+  topNavbarOffset?: string;
+  headerButtonText?: string;
+  bodyScrollLockTargetId?: string;
+
+  onClose?: () => void;
+  onAfterOpen: () => void;
+  onHeaderButtonClick: () => void;
+  submit?: () => void;
+
+  children?: ReactNode;
+}
+
 export const MobileFullModal = ({
   topNavbarOffset = '0px',
 
-  isOpen,
-  onClose,
+  isOpen = false,
+  onClose = () => {},
   onAfterOpen = () => {},
 
   title,
@@ -32,8 +62,7 @@ export const MobileFullModal = ({
   bodyScrollLockTargetId,
   delegateCloseControl = false,
   children,
-  className,
-}) => {
+}: Props) => {
   const { modalId, bodyScrollLockTarget } = useScrollLock(
     bodyScrollLockTargetId,
     modalType
@@ -41,7 +70,6 @@ export const MobileFullModal = ({
 
   return (
     <Container
-      className={className}
       isOpen={isOpen}
       onClose={onClose}
       onAfterOpen={onAfterOpen}
@@ -49,28 +77,25 @@ export const MobileFullModal = ({
     >
       <Modal topNavbarOffset={topNavbarOffset}>
         <Header>
-          <Header.Left>
-            <Header.Left.Icon onClick={() => onClose()} />
-          </Header.Left>
-          <Header.Title>
-            <Header.Title.Text>{title}</Header.Title.Text>
+          <HeaderLeft>
+            <HeaderLeftIcon onClick={() => onClose()} />
+          </HeaderLeft>
+          <HeaderTitle>
+            <HeaderTitleText>{title}</HeaderTitleText>
             {subTitle && (
-              <Header.SubTitle>
-                (<Header.SubTitle.Text>{subTitle}</Header.SubTitle.Text>)
-              </Header.SubTitle>
+              <HeaderSubTitle>
+                (<HeaderSubTitleText>{subTitle}</HeaderSubTitleText>)
+              </HeaderSubTitle>
             )}
-          </Header.Title>
-          <Header.Right>
-            <Header.Right.Button onClick={onHeaderButtonClick}>
+          </HeaderTitle>
+          <HeaderRight>
+            <HeaderRightButton onClick={onHeaderButtonClick}>
               {headerButtonText}
-            </Header.Right.Button>
-          </Header.Right>
+            </HeaderRightButton>
+          </HeaderRight>
         </Header>
-        <Body
-          id={modalId && `${modalType}${modalId}`}
-          topNavbarOffset={topNavbarOffset}
-        >
-          <Body.Main hasFooter={!!submit}>{children}</Body.Main>
+        <Body id={modalId ? `${modalType}${modalId}` : undefined}>
+          <BodyMain hasFooter={!!submit}>{children}</BodyMain>
           {submit && (
             <Footer>
               <Button

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { enableBodyScrollLock } from '../../../utils/common';
 import useScrollLock from '../../../hooks/useScrollLock';
 
-import { BaseModal } from '../BaseModal';
+import { BaseModal, BaseModalProps } from '../BaseModal';
 import { BaseButton } from '../../Button';
 import { successIcon, warningIcon } from '../../../assets';
 
@@ -16,7 +16,8 @@ import {
 } from './ConfirmModal.styles';
 
 const modalType = 'confirmModal';
-const defaultTypeProps = (type) => {
+
+const defaultTypeProps = (type: Type) => {
   switch (type) {
     case 'delete':
       return { confirmColor: 'red', confirmText: '삭제' };
@@ -26,7 +27,7 @@ const defaultTypeProps = (type) => {
   }
 };
 
-const getIconSrc = (icon) => {
+const getIconSrc = (icon: IconType) => {
   switch (icon) {
     case 'warning':
       return warningIcon;
@@ -36,8 +37,34 @@ const getIconSrc = (icon) => {
   }
 };
 
+type IconType = 'warning' | 'success';
+type Type = 'delete' | 'ok';
+
+interface Props
+  extends Omit<
+    BaseModalProps,
+    'allowKeyExit' | 'onAfterOpen' | 'bodyScrollLockTarget' | 'children'
+  > {
+  icon?: IconType;
+  type?: Type;
+  title?: string;
+  message?: string;
+  isOpen: boolean;
+  showClose?: boolean;
+  onOk?: () => void;
+  okText?: string;
+  closeText?: string;
+  children?: ReactNode;
+  onCloseAction?: () => void;
+  mobileWidth?: string | number;
+  mobileHeight?: string | number;
+  bodyScrollLockTargetId?: string | null;
+  delegateCloseControl?: boolean;
+  testId?: string;
+}
+
 export const ConfirmModal = ({
-  icon,
+  icon = 'success',
   title,
   message,
   type = 'ok',
@@ -46,13 +73,12 @@ export const ConfirmModal = ({
   isDragDisabled = false,
   isDragBounded = true,
   onClose = () => {},
-  onOk = '확인',
+  onOk = () => {},
   okText,
   closeText,
   showClose = true,
   children,
-  onCloseAction,
-  className,
+  onCloseAction = () => {},
   dragOnStart = () => {},
   dragOnStop = () => {},
   dragOnDrag = () => {},
@@ -61,28 +87,27 @@ export const ConfirmModal = ({
   bodyScrollLockTargetId,
   delegateCloseControl = false,
   testId,
-}) => {
+}: Props) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
   const { modalId, bodyScrollLockTarget } = useScrollLock(
     bodyScrollLockTargetId,
     modalType
   );
 
-  const _onOk = (onOk) => {
+  const _onOk = () => {
     enableBodyScrollLock(bodyScrollLockTarget, delegateCloseControl);
     onOk();
     return Promise.resolve();
   };
 
-  const _onClose = (onCloseAction) => {
+  const _onClose = () => {
     enableBodyScrollLock(bodyScrollLockTarget, delegateCloseControl);
-    onCloseAction && onCloseAction();
+    onCloseAction();
     return Promise.resolve();
   };
 
   return (
     <BaseModal
-      className={className}
       isOpen={isOpen}
       onClose={onClose}
       allowKeyExit={false}
@@ -95,9 +120,9 @@ export const ConfirmModal = ({
       bodyScrollLockTarget={bodyScrollLockTarget}
     >
       <Container mobileWidth={mobileWidth} mobileHeight={mobileHeight}>
-        <Body id={modalId && `${modalType}${modalId}`}>
+        <Body id={modalId ? `${modalType}${modalId}` : undefined}>
           {icon && <Icon src={getIconSrc(icon)} alt="icon" />}
-          {title && <TitleText hasIcon={icon}>{title}</TitleText>}
+          {title && <TitleText hasIcon={!!icon}>{title}</TitleText>}
           {message && <MessageText>{message}</MessageText>}
           {children}
         </Body>
@@ -110,7 +135,7 @@ export const ConfirmModal = ({
               fill
               size="large"
               onClick={() =>
-                _onClose(onCloseAction).then(() => {
+                _onClose().then(() => {
                   onClose();
                 })
               }
@@ -125,7 +150,7 @@ export const ConfirmModal = ({
             className="footer--btn not-draggable"
             testId={`${testId}-confirm`}
             onClick={() =>
-              _onOk(onOk).then(() => {
+              _onOk().then(() => {
                 onClose();
               })
             }

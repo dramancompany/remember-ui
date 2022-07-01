@@ -2,18 +2,19 @@ import React from 'react';
 
 import { Spinner } from '../../Spinner';
 
+import { accent200 } from '../../../core/GlobalStyle';
 import { Container, Inner } from './CustomButton.styles';
-import { yellow100 } from '../../../core/GlobalStyle';
+import type { CustomButtonProps } from './CustomButton.types';
 
 export const CustomButton = ({
-  className = '',
+  className,
   disabled = false,
-  onClick = () => {},
+  onClick,
   customStyle = {
     fontWeight: 400,
     fontColor: 'white',
-    borderColor: yellow100,
-    backgroundColor: yellow100,
+    borderColor: accent200,
+    backgroundColor: accent200,
   },
   block = false,
   outline = false,
@@ -21,12 +22,8 @@ export const CustomButton = ({
   isLoading = false,
   children,
   testId,
-}) => {
-  const _onClick = (e) => {
-    if (disabled) return;
-    if (isLoading) return;
-    onClick(e);
-  };
+}: CustomButtonProps) => {
+  const preventOnClick = disabled || isLoading;
 
   return (
     <Container
@@ -35,12 +32,12 @@ export const CustomButton = ({
       customStyle={customStyle}
       outline={outline}
       disabled={disabled}
-      onClick={_onClick}
+      onClick={preventOnClick ? undefined : onClick}
       isLoading={isLoading}
       data-testid={testId}
       block={block}
     >
-      <Inner size={size}>
+      <Inner>
         {!isLoading && children}
         {isLoading && <Spinner width={18} height={18} borderWeight={3} />}
       </Inner>

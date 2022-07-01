@@ -11,24 +11,26 @@ import {
   mobileOnly,
 } from '../../../core/GlobalStyle';
 
-export const Container = styled.div`
+export const Container = styled.div<{
+  mobileWidth?: number | string;
+  mobileHeight?: number | string;
+}>`
   width: 400px;
   max-width: 400px;
   border-radius: 10px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
   background-color: white;
 
-  ${mobileOnly(css`
-    min-width: ${({ mobileWidth }) =>
-      (mobileWidth && `${mobileWidth}`) || '90vw'};
-    max-width: ${({ mobileWidth }) =>
-      (mobileWidth && `${mobileWidth}`) || '90vw'};
-    ${({ mobileHeight }) =>
-      mobileHeight &&
-      css`
-        height: ${mobileHeight};
-      `}
-  `)}
+  ${({ mobileWidth, mobileHeight }) =>
+    mobileOnly(css`
+      min-width: ${mobileWidth ?? '90vw'};
+      max-width: ${mobileWidth ?? '90vw'};
+      ${mobileHeight
+        ? css`
+            height: ${mobileHeight};
+          `
+        : ''}
+    `)}
 `;
 
 export const Body = styled.div`
@@ -47,7 +49,7 @@ export const Icon = styled.img`
   margin-bottom: 12px;
 `;
 
-export const TitleText = styled.div`
+export const TitleText = styled.div<{ hasIcon?: boolean }>`
   ${({ hasIcon }) =>
     hasIcon
       ? textExtraLarge({ weight: 'bold', color: text })
@@ -67,7 +69,7 @@ export const MessageText = styled.div`
   text-align: center;
 `;
 
-export const Footer = styled.div`
+export const Footer = styled.div<{ showClose?: boolean }>`
   ${flexCenterY};
 
   padding: 12px 9px;
