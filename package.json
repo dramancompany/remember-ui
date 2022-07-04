@@ -1,6 +1,6 @@
 {
   "name": "@dramancompany/remember-ui",
-  "version": "2.3.0-beta.6",
+  "version": "2.3.0-beta.7",
   "description": "Remember UI Components",
   "homepage": "https://github.com/dramancompany/remember-ui",
   "author": "DramanCompany",
@@ -8,7 +8,7 @@
   "main": "dist/index.cjm.js",
   "module": "dist/index.js",
   "sideEffects": false,
-  "types": "types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist",
     "README.md",
