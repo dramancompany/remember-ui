@@ -9,6 +9,8 @@ import type {
 import { SelectProps } from 'components/Control/Select';
 // import { TYPOGRAPHY_STYLES } from './src/core/GlobalStyle/mixin';
 
+export * from './src/components/Control/Select';
+
 declare module '@dramancompany/remember-ui' {
   // variables
   /** @deprecated */
@@ -495,6 +497,15 @@ declare module '@dramancompany/remember-ui' {
   }
 
   export const Checkbox: React.FC<CheckboxProps>;
+
+  // export interface SelectOption {
+  //   id: string | number;
+  //   label: string | number;
+  //   value?: string | number;
+  //   disabled?: boolean;
+  // }
+
+  // export const Select: React.FC<SelectProps<T>>;
 
   export interface InfoTooltipProps {
     children?: React.ReactChild | React.ReactChildren;
