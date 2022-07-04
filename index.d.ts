@@ -6,6 +6,7 @@ import type {
   FlattenSimpleInterpolation,
   GlobalStyleComponent,
 } from 'styled-components';
+import { SelectProps } from 'components/Control/Select';
 // import { TYPOGRAPHY_STYLES } from './src/core/GlobalStyle/mixin';
 
 declare module '@dramancompany/remember-ui' {
@@ -501,24 +502,6 @@ declare module '@dramancompany/remember-ui' {
     value?: string | number;
     disabled?: boolean;
   }
-
-  export interface SelectProps {
-    options: SelectOption[];
-    value?: string | number;
-    onChange: (value: number | string) => void;
-    className?: string;
-    label?: string;
-    changeInputMode?: () => void;
-    required?: boolean;
-    isFixedSelect?: boolean;
-    maxHeight?: number;
-    placeholder?: string;
-    marginBottom?: number;
-    error?: boolean;
-    errorMessage?: string;
-  }
-
-  export const Select: React.FC<SelectProps>;
 
   export interface InfoTooltipProps {
     children?: React.ReactChild | React.ReactChildren;

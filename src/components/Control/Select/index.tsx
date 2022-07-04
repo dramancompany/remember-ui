@@ -28,7 +28,7 @@ export interface SelectOption<T extends ValueType, P = any> {
   disabled?: boolean;
 }
 
-interface Props<T extends ValueType> {
+export interface SelectProps<T extends ValueType> {
   options: SelectOption<T>[];
   value?: T;
   onChange: (id: T) => void;
@@ -58,7 +58,7 @@ export const Select = <T extends ValueType>({
   marginBottom,
   errorMessage,
   error,
-}: Props<T>) => {
+}: SelectProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openExample = () => {
