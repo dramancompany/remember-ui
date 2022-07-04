@@ -496,13 +496,6 @@ declare module '@dramancompany/remember-ui' {
 
   export const Checkbox: React.FC<CheckboxProps>;
 
-  export interface SelectOption {
-    id: string | number;
-    label: string | number;
-    value?: string | number;
-    disabled?: boolean;
-  }
-
   export interface InfoTooltipProps {
     children?: React.ReactChild | React.ReactChildren;
     content: ReactNode;
