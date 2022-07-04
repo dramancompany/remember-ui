@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import type { Placement } from 'popper.js';
+import type { Placement } from 'tippy.js';
 
 import { Popover, Content } from './Popover.styles';
 

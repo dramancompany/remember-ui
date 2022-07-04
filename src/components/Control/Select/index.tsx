@@ -23,7 +23,7 @@ type ValueType = string | number;
 
 export interface SelectOption<T extends ValueType, P = any> {
   id: T;
-  label: string;
+  label: React.ReactNode;
   value?: P;
   disabled?: boolean;
 }

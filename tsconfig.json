@@ -12,8 +12,8 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "declaration": true,
-    "declarationDir": "./types"
+    "declarationDir": "./dist/types"
   },
   "include": ["custom.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "./dist", "./types"]
+  "exclude": ["node_modules", "./dist"]
 }
