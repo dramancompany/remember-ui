@@ -17,7 +17,7 @@ import {
   Input,
 } from './BaseInput.styles';
 
-interface Props {
+export interface BaseInputProps {
   name?: string;
   value?: string | number;
   onChange: ChangeEventHandler<HTMLInputElement>;
@@ -67,7 +67,7 @@ export const BaseInput = ({
   marginBottom,
   outerRef,
   ...rest
-}: Props) => {
+}: BaseInputProps) => {
   const [error, setError] = useState('');
 
   const _validate = () => {
