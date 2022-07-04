@@ -17,7 +17,7 @@ export interface NewBaseButtonProps {
   size?: BaseButtonSizeType;
   isLoading?: boolean;
   block?: boolean;
-  children: React.ReactChild | React.ReactChildren;
+  children: React.ReactNode;
   testId?: string;
 }
 
