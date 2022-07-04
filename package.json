@@ -21,7 +21,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "yarn tsc && rollup -c",
     "build:dev": "rollup -c rollup.config.dev.js -w",
     "build:all": "yarn build && yarn docz:build",
     "docz:dev": "docz dev",
