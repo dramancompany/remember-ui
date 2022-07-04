@@ -19,17 +19,19 @@ import {
   Message,
 } from './Select.styles';
 
-interface SelectOption {
-  id: string | number;
-  label: string | number;
-  value?: string | number;
+type ValueType = string | number;
+
+export interface SelectOption<T extends ValueType, P = any> {
+  id: T;
+  label: string;
+  value?: P;
   disabled?: boolean;
 }
 
-interface Props {
-  options: SelectOption[];
-  value?: string | number;
-  onChange: (value: number | string) => void;
+interface Props<T extends ValueType> {
+  options: SelectOption<T>[];
+  value?: T;
+  onChange: (id: T) => void;
   className?: string;
   label?: string;
   changeInputMode?: () => void;
@@ -42,9 +44,9 @@ interface Props {
   errorMessage?: string;
 }
 
-export const Select = ({
+export const Select = <T extends ValueType>({
   options = [],
-  value = '',
+  value,
   className,
   onChange,
   label,
@@ -56,7 +58,7 @@ export const Select = ({
   marginBottom,
   errorMessage,
   error,
-}: Props) => {
+}: Props<T>) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openExample = () => {

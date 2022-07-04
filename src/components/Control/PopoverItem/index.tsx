@@ -12,7 +12,7 @@ export interface PopoverProps {
 interface Props extends PopoverProps {
   children: React.ReactNode;
   onClick: MouseEventHandler;
-  className: string;
+  className?: string;
 }
 
 export const PopoverItem = ({
