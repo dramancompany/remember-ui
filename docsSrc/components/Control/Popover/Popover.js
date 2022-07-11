@@ -16,7 +16,7 @@ Popover.propTypes = {
   onPopoverOpenChange: t.func,
   customElement: t.object,
   content: t.object,
-  size: t.string,
+  size: t.oneOf(['small', 'large', 'auto']),
   trigger: t.oneOf(['click', 'focus', 'mouseenter']),
   className: t.string,
   distance: t.number,

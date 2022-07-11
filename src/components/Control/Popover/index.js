@@ -7,7 +7,7 @@ export const BasePopover = ({
   className = 'DcPopover',
   customElement,
   content,
-  size = 'small', // small or large
+  size = 'small', // 'small' | 'large' | 'auto'
   children,
   onOpen = () => {},
   distance = 10,
@@ -51,6 +51,7 @@ export const BasePopover = ({
       onMount={(inst) => setInstance(inst)}
       arrow={false}
       $size={size}
+      maxWidth="unset"
       onShow={() => {
         onPopoverOpenChange(true);
         onOpen();
