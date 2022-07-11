@@ -17,9 +17,9 @@ import {
   Input,
 } from './BaseInput.styles';
 
-export interface BaseInputProps {
+export interface BaseInputProps<T> {
   name?: string;
-  value?: string | number;
+  value?: T;
   onChange: ChangeEventHandler<HTMLInputElement>;
   outerRef?: RefObject<HTMLInputElement>;
   footer?: ReactNode;
@@ -39,10 +39,10 @@ export interface BaseInputProps {
   readOnly?: boolean;
   onClick?: MouseEventHandler<HTMLInputElement>;
   onEnter?: VoidFunction;
-  validate?: (value?: string | number) => string;
+  validate?: (value?: T) => string;
 }
 
-export const BaseInput = ({
+export const BaseInput = <T extends string | number = string>({
   value,
   name,
   onChange,
@@ -67,7 +67,7 @@ export const BaseInput = ({
   marginBottom,
   outerRef,
   ...rest
-}: BaseInputProps) => {
+}: BaseInputProps<T>) => {
   const [error, setError] = useState('');
 
   const _validate = () => {

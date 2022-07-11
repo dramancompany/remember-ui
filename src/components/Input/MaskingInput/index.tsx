@@ -18,7 +18,7 @@ import {
   Input,
 } from './MaskingInput.styles';
 
-interface Props {
+export interface MaskingInputProps {
   name?: string;
   value?: string | number;
   onChange: ChangeEventHandler<HTMLInputElement>;
@@ -65,7 +65,7 @@ export const MaskingInput = ({
   mask = false,
   blankLabel = false,
   marginBottom,
-}: Props) => {
+}: MaskingInputProps) => {
   const [error, setError] = useState('');
   const _validate = () => {
     if (validate) {

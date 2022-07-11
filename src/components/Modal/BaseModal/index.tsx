@@ -22,7 +22,7 @@ export interface BaseModalProps {
   dragOnStart?: () => void;
   dragOnStop?: () => void;
   dragOnDrag?: () => void;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const BaseModal = ({

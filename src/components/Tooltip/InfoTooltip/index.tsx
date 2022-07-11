@@ -5,10 +5,10 @@ import 'tippy.js/dist/tippy.css';
 import { Tooltip } from './InfoTooltip.styles';
 
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   content: React.ReactNode;
   visible?: boolean;
-  className: string;
+  className?: string;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   onShow?: (instance: Instance<TippyProps>) => false | void;
   customAnimation?: 'headShake';
