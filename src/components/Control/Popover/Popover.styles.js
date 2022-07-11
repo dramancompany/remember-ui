@@ -11,7 +11,7 @@ export const Popover = styled(Tippy)`
   border-radius: 10px !important;
   background-color: white !important;
   box-shadow: 0 0px 16px 0 rgba(0, 0, 0, 0.2) !important;
-  width: ${({ $size = 'small' }) => SIZE_TO_WIDTH_MAP[$size]} !important;
+  width: ${({ $size }) => SIZE_TO_WIDTH_MAP[$size]} !important;
 
   .tippy-content {
     padding: 0 !important;
