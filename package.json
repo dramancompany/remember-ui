@@ -8,7 +8,6 @@
   "main": "dist/index.cjm.js",
   "module": "dist/index.js",
   "sideEffects": false,
-  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md",
