@@ -20,10 +20,10 @@ import {
   Title,
 } from './Textarea.styles';
 
-interface Props {
+export interface TextareaProps {
   name?: string;
   value?: string;
-  onChange: (value: string) => {};
+  onChange: (value: string) => void;
   outerRef?: RefObject<HTMLTextAreaElement>;
   footer?: ReactNode;
   placeholder?: string;
@@ -57,7 +57,7 @@ export const Textarea = ({
   countLength = false,
   textareaOnClick = () => {},
   resize = false,
-}: Props) => {
+}: TextareaProps) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const _onChange = useCustomSetInput(
     outerRef || textareaRef,

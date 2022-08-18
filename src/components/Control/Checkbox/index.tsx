@@ -12,7 +12,7 @@ import {
 import useHover from '../../../hooks/useHover';
 import { Container, Icon } from './Checkbox.styles';
 
-interface Props {
+export interface Props {
   state?: 'on' | 'off';
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
   disabled?: boolean;

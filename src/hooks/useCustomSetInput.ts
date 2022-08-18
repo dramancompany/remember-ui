@@ -3,7 +3,7 @@ import { useRef, useState, useEffect, useCallback, RefObject } from 'react';
 export default function useCustomSetInput(
   inputRef: RefObject<HTMLInputElement | HTMLTextAreaElement>,
   value: string,
-  onChange: (value: string) => {},
+  onChange: (value: string) => void,
   maxLength: number = 2000
 ) {
   const [notifier, setNotifier] = useState(false);

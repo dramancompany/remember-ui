@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from './Spinner.styles';
 
-export interface Props {
+export interface SpinnerProps {
   width?: number;
   height?: number;
   borderWeight?: number;
@@ -16,7 +16,7 @@ export const Spinner = ({
   borderWeight = 5,
   theme = 'gray',
   className,
-}: Props) => (
+}: SpinnerProps) => (
   <Container
     className={className}
     width={width}

@@ -19,7 +19,7 @@ import { BaseModalProps } from '../BaseModal';
 
 const modalType = 'designedModal';
 
-interface Props
+export interface DesignedModalProps
   extends Omit<
     BaseModalProps,
     'allowKeyExit' | 'bodyScrollLockTarget' | 'children'
@@ -29,7 +29,7 @@ interface Props
   customText?: string;
   submit?: () => void;
   close?: () => void;
-  submitText: string;
+  submitText?: string;
   closeText?: string;
   submitButtonDisabled?: boolean;
   headerButton?: ReactNode;
@@ -66,7 +66,7 @@ export const DesignedModal = ({
   mobileHeight,
   bodyScrollLockTargetId,
   delegateCloseControl = false,
-}: Props) => {
+}: DesignedModalProps) => {
   const { modalId, bodyScrollLockTarget } = useScrollLock(
     bodyScrollLockTargetId,
     modalType
