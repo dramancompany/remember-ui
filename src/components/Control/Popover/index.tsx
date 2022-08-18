@@ -1,14 +1,14 @@
 import React, { ReactNode, useState } from 'react';
 import type { Placement } from 'tippy.js';
 
-import { Popover, Content } from './Popover.styles';
+import { Popover, Content, SIZE_TO_WIDTH_MAP } from './Popover.styles';
 
 interface Props {
   content: ReactNode;
   onPopoverOpenChange?: (isChange: boolean) => void;
   className?: string;
   customElement?: ReactNode;
-  size?: 'small' | 'large';
+  size?: keyof typeof SIZE_TO_WIDTH_MAP;
   onOpen?: () => void;
   distance?: number;
   trigger?: 'mouseenter' | 'click' | 'focus';
