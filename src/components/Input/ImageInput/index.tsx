@@ -14,7 +14,7 @@ import {
 interface Props {
   id: string;
   onChange: (fileReaderResult?: string | ArrayBuffer | null) => void;
-  label?: string;
+  label?: React.ReactNode;
   className?: string;
 }
 

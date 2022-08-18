@@ -19,16 +19,14 @@ import {
   Message,
 } from './Select.styles';
 
-type ValueType = string | number;
-
-export interface SelectOption<T extends ValueType, P = any> {
+export interface SelectOption<T, P = any> {
   id: T;
   label: React.ReactNode;
   value?: P;
   disabled?: boolean;
 }
 
-export interface SelectProps<T extends ValueType> {
+export interface SelectProps<T> {
   options: SelectOption<T>[];
   value?: T;
   onChange: (id: T) => void;
@@ -44,7 +42,7 @@ export interface SelectProps<T extends ValueType> {
   errorMessage?: string;
 }
 
-export const Select = <T extends ValueType>({
+export const Select = <T extends string | number>({
   options = [],
   value,
   className,

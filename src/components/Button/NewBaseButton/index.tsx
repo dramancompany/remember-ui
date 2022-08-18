@@ -5,6 +5,8 @@ import { Spinner } from '../../Spinner';
 import { Container, Inner } from './NewBaseButton.styles';
 import type { NewBaseButtonProps } from './NewBaseButton.types';
 
+export * from './NewBaseButton.types';
+
 export const NewBaseButton = ({
   className,
   disabled = false,
