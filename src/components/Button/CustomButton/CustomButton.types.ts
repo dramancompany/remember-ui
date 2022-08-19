@@ -15,7 +15,7 @@ export interface CustomButtonProps {
     borderColor: string;
     backgroundColor: string;
   };
-  testId: string;
+  testId?: string;
 }
 
 export type CustomButtonStyleProps = Required<
