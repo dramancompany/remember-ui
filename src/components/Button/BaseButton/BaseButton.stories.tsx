@@ -18,7 +18,9 @@ const Template: ComponentStory<typeof BaseButton> = (args) => (
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Variants: ComponentStory<typeof BaseButton> = () => (
   <DoczContainer direction="column">
-    <h1>Deprecated</h1>
+    <h1 style={{ fontSize: '30px', borderBottom: '1px solid black' }}>
+      Deprecated
+    </h1>
     <DoczContainer direction="row">
       <BaseButton width={100}>Default</BaseButton>
       <BaseButton fill width={100}>
