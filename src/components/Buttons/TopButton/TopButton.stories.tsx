@@ -8,13 +8,6 @@ import { TopButton } from './index';
 const meta: ComponentMeta<typeof TopButton> = {
   title: 'Buttons/TopButton',
   component: TopButton,
-  decorators: [
-    (Story) => (
-      <div style={{ margin: 'none' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 const Template: ComponentStory<typeof TopButton> = (args) => (
