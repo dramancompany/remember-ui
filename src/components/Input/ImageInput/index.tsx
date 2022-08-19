@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 
 import { customToast as toast } from '../../../utils';
-import { BaseButton } from '../../Button';
+import { BaseButton } from '../../Buttons';
 
 import {
   Container,

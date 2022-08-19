@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import { Content, Body, Buttons, CancelButton } from './MessageModal.styles';
-import { NewBaseButton } from '../../Button';
+import { NewBaseButton } from '../../Buttons';
 import { BaseModal } from '../BaseModal';
 
 export interface MessageModalProps {

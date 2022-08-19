@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { BaseModal } from '../BaseModal';
-import { BaseButton } from '../../Button';
+import { BaseButton } from '../../Buttons';
 
 import {
   white,

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { BaseModal } from '../BaseModal';
-import { NewBaseButton } from '../../Button';
+import { NewBaseButton } from '../../Buttons';
 import { closeIcon } from '../../../assets';
 
 import {
