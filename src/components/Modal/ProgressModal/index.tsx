@@ -12,7 +12,7 @@ import {
   ProgressBarFiller,
 } from './ProgressModal.styles';
 
-interface Props {
+export interface ProgressModalProps {
   isOpen: boolean;
   isDraggable?: boolean;
   isDragBounded?: boolean;
@@ -44,7 +44,7 @@ export const ProgressModal = ({
   dragOnDrag = () => {},
   mobileWidth = '90vw',
   mobileHeight,
-}: Props) => (
+}: ProgressModalProps) => (
   <BaseModal
     isOpen={isOpen}
     allowKeyExit={false}

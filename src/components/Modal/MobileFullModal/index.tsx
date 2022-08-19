@@ -22,7 +22,7 @@ import {
 
 const modalType = 'mobileFullModal';
 
-interface Props {
+export interface MobileFullModalProps {
   isOpen?: boolean;
   isLoading?: boolean;
   delegateCloseControl?: boolean;
@@ -62,7 +62,7 @@ export const MobileFullModal = ({
   bodyScrollLockTargetId,
   delegateCloseControl = false,
   children,
-}: Props) => {
+}: MobileFullModalProps) => {
   const { modalId, bodyScrollLockTarget } = useScrollLock(
     bodyScrollLockTargetId,
     modalType

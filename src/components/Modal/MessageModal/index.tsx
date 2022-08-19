@@ -4,7 +4,7 @@ import { Content, Body, Buttons, CancelButton } from './MessageModal.styles';
 import { NewBaseButton } from '../../Button';
 import { BaseModal } from '../BaseModal';
 
-interface Props {
+export interface MessageModalProps {
   isOpen: boolean;
   isLoading?: boolean;
   onConfirm?: () => void;
@@ -24,7 +24,7 @@ export const MessageModal = ({
   confirmText,
   cancelText,
   isLoading = false,
-}: Props) => {
+}: MessageModalProps) => {
   return (
     <BaseModal isOpen={isOpen}>
       <Content>

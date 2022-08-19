@@ -44,7 +44,7 @@ const getIconSrc = (icon: IconType) => {
 type IconType = 'warning' | 'success';
 type Type = 'delete' | 'ok';
 
-interface Props
+export interface ConfirmModalProps
   extends Omit<
     BaseModalProps,
     'allowKeyExit' | 'onAfterOpen' | 'bodyScrollLockTarget' | 'children'
@@ -91,7 +91,7 @@ export const ConfirmModal = ({
   bodyScrollLockTargetId,
   delegateCloseControl = false,
   testId,
-}: Props) => {
+}: ConfirmModalProps) => {
   const { confirmColor, confirmText } = defaultTypeProps(type);
   const { modalId, bodyScrollLockTarget } = useScrollLock(
     bodyScrollLockTargetId,
