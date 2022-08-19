@@ -15,7 +15,6 @@ const Template: ComponentStory<typeof NewBaseButton> = (args) => (
   <NewBaseButton {...args} />
 );
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Variants: ComponentStory<typeof NewBaseButton> = () => (
   <>
     <DoczContainer direction="column">
@@ -78,7 +77,7 @@ export const Variants: ComponentStory<typeof NewBaseButton> = () => (
       <DoczContainer direction="row">
         <div style={{ width: '300px' }}>
           <NewBaseButton size="large" theme="primary" block>
-            Yellow
+            Primary
           </NewBaseButton>
         </div>
         <div style={{ width: '300px' }}>

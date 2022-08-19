@@ -4,8 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CustomButton } from './index';
 import { DoczContainer } from 'components/DoczContainer';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-
 const meta: ComponentMeta<typeof CustomButton> = {
   title: 'Buttons/CustomButton',
   component: CustomButton,
@@ -15,7 +13,6 @@ const Template: ComponentStory<typeof CustomButton> = (args) => (
   <CustomButton {...args} />
 );
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Variants: ComponentStory<typeof CustomButton> = () => (
   <DoczContainer direction="column">
     <h4>Basic Usage (with RealWorld)</h4>

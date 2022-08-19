@@ -7,9 +7,10 @@ import { TopBtn } from '../../../assets';
 
 interface TopButtonProps {
   className?: string;
+  marginLeft?: number;
 }
 
-export const TopButton = ({ className }: TopButtonProps) => {
+export const TopButton = ({ className, marginLeft = 562 }: TopButtonProps) => {
   const isScrollTop = useDetectScrollPositionTop();
 
   const handleClick = useCallback(() => {
@@ -24,6 +25,7 @@ export const TopButton = ({ className }: TopButtonProps) => {
       show={!isScrollTop}
       src={TopBtn}
       onClick={handleClick}
+      marginLeft={marginLeft}
     />
   );
 };

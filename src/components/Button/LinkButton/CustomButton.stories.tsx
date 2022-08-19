@@ -4,8 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { LinkButton } from './index';
 import { DoczContainer } from 'components/DoczContainer';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-
 const meta: ComponentMeta<typeof LinkButton> = {
   title: 'Buttons/LinkButton',
   component: LinkButton,
@@ -15,7 +13,6 @@ const Template: ComponentStory<typeof LinkButton> = (args) => (
   <LinkButton {...args} />
 );
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Variants: ComponentStory<typeof LinkButton> = () => (
   <DoczContainer direction="row">
     <LinkButton>Default</LinkButton>

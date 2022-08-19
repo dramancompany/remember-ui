@@ -5,8 +5,6 @@ import { MoreButton } from './index';
 import { DoczContainer } from 'components/DoczContainer';
 import { NewBaseButton } from '../NewBaseButton';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-
 const meta: ComponentMeta<typeof MoreButton> = {
   title: 'Buttons/MoreButton',
   component: MoreButton,
@@ -16,7 +14,6 @@ const Template: ComponentStory<typeof MoreButton> = (args) => (
   <MoreButton {...args} />
 );
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Variants: ComponentStory<typeof MoreButton> = () => {
   const [isShow, setIsShow] = React.useState(false);
   const toggle = () => setIsShow(!isShow);
