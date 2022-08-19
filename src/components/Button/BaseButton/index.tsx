@@ -13,8 +13,8 @@ import {
   PlusButton,
   RedButton,
   YellowButton,
-} from './Button.styles';
-import type { BaseButtonProps } from './Button.types';
+} from './BaseButton.styles';
+import type { BaseButtonProps } from './BaseButton.types';
 
 export const BUTTONS = {
   black: BlackButton,

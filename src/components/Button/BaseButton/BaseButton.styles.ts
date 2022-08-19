@@ -12,7 +12,7 @@ import {
   contents999,
   yellow100,
 } from '../../../core/GlobalStyle';
-import type { BaseButtonStyleType } from './Button.types';
+import type { BaseButtonStyleType } from './BaseButton.types';
 
 const BASE_BUTTON_SIZES = {
   small: {
