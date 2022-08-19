@@ -1,4 +1,4 @@
-import type { BaseButtonSizeType } from '../BaseButton/Button.types';
+import type { BaseButtonSizeType } from '../BaseButton/BaseButton.types';
 
 export type NewBaseButtonTheme =
   | 'yellow'

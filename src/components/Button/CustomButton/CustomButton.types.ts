@@ -1,4 +1,4 @@
-import { BaseButtonSizeType } from '../BaseButton/Button.types';
+import { BaseButtonSizeType } from '../BaseButton/BaseButton.types';
 
 export interface CustomButtonProps {
   className?: string;

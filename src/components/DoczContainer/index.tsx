@@ -3,9 +3,9 @@ import type { CSSProperties } from 'react';
 
 import { Container as ContainerDiv } from './DoczContainer.styles';
 
-interface Props {
+export interface Props {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   direction: CSSProperties['flexDirection'];
 }
 
