@@ -4,7 +4,7 @@ import {
   mobileOnly,
   minHeightFix,
   minHeightFixChild,
-} from '../../core/GlobalStyle/mixin';
+} from '../../../core/GlobalStyle/mixin';
 
 export const Container = styled.div<{
   direction: CSSProperties['flexDirection'];

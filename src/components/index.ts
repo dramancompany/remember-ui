@@ -1,11 +1,11 @@
 export * from './Buttons';
-export * from './Chip';
-export * from './Container';
+export * from './Common/Chip';
+export * from './Common/Container';
 export * from './Control';
 export * from './Input';
 export * from './Modal';
-export * from './Pagination';
-export * from './Spinner';
+export * from './Common/Pagination';
+export * from './Common/Spinner';
 export * from './Tooltip';
 export * from './Icon';
 

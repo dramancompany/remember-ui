@@ -8,7 +8,7 @@ import {
   contents999,
   contents300,
   gray150,
-} from '../../core/GlobalStyle';
+} from '../../../core/GlobalStyle';
 
 export const Container = styled.ul`
   align-items: center;

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { range } from '../../utils';
+import { range } from '../../../utils';
 import {
   arrowBackActiveIcon,
   arrowBackInactiveIcon,
   arrowForwardActiveIcon,
   arrowForwardInactiveIcon,
-} from '../../assets';
+} from '../../../assets';
 
 import {
   Container,

@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { yellow50, yellow60, brown100 } from '../../core/GlobalStyle/variable';
-import { font, textEllipsis } from '../../core/GlobalStyle/mixin';
+import {
+  yellow50,
+  yellow60,
+  brown100,
+} from '../../../core/GlobalStyle/variable';
+import { font, textEllipsis } from '../../../core/GlobalStyle/mixin';
 
 export const Container = styled.div<{ isOverflowed?: boolean }>`
   ${font({ size: '13px', color: brown100 })};

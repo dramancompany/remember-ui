@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Spinner } from '../../Spinner';
+import { Spinner } from '../../Common/Spinner';
 
 import { accent200 } from '../../../core/GlobalStyle';
 import { Container, Inner } from './CustomButton.styles';
