@@ -241,6 +241,20 @@ export const textLink = css`
   }
 `;
 
+export const ellipsis = (line = 1) => {
+  if (line === 1) {
+    return textEllipsis;
+  }
+
+  return css`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: ${line};
+  `;
+}
+
 /**
  * breakpoint 관련 mixin
  */
