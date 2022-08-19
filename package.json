@@ -1,12 +1,13 @@
 {
   "name": "@dramancompany/remember-ui",
-  "version": "2.3.0-beta.9",
+  "version": "2.3.0-beta.11",
   "description": "Remember UI Components",
   "homepage": "https://github.com/dramancompany/remember-ui",
   "author": "DramanCompany",
   "license": "MIT",
   "main": "dist/index.cjm.js",
   "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
     "dist",
