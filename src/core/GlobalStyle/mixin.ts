@@ -67,7 +67,7 @@ export const TYPOGRAPHY_STYLES = {
   Headline2_B: {
     fontSize: 24,
     lineHeight: 34,
-    fontWeight: 600
+    fontWeight: 600,
   },
   Headline3_B: {
     fontSize: 20,
@@ -258,7 +258,7 @@ export const mobileOnly = (cssContent: FlattenSimpleInterpolation) => css`
 `;
 
 export const webOnly = (cssContent: FlattenSimpleInterpolation) => css`
-  @media only screen and (min-width: ${mobileSizeBreak}) {
+  @media only screen and (min-width: ${parseInt(mobileSizeBreak) + 1}px) {
     ${cssContent}
   }
 `;
@@ -270,7 +270,8 @@ export const landingMobileOnly = (cssContent: FlattenSimpleInterpolation) => css
 `;
 
 export const landingWebOnly = (cssContent:FlattenSimpleInterpolation) => css`
-  @media only screen and (min-width: ${landingMobileSizeBreak}) {
+  @media only screen and (min-width: ${parseInt(landingMobileSizeBreak) +
+    1}px) {
     ${cssContent}
   }
 `;
