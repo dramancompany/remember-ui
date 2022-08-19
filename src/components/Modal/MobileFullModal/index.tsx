@@ -36,8 +36,8 @@ interface Props {
   bodyScrollLockTargetId?: string;
 
   onClose?: () => void;
-  onAfterOpen: () => void;
-  onHeaderButtonClick: () => void;
+  onAfterOpen?: () => void;
+  onHeaderButtonClick?: () => void;
   submit?: () => void;
 
   children?: ReactNode;
