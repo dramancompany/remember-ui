@@ -14,9 +14,14 @@ import {
 
 const ItemHeight = 48;
 
-interface AccordionMenu {
+export type AccordionMenuList = {
   title: string;
-  list: { title: string; value: string; onClick?: (value: string) => void }[];
+  value: string;
+  onClick?: (value: string) => void;
+};
+export interface AccordionMenu {
+  title: string;
+  list: AccordionMenuList[];
 }
 
 interface Props {
