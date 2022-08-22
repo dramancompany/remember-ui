@@ -15,6 +15,6 @@ const Template: ComponentStory<typeof ProfileAvatar> = (args) => (
   <ProfileAvatar {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Basic = Template.bind({});
 
 export default meta;

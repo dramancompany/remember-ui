@@ -7,11 +7,8 @@ import { DoczContainer } from 'components/DoczContainer';
 const meta: ComponentMeta<typeof CustomButton> = {
   title: 'Buttons/CustomButton',
   component: CustomButton,
+  args: { children: 'CustomButton' },
 };
-
-const Template: ComponentStory<typeof CustomButton> = (args) => (
-  <CustomButton {...args} />
-);
 
 export const Variants: ComponentStory<typeof CustomButton> = () => (
   <DoczContainer direction="column">
@@ -43,10 +40,10 @@ export const Variants: ComponentStory<typeof CustomButton> = () => (
   </DoczContainer>
 );
 
-export const Primary = Template.bind({});
+const Template: ComponentStory<typeof CustomButton> = (args) => (
+  <CustomButton {...args} />
+);
 
-Primary.args = {
-  children: 'CustomButton',
-};
+export const Basic = Template.bind({});
 
 export default meta;

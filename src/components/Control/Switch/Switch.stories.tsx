@@ -46,6 +46,6 @@ export const Variants: ComponentStory<typeof Switch> = () => {
 
 const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
 
-export const Primary = Template.bind({});
+export const Basic = Template.bind({});
 
 export default meta;

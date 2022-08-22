@@ -7,11 +7,8 @@ import { DoczContainer } from 'components/DoczContainer';
 const meta: ComponentMeta<typeof BaseButton> = {
   title: 'Buttons/BaseButton',
   component: BaseButton,
+  args: { children: 'BaseButton' },
 };
-
-const Template: ComponentStory<typeof BaseButton> = (args) => (
-  <BaseButton {...args} />
-);
 
 export const Variants: ComponentStory<typeof BaseButton> = () => (
   <DoczContainer direction="column">
@@ -44,10 +41,10 @@ export const Variants: ComponentStory<typeof BaseButton> = () => (
   </DoczContainer>
 );
 
-export const Primary = Template.bind({});
+const Template: ComponentStory<typeof BaseButton> = (args) => (
+  <BaseButton {...args} />
+);
 
-Primary.args = {
-  children: 'BaseButton',
-};
+export const Basic = Template.bind({});
 
 export default meta;

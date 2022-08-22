@@ -33,6 +33,6 @@ const Template: ComponentStory<typeof Checkbox> = (args) => (
   <Checkbox {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Basic = Template.bind({});
 
 export default meta;

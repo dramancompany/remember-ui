@@ -9,11 +9,8 @@ import { DoczContainer } from 'components/DoczContainer';
 const meta: ComponentMeta<typeof NewBaseButton> = {
   title: 'Buttons/NewBaseButton',
   component: NewBaseButton,
+  args: { children: 'NewBaseButton' },
 };
-
-const Template: ComponentStory<typeof NewBaseButton> = (args) => (
-  <NewBaseButton {...args} />
-);
 
 export const Variants: ComponentStory<typeof NewBaseButton> = () => (
   <>
@@ -135,10 +132,10 @@ export const Variants: ComponentStory<typeof NewBaseButton> = () => (
   </>
 );
 
-export const Primary = Template.bind({});
+const Template: ComponentStory<typeof NewBaseButton> = (args) => (
+  <NewBaseButton {...args} />
+);
 
-Primary.args = {
-  children: 'NewBaseButton',
-};
+export const Basic = Template.bind({});
 
 export default meta;

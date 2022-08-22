@@ -10,10 +10,6 @@ const meta: ComponentMeta<typeof MoreButton> = {
   component: MoreButton,
 };
 
-const Template: ComponentStory<typeof MoreButton> = (args) => (
-  <MoreButton {...args} />
-);
-
 export const Variants: ComponentStory<typeof MoreButton> = () => {
   const [isShow, setIsShow] = React.useState(false);
   const toggle = () => setIsShow(!isShow);
@@ -55,8 +51,10 @@ export const Variants: ComponentStory<typeof MoreButton> = () => {
   );
 };
 
-export const Primary = Template.bind({});
+const Template: ComponentStory<typeof MoreButton> = (args) => (
+  <MoreButton {...args} />
+);
 
-Primary.args = {};
+export const Basic = Template.bind({});
 
 export default meta;

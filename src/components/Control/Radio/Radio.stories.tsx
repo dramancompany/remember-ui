@@ -66,6 +66,6 @@ export const Variants: ComponentStory<typeof Radio> = () => {
 
 const Template: ComponentStory<typeof Radio> = (args) => <Radio {...args} />;
 
-export const Primary = Template.bind({});
+export const Basic = Template.bind({});
 
 export default meta;

@@ -7,11 +7,11 @@ import { DoczContainer } from 'components/DoczContainer';
 const meta: ComponentMeta<typeof LinkButton> = {
   title: 'Buttons/LinkButton',
   component: LinkButton,
+  args: {
+    address: 'https://dramancompany.github.io/remember-ui/',
+    children: 'LinkButton',
+  },
 };
-
-const Template: ComponentStory<typeof LinkButton> = (args) => (
-  <LinkButton {...args} />
-);
 
 export const Variants: ComponentStory<typeof LinkButton> = () => (
   <DoczContainer direction="row">
@@ -26,11 +26,10 @@ export const Variants: ComponentStory<typeof LinkButton> = () => (
   </DoczContainer>
 );
 
-export const Primary = Template.bind({});
+const Template: ComponentStory<typeof LinkButton> = (args) => (
+  <LinkButton {...args} />
+);
 
-Primary.args = {
-  address: 'https://dramancompany.github.io/remember-ui/',
-  children: 'LinkButton',
-};
+export const Basic = Template.bind({});
 
 export default meta;
