@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ProfileAvatar } from './index';
+import { ProfileAvatar } from '../index';
 
 const meta: ComponentMeta<typeof ProfileAvatar> = {
   title: 'Icon/ProfileAvatar',

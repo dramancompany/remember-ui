@@ -1,7 +1,7 @@
 export * from './Checkbox';
-export * from './Radio';
+export { Radio } from './Radio';
 export * from './Select';
 export * from './BasePopover';
-export * from './PopoverItem';
-export * from './Switch';
+export { PopoverItem } from './PopoverItem';
+export { Switch } from './Switch';
 export * from './Accordion';
