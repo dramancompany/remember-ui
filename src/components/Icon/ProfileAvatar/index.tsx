@@ -5,7 +5,7 @@ import { gray150 } from '../../../core/GlobalStyle';
 
 import { Container, Svg } from './ProfileAvatar.styles';
 
-interface Props {
+export interface Props {
   className?: string;
   color?: CSSProperties['color'];
   width?: number;
