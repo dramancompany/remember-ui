@@ -9,7 +9,7 @@ const meta: ComponentMeta<typeof PopoverItem> = {
   component: PopoverItem,
 };
 
-export const Basic: ComponentStory<typeof PopoverItem> = (args) => (
+export const Variants: ComponentStory<typeof PopoverItem> = () => (
   <DoczContainer direction="row">
     <PopoverItem onClick={() => alert('Pop!')}>쿠폰 등록</PopoverItem>
     <PopoverItem warning onClick={() => alert('Pop!')}>
