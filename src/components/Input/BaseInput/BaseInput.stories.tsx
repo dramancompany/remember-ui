@@ -12,7 +12,7 @@ const meta: ComponentMeta<typeof BaseInput> = {
 
 export const Variants: ComponentStory<typeof BaseInput> = () => {
   const [buyerName, setBuyerName] = React.useState('');
-  const [phoneNo, setPhoneNo] = React.useState<string>();
+  const [phoneNo, setPhoneNo] = React.useState('');
   return (
     <>
       <DoczContainer direction="row">
