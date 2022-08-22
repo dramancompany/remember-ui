@@ -42,7 +42,9 @@ export interface MobileFullModalProps {
 
   children?: ReactNode;
 }
-
+/**
+ * @see https://naver.com
+ */
 export const MobileFullModal = ({
   topNavbarOffset = '0px',
 
