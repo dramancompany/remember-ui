@@ -9,27 +9,25 @@ const meta: ComponentMeta<typeof Checkbox> = {
   component: Checkbox,
 };
 
-export const Variants: ComponentStory<typeof Checkbox> = (args) => {
-  return (
-    <>
-      <DoczContainer direction="column">
-        <h3>체크박스 on/off/disabled</h3>
-        <DoczContainer direction="row">
-          <Checkbox state="on" />
-          <Checkbox state="off" />
-          <Checkbox state="on" disabled />
-        </DoczContainer>
+export const Variants: ComponentStory<typeof Checkbox> = (args) => (
+  <>
+    <DoczContainer direction="column">
+      <h3>체크박스 on/off/disabled</h3>
+      <DoczContainer direction="row">
+        <Checkbox state="on" />
+        <Checkbox state="off" />
+        <Checkbox state="on" disabled />
       </DoczContainer>
-      <DoczContainer direction="column">
-        <h3>Round 체크박스 on/off</h3>
-        <DoczContainer direction="row">
-          <Checkbox round state="on" />
-          <Checkbox round state="off" />
-        </DoczContainer>
+    </DoczContainer>
+    <DoczContainer direction="column">
+      <h3>Round 체크박스 on/off</h3>
+      <DoczContainer direction="row">
+        <Checkbox round state="on" />
+        <Checkbox round state="off" />
       </DoczContainer>
-    </>
-  );
-};
+    </DoczContainer>
+  </>
+);
 
 const Template: ComponentStory<typeof Checkbox> = (args) => (
   <Checkbox {...args} />
