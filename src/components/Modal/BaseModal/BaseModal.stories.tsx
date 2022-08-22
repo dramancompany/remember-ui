@@ -24,7 +24,7 @@ export const Variants: ComponentStory<typeof BaseModal> = () => {
       <BaseModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div
           style={{
-            boxShadow: ' 0px 0px 21px 0px rgba(143,143,143,0.4)',
+            boxShadow: '0px 0px 21px 0px rgba(143,143,143,0.4)',
             backgroundColor: 'white',
             height: '50vh',
             display: 'flex',
