@@ -9,7 +9,7 @@ const meta: ComponentMeta<typeof Checkbox> = {
   component: Checkbox,
 };
 
-export const Variants: ComponentStory<typeof Checkbox> = (args) => (
+export const Variants: ComponentStory<typeof Checkbox> = () => (
   <>
     <DoczContainer direction="column">
       <h3>체크박스 on/off/disabled</h3>

@@ -10,7 +10,7 @@ const meta: ComponentMeta<typeof Accordion> = {
   component: Accordion,
 };
 
-export const Variants: ComponentStory<typeof Accordion> = (args) => {
+export const Variants: ComponentStory<typeof Accordion> = () => {
   const [checkedList, setCheckedList] = React.useState<AccordionMenuList[]>([]);
   const isCheckedItem = (_title: string, _value: string) => {
     return checkedList.some(
