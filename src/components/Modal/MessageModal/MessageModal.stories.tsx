@@ -27,7 +27,7 @@ export const Basic: ComponentStory<typeof MessageModal> = () => {
         size="large"
         onClick={() => setIsOpen(true)}
       >
-        Open Success Modal
+        Open Basic Modal
       </NewBaseButton>
       <MessageModal
         isOpen={isOpen}
@@ -59,7 +59,7 @@ export const ConfirmOnly: ComponentStory<typeof MessageModal> = () => {
         size="large"
         onClick={() => setIsOpen(true)}
       >
-        Open Waring Modal
+        Open ConfirmOnly Modal
       </NewBaseButton>
       <MessageModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <DoczContainer direction="row">
@@ -74,6 +74,5 @@ export const ConfirmOnly: ComponentStory<typeof MessageModal> = () => {
     </div>
   );
 };
-// style={{ boxShadow: ' 0px 0px 21px 0px rgba(143,143,143,0.4)' }}
 
 export default meta;
