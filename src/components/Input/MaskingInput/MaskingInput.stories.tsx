@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { MaskingInput } from '../index';
+import { MaskingInput } from './index';
 
 const meta: ComponentMeta<typeof MaskingInput> = {
   title: 'Input/MaskingInput',
