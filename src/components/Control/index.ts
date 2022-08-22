@@ -5,3 +5,4 @@ export * from './BasePopover';
 export { PopoverItem } from './PopoverItem';
 export { Switch } from './Switch';
 export * from './Accordion';
+export { BaseTooltip, InfoTooltip } from './Tooltip';

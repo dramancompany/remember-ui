@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 
 import { Tooltip } from './InfoTooltip.styles';
 
-interface Props {
+export interface Props {
   children?: React.ReactNode;
   content: React.ReactNode;
   visible?: boolean;

@@ -2,7 +2,7 @@ import React from 'react';
 import type { ReactChild, CSSProperties, MouseEventHandler } from "react"
 import type { Placement,Instance, Props as TippyProps } from 'tippy.js';
 
-import { helpIcon, plusIcon, moreIcon } from '../../../assets';
+import { helpIcon, plusIcon, moreIcon } from '../../../../assets';
 import { Icon, Tooltip } from './BaseTooltip.styles';
 import 'tippy.js/dist/tippy.css';
 
@@ -25,7 +25,7 @@ const getImgFromType = (type: 'plus' | 'more' | 'help') => {
  * @param { 'dclight', 'dcdark', 'dcblue' } theme
  */
 
-interface Props {
+export interface Props {
   customComponent?: JSX.Element;
   offset?: `${number},${number}`
   arrow?: boolean
