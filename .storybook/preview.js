@@ -5,7 +5,7 @@ import React from 'react';
  * storybook layout settings
  */
 export const parameters = {
-  layout: 'fullscreen',
+  layout: 'padded',
   actions: { argTypesRegex: '^on[A-Z].*' },
   options: {
     showPanel: true,

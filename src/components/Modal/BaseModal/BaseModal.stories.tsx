@@ -9,10 +9,10 @@ const meta: ComponentMeta<typeof BaseModal> = {
   component: BaseModal,
 };
 
-const Template: ComponentStory<typeof BaseModal> = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export const Variants: ComponentStory<typeof BaseModal> = () => {
+  const [isOpen, setIsOpen] = React.useState(true);
   return (
-    <div>
+    <div style={{ width: 'fit-content' }}>
       <NewBaseButton
         theme="light"
         size="large"
@@ -46,7 +46,5 @@ const Template: ComponentStory<typeof BaseModal> = () => {
     </div>
   );
 };
-
-export const Basic = Template.bind({});
 
 export default meta;
