@@ -1,1 +1,1 @@
-export * from './ProfileAvatar';
+export { ProfileAvatar } from './ProfileAvatar';
