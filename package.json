@@ -24,10 +24,6 @@
   "scripts": {
     "build": "yarn tsc && rollup -c",
     "build:dev": "rollup -c rollup.config.dev.js -w",
-    "build:all": "yarn build && yarn docz:build",
-    "docz:dev": "docz dev",
-    "docz:build": "rm -rf ./docs .docz/.cache && docz build",
-    "docz:serve": "docz serve",
     "tsc": "tsc",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -54,11 +50,9 @@
     "@types/styled-components": "^5.1.25",
     "babel-loader": "^8.2.5",
     "babel-preset-react-app": "^9.1.2",
-    "docz": "^2.3.1",
     "eslint-config-prettier": "^6.10.0",
     "gatsby-plugin-sass": "2.1.17",
     "prettier": "2.0.2",
-    "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rollup": "^2.7.2",
