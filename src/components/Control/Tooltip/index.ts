@@ -1,2 +1,2 @@
 export * from './BaseTooltip';
-export * from './InfoTooltip';
+export { InfoTooltip } from './InfoTooltip';
