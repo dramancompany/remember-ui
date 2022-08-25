@@ -1,9 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,vscode,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,vscode,node
 
-### Docz ###
-.docz
-
 ### macOS ###
 # General
 .DS_Store

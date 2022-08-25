@@ -10,17 +10,13 @@ const meta: ComponentMeta<typeof TopButton> = {
   component: TopButton,
 };
 
-const Template: ComponentStory<typeof TopButton> = (args) => (
-  <TopButton {...args} />
-);
-
 export const Variants: ComponentStory<typeof TopButton> = () => {
   return (
     <div
       style={{
         width: '100%',
         height: '90vh',
-        backgroundColor: 'lightgray',
+        backgroundColor: '#E8E6DF',
         position: 'relative',
         textAlign: 'center',
         padding: '20px',

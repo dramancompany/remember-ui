@@ -11,7 +11,7 @@ const meta: ComponentMeta<typeof Spinner> = {
 export const Basic: ComponentStory<typeof Spinner> = (args) => (
   <div
     style={{
-      background: 'lightgray',
+      background: '#E8E6DF',
       height: '200px',
       display: 'flex',
       alignItems: 'center',
