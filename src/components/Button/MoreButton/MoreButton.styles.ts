@@ -1,10 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { MoreButtonProps } from '.';
 
 export const Icon = styled.img<Pick<MoreButtonProps, 'size'>>`
-  width: ${({ size }) => size === 'large' && '16px'};
-  height: ${({ size }) => size === 'large' && '16px'};
-  margin-top: ${({ size }) => size === 'large' && '2px'};
+  ${({ size }) => css`
+    width: ${size === 'large' ? '16px' : '12px'};
+    height: ${size === 'large' ? '16px' : '12px'};
+    ${size === 'large' &&
+    css`
+      margin-top: 2px;
+    `};
+  `}
 
   display: inline-block;
   cursor: pointer;
