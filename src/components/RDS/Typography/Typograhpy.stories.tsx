@@ -33,7 +33,7 @@ export const Variants: ComponentStory<typeof TypeItem> = () => (
           <Th>Weight</Th>
           <Th>Size</Th>
           <Th>Line height</Th>
-          <Th>Migration required</Th>
+          <Th>deprecated</Th>
         </tr>
       </thead>
       <tr>
@@ -47,7 +47,7 @@ export const Variants: ComponentStory<typeof TypeItem> = () => (
         <Td>34px</Td>
         <Td>
           <DeprecatedTypeItem typo="textTripleExtraLarge" />
-          <DeprecatedTypeItem typo="texTdoubleExtraLarge" />
+          <DeprecatedTypeItem typo="textDoubleExtraLarge" />
         </Td>
       </tr>
       <tr>
