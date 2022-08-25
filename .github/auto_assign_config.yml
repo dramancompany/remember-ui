@@ -7,11 +7,11 @@ numberOfReviewers: 2
 useReviewGroups: false
 
 reviewers:
-  - qkraudghgh
   - JeongminSung
   - kwanwooi25
   - yongsk0066
   - kimjeongwonn
   - saengmotmi
+  - Yuddomack
 
 useAssigneeGroups: false
