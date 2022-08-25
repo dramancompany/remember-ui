@@ -86,7 +86,6 @@ export const Textarea = ({
         onClick={textareaOnClick}
         resize={resize}
       />
-      <textarea />
       {countLength && (
         <TextCount>
           <Progress inProgress={value.length > 0}>
