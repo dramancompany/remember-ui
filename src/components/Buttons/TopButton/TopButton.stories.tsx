@@ -3,8 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { TopButton } from './index';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-
 const meta: ComponentMeta<typeof TopButton> = {
   title: 'Buttons/TopButton',
   component: TopButton,

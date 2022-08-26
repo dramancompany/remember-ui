@@ -4,8 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { NewBaseButton } from './index';
 import { DoczContainer } from 'components/DoczContainer';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-
 const meta: ComponentMeta<typeof NewBaseButton> = {
   title: 'Buttons/NewBaseButton',
   component: NewBaseButton,
