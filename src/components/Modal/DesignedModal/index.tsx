@@ -26,7 +26,7 @@ export interface DesignedModalProps
   > {
   title?: string;
   subTitle?: string;
-  customText?: string;
+  customText?: ReactNode;
   submit?: () => void;
   close?: () => void;
   submitText?: string;
