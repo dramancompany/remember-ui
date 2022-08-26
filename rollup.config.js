@@ -5,6 +5,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
+import typescript from 'rollup-plugin-typescript2';
 
 process.env.BABEL_ENV = 'production';
 
@@ -15,8 +16,8 @@ const outputData = [
   },
   {
     file: 'dist/index.cjm.js',
-    format: 'cjs'
-  }
+    format: 'cjs',
+  },
 ];
 
 const plugins = [
@@ -30,6 +31,7 @@ const plugins = [
   commonjs(),
   resolve(),
   terser(),
+  typescript({ tsconfig: 'tsconfig.json' }),
 ];
 
 /**
@@ -45,7 +47,7 @@ const dependencies = [
 ];
 
 export default outputData.map(({ file, format }) => ({
-  input: 'src/index.js',
+  input: 'src/index.ts',
   plugins,
   output: {
     file: file,

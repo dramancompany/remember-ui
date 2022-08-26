@@ -1,0 +1,84 @@
+import React, { useState } from 'react';
+import { createUUID } from '../../../utils/common';
+
+import {
+  Container,
+  Menu,
+  Item,
+  ItemTitle,
+  ItemChecker,
+  ItemInner,
+  ItemInnerTitle,
+  ItemInnerCheckbox,
+} from './Accordion.styles';
+
+const ItemHeight = 48;
+
+interface AccordionMenu {
+  title: string;
+  list: { title: string; value: string; onClick?: (value: string) => void }[];
+}
+
+interface Props {
+  menus: AccordionMenu[];
+  hasCheckBox?: boolean;
+  onClickItem?: (value: string) => void;
+  onCheckItem?: (title: string, value: string) => void;
+  isCheckedItem?: (title: string, value: string) => boolean;
+}
+
+export const Accordion = ({
+  menus = [],
+  onClickItem = () => {},
+  onCheckItem = () => {},
+  isCheckedItem,
+  hasCheckBox,
+}: Props) => {
+  const [hasToggled, setHasToggled] = useState(false);
+  const id = createUUID();
+
+  return (
+    <Container>
+      <Menu>
+        {menus &&
+          menus.map(({ title, list }) => (
+            <Item
+              hasToggled={hasToggled}
+              height={`${list.length * ItemHeight}px`}
+            >
+              <ItemTitle htmlFor={title}>{title}</ItemTitle>
+              <ItemChecker
+                type="radio"
+                onClick={() => setHasToggled(true)}
+                name={id}
+                id={title}
+                height={`${list.length * ItemHeight}px`}
+              />
+              <ItemInner className="inner">
+                {list.map(({ title: listTitle, value, onClick }) => (
+                  <ItemInnerTitle
+                    onClick={() => {
+                      if (hasCheckBox && onCheckItem) {
+                        onCheckItem(title, value);
+                      } else if (onClick) {
+                        onClick(value);
+                      } else {
+                        onClickItem(value);
+                      }
+                    }}
+                  >
+                    {hasCheckBox && (
+                      <ItemInnerCheckbox
+                        state={isCheckedItem?.(title, value) ? 'on' : 'off'}
+                      />
+                    )}
+                    {listTitle}
+                  </ItemInnerTitle>
+                ))}
+              </ItemInner>
+            </Item>
+          ))}
+      </Menu>
+    </Container>
+  );
+};

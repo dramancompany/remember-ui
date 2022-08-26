@@ -5,11 +5,13 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import dotenv from 'dotenv';
+import typescript from 'rollup-plugin-typescript2';
 
 dotenv.config();
 
 process.env.BABEL_ENV = 'production';
 
+// TODO: 환경 변수 파일
 const outputData = [
   {
     file: `${process.env.DIRECTORY}/dist/index.js`,
@@ -31,6 +33,7 @@ const plugins = [
   }),
   commonjs(),
   resolve(),
+  typescript({ tsconfig: 'tsconfig.json' }),
 ];
 
 /**
@@ -46,7 +49,7 @@ const dependencies = [
 ];
 
 export default outputData.map(({ file, format }) => ({
-  input: 'src/index.js',
+  input: 'src/index.ts',
   plugins,
   output: {
     file: file,

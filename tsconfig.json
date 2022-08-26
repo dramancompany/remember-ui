@@ -1,0 +1,19 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
+    "module": "es6",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist/types"
+  },
+  "include": ["custom.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "./dist"]
+}
