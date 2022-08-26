@@ -37,7 +37,8 @@ const theme = create({
   // Brand assets
   brandTitle: 'Remember UI Component',
   brandUrl: 'https://dramancompany.github.io/remember-ui',
-  brandImage: '/remember-logo.png',
+  brandImage:
+    'https://s3.ap-northeast-1.amazonaws.com/static.rememberapp.co.kr/logo/remember/remember_ui_logo.png',
 });
 
 addons.setConfig({
