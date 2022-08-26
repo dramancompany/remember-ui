@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ImageInput } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 
 const meta: ComponentMeta<typeof ImageInput> = {
   title: 'Input/ImageInput',
@@ -12,7 +12,7 @@ const meta: ComponentMeta<typeof ImageInput> = {
 export const Variants: ComponentStory<typeof ImageInput> = () => {
   const [imageUrl, setImageUrl] = React.useState('');
   return (
-    <DoczContainer direction="column">
+    <StoryContainer direction="column">
       {imageUrl && (
         <img
           src={imageUrl}
@@ -32,7 +32,7 @@ export const Variants: ComponentStory<typeof ImageInput> = () => {
         id="company-logo-img"
         onChange={(image) => image && setImageUrl(image.toString())}
       />
-    </DoczContainer>
+    </StoryContainer>
   );
 };
 

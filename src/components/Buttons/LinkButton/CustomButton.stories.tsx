@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { LinkButton } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 
 const meta: ComponentMeta<typeof LinkButton> = {
   title: 'Buttons/LinkButton',
@@ -14,7 +14,7 @@ const meta: ComponentMeta<typeof LinkButton> = {
 };
 
 export const Variants: ComponentStory<typeof LinkButton> = () => (
-  <DoczContainer direction="row">
+  <StoryContainer direction="row">
     <LinkButton>Default</LinkButton>
     <LinkButton showAddress={false}>Default</LinkButton>
     <LinkButton showAddress={false} address="https://career.rememberapp.co.kr">
@@ -23,7 +23,7 @@ export const Variants: ComponentStory<typeof LinkButton> = () => (
     <LinkButton address="https://dramancompany.github.io/remember-ui/">
       Remember UI
     </LinkButton>
-  </DoczContainer>
+  </StoryContainer>
 );
 
 const Template: ComponentStory<typeof LinkButton> = (args) => (

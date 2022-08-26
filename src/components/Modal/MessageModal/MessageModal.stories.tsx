@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { NewBaseButton } from 'components/Buttons';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { Radio } from 'components/Control/Radio';
 import { BaseInput } from 'components/Input';
 import { MessageModal } from './index';
@@ -34,15 +34,15 @@ export const Basic: ComponentStory<typeof MessageModal> = () => {
         onConfirm={() => handleSubmit()}
         onClose={() => setIsOpen(false)}
       >
-        <DoczContainer direction="row">
+        <StoryContainer direction="row">
           <div>취소랑 확인이 있는 모달</div>
-        </DoczContainer>
-        <DoczContainer direction="row">
+        </StoryContainer>
+        <StoryContainer direction="row">
           <Radio isChecked={radioId === 1} onClick={() => setRadio(1)} />
           <span>옵션1</span>
           <Radio isChecked={radioId === 2} onClick={() => setRadio(2)} />
           <span>옵션2</span>
-        </DoczContainer>
+        </StoryContainer>
       </MessageModal>
     </div>
   );
@@ -62,9 +62,9 @@ export const ConfirmOnly: ComponentStory<typeof MessageModal> = () => {
         Open ConfirmOnly Modal
       </NewBaseButton>
       <MessageModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <DoczContainer direction="row">
+        <StoryContainer direction="row">
           <div>확인만 있는 모달</div>
-        </DoczContainer>
+        </StoryContainer>
         <BaseInput
           onChange={(e) => setKeyword(e.target.value)}
           value={keyword}

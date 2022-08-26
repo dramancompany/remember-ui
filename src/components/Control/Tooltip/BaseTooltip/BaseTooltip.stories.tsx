@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { BaseTooltip } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { contents000 } from 'core/GlobalStyle/variable';
 
 const meta: ComponentMeta<typeof BaseTooltip> = {
@@ -14,7 +14,7 @@ const meta: ComponentMeta<typeof BaseTooltip> = {
 };
 
 export const Variants: ComponentStory<typeof BaseTooltip> = () => (
-  <DoczContainer direction="row">
+  <StoryContainer direction="row">
     <BaseTooltip
       content={
         <span>
@@ -44,7 +44,7 @@ export const Variants: ComponentStory<typeof BaseTooltip> = () => (
         <div style={{ marginLeft: '20px', cursor: 'pointer' }}>전체보기</div>
       }
     />
-  </DoczContainer>
+  </StoryContainer>
 );
 
 const Template: ComponentStory<typeof BaseTooltip> = (args) => (

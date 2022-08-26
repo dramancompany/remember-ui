@@ -1,19 +1,19 @@
 import React from 'react';
 import type { CSSProperties } from 'react';
 
-import { Container as ContainerDiv } from './DoczContainer.styles';
+import { Container as ContainerDiv } from './StoryContainer.styles';
 
-interface DoczContainerProps {
+interface StoryContainerProps {
   children: React.ReactNode;
   className?: string;
   direction: CSSProperties['flexDirection'];
 }
 
-export const DoczContainer = ({
+export const StoryContainer = ({
   children,
   direction,
   className,
-}: DoczContainerProps) => {
+}: StoryContainerProps) => {
   return (
     <ContainerDiv className={className} direction={direction}>
       {children}

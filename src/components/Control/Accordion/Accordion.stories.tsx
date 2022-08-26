@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Accordion, AccordionMenuList } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { menus, menus2, menus3 } from './Accordion.constant';
 
 const meta: ComponentMeta<typeof Accordion> = {
@@ -36,7 +36,7 @@ export const Variants: ComponentStory<typeof Accordion> = () => {
   };
   return (
     <>
-      <DoczContainer direction="column">
+      <StoryContainer direction="column">
         <h3>체크박스 있는 경우</h3>
         <Accordion
           menus={menus}
@@ -45,17 +45,17 @@ export const Variants: ComponentStory<typeof Accordion> = () => {
           hasCheckBox={true}
         />
         <>{checkedList.map((el) => ` (${el.title}/${el.value}) `)}</>
-      </DoczContainer>
-      <DoczContainer direction="column">
+      </StoryContainer>
+      <StoryContainer direction="column">
         <h3>
           각 menu 클릭할 경우 공통 로직 적용 되는 예제 / 현재는 console.log
         </h3>
         <Accordion menus={menus2} onClickItem={(value) => console.log(value)} />
-      </DoczContainer>
-      <DoczContainer direction="column">
+      </StoryContainer>
+      <StoryContainer direction="column">
         <h3>각 menu 클릭할 경우 각각의 event handling 할 경우</h3>
         <Accordion menus={menus3} />
-      </DoczContainer>
+      </StoryContainer>
     </>
   );
 };

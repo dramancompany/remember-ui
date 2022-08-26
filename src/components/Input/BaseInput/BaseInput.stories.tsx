@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { BaseInput } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { Checkbox } from 'components/Control/Checkbox';
 
 const meta: ComponentMeta<typeof BaseInput> = {
@@ -15,13 +15,13 @@ export const Variants: ComponentStory<typeof BaseInput> = () => {
   const [phoneNo, setPhoneNo] = React.useState('');
   return (
     <>
-      <DoczContainer direction="row">
+      <StoryContainer direction="row">
         <BaseInput type="text" name="test1" onChange={() => {}} />
         <BaseInput name="test2" readOnly onChange={() => {}} />
         <BaseInput name="test2" disabled onChange={() => {}} />
-      </DoczContainer>
+      </StoryContainer>
       <br />
-      <DoczContainer direction="row">
+      <StoryContainer direction="row">
         <BaseInput
           name="test2"
           label="제목"
@@ -78,7 +78,7 @@ export const Variants: ComponentStory<typeof BaseInput> = () => {
             </div>
           }
         />
-      </DoczContainer>
+      </StoryContainer>
     </>
   );
 };

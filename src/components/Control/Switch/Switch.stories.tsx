@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Switch } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { contents000 } from 'core/GlobalStyle/variable';
 
 const meta: ComponentMeta<typeof Switch> = {
@@ -15,22 +15,22 @@ export const Variants: ComponentStory<typeof Switch> = () => {
   const toggle = () => setIsChecked(!isChecked);
   return (
     <>
-      <DoczContainer direction="row">
-        <DoczContainer direction="column">
+      <StoryContainer direction="row">
+        <StoryContainer direction="column">
           <div>small</div>
           <Switch checked={isChecked} onClick={toggle} />
-        </DoczContainer>
-        <DoczContainer direction="column">
+        </StoryContainer>
+        <StoryContainer direction="column">
           <div>large</div>
           <Switch checked={isChecked} onClick={toggle} size="large" />
-        </DoczContainer>
-      </DoczContainer>
-      <DoczContainer direction="row">
-        <DoczContainer direction="column">
+        </StoryContainer>
+      </StoryContainer>
+      <StoryContainer direction="row">
+        <StoryContainer direction="column">
           <div>small black</div>
           <Switch checked={isChecked} onClick={toggle} color={contents000} />
-        </DoczContainer>
-        <DoczContainer direction="column">
+        </StoryContainer>
+        <StoryContainer direction="column">
           <div>large black</div>
           <Switch
             checked={isChecked}
@@ -38,8 +38,8 @@ export const Variants: ComponentStory<typeof Switch> = () => {
             size="large"
             color={contents000}
           />
-        </DoczContainer>
-      </DoczContainer>
+        </StoryContainer>
+      </StoryContainer>
     </>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { CustomButton } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 
 const meta: ComponentMeta<typeof CustomButton> = {
   title: 'Buttons/CustomButton',
@@ -11,9 +11,9 @@ const meta: ComponentMeta<typeof CustomButton> = {
 };
 
 export const Variants: ComponentStory<typeof CustomButton> = () => (
-  <DoczContainer direction="column">
+  <StoryContainer direction="column">
     <h4>Basic Usage (with RealWorld)</h4>
-    <DoczContainer direction="row">
+    <StoryContainer direction="row">
       <CustomButton
         size="large"
         customStyle={{
@@ -36,8 +36,8 @@ export const Variants: ComponentStory<typeof CustomButton> = () => (
       >
         서비스 소개서 다운로드
       </CustomButton>
-    </DoczContainer>
-  </DoczContainer>
+    </StoryContainer>
+  </StoryContainer>
 );
 
 const Template: ComponentStory<typeof CustomButton> = (args) => (

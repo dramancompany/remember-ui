@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { InfoTooltip } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { contents000 } from 'core/GlobalStyle/variable';
 
 const meta: ComponentMeta<typeof InfoTooltip> = {
@@ -20,19 +20,19 @@ export const Variants: ComponentStory<typeof InfoTooltip> = () => {
     setVisible(false);
   };
   return (
-    <DoczContainer direction="column">
-      <DoczContainer direction="column">
+    <StoryContainer direction="column">
+      <StoryContainer direction="column">
         <div>Tooltip</div>
         <InfoTooltip
           visible={visible}
           content={<span>툴팁을 클릭하면, 다시 보지 않게 됩니다.</span>}
           onClick={onClickToolTip}
         />
-      </DoczContainer>
+      </StoryContainer>
       <br />
       <br />
       <br />
-      <DoczContainer direction="column">
+      <StoryContainer direction="column">
         <div>Tooltip with onMount Animation</div>
         <InfoTooltip
           visible={visible}
@@ -40,8 +40,8 @@ export const Variants: ComponentStory<typeof InfoTooltip> = () => {
           onClick={onClickToolTip}
           customAnimation="headShake"
         />
-      </DoczContainer>
-    </DoczContainer>
+      </StoryContainer>
+    </StoryContainer>
   );
 };
 

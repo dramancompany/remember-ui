@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { BaseButton } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 
 const meta: ComponentMeta<typeof BaseButton> = {
   title: 'Buttons/BaseButton',
@@ -11,11 +11,11 @@ const meta: ComponentMeta<typeof BaseButton> = {
 };
 
 export const Variants: ComponentStory<typeof BaseButton> = () => (
-  <DoczContainer direction="column">
+  <StoryContainer direction="column">
     <h1 style={{ fontSize: '30px', borderBottom: '1px solid black' }}>
       Deprecated
     </h1>
-    <DoczContainer direction="row">
+    <StoryContainer direction="row">
       <BaseButton width={100}>Default</BaseButton>
       <BaseButton fill width={100}>
         Fill
@@ -23,8 +23,8 @@ export const Variants: ComponentStory<typeof BaseButton> = () => (
       <BaseButton rounded={false} disabled width={100}>
         No Rounded
       </BaseButton>
-    </DoczContainer>
-    <DoczContainer direction="row">
+    </StoryContainer>
+    <StoryContainer direction="row">
       <BaseButton isLoading width={100}>
         isLoading
       </BaseButton>
@@ -37,8 +37,8 @@ export const Variants: ComponentStory<typeof BaseButton> = () => (
       <BaseButton fill color="plus" size="xlarge" width={100}>
         plus
       </BaseButton>
-    </DoczContainer>
-  </DoczContainer>
+    </StoryContainer>
+  </StoryContainer>
 );
 
 const Template: ComponentStory<typeof BaseButton> = (args) => (

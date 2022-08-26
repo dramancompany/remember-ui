@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { DesignedModal } from './index';
 import { NewBaseButton } from 'components/Buttons';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { Radio } from 'components/Control';
 
 const meta: ComponentMeta<typeof DesignedModal> = {
@@ -46,15 +46,15 @@ export const Basic: ComponentStory<typeof DesignedModal> = () => {
         submitButtonDisabled={isProcessing}
         isLoading={isProcessing}
       >
-        <DoczContainer direction="row">
+        <StoryContainer direction="row">
           <div>Radio onClick Event Bind</div>
-        </DoczContainer>
-        <DoczContainer direction="row">
+        </StoryContainer>
+        <StoryContainer direction="row">
           <Radio isChecked={radioId === 1} onClick={() => setRadio(1)} />
           <span>옵션1</span>
           <Radio isChecked={radioId === 2} onClick={() => setRadio(2)} />
           <span>옵션2</span>
-        </DoczContainer>
+        </StoryContainer>
       </DesignedModal>
     </div>
   );

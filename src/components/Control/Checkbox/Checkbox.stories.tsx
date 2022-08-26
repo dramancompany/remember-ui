@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Checkbox } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 
 const meta: ComponentMeta<typeof Checkbox> = {
   title: 'Control/Checkbox',
@@ -11,21 +11,21 @@ const meta: ComponentMeta<typeof Checkbox> = {
 
 export const Variants: ComponentStory<typeof Checkbox> = () => (
   <>
-    <DoczContainer direction="column">
+    <StoryContainer direction="column">
       <h3>체크박스 on/off/disabled</h3>
-      <DoczContainer direction="row">
+      <StoryContainer direction="row">
         <Checkbox state="on" />
         <Checkbox state="off" />
         <Checkbox state="on" disabled />
-      </DoczContainer>
-    </DoczContainer>
-    <DoczContainer direction="column">
+      </StoryContainer>
+    </StoryContainer>
+    <StoryContainer direction="column">
       <h3>Round 체크박스 on/off</h3>
-      <DoczContainer direction="row">
+      <StoryContainer direction="row">
         <Checkbox round state="on" />
         <Checkbox round state="off" />
-      </DoczContainer>
-    </DoczContainer>
+      </StoryContainer>
+    </StoryContainer>
   </>
 );
 

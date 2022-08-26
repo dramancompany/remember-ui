@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { MoreButton } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { NewBaseButton } from '../NewBaseButton';
 
 const meta: ComponentMeta<typeof MoreButton> = {
@@ -16,9 +16,9 @@ export const Variants: ComponentStory<typeof MoreButton> = () => {
 
   return (
     <>
-      <DoczContainer direction="column">
+      <StoryContainer direction="column">
         <div>MoreButton Show/Hide( Static )</div>
-        <DoczContainer direction="row">
+        <StoryContainer direction="row">
           <NewBaseButton theme="light" outline>
             Show
             <MoreButton size="small" />
@@ -35,18 +35,18 @@ export const Variants: ComponentStory<typeof MoreButton> = () => {
             Hide
             <MoreButton value size="large" />
           </NewBaseButton>
-        </DoczContainer>
-      </DoczContainer>
+        </StoryContainer>
+      </StoryContainer>
 
-      <DoczContainer direction="column">
+      <StoryContainer direction="column">
         <div>MoreButton onClick Event Bind( Dynamic )</div>
-        <DoczContainer direction="row">
+        <StoryContainer direction="row">
           <NewBaseButton onClick={toggle}>
             {isShow ? 'Hide' : 'Show'}
             <MoreButton size="large" value={isShow} />
           </NewBaseButton>
-        </DoczContainer>
-      </DoczContainer>
+        </StoryContainer>
+      </StoryContainer>
     </>
   );
 };

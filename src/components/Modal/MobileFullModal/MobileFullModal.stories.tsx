@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { NewBaseButton } from 'components/Buttons';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 import { Radio } from 'components/Control/Radio';
 import { MobileFullModal } from './index';
 
@@ -47,13 +47,13 @@ export const Basic: ComponentStory<typeof MobileFullModal> = () => {
         submitButtonDisabled={isProcessing}
         isLoading={isProcessing}
       >
-        <DoczContainer direction="row">
+        <StoryContainer direction="row">
           <div>Radio onClick Event Bind</div>
           <Radio isChecked={radioId === 1} onClick={() => setRadio(1)} />
           <span>옵션1</span>
           <Radio isChecked={radioId === 2} onClick={() => setRadio(2)} />
           <span>옵션2</span>
-        </DoczContainer>
+        </StoryContainer>
       </MobileFullModal>
     </div>
   );

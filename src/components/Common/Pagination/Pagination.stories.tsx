@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Pagination } from './index';
-import { DoczContainer } from 'components/DoczContainer';
+import { StoryContainer } from 'components/StoryContainer';
 
 const meta: ComponentMeta<typeof Pagination> = {
   title: 'Common/Pagination',
@@ -18,7 +18,7 @@ export const Basic: ComponentStory<typeof Pagination> = (args) => {
   const [pageNumber1, setPageNumber1] = React.useState(1);
 
   return (
-    <DoczContainer direction="column">
+    <StoryContainer direction="column">
       <Pagination
         {...args}
         onChangePage={(page) => {
@@ -26,7 +26,7 @@ export const Basic: ComponentStory<typeof Pagination> = (args) => {
         }}
         activePage={pageNumber1}
       />
-    </DoczContainer>
+    </StoryContainer>
   );
 };
 

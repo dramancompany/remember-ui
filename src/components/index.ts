@@ -5,5 +5,5 @@ export * from './Input';
 export * from './Modal';
 export * from './Icon';
 
-export * from './DoczContainer';
+export * from './StoryContainer';
 export * from './RDS/Typography';
