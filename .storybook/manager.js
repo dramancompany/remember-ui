@@ -5,7 +5,7 @@ import { create } from '@storybook/theming';
 const theme = create({
   base: 'light', // this will inherit the base properties of Storybooks'light theme
 
-  // Base color
+  // Point color
   colorSecondary: '#FF5414',
 
   // UI
@@ -24,9 +24,9 @@ const theme = create({
   textMutedColor: '#666666',
 
   // Toolbar default and active colors
-  barTextColor: '#999999',
+  barTextColor: '#333333',
   barSelectedColor: '#FF5414',
-  barBg: '#FFFFFF',
+  barBg: '#E8E6DF',
 
   // Form colors
   inputBg: '#FFFFFF',
@@ -37,8 +37,7 @@ const theme = create({
   // Brand assets
   brandTitle: 'Remember UI Component',
   brandUrl: 'https://dramancompany.github.io/remember-ui',
-  brandImage:
-    'https://s3.ap-northeast-1.amazonaws.com/static.rememberapp.co.kr/logo/remember/logo.png',
+  brandImage: '/remember-logo.png',
 });
 
 addons.setConfig({
