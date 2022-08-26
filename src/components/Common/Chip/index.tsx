@@ -3,7 +3,7 @@ import type { MouseEventHandler } from 'react';
 
 import { Container, ChipContent } from './Chip.styles';
 
-interface Props {
+export interface ChipProps {
   children: React.ReactNode;
   className?: string;
   isOverflowed?: boolean;
@@ -15,7 +15,7 @@ export const Chip = ({
   className,
   isOverflowed = false,
   onClick = () => {},
-}: Props) => (
+}: ChipProps) => (
   <Container
     className={className}
     isOverflowed={isOverflowed}

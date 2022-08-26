@@ -10,7 +10,7 @@ import {
 import useHover from '../../../hooks/useHover';
 import { RadioButton } from './Radio.styles';
 
-export interface Props {
+export interface RadioProps {
   isChecked?: boolean;
   onClick?: () => void;
   className?: string;
@@ -22,7 +22,7 @@ export const Radio = ({
   onClick,
   className,
   theme = 'yellow',
-}: Props) => {
+}: RadioProps) => {
   const { ref: hoverRef, value: isHovered } = useHover<HTMLImageElement>();
 
   const getIconImg = () => {

@@ -12,7 +12,7 @@ import {
 import useHover from '../../../hooks/useHover';
 import { Container, Icon } from './Checkbox.styles';
 
-export interface Props {
+export interface CheckboxProps {
   state?: 'on' | 'off';
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
   disabled?: boolean;
@@ -26,7 +26,7 @@ export const Checkbox = ({
   disabled = false,
   className,
   round = false,
-}: Props) => {
+}: CheckboxProps) => {
   const { ref: hoverRef, value: isHovered } = useHover<HTMLDivElement>();
 
   const getIconImg = () => {

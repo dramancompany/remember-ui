@@ -5,7 +5,7 @@ import { useDetectScrollPositionTop } from '../../../hooks';
 import { Container } from './TopButton.styles';
 import { TopBtn } from '../../../assets';
 
-interface TopButtonProps {
+export interface TopButtonProps {
   className?: string;
   marginLeft?: number;
 }

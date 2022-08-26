@@ -27,31 +27,24 @@ export interface MobileFullModalProps {
   isLoading?: boolean;
   delegateCloseControl?: boolean;
   submitButtonDisabled?: boolean;
-
   title: string;
   subTitle?: string;
   submitText?: string;
   topNavbarOffset?: string;
   headerButtonText?: string;
   bodyScrollLockTargetId?: string;
-
   onClose?: () => void;
   onAfterOpen?: () => void;
   onHeaderButtonClick?: () => void;
   submit?: () => void;
-
   children?: ReactNode;
 }
-/**
- * @see https://naver.com
- */
+
 export const MobileFullModal = ({
   topNavbarOffset = '0px',
-
   isOpen = false,
   onClose = () => {},
   onAfterOpen = () => {},
-
   title,
   subTitle = '',
   headerButtonText = '',
@@ -59,7 +52,6 @@ export const MobileFullModal = ({
   submit,
   submitText,
   submitButtonDisabled = false,
-
   isLoading = false,
   bodyScrollLockTargetId,
   delegateCloseControl = false,

@@ -11,14 +11,19 @@ import {
   InputFile,
 } from './ImageInput.styles';
 
-interface Props {
+export interface ImageInputProps {
   id: string;
   onChange: (fileReaderResult?: string | ArrayBuffer | null) => void;
   label?: React.ReactNode;
   className?: string;
 }
 
-export const ImageInput = ({ id, onChange, label, className }: Props) => {
+export const ImageInput = ({
+  id,
+  onChange,
+  label,
+  className,
+}: ImageInputProps) => {
   const [imageName, setImageName] = useState('');
 
   const changeImage = (e: ChangeEvent<HTMLInputElement>) => {

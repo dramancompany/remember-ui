@@ -9,7 +9,7 @@ export interface PopoverProps {
   bold?: boolean;
 }
 
-export interface Props extends PopoverProps {
+export interface PopoverItemProps extends PopoverProps {
   children: React.ReactNode;
   onClick: MouseEventHandler;
   className?: string;
@@ -22,7 +22,7 @@ export const PopoverItem = ({
   bold = false,
   onClick,
   className,
-}: Props) => {
+}: PopoverItemProps) => {
   return (
     <Container onClick={onClick}>
       <Popover

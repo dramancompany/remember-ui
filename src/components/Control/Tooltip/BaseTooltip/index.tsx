@@ -25,7 +25,7 @@ const getImgFromType = (type: 'plus' | 'more' | 'help') => {
  * @param { 'dclight', 'dcdark', 'dcblue' } theme
  */
 
-export interface Props {
+export interface BaseTooltipProps {
   customComponent?: JSX.Element;
   offset?: `${number},${number}`
   arrow?: boolean
@@ -55,7 +55,7 @@ export const BaseTooltip = ({
   placement = 'bottom',
   textAlign = 'center',
   className,
-}: Props) => (
+}: BaseTooltipProps) => (
   <Tooltip
     className={className}
     offset={offset}

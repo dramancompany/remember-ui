@@ -24,7 +24,7 @@ export interface AccordionMenu {
   list: AccordionMenuList[];
 }
 
-interface Props {
+interface AccordionMenuProps {
   menus: AccordionMenu[];
   hasCheckBox?: boolean;
   onClickItem?: (value: string) => void;
@@ -38,7 +38,7 @@ export const Accordion = ({
   onCheckItem = () => {},
   isCheckedItem,
   hasCheckBox,
-}: Props) => {
+}: AccordionMenuProps) => {
   const [hasToggled, setHasToggled] = useState(false);
   const id = createUUID();
 

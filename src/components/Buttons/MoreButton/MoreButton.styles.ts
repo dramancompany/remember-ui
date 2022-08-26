@@ -10,7 +10,6 @@ export const Icon = styled.img<Pick<MoreButtonProps, 'size'>>`
       margin-top: 2px;
     `};
   `}
-
   display: inline-block;
   cursor: pointer;
 

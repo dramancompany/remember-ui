@@ -5,7 +5,7 @@ import { gray150 } from '../../../core/GlobalStyle';
 
 import { Container, Svg } from './ProfileAvatar.styles';
 
-export interface Props {
+export interface ProfileAvatarProps {
   className?: string;
   color?: CSSProperties['color'];
   width?: number;
@@ -15,7 +15,7 @@ export const ProfileAvatar = ({
   className,
   color = gray150,
   width = 68,
-}: Props) => (
+}: ProfileAvatarProps) => (
   <Container className={className} width={width}>
     <Svg
       xmlns="http://www.w3.org/2000/svg"

@@ -9,7 +9,7 @@ const isHexColorCode = (color: string) => /^#([0-9a-f]{3}){1,2}$/i.test(color);
 
 export type SwitchSize = 'small' | 'large';
 
-export interface Props {
+export interface SwitchProps {
   className?: string;
   checked?: boolean;
   onClick: ChangeEventHandler<HTMLInputElement>;
@@ -23,7 +23,7 @@ export const Switch = ({
   onClick,
   size = 'small',
   color = yellow100,
-}: Props) => {
+}: SwitchProps) => {
   const { current: target } = useRef(createUUID());
   const _color = isHexColorCode(color) ? color : yellow100;
 

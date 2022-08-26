@@ -5,5 +5,5 @@ export * from './Input';
 export * from './Modal';
 export * from './Icon';
 
-export { DoczContainer } from './DoczContainer';
-export { TypeItem } from './RDS/Typography';
+export * from './DoczContainer';
+export * from './RDS/Typography';

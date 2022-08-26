@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 
 import { Tooltip } from './InfoTooltip.styles';
 
-export interface Props {
+export interface InfoTooltipProps {
   children?: React.ReactNode;
   content: React.ReactNode;
   visible?: boolean;
@@ -22,7 +22,7 @@ export const InfoTooltip = ({
   onShow = () => {},
   visible,
   customAnimation,
-}: Props) => {
+}: InfoTooltipProps) => {
   /**
    * @description
    * @tippy.js/react 라이브러리의 작동 원리상

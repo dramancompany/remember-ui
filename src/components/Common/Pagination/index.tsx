@@ -53,7 +53,7 @@ const getPaginationInfo = ({
   };
 };
 
-interface Props {
+export interface PaginationProps {
   itemCountPerPage: number;
   pageRangeDisplayed: number;
   totalItemCount?: number;
@@ -62,14 +62,14 @@ interface Props {
   className?: string;
 }
 
-export const DcNewPagination = ({
+export const Pagination = ({
   activePage = 1,
   totalItemCount = 0,
   pageRangeDisplayed,
   onChangePage,
   itemCountPerPage,
   className,
-}: Props) => {
+}: PaginationProps) => {
   const { firstPage, lastPage, totalPages } = getPaginationInfo({
     activePage,
     totalItemCount,
@@ -132,5 +132,3 @@ export const DcNewPagination = ({
     </Container>
   );
 };
-
-export const Pagination = DcNewPagination;

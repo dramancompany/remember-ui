@@ -3,7 +3,7 @@ import type { Placement } from 'tippy.js';
 
 import { Popover, Content, SIZE_TO_WIDTH_MAP } from './BasePopover.styles';
 
-interface Props {
+export interface BasePopoverProps {
   content: ReactNode;
   onPopoverOpenChange?: (isChange: boolean) => void;
   className?: string;
@@ -29,7 +29,7 @@ export const BasePopover = ({
   placement = 'bottom-end',
   disabled = false,
   children,
-}: Props) => {
+}: BasePopoverProps) => {
   const [instance, setInstance] = useState<any>(undefined);
 
   if (disabled) return <React.Fragment>{children}</React.Fragment>;
