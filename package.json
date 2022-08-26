@@ -1,6 +1,6 @@
 {
   "name": "@dramancompany/remember-ui",
-  "version": "2.3.0-beta.15",
+  "version": "2.3.0-beta.16",
   "description": "Remember UI Components",
   "homepage": "https://github.com/dramancompany/remember-ui",
   "author": "DramanCompany",
@@ -26,7 +26,7 @@
     "build:dev": "rollup -c rollup.config.dev.js -w",
     "tsc": "tsc",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
