@@ -284,8 +284,7 @@ export const landingMobileOnly = (cssContent: FlattenSimpleInterpolation) => css
 `;
 
 export const landingWebOnly = (cssContent:FlattenSimpleInterpolation) => css`
-  @media only screen and (min-width: ${parseInt(landingMobileSizeBreak) +
-    1}px) {
+  @media only screen and (min-width: ${parseInt(landingMobileSizeBreak) + 1}px) {
     ${cssContent}
   }
 `;
