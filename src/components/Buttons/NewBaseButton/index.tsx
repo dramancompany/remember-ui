@@ -34,7 +34,6 @@ export const NewBaseButton = ({
       isLoading={isLoading}
       data-testid={testId}
     >
-      sffasfafa
       <Inner>
         {isLoading ? (
           <Spinner
