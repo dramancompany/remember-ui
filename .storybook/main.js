@@ -14,7 +14,7 @@ module.exports = {
     builder: '@storybook/builder-vite', // 👈  vite 사용을 위해 해당 옵션을 추가합니다.
   },
   /**
-   * A option exposed by storybook-builder-vite for customising the Vite config.
+   * A option exposed by storybook-builder-vite for customizing the Vite config.
    * @see https://github.com/eirslett/storybook-builder-vite#customize-vite-config
    * @param {import("vite").UserConfig} config
    * @see https://vitejs.dev/config/
