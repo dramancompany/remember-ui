@@ -38,8 +38,7 @@
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
     "@storybook/addons": "^6.5.10",
-    "@storybook/builder-webpack4": "^6.5.10",
-    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/builder-vite": "^0.2.2",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.10",
@@ -63,7 +62,9 @@
     "rollup-plugin-typescript2": "^0.31.2",
     "sass": "^1.53.0",
     "styled-components": "4.4.1",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "vite": "^3.0.9",
+    "vite-tsconfig-paths": "^3.5.0"
   },
   "peerDependencies": {
     "react": "^16.13.1",
