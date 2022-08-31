@@ -40,6 +40,8 @@ export const parameters = {
 
 /**
  * global decorators
+ * @see https://vitejs.dev/guide/features.html#jsx
+ * vite 설정으로 인해 JSX syntax를 사용하려면 .jsx 확장자를 사용해야한다.
  */
 export const decorators = [
   (Story) => (
