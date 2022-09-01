@@ -24,7 +24,7 @@ export interface AccordionMenu {
   list: AccordionMenuList[];
 }
 
-interface AccordionMenuProps {
+export interface AccordionMenuProps {
   menus: AccordionMenu[];
   hasCheckBox?: boolean;
   onClickItem?: (value: string) => void;
