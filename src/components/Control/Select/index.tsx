@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 
-import { MoreButton } from '../../Button';
+import { MoreButton } from '../../Buttons';
 import { requiredIcon } from '../../../assets';
 
 import {

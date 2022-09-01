@@ -14,12 +14,17 @@ import {
 
 const ItemHeight = 48;
 
-interface AccordionMenu {
+export type AccordionMenuList = {
   title: string;
-  list: { title: string; value: string; onClick?: (value: string) => void }[];
+  value: string;
+  onClick?: (value: string) => void;
+};
+export interface AccordionMenu {
+  title: string;
+  list: AccordionMenuList[];
 }
 
-interface Props {
+export interface AccordionMenuProps {
   menus: AccordionMenu[];
   hasCheckBox?: boolean;
   onClickItem?: (value: string) => void;
@@ -33,7 +38,7 @@ export const Accordion = ({
   onCheckItem = () => {},
   isCheckedItem,
   hasCheckBox,
-}: Props) => {
+}: AccordionMenuProps) => {
   const [hasToggled, setHasToggled] = useState(false);
   const id = createUUID();
 

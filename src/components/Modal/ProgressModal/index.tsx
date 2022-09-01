@@ -16,7 +16,6 @@ export interface ProgressModalProps {
   isOpen: boolean;
   isDraggable?: boolean;
   isDragBounded?: boolean;
-
   icon?: string;
   message?: string;
   title?: (currentCount: number, totalCount: number) => ReactNode;
@@ -24,7 +23,6 @@ export interface ProgressModalProps {
   currentCount?: number;
   mobileWidth?: string | number;
   mobileHeight?: string | number;
-
   dragOnStart?: () => void;
   dragOnStop?: () => void;
   dragOnDrag?: () => void;

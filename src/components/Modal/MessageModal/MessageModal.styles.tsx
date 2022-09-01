@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
+import { MessageModal as Modal } from '.';
 import { mobileOnly, contents999 } from '../../../core/GlobalStyle';
-import { NewBaseButton } from '../../Button';
+import { NewBaseButton } from '../../Buttons';
 
 export const Content = styled.div`
   background-color: ${contents999};

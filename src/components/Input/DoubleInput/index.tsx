@@ -8,7 +8,7 @@ import {
   ErrorMsg,
 } from './DoubleInput.styles';
 
-interface Props {
+export interface DoubleInputProps {
   label1?: string;
   label2?: string;
   value1?: string;
@@ -42,7 +42,7 @@ export const DoubleInput = ({
   onlyNumber,
   width,
   className,
-}: Props) => {
+}: DoubleInputProps) => {
   const [error, setError] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
