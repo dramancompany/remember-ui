@@ -27,13 +27,5 @@ module.exports = {
       })
     );
     return config;
-
-    // return {
-    //   ...config,
-    //   define: {
-    //     ...config.define,
-    //     global: 'window',
-    //   },
-    // };
   },
 };
