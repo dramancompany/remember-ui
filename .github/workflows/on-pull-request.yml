@@ -1,0 +1,17 @@
+name: Workflows on PR
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+jobs:
+  run-linter:
+    uses: dramancompany/shared_workflows/.github/workflows/linter.yml@main
+    with:
+      nodeVersion: 16
+      autoFix: true
+    secrets: inherit
+
+  assign-reviewers:
+    if: ${{ (contains(github.event.pull_request.base.ref, 'master') || contains(github.event.pull_request.base.ref, 'feature')) && (github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'ready_for_review') }}
+    uses: dramancompany/shared_workflows/.github/workflows/assign-reviewers.yml@main
