@@ -22,7 +22,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "tsc && vite build",
     "tsc": "tsc",
     "storybook": "start-storybook -p 6006",
     "storybook-nocache": "start-storybook --no-manager-cache -p 6006",

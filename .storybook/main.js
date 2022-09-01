@@ -26,7 +26,14 @@ module.exports = {
         projects: [path.resolve(path.dirname(__dirname), 'tsconfig.json')],
       })
     );
-
     return config;
+
+    // return {
+    //   ...config,
+    //   define: {
+    //     ...config.define,
+    //     global: 'window',
+    //   },
+    // };
   },
 };
