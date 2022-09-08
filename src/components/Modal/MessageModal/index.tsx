@@ -26,41 +26,41 @@ export const MessageModal = ({
   cancelText,
   isLoading = false,
 }: MessageModalProps) => (
-    <BaseModal isOpen={isOpen}>
-      <Content>
-        <Body>{children}</Body>
-        <Buttons>
-          {onConfirm && (
-            <CancelButton
-              onClick={() => {
-                if (onCancel) {
-                  onCancel();
-                }
-                onClose();
-              }}
-              theme="light"
-              outline
-              size="large"
-              block
-            >
-              {cancelText || '취소'}
-            </CancelButton>
-          )}
-          <NewBaseButton
+  <BaseModal isOpen={isOpen}>
+    <Content>
+      <Body>{children}</Body>
+      <Buttons>
+        {onConfirm && (
+          <CancelButton
             onClick={() => {
-              if (onConfirm) {
-                onConfirm();
+              if (onCancel) {
+                onCancel();
               }
               onClose();
             }}
-            theme="primary"
-            size={onConfirm === undefined ? 'xlarge' : 'large'}
+            theme="light"
+            outline
+            size="large"
             block
-            isLoading={isLoading}
           >
-            {confirmText || '확인'}
-          </NewBaseButton>
-        </Buttons>
-      </Content>
-    </BaseModal>
-  );
+            {cancelText || '취소'}
+          </CancelButton>
+        )}
+        <NewBaseButton
+          onClick={() => {
+            if (onConfirm) {
+              onConfirm();
+            }
+            onClose();
+          }}
+          theme="primary"
+          size={onConfirm === undefined ? 'xlarge' : 'large'}
+          block
+          isLoading={isLoading}
+        >
+          {confirmText || '확인'}
+        </NewBaseButton>
+      </Buttons>
+    </Content>
+  </BaseModal>
+);

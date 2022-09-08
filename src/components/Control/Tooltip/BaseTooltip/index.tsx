@@ -1,6 +1,6 @@
 import React from 'react';
-import type { ReactChild, CSSProperties, MouseEventHandler } from "react"
-import type { Placement,Instance, Props as TippyProps } from 'tippy.js';
+import type { ReactChild, CSSProperties, MouseEventHandler } from 'react';
+import type { Placement, Instance, Props as TippyProps } from 'tippy.js';
 
 import { helpIcon, plusIcon, moreIcon } from '../../../../assets';
 
@@ -28,18 +28,18 @@ const getImgFromType = (type: 'plus' | 'more' | 'help') => {
 
 export interface BaseTooltipProps {
   customComponent?: JSX.Element;
-  offset?: `${number},${number}`
-  arrow?: boolean
-  onClick?: MouseEventHandler<HTMLImageElement>
-  onShow?: (instance: Instance<TippyProps>) => false | void
-  content: ReactChild | ReactChild[] 
-  iconStyle?: CSSProperties
-  size?: 'small' | 'medium'
-  type?: 'help' | 'plus' | 'more'
-  theme?: 'dclight' | 'dcdark' | 'dcblue'
-  placement?: Placement
-  textAlign?: CSSProperties['textAlign']
-  className?: string
+  offset?: `${number},${number}`;
+  arrow?: boolean;
+  onClick?: MouseEventHandler<HTMLImageElement>;
+  onShow?: (instance: Instance<TippyProps>) => false | void;
+  content: ReactChild | ReactChild[];
+  iconStyle?: CSSProperties;
+  size?: 'small' | 'medium';
+  type?: 'help' | 'plus' | 'more';
+  theme?: 'dclight' | 'dcdark' | 'dcblue';
+  placement?: Placement;
+  textAlign?: CSSProperties['textAlign'];
+  className?: string;
 }
 
 export const BaseTooltip = ({

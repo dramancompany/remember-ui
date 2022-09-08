@@ -64,7 +64,6 @@ export const Button = styled.div<{
     height: 24px;
     line-height: 24px;
   `)}
-
 `;
 
 export const Icon = styled.img.attrs({

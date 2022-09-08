@@ -15,7 +15,7 @@ export const Container = ({
   className,
   direction = 'column',
 }: ContainerProps) => (
-    <ContainerDiv className={className} direction={direction}>
-      {children}
-    </ContainerDiv>
-  );
+  <ContainerDiv className={className} direction={direction}>
+    {children}
+  </ContainerDiv>
+);

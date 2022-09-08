@@ -23,14 +23,14 @@ export const PopoverItem = ({
   onClick,
   className,
 }: PopoverItemProps) => (
-    <Container onClick={onClick}>
-      <Popover
-        className={className}
-        selected={selected}
-        warning={warning}
-        bold={bold}
-      >
-        {children}
-      </Popover>
-    </Container>
-  );
+  <Container onClick={onClick}>
+    <Popover
+      className={className}
+      selected={selected}
+      warning={warning}
+      bold={bold}
+    >
+      {children}
+    </Popover>
+  </Container>
+);

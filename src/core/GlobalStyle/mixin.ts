@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { css,  FlattenSimpleInterpolation } from 'styled-components';
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 import {
   mobileSizeBreak,
@@ -135,8 +135,8 @@ export interface FontProps {
   size?: `${number}px`;
   weight?: CSSProperties['fontWeight'];
   color?: CSSProperties['color'];
-  opacity?: CSSProperties['opacity'] | null
-  lineHeight?: CSSProperties['lineHeight']
+  opacity?: CSSProperties['opacity'] | null;
+  lineHeight?: CSSProperties['lineHeight'];
 }
 
 export const font = ({
@@ -157,35 +157,60 @@ export const font = ({
 /**
  * @description size 12px
  */
-export const textExtraSmall = ({ weight, color, opacity, ...rest }: FontProps) => css`
+export const textExtraSmall = ({
+  weight,
+  color,
+  opacity,
+  ...rest
+}: FontProps) => css`
   ${font({ size: '12px', weight, color, opacity, ...rest })};
 `;
 
 /**
  * @description size 14px
  */
-export const textSmall = ({ weight, color, opacity, ...rest }: FontProps) => css`
+export const textSmall = ({
+  weight,
+  color,
+  opacity,
+  ...rest
+}: FontProps) => css`
   ${font({ size: '14px', weight, color, opacity, ...rest })};
 `;
 
 /**
  * @description size 16px
  */
-export const textMedium = ({ weight, color, opacity, ...rest }: FontProps) => css`
+export const textMedium = ({
+  weight,
+  color,
+  opacity,
+  ...rest
+}: FontProps) => css`
   ${font({ size: '16px', weight, color, opacity, ...rest })};
 `;
 
 /**
  * @description size 18px
  */
-export const textLarge = ({ weight, color, opacity, ...rest }: FontProps) => css`
+export const textLarge = ({
+  weight,
+  color,
+  opacity,
+  ...rest
+}: FontProps) => css`
   ${font({ size: '18px', weight, color, opacity, ...rest })};
 `;
 
 /**
  * @description size 20px
  */
-export const textExtraLarge = ({ weight, color, opacity, ...rest }: FontProps) => css`
+export const textExtraLarge = ({
+  weight,
+  color,
+  opacity,
+  ...rest
+}: FontProps) => css`
   ${font({ size: '20px', weight, color, opacity, ...rest })};
 `;
 
@@ -253,7 +278,7 @@ export const ellipsis = (line = 1) => {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: ${line};
   `;
-}
+};
 
 /**
  * breakpoint 관련 mixin
@@ -277,19 +302,25 @@ export const webOnly = (cssContent: FlattenSimpleInterpolation) => css`
   }
 `;
 
-export const landingMobileOnly = (cssContent: FlattenSimpleInterpolation) => css`
+export const landingMobileOnly = (
+  cssContent: FlattenSimpleInterpolation
+) => css`
   @media only screen and (max-width: ${landingMobileSizeBreak}) {
     ${cssContent}
   }
 `;
 
-export const landingWebOnly = (cssContent:FlattenSimpleInterpolation) => css`
-  @media only screen and (min-width: ${parseInt(landingMobileSizeBreak) + 1}px) {
+export const landingWebOnly = (cssContent: FlattenSimpleInterpolation) => css`
+  @media only screen and (min-width: ${parseInt(landingMobileSizeBreak) +
+    1}px) {
     ${cssContent}
   }
 `;
 
-export const placeholderColor = (color: CSSProperties["color"], center = false) => css`
+export const placeholderColor = (
+  color: CSSProperties['color'],
+  center = false
+) => css`
   &::placeholder {
     color: ${color};
 

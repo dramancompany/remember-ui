@@ -14,7 +14,7 @@ export const StoryContainer = ({
   direction,
   className,
 }: StoryContainerProps) => (
-    <ContainerDiv className={className} direction={direction}>
-      {children}
-    </ContainerDiv>
-  );
+  <ContainerDiv className={className} direction={direction}>
+    {children}
+  </ContainerDiv>
+);
