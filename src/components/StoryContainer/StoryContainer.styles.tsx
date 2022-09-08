@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import styled from 'styled-components';
+
 import { minHeightFix, minHeightFixChild } from '../../core/GlobalStyle/mixin';
 
 export const Container = styled.div<{

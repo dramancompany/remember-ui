@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PopoverItem } from './index';
 import { StoryContainer } from 'components/StoryContainer';
+
+import { PopoverItem } from './index';
 
 const meta: ComponentMeta<typeof PopoverItem> = {
   title: 'Control/PopoverItem',

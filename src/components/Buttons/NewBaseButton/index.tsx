@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Spinner } from '../../Common/Spinner';
+import type { NewBaseButtonProps } from './NewBaseButton.types';
 
 import { Container, Inner } from './NewBaseButton.styles';
-import type { NewBaseButtonProps } from './NewBaseButton.types';
 
 export * from './NewBaseButton.types';
 

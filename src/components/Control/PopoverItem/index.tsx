@@ -22,8 +22,7 @@ export const PopoverItem = ({
   bold = false,
   onClick,
   className,
-}: PopoverItemProps) => {
-  return (
+}: PopoverItemProps) => (
     <Container onClick={onClick}>
       <Popover
         className={className}
@@ -35,4 +34,3 @@ export const PopoverItem = ({
       </Popover>
     </Container>
   );
-};

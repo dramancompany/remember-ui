@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Checkbox } from './index';
 import { StoryContainer } from 'components/StoryContainer';
+
+import { Checkbox } from './index';
 
 const meta: ComponentMeta<typeof Checkbox> = {
   title: 'Control/Checkbox',

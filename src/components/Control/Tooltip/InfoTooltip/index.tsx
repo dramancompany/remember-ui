@@ -22,14 +22,14 @@ export const InfoTooltip = ({
   onShow = () => {},
   visible,
   customAnimation,
-}: InfoTooltipProps) => {
+}: InfoTooltipProps) => 
   /**
    * @description
    * @tippy.js/react 라이브러리의 작동 원리상
    * visible prop을 넘길 경우 trigger가 동작하지 않는다.
    * 별도로 children wrapper에 event를 감지하는 동작을 넣어주어야 한다.
    */
-  return (
+   (
     <Tooltip
       className={className}
       content={<div onClick={onClick}>{content}</div>}
@@ -46,5 +46,5 @@ export const InfoTooltip = ({
     >
       <div onClick={onClick}>{children}</div>
     </Tooltip>
-  );
-};
+  )
+;

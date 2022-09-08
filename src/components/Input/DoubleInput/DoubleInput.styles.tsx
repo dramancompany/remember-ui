@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { BaseInput } from '../BaseInput';
-
 import {
   red100,
   text,

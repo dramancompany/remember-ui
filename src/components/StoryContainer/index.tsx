@@ -13,10 +13,8 @@ export const StoryContainer = ({
   children,
   direction,
   className,
-}: StoryContainerProps) => {
-  return (
+}: StoryContainerProps) => (
     <ContainerDiv className={className} direction={direction}>
       {children}
     </ContainerDiv>
   );
-};

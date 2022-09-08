@@ -8,8 +8,7 @@ const meta: ComponentMeta<typeof TopButton> = {
   component: TopButton,
 };
 
-export const Variants: ComponentStory<typeof TopButton> = () => {
-  return (
+export const Variants: ComponentStory<typeof TopButton> = () => (
     <div
       style={{
         width: '100%',
@@ -24,6 +23,5 @@ export const Variants: ComponentStory<typeof TopButton> = () => {
       <TopButton marginLeft={0} />
     </div>
   );
-};
 
 export default meta;

@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ImageInput } from './index';
 import { StoryContainer } from 'components/StoryContainer';
+
+import { ImageInput } from './index';
 
 const meta: ComponentMeta<typeof ImageInput> = {
   title: 'Input/ImageInput',

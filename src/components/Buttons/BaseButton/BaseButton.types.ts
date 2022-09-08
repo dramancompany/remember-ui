@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+
 import type { BUTTONS } from '.';
 
 export type BaseButtonSizeType = 'small' | 'medium' | 'large' | 'xlarge';

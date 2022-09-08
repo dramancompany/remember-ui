@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { gray100, white } from '../../../core/GlobalStyle';
 
 import { SwitchSize } from './index';

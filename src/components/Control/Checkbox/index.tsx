@@ -10,6 +10,7 @@ import {
   checkboxRoundOff,
 } from '../../../assets';
 import useHover from '../../../hooks/useHover';
+
 import { Container, Icon } from './Checkbox.styles';
 
 export interface CheckboxProps {

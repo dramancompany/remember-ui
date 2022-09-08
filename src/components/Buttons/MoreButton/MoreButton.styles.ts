@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { MoreButtonProps } from '.';
 
 export const Icon = styled.img<Pick<MoreButtonProps, 'size'>>`

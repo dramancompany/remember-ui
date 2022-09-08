@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Spinner } from '../../Common/Spinner';
+import type { BaseButtonProps } from './BaseButton.types';
 
 import {
   BlackButton,
@@ -14,7 +15,6 @@ import {
   RedButton,
   YellowButton,
 } from './BaseButton.styles';
-import type { BaseButtonProps } from './BaseButton.types';
 
 export const BUTTONS = {
   black: BlackButton,

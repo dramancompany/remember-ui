@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Pagination } from './index';
 import { StoryContainer } from 'components/StoryContainer';
+
+import { Pagination } from './index';
 
 const meta: ComponentMeta<typeof Pagination> = {
   title: 'Common/Pagination',

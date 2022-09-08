@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
+
 import { enableBodyScrollLock } from '../../../utils/common';
 import useScrollLock from '../../../hooks/useScrollLock';
-
 import { BaseModal, BaseModalProps } from '../BaseModal';
 import { BaseButton } from '../../Buttons';
 import { successIcon, warningIcon } from '../../../assets';

@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Radio } from './index';
 import { StoryContainer } from 'components/StoryContainer';
+
+import { Radio } from './index';
 
 const meta: ComponentMeta<typeof Radio> = {
   title: 'Control/Radio',

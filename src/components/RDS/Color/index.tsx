@@ -1,6 +1,7 @@
-import { getTypographyStyles } from 'core';
 import React from 'react';
 import styled from 'styled-components';
+
+import { getTypographyStyles } from 'core';
 
 type Props = {
   backgroundColor: string;

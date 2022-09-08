@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import * as Colors from 'core/GlobalStyle/variable';
+
 import { Container, TitleWrap, ColorWrap, ColorItem } from './index';
 
 const meta: ComponentMeta<typeof ColorItem> = {
@@ -11,18 +12,15 @@ const meta: ComponentMeta<typeof ColorItem> = {
 
 const C = { ...Colors };
 
-const renderDeprecatedColorItem = (colors: string[]) => {
-  return colors.map((color) => {
+const renderDeprecatedColorItem = (colors: string[]) => colors.map((color) => {
     const colorValue = C[color];
 
     return (
       <ColorItem colorName={color} backgroundColor={colorValue} deprecated />
     );
   });
-};
 
-export const Variants: ComponentStory<typeof ColorItem> = () => {
-  return (
+export const Variants: ComponentStory<typeof ColorItem> = () => (
     <>
       컬러칩을 클릭하면 hex code가 복사됩니다.
       <br />
@@ -141,6 +139,5 @@ export const Variants: ComponentStory<typeof ColorItem> = () => {
       </Container>
     </>
   );
-};
 
 export default meta;

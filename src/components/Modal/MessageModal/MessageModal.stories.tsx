@@ -5,6 +5,7 @@ import { NewBaseButton } from 'components/Buttons';
 import { StoryContainer } from 'components/StoryContainer';
 import { Radio } from 'components/Control/Radio';
 import { BaseInput } from 'components/Input';
+
 import { MessageModal } from './index';
 
 const meta: ComponentMeta<typeof MessageModal> = {

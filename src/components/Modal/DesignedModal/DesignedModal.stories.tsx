@@ -1,10 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { DesignedModal } from './index';
 import { NewBaseButton } from 'components/Buttons';
 import { StoryContainer } from 'components/StoryContainer';
 import { Radio } from 'components/Control';
+
+import { DesignedModal } from './index';
 
 const meta: ComponentMeta<typeof DesignedModal> = {
   title: 'Modal/DesignedModal',

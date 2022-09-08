@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 import { BaseModal } from '../BaseModal';
 import { BaseButton } from '../../Buttons';
-
 import {
   white,
   gray80,

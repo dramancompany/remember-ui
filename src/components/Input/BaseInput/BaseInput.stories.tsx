@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { BaseInput } from './index';
 import { StoryContainer } from 'components/StoryContainer';
 import { Checkbox } from 'components/Control/Checkbox';
+
+import { BaseInput } from './index';
 
 const meta: ComponentMeta<typeof BaseInput> = {
   title: 'Input/BaseInput',

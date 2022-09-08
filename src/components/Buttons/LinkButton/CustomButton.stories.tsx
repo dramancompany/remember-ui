@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { LinkButton } from './index';
 import { StoryContainer } from 'components/StoryContainer';
+
+import { LinkButton } from './index';
 
 const meta: ComponentMeta<typeof LinkButton> = {
   title: 'Buttons/LinkButton',

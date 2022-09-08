@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react';
 
-import { Content, Body, Buttons, CancelButton } from './MessageModal.styles';
 import { NewBaseButton } from '../../Buttons';
 import { BaseModal } from '../BaseModal';
+
+import { Content, Body, Buttons, CancelButton } from './MessageModal.styles';
 
 export interface MessageModalProps {
   isOpen: boolean;
@@ -24,8 +25,7 @@ export const MessageModal = ({
   confirmText,
   cancelText,
   isLoading = false,
-}: MessageModalProps) => {
-  return (
+}: MessageModalProps) => (
     <BaseModal isOpen={isOpen}>
       <Content>
         <Body>{children}</Body>
@@ -64,4 +64,3 @@ export const MessageModal = ({
       </Content>
     </BaseModal>
   );
-};

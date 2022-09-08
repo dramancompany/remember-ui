@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Spinner } from '../../Common/Spinner';
-
 import { accent200 } from '../../../core/GlobalStyle';
-import { Container, Inner } from './CustomButton.styles';
 import type { CustomButtonProps } from './CustomButton.types';
+
+import { Container, Inner } from './CustomButton.styles';
 
 export const CustomButton = ({
   className,

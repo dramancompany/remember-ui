@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { BaseModal } from './index';
 import { NewBaseButton } from 'components/Buttons';
+
+import { BaseModal } from './index';
 
 const meta: ComponentMeta<typeof BaseModal> = {
   title: 'Modal/BaseModal',

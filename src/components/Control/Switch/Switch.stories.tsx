@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Switch } from './index';
 import { StoryContainer } from 'components/StoryContainer';
 import { contents000 } from 'core/GlobalStyle/variable';
+
+import { Switch } from './index';
 
 const meta: ComponentMeta<typeof Switch> = {
   title: 'Control/Switch',

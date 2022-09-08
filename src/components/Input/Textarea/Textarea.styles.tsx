@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 import { requiredIcon } from '../../../assets';
-
 import {
   contents100,
   gray100,

@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, useRef } from 'react';
-import { yellow100 } from '../../../core/GlobalStyle';
 
+import { yellow100 } from '../../../core/GlobalStyle';
 import { createUUID } from '../../../utils/common';
 
 import { Container, Input, Label, Span } from './Switch.styles';

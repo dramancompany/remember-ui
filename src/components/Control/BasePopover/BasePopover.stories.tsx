@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { BasePopover } from './index';
 import { PopoverItem } from '../PopoverItem';
 import { NewBaseButton } from 'components/Buttons';
+
+import { BasePopover } from './index';
 
 const meta: ComponentMeta<typeof BasePopover> = {
   title: 'Control/BasePopover',
