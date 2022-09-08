@@ -1,0 +1,6 @@
+.github
+.eslintrc.js
+vite.config.ts
+dist
+docs
+public
