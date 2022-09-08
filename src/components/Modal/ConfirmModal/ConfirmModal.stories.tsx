@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ConfirmModal } from './index';
 import { NewBaseButton } from 'components/Buttons';
+
+import { ConfirmModal } from './index';
 
 const meta: ComponentMeta<typeof ConfirmModal> = {
   title: 'Modal/ConfirmModal',

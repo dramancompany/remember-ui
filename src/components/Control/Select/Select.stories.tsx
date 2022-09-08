@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Select } from './index';
 import { options } from './Select.constant';
+
+import { Select } from './index';
 
 const meta: ComponentMeta<typeof Select> = {
   title: 'Control/Select',

@@ -1,9 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Accordion, AccordionMenuList } from './index';
 import { StoryContainer } from 'components/StoryContainer';
+
 import { menus, menus2, menus3 } from './Accordion.constant';
+
+import { Accordion, AccordionMenuList } from './index';
 
 const meta: ComponentMeta<typeof Accordion> = {
   title: 'Control/Accordion',
@@ -12,11 +14,10 @@ const meta: ComponentMeta<typeof Accordion> = {
 
 export const Variants: ComponentStory<typeof Accordion> = () => {
   const [checkedList, setCheckedList] = React.useState<AccordionMenuList[]>([]);
-  const isCheckedItem = (_title: string, _value: string) => {
-    return checkedList.some(
+  const isCheckedItem = (_title: string, _value: string) =>
+    checkedList.some(
       ({ title, value }) => title === _title && value === _value
     );
-  };
   const onCheckItem = (title: string, value: string) => {
     const checkedIndex = checkedList.findIndex(
       (el) => el.title === title && el.value === value

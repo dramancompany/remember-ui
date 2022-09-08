@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { NewBaseButton } from 'components/Buttons';
+
 import { ProgressModal } from './index';
 
 const meta: ComponentMeta<typeof ProgressModal> = {
@@ -32,8 +33,8 @@ export const Basic: ComponentStory<typeof ProgressModal> = () => {
         isOpen={isOpen}
         currentCount={currentCount}
         totalCount={5}
-        title={(currentCount, totalCount) =>
-          `${currentCount} / ${totalCount}명에게 메시지 전송 중`
+        title={(_currentCount, totalCount) =>
+          `${_currentCount} / ${totalCount}명에게 메시지 전송 중`
         }
         message="메시지 전송 중에 브라우저 창을 닫지 마세요"
       />

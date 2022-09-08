@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { BaseTooltip } from './index';
 import { StoryContainer } from 'components/StoryContainer';
-import { contents000 } from 'core/GlobalStyle/variable';
+
+import { BaseTooltip } from './index';
 
 const meta: ComponentMeta<typeof BaseTooltip> = {
   title: 'Control/BaseTooltip',

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { contents999, disable, flexCenter } from '../../../core/GlobalStyle';
 import { THEME_COLOR } from '../../../core/GlobalStyle/theme';
 import type { NewBaseButtonStyleType } from './NewBaseButton.types';

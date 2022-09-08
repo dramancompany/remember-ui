@@ -1,10 +1,4 @@
-import React, {
-  ChangeEventHandler,
-  MouseEventHandler,
-  ReactNode,
-  RefObject,
-  useRef,
-} from 'react';
+import React, { MouseEventHandler, ReactNode, RefObject, useRef } from 'react';
 
 import useCustomSetInput from '../../../hooks/useCustomSetInput';
 
@@ -44,6 +38,8 @@ export interface TextareaProps {
 export const Textarea = ({
   outerRef,
   value = '',
+  /** 해당 props는 textarea에 attributes에 없으므로 삭제되어야한다 - 20220908 */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   type,
   name,
   onChange,

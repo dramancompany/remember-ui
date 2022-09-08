@@ -1,4 +1,4 @@
-const options = [
+export const options = [
   {
     id: 1,
     label: '인재검색 50',

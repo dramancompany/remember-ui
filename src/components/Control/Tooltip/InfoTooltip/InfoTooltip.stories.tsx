@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { InfoTooltip } from './index';
 import { StoryContainer } from 'components/StoryContainer';
-import { contents000 } from 'core/GlobalStyle/variable';
+
+import { InfoTooltip } from './index';
 
 const meta: ComponentMeta<typeof InfoTooltip> = {
   title: 'Control/InfoTooltip',

@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react';
 
-import { Content, Body, Buttons, CancelButton } from './MessageModal.styles';
 import { NewBaseButton } from '../../Buttons';
 import { BaseModal } from '../BaseModal';
+
+import { Content, Body, Buttons, CancelButton } from './MessageModal.styles';
 
 export interface MessageModalProps {
   isOpen: boolean;
@@ -24,44 +25,42 @@ export const MessageModal = ({
   confirmText,
   cancelText,
   isLoading = false,
-}: MessageModalProps) => {
-  return (
-    <BaseModal isOpen={isOpen}>
-      <Content>
-        <Body>{children}</Body>
-        <Buttons>
-          {onConfirm && (
-            <CancelButton
-              onClick={() => {
-                if (onCancel) {
-                  onCancel();
-                }
-                onClose();
-              }}
-              theme="light"
-              outline
-              size="large"
-              block
-            >
-              {cancelText || '취소'}
-            </CancelButton>
-          )}
-          <NewBaseButton
+}: MessageModalProps) => (
+  <BaseModal isOpen={isOpen}>
+    <Content>
+      <Body>{children}</Body>
+      <Buttons>
+        {onConfirm && (
+          <CancelButton
             onClick={() => {
-              if (onConfirm) {
-                onConfirm();
+              if (onCancel) {
+                onCancel();
               }
               onClose();
             }}
-            theme="primary"
-            size={onConfirm === undefined ? 'xlarge' : 'large'}
+            theme="light"
+            outline
+            size="large"
             block
-            isLoading={isLoading}
           >
-            {confirmText || '확인'}
-          </NewBaseButton>
-        </Buttons>
-      </Content>
-    </BaseModal>
-  );
-};
+            {cancelText || '취소'}
+          </CancelButton>
+        )}
+        <NewBaseButton
+          onClick={() => {
+            if (onConfirm) {
+              onConfirm();
+            }
+            onClose();
+          }}
+          theme="primary"
+          size={onConfirm === undefined ? 'xlarge' : 'large'}
+          block
+          isLoading={isLoading}
+        >
+          {confirmText || '확인'}
+        </NewBaseButton>
+      </Buttons>
+    </Content>
+  </BaseModal>
+);

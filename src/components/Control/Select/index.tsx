@@ -94,24 +94,22 @@ export const Select = <T extends string | number>({
           </Selected>
           {options.length > 0 && isOpen && (
             <Options active={isOpen} maxHeight={maxHeight}>
-              {options.map(({ id, label, disabled }, index) => {
-                return (
-                  <OptionItem
-                    key={`option-${index}`}
-                    custom={id === 'custom'}
-                    selected={value === id}
-                    disable={disabled}
-                    onClick={() => {
-                      if (!disabled) {
-                        id !== 'custom' ? onChange(id) : changeInputMode?.();
-                      }
-                      closeExample();
-                    }}
-                  >
-                    <OptionItemText>{label}</OptionItemText>
-                  </OptionItem>
-                );
-              })}
+              {options.map(({ id, label: _label, disabled }, index) => (
+                <OptionItem
+                  key={`option-${index}`}
+                  custom={id === 'custom'}
+                  selected={value === id}
+                  disable={disabled}
+                  onClick={() => {
+                    if (!disabled) {
+                      id !== 'custom' ? onChange(id) : changeInputMode?.();
+                    }
+                    closeExample();
+                  }}
+                >
+                  <OptionItemText>{_label}</OptionItemText>
+                </OptionItem>
+              ))}
             </Options>
           )}
         </OutsideClickHandler>

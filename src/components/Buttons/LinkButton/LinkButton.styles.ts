@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { textSmall, accent200 } from '../../../core/GlobalStyle';
 
 export const Link = styled.a`

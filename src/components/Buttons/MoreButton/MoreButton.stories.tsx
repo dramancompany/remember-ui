@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { MoreButton } from './index';
 import { StoryContainer } from 'components/StoryContainer';
 import { NewBaseButton } from '../NewBaseButton';
+
+import { MoreButton } from './index';
 
 const meta: ComponentMeta<typeof MoreButton> = {
   title: 'Buttons/MoreButton',

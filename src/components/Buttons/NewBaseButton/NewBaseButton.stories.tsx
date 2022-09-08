@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { NewBaseButton } from './index';
 import { StoryContainer } from 'components/StoryContainer';
+
+import { NewBaseButton } from './index';
 
 const meta: ComponentMeta<typeof NewBaseButton> = {
   title: 'Buttons/NewBaseButton',

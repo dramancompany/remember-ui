@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 
 import { useDetectScrollPositionTop } from '../../../hooks';
+import { TopBtn } from '../../../assets';
 
 import { Container } from './TopButton.styles';
-import { TopBtn } from '../../../assets';
 
 export interface TopButtonProps {
   className?: string;

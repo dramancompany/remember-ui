@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import type { SpinnerProps } from './index';
 
 export const Container = styled.div<SpinnerProps>`

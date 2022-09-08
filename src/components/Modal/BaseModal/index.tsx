@@ -4,6 +4,7 @@ import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
 import Draggable from 'react-draggable';
 
 import { enableBodyScrollLock } from '../../../utils/common';
+
 import { Container } from './BaseModal.styles';
 
 Modal.setAppElement('body');

@@ -7,8 +7,8 @@ import React, {
 } from 'react';
 
 import { handleInputLength } from '../../../utils/string';
-
 import { requiredIcon } from '../../../assets';
+
 import {
   Container,
   Label,
@@ -72,8 +72,8 @@ export const BaseInput = <T extends string | number = string>({
 
   const _validate = () => {
     if (validate) {
-      const error = validate(value);
-      setError(error);
+      const e = validate(value);
+      setError(e);
     }
   };
 

@@ -14,10 +14,8 @@ export const Container = ({
   children,
   className,
   direction = 'column',
-}: ContainerProps) => {
-  return (
-    <ContainerDiv className={className} direction={direction}>
-      {children}
-    </ContainerDiv>
-  );
-};
+}: ContainerProps) => (
+  <ContainerDiv className={className} direction={direction}>
+    {children}
+  </ContainerDiv>
+);

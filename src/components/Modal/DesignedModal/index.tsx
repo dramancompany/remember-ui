@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
+
 import { enableBodyScrollLock } from '../../../utils/common';
 import useScrollLock from '../../../hooks/useScrollLock';
+import { BaseModalProps } from '../BaseModal';
 
 import {
   Container,
@@ -15,7 +17,6 @@ import {
   ModalHeader,
   ModalHeaderContent,
 } from './DesignedModal.styles';
-import { BaseModalProps } from '../BaseModal';
 
 const modalType = 'designedModal';
 
