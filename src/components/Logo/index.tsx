@@ -6,16 +6,18 @@ export interface RememberLogoProps {
   className?: string;
   color?: 'white' | 'black';
   width?: number;
+  height?: number;
 }
 
 export const RememberLogo = ({
   className,
   color = 'white',
-  width = 158,
+  width,
+  height = 18,
 }: RememberLogoProps) => (
   <img
     className={className}
-    style={{ width }}
+    style={{ width, height }}
     src={color === 'white' ? rememberLogoWhite : rememberLogoBlack}
     alt="rememberLogo"
   />
