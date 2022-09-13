@@ -3,6 +3,7 @@ import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default () => {
   return defineConfig({
@@ -12,18 +13,23 @@ export default () => {
       dts({
         insertTypesEntry: true,
       }),
+      visualizer({
+        filename: './dist/report.html',
+        // open: true,
+        brotliSize: true,
+      }),
     ],
     build: {
-      target: ['esnext'],
+      target: ['es2015'],
       polyfillModulePreload: false,
       lib: {
         entry: path.resolve(__dirname, 'src/index.ts'),
         name: 'remember-ui',
         /** package.json과 파일 포멧을 맞춰야 한다
-         * es -> package.json의 module과 동일 === dist/index.js
-         * cjs -> package.json의 main 동일 === dist/index.cjm.js
+         * es -> package.json의 module과 동일 === dist/index.es.js
+         * cjs -> package.json의 main 동일 === dist/index.cjs.js
          */
-        formats: ['es', 'cjs'],
+        formats: ['umd', 'es'],
         fileName: (format) => `index.${format}.js`,
       },
       rollupOptions: {
