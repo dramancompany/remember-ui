@@ -11,7 +11,7 @@ export interface RememberLogoProps {
 export const RememberLogo = ({
   className,
   color = 'white',
-  width,
+  width = 158,
 }: RememberLogoProps) => (
   <img
     className={className}

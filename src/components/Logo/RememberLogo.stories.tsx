@@ -7,7 +7,7 @@ const meta: ComponentMeta<typeof RememberLogo> = {
   title: 'Logo/RememberLogo',
   component: RememberLogo,
   args: {
-    width: 50,
+    width: 250,
   },
 };
 
