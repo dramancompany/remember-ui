@@ -7,7 +7,7 @@ const meta: ComponentMeta<typeof RememberLogo> = {
   title: 'Logo/RememberLogo',
   component: RememberLogo,
   args: {
-    height: 18,
+    height: 20,
   },
 };
 

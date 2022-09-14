@@ -32,6 +32,3 @@ export { default as arrowForwardActiveIcon } from './icons/icon-arrow-forward-ac
 export { default as arrowForwardInactiveIcon } from './icons/icon-arrow-forward-inactive.png';
 
 export { default as closeIcon } from './icons/icon-close.svg';
-
-export { default as rememberLogoBlack } from './remember-logo-black.png';
-export { default as rememberLogoWhite } from './remember-logo-white.png';
