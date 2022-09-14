@@ -51,7 +51,6 @@ export const Container = styled.div<NewBaseButtonStyleType>`
     font-size: ${NEW_BASE_BUTTON_SIZES[size].fontSize};
     min-width: ${NEW_BASE_BUTTON_SIZES[size].minWidth};
     padding: ${NEW_BASE_BUTTON_SIZES[size].padding};
-    border-radius: ${size === 'small' ? '2px' : '4px'};
   `};
 
   ${({ buttonTheme }) => css`
