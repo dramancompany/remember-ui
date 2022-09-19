@@ -2,7 +2,7 @@
   "name": "@dramancompany/remember-ui",
   "version": "2.3.0-beta.26",
   "description": "Remember UI Components",
-  "homepage": "https://github.com/dramancompany/remember-ui",
+  "homepage": "https://dramancompany.github.io/remember-ui/",
   "author": "DramanCompany",
   "license": "MIT",
   "sideEffects": false,
