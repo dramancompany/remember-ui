@@ -1,6 +1,7 @@
 const path = require('path');
 const tsconfigPaths = require('vite-tsconfig-paths').default;
 
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -26,7 +27,7 @@ module.exports = {
         projects: [path.resolve(path.dirname(__dirname), 'tsconfig.json')],
       })
     );
-    config.base = '/remember-ui'
+    config.base = process.env.NODE_ENV === 'production' ? '/remember-ui' : '/';
     return config;
   },
 };
