@@ -14,9 +14,8 @@ export default () => {
         insertTypesEntry: true,
       }),
       visualizer({
-        filename: './dist/report.html',
-        // open: true,
-        brotliSize: true,
+        filename: 'stats.html',
+        open: false,
       }),
     ],
     build: {
