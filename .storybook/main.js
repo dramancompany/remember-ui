@@ -26,6 +26,7 @@ module.exports = {
         projects: [path.resolve(path.dirname(__dirname), 'tsconfig.json')],
       })
     );
+    config.base = '/remember-ui'
     return config;
   },
 };
