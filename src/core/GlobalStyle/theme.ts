@@ -1,9 +1,10 @@
 import {
   accent100,
-  contents100,
-  contents300,
   accent200,
   contents000,
+  contents100,
+  contents200,
+  contents300,
   disable,
 } from './variable';
 
@@ -31,6 +32,10 @@ const THEME_COLOR = {
   primary: {
     main: contents000,
     sub: contents000,
+  },
+  secondary: {
+    main: contents200,
+    sub: contents200,
   },
   disable: {
     main: disable,
