@@ -1,20 +1,15 @@
 import styled, { css } from 'styled-components';
 
-import { BaseModal } from '../BaseModal';
-import { BaseButton } from '../../Buttons';
+import { NewBaseButton } from 'components/Buttons';
 import {
-  white,
-  gray80,
-  gray200,
-  text,
+  background100,
+  contents200,
+  contents300,
   flexCenterY,
-  textSmall,
-  textDoubleExtraLarge,
+  getTypographyStyles,
   mobileOnly,
-  mobileSubTitle16,
-  mobileSubTitle14,
-  mobileSubTitle13,
-} from '../../../core/GlobalStyle';
+} from 'core/GlobalStyle';
+import { BaseModal } from '../BaseModal';
 
 export const Container = styled(BaseModal)`
   ${mobileOnly(css`
@@ -30,7 +25,7 @@ export const Modal = styled.div<{
   mobileWidth?: number | string;
   mobileHeight?: number | string;
 }>`
-  background-color: ${white};
+  background-color: ${background100};
   border-radius: 10px;
   width: 635px;
 
@@ -64,7 +59,10 @@ export const ModalHeader = styled.div`
   `)};
 `;
 
-export const ModalHeaderContent = styled.div``;
+export const ModalHeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 export const ModalBody = styled.div`
   max-height: 60vh;
@@ -74,7 +72,7 @@ export const ModalBody = styled.div`
 export const ModalFooter = styled.div`
   ${flexCenterY}
 
-  box-shadow: inset 0 1px 0 0 ${gray80};
+  box-shadow: inset 0 1px 0 0 ${contents300};
   box-sizing: border-box;
   justify-content: space-between;
   padding: 12px 30px;
@@ -83,7 +81,8 @@ export const ModalFooter = styled.div`
   border-bottom-left-radius: 10px;
 
   .clear-filter {
-    ${textSmall({ color: gray200 })}
+    ${getTypographyStyles('Body1_M')}
+    color: ${contents200};
     ${flexCenterY}
 
     cursor: pointer;
@@ -97,7 +96,8 @@ export const ModalFooter = styled.div`
   }
 
   .info-msg {
-    ${textSmall({ color: gray200 })}
+    ${getTypographyStyles('Body1_M')}
+    color: ${contents200};
     ${flexCenterY}
   }
 
@@ -106,21 +106,23 @@ export const ModalFooter = styled.div`
   `)};
 `;
 
-export const Title = styled.span`
-  ${textDoubleExtraLarge({ weight: 'bold', color: text })}
+export const Title = styled.h3`
+  ${getTypographyStyles('Headline3_B')}
+  margin: 0;
   margin-right: 8px;
   letter-spacing: -1px;
 
   ${mobileOnly(css`
-    ${mobileSubTitle16({ color: text })};
+    ${getTypographyStyles('Body1_B')}
   `)};
 `;
 
 export const SubTitle = styled.span`
-  ${textSmall({ color: gray200 })};
+  ${getTypographyStyles('Body1_M')}
+  color: ${contents200};
 
   ${mobileOnly(css`
-    ${mobileSubTitle13({ weight: 'normal', color: gray200 })};
+    ${getTypographyStyles('Body2_M')}
   `)};
 `;
 
@@ -138,17 +140,13 @@ export const Buttons = styled.div`
   `)};
 `;
 
-export const Button = styled(BaseButton)<{ buttonCount?: number }>`
-  width: 116px;
-
+export const Button = styled(NewBaseButton)<{ buttonCount?: number }>`
   &:last-child {
     margin-left: 6px;
   }
 
   ${({ buttonCount = 1 }) =>
     mobileOnly(css`
-      ${mobileSubTitle14({ color: white })};
-
       width: ${buttonCount === 2 ? '50%' : '100%'};
 
       ${buttonCount !== 2 &&
