@@ -1,9 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  extends: ['react-app', 'airbnb-typescript', 'airbnb/hooks', 'prettier', 'plugin:storybook/recommended'],
+  extends: [
+    'react-app',
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   parserOptions: {
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
   rules: {
     // react
@@ -36,65 +42,85 @@ module.exports = {
     'no-async-promise-executor': 0,
     'no-restricted-syntax': 0,
     'no-await-in-loop': 0,
-    'prefer-destructuring': ['error', {
-      object: true,
-      array: false
-    }],
+    'prefer-destructuring': [
+      'error',
+      {
+        object: true,
+        array: false,
+      },
+    ],
     // Module
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
-    'import/order': ['error', {
-      groups: [['builtin', 'external'], ['internal', 'parent', 'sibling']],
-      pathGroups: [{
-        pattern: 'global-style/**',
-        group: 'sibling',
-        position: 'after'
-      }, {
-        pattern: './*.constant',
-        group: 'sibling',
-        position: 'after'
-      }, {
-        pattern: './*.text',
-        group: 'sibling',
-        position: 'after'
-      }, {
-        pattern: './*.styles',
-        group: 'sibling',
-        position: 'after'
-      }, {
-        pattern: './*.scss',
-        group: 'sibling',
-        position: 'after'
-      }, {
-        pattern: './*.css',
-        group: 'sibling',
-        position: 'after'
-      }, {
-        pattern: 'assets/**',
-        group: 'sibling',
-        position: 'after'
-      }],
-      'newlines-between': 'always'
-    }],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          ['builtin', 'external'],
+          ['internal', 'parent', 'sibling'],
+        ],
+        pathGroups: [
+          {
+            pattern: 'global-style/**',
+            group: 'sibling',
+            position: 'after',
+          },
+          {
+            pattern: './*.constant',
+            group: 'sibling',
+            position: 'after',
+          },
+          {
+            pattern: './*.text',
+            group: 'sibling',
+            position: 'after',
+          },
+          {
+            pattern: './*.styles',
+            group: 'sibling',
+            position: 'after',
+          },
+          {
+            pattern: './*.scss',
+            group: 'sibling',
+            position: 'after',
+          },
+          {
+            pattern: './*.css',
+            group: 'sibling',
+            position: 'after',
+          },
+          {
+            pattern: 'assets/**',
+            group: 'sibling',
+            position: 'after',
+          },
+        ],
+        'newlines-between': 'always',
+      },
+    ],
     // typescript eslint
     '@typescript-eslint/no-unused-expressions': 0,
-    '@typescript-eslint/naming-convention': ['error', {
-      selector: 'variable',
-      format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
-      leadingUnderscore: 'allow'
-    }],
-    '@typescript-eslint/no-use-before-define': 'off'
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'variable',
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+        leadingUnderscore: 'allow',
+      },
+    ],
+    '@typescript-eslint/no-use-before-define': 'off',
   },
   env: {
-    browser: true
+    browser: true,
   },
   settings: {
     'import/resolver': {
       node: {
         paths: [path.resolve(__dirname, 'src')],
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
-      }
-    }
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      },
+    },
   },
-  ignorePatterns: ['vite.config.ts']
+  ignorePatterns: ['vite.config.ts'],
 };
