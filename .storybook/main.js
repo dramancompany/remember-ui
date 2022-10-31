@@ -26,6 +26,7 @@ module.exports = {
         projects: [path.resolve(path.dirname(__dirname), 'tsconfig.json')],
       })
     );
+    config.base = process.env.NODE_ENV === 'production' ? '/remember-ui' : '/';
     return config;
   },
 };

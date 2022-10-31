@@ -4,6 +4,7 @@ export * from './Control';
 export * from './Input';
 export * from './Modal';
 export * from './Icon';
+export * from './Logo';
 
 export * from './StoryContainer';
 export * from './RDS/Typography';

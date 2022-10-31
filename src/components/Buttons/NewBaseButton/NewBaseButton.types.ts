@@ -6,7 +6,8 @@ export type NewBaseButtonTheme =
   | 'blue'
   | 'gray'
   | 'light'
-  | 'primary';
+  | 'primary'
+  | 'secondary';
 
 export interface NewBaseButtonProps {
   className?: string;

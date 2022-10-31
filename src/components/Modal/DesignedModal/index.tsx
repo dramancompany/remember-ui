@@ -108,10 +108,8 @@ export const DesignedModal = ({
             {close && (
               <Button
                 className="not-draggable"
-                color="gray"
-                size="large"
-                fill
-                rounded
+                theme="secondary"
+                size="xlarge"
                 onClick={() => {
                   enableBodyScrollLock(
                     bodyScrollLockTarget,
@@ -128,10 +126,8 @@ export const DesignedModal = ({
             {submit && (
               <Button
                 className="not-draggable"
-                color="yellow"
-                size="large"
-                fill
-                rounded
+                theme="primary"
+                size="xlarge"
                 onClick={() => {
                   enableBodyScrollLock(
                     bodyScrollLockTarget,

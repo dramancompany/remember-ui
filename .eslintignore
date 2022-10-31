@@ -4,3 +4,5 @@ vite.config.ts
 dist
 docs
 public
+scripts
+visualizer

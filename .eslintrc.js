@@ -1,7 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  extends: ['react-app', 'airbnb-typescript', 'airbnb/hooks', 'prettier'],
+  extends: [
+    'react-app',
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   parserOptions: {
     project: './tsconfig.json',
   },
@@ -36,7 +42,13 @@ module.exports = {
     'no-async-promise-executor': 0,
     'no-restricted-syntax': 0,
     'no-await-in-loop': 0,
-    'prefer-destructuring': ['error', { object: true, array: false }],
+    'prefer-destructuring': [
+      'error',
+      {
+        object: true,
+        array: false,
+      },
+    ],
     // Module
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,

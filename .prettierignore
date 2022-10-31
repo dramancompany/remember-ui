@@ -1,5 +1,4 @@
 .github
-vite.config.ts
 dist
 docs
 public
