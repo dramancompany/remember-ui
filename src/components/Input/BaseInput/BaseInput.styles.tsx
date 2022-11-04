@@ -8,10 +8,11 @@ import {
   gray100,
   gray150,
   gray400,
-  red100,
   mobileOnly,
   mobileSubTitle13,
   contents100,
+  roleRed,
+  secondary100,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div``;
@@ -29,16 +30,13 @@ export const Label = styled.div<{ $marginBottom?: number }>`
   `)};
 `;
 
-export const Mark = styled.img`
+export const RequiredMark = styled.span`
   margin-left: 4px;
-  position: relative;
-  top: 1px;
-  width: 6px;
-  height: 6px;
+  color: ${secondary100};
 `;
 
 export const ErrorMessage = styled.div`
-  ${font({ size: '13px', color: red100, weight: 'normal' })}
+  ${font({ size: '13px', color: roleRed, weight: 'normal' })}
 
   height: 19px;
 `;
@@ -66,7 +64,7 @@ export const Input = styled.input<{
   ${({ error }) =>
     error &&
     css`
-      border: 1px solid ${red100};
+      border: 1px solid ${roleRed};
     `}
 
   ${({ footer }) =>

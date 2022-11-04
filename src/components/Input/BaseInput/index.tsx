@@ -7,14 +7,13 @@ import React, {
 } from 'react';
 
 import { handleInputLength } from '../../../utils/string';
-import { requiredIcon } from '../../../assets';
 
 import {
   Container,
   Label,
-  Mark,
   ErrorMessage,
   Input,
+  RequiredMark,
 } from './BaseInput.styles';
 
 export interface BaseInputProps<T> {
@@ -89,7 +88,7 @@ export const BaseInput = <T extends string | number = string>({
       {(label || blankLabel) && (
         <Label $marginBottom={marginBottom}>
           <span>{label}</span>
-          {required && <Mark src={requiredIcon} alt="mark" />}
+          {required && <RequiredMark>*</RequiredMark>}
         </Label>
       )}
       <Input
