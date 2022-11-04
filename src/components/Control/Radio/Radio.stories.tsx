@@ -61,6 +61,44 @@ export const Variants: ComponentStory<typeof Radio> = () => {
           <span>옵션2</span>
         </StoryContainer>
       </StoryContainer>
+      <StoryContainer direction="column">
+        <StoryContainer direction="row">
+          Small Radio onClick Event Bind( Dynamic )
+        </StoryContainer>
+        <StoryContainer direction="row">
+          <Radio
+            isChecked={radioId === 1}
+            onClick={() => setRadio(1)}
+            size="small"
+          />
+          <span>옵션1</span>
+          <Radio
+            isChecked={radioId === 2}
+            onClick={() => setRadio(2)}
+            size="small"
+          />
+          <span>옵션2</span>
+        </StoryContainer>
+      </StoryContainer>
+      <StoryContainer direction="column">
+        <StoryContainer direction="row">
+          Medium Radio onClick Event Bind( Dynamic )
+        </StoryContainer>
+        <StoryContainer direction="row">
+          <Radio
+            isChecked={radioId === 1}
+            onClick={() => setRadio(1)}
+            size="medium"
+          />
+          <span>옵션1</span>
+          <Radio
+            isChecked={radioId === 2}
+            onClick={() => setRadio(2)}
+            size="medium"
+          />
+          <span>옵션2</span>
+        </StoryContainer>
+      </StoryContainer>
     </>
   );
 };
