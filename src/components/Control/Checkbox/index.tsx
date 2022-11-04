@@ -1,4 +1,4 @@
-import type { MouseEvent } from 'react';
+import React, { type MouseEvent } from 'react';
 
 import { CheckboxInput } from './Checkbox.styles';
 
@@ -21,6 +21,7 @@ export const Checkbox = ({
     className={className}
     checked={state === 'on'}
     onClick={onClick}
+    onChange={() => {}}
     disabled={disabled}
     isRound={round}
   />

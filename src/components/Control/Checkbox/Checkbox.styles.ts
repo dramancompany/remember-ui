@@ -23,18 +23,22 @@ export const CheckboxInput = styled.input.attrs({ type: 'checkbox' })<{
   position: relative;
 
   &:hover,
-  &:focus,
-  &:checked {
+  &:focus {
     border-color: ${secondary100};
+    background-color: ${bg100};
   }
 
   &:checked {
+    border-color: ${secondary100};
     background-color: ${secondary100};
   }
 
   &:disabled {
     border-color: ${disabledColor};
-    background-color: ${disabledColor};
+
+    &:checked {
+      background-color: ${disabledColor};
+    }
   }
 
   &::after {
