@@ -1,16 +1,55 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div<{ isRound: boolean; disabled: boolean }>`
-  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-  width: ${({ isRound }) => (isRound ? '20px' : '24px')};
-  height: ${({ isRound }) => (isRound ? '20px' : '24px')};
-  border-radius: ${({ isRound }) => (isRound ? '50%' : '0')};
-  align-items: center;
-  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-`;
+import {
+  bg100,
+  contents200,
+  disabled as disabledColor,
+  secondary100,
+} from 'core';
 
-export const Icon = styled.img<{ isRound: boolean }>`
-  width: ${({ isRound }) => (isRound ? '20px' : '16px')};
-  height: ${({ isRound }) => (isRound ? '20px' : '16px')};
-  margin: ${({ isRound }) => (isRound ? '0' : '4px')};
+export const CheckboxInput = styled.input.attrs({ type: 'checkbox' })<{
+  isRound?: boolean;
+}>`
+  appearance: none;
+  ${({ isRound, disabled }) => css`
+    width: ${isRound ? '24px' : '16px'};
+    height: ${isRound ? '24px' : '16px'};
+    border-radius: ${isRound ? '50%' : '2px'};
+    cursor: ${disabled ? 'not-allowed' : 'pointer'};
+  `}
+  border: 1px solid ${contents200};
+  accent-color: ${secondary100};
+  background-color: ${bg100};
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:checked {
+    border-color: ${secondary100};
+  }
+
+  &:checked {
+    background-color: ${secondary100};
+  }
+
+  &:disabled {
+    border-color: ${disabledColor};
+    background-color: ${disabledColor};
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%) rotate(-45deg);
+    border-width: 0 0 2px 2px;
+    border-style: solid;
+    border-color: ${bg100};
+    border-radius: 1px;
+    ${({ isRound }) => css`
+      width: ${isRound ? '12px' : '10px'};
+      height: ${isRound ? '6px' : '5px'};
+    `}
+  }
 `;
