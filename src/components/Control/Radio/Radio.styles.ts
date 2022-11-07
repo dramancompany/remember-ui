@@ -1,10 +1,15 @@
 import styled, { css } from 'styled-components';
 
-import { contents000, secondary100 } from 'core';
+import { contents000, contents300, secondary100 } from 'core';
 
 export const SIZE_MAP = {
-  small: '16px',
-  medium: '24px',
+  small: '13.4px',
+  medium: '20px',
+} as const;
+
+export const MARGIN_MAP = {
+  small: '1.3px',
+  medium: '2px',
 } as const;
 
 export const COLOR_MAP = {
@@ -16,16 +21,42 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
   theme?: keyof typeof COLOR_MAP;
   $size?: keyof typeof SIZE_MAP;
 }>`
-  // career-web 같은 경우 전역적으로 input 태그에 appearance: none; 이 적용되어 있어서 강제로 지정 필요..
-  appearance: radio;
-  cursor: pointer;
-
-  ${({ theme = 'yellow', $size = 'medium' }) => css`
+  appearance: none;
+  ${({ $size = 'medium' }) => css`
     height: ${SIZE_MAP[$size]};
     width: ${SIZE_MAP[$size]};
-
-    &:checked {
-      accent-color: ${COLOR_MAP[theme]};
-    }
+    margin: ${MARGIN_MAP[$size]};
+    border-radius: 50%;
   `}
+  border: 1px solid ${contents300};
+  accent-color: ${secondary100};
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: transparent;
+    ${({ $size }) => css`
+      width: ${$size === 'medium' ? '8px' : '5px'};
+      height: ${$size === 'medium' ? '8px' : '5px'};
+    `}
+  }
+
+  &:hover {
+    border-color: ${secondary100};
+  }
+
+  &:checked {
+    border-color: ${secondary100};
+
+    &::after {
+      background-color: ${secondary100};
+    }
+  }
 `;
