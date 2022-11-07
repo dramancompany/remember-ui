@@ -41,12 +41,12 @@ export const CheckboxInput = styled.input.attrs({ type: 'checkbox' })<{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -75%) rotate(-45deg);
-    border-width: 0 0 2px 2px;
+    border-width: 0 0 1.5px 1.5px;
     border-style: solid;
     border-color: ${contents300};
     ${({ $size }) => css`
-      width: ${$size === 'medium' ? '8px' : '6px'};
-      height: ${$size === 'medium' ? '4px' : '3px'};
+      width: ${$size === 'medium' ? '7px' : '5px'};
+      height: ${$size === 'medium' ? '3.5px' : '2.5px'};
     `}
   }
 
