@@ -1,6 +1,6 @@
 import React, { type MouseEvent } from 'react';
 
-import { CheckboxInput } from './Checkbox.styles';
+import { CheckboxInput, SIZE_MAP } from './Checkbox.styles';
 
 export interface CheckboxProps {
   state?: 'on' | 'off';
@@ -8,6 +8,7 @@ export interface CheckboxProps {
   disabled?: boolean;
   className?: string;
   round?: boolean;
+  size?: keyof typeof SIZE_MAP;
 }
 
 export const Checkbox = ({
@@ -16,6 +17,7 @@ export const Checkbox = ({
   disabled = false,
   className,
   round = false,
+  size = 'medium',
 }: CheckboxProps) => (
   <CheckboxInput
     className={className}
@@ -24,5 +26,6 @@ export const Checkbox = ({
     onChange={() => {}}
     disabled={disabled}
     isRound={round}
+    $size={size}
   />
 );

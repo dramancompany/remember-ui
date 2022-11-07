@@ -23,7 +23,6 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
   ${({ theme = 'yellow', $size = 'medium' }) => css`
     height: ${SIZE_MAP[$size]};
     width: ${SIZE_MAP[$size]};
-    margin: 0 10px;
 
     &:checked {
       accent-color: ${COLOR_MAP[theme]};

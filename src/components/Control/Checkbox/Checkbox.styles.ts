@@ -7,13 +7,19 @@ import {
   secondary100,
 } from 'core';
 
+export const SIZE_MAP = {
+  small: '16px',
+  medium: '24px',
+} as const;
+
 export const CheckboxInput = styled.input.attrs({ type: 'checkbox' })<{
   isRound?: boolean;
+  $size?: keyof typeof SIZE_MAP;
 }>`
   appearance: none;
-  ${({ isRound, disabled }) => css`
-    width: ${isRound ? '24px' : '16px'};
-    height: ${isRound ? '24px' : '16px'};
+  ${({ $size = 'medium', isRound, disabled }) => css`
+    width: ${SIZE_MAP[$size]};
+    height: ${SIZE_MAP[$size]};
     border-radius: ${isRound ? '50%' : '2px'};
     cursor: ${disabled ? 'not-allowed' : 'pointer'};
   `}
@@ -51,9 +57,9 @@ export const CheckboxInput = styled.input.attrs({ type: 'checkbox' })<{
     border-style: solid;
     border-color: ${bg100};
     border-radius: 1px;
-    ${({ isRound }) => css`
-      width: ${isRound ? '12px' : '10px'};
-      height: ${isRound ? '6px' : '5px'};
+    ${({ $size }) => css`
+      width: ${$size === 'medium' ? '12px' : '10px'};
+      height: ${$size === 'medium' ? '6px' : '5px'};
     `}
   }
 `;
