@@ -1,31 +1,28 @@
-import React, { type MouseEvent } from 'react';
+import React, { InputHTMLAttributes } from 'react';
 
 import { CheckboxInput, SIZE_MAP } from './Checkbox.styles';
 
-export interface CheckboxProps {
+export interface CheckboxProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  /**
+   * @deprecated
+   * `state`대신 `checked`를 사용해 주세요
+   */
   state?: 'on' | 'off';
-  onClick?: (e: MouseEvent<HTMLInputElement>) => void;
-  disabled?: boolean;
-  className?: string;
   round?: boolean;
-  size?: keyof typeof SIZE_MAP;
+  $size?: keyof typeof SIZE_MAP;
 }
 
 export const Checkbox = ({
   state = 'off',
-  onClick = () => {},
-  disabled = false,
-  className,
   round = false,
-  size = 'medium',
+  $size = 'medium',
+  ...props
 }: CheckboxProps) => (
   <CheckboxInput
-    className={className}
     checked={state === 'on'}
-    onClick={onClick}
-    onChange={() => {}}
-    disabled={disabled}
     isRound={round}
-    $size={size}
+    $size={$size}
+    {...props}
   />
 );

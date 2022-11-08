@@ -18,7 +18,7 @@ export const Variants: ComponentStory<typeof Radio> = () => {
       <StoryContainer direction="column">
         <StoryContainer direction="row">Radio on/off( Static )</StoryContainer>
         <StoryContainer direction="row">
-          <Radio isChecked />
+          <Radio checked />
           <Radio />
         </StoryContainer>
       </StoryContainer>
@@ -27,7 +27,7 @@ export const Variants: ComponentStory<typeof Radio> = () => {
           Black Radio on/off( Static )
         </StoryContainer>
         <StoryContainer direction="row">
-          <Radio theme="black" isChecked />
+          <Radio theme="black" checked />
           <Radio theme="black" />
         </StoryContainer>
       </StoryContainer>
@@ -36,9 +36,9 @@ export const Variants: ComponentStory<typeof Radio> = () => {
           Radio onClick Event Bind( Dynamic )
         </StoryContainer>
         <StoryContainer direction="row">
-          <Radio isChecked={radioId === 1} onClick={() => setRadio(1)} />
+          <Radio checked={radioId === 1} onClick={() => setRadio(1)} />
           <span>옵션1</span>
-          <Radio isChecked={radioId === 2} onClick={() => setRadio(2)} />
+          <Radio checked={radioId === 2} onClick={() => setRadio(2)} />
           <span>옵션2</span>
         </StoryContainer>
       </StoryContainer>
@@ -48,13 +48,13 @@ export const Variants: ComponentStory<typeof Radio> = () => {
         </StoryContainer>
         <StoryContainer direction="row">
           <Radio
-            isChecked={radioId === 1}
+            checked={radioId === 1}
             onClick={() => setRadio(1)}
             theme="black"
           />
           <span>옵션1</span>
           <Radio
-            isChecked={radioId === 2}
+            checked={radioId === 2}
             onClick={() => setRadio(2)}
             theme="black"
           />
@@ -67,15 +67,15 @@ export const Variants: ComponentStory<typeof Radio> = () => {
         </StoryContainer>
         <StoryContainer direction="row">
           <Radio
-            isChecked={radioId === 1}
+            checked={radioId === 1}
             onClick={() => setRadio(1)}
-            size="small"
+            $size="small"
           />
           <span>옵션1</span>
           <Radio
-            isChecked={radioId === 2}
+            checked={radioId === 2}
             onClick={() => setRadio(2)}
-            size="small"
+            $size="small"
           />
           <span>옵션2</span>
         </StoryContainer>
@@ -86,15 +86,15 @@ export const Variants: ComponentStory<typeof Radio> = () => {
         </StoryContainer>
         <StoryContainer direction="row">
           <Radio
-            isChecked={radioId === 1}
+            checked={radioId === 1}
             onClick={() => setRadio(1)}
-            size="medium"
+            $size="medium"
           />
           <span>옵션1</span>
           <Radio
-            isChecked={radioId === 2}
+            checked={radioId === 2}
             onClick={() => setRadio(2)}
-            size="medium"
+            $size="medium"
           />
           <span>옵션2</span>
         </StoryContainer>

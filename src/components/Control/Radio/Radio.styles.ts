@@ -29,7 +29,6 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
     border-radius: 50%;
   `}
   border: 1px solid ${contents300};
-  accent-color: ${secondary100};
   cursor: pointer;
   position: relative;
   box-sizing: border-box;
@@ -48,15 +47,17 @@ export const RadioInput = styled.input.attrs({ type: 'radio' })<{
     `}
   }
 
-  &:hover {
-    border-color: ${secondary100};
-  }
-
-  &:checked {
-    border-color: ${secondary100};
-
-    &::after {
-      background-color: ${secondary100};
+  ${({ theme = 'yellow' }) => css`
+    &:hover {
+      border-color: ${theme === 'black' ? contents000 : secondary100};
     }
-  }
+
+    &:checked {
+      border-color: ${theme === 'black' ? contents000 : secondary100};
+
+      &::after {
+        background-color: ${theme === 'black' ? contents000 : secondary100};
+      }
+    }
+  `}
 `;

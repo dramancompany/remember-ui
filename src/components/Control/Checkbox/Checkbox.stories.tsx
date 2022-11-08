@@ -18,37 +18,37 @@ export const Variants: ComponentStory<typeof Checkbox> = () => {
       <StoryContainer direction="column">
         <h3>체크박스 (medium) on/off/disabled</h3>
         <StoryContainer direction="row">
-          <Checkbox state="on" />
-          <Checkbox state="off" />
-          <Checkbox state="on" disabled />
-          <Checkbox state="off" disabled />
+          <Checkbox checked />
+          <Checkbox />
+          <Checkbox checked disabled />
+          <Checkbox disabled />
         </StoryContainer>
       </StoryContainer>
       <StoryContainer direction="column">
         <h3>체크박스 (small) on/off/disabled</h3>
         <StoryContainer direction="row">
-          <Checkbox state="on" size="small" />
-          <Checkbox state="off" size="small" />
-          <Checkbox state="on" size="small" disabled />
-          <Checkbox state="off" size="small" disabled />
+          <Checkbox checked $size="small" />
+          <Checkbox $size="small" />
+          <Checkbox checked $size="small" disabled />
+          <Checkbox $size="small" disabled />
         </StoryContainer>
       </StoryContainer>
       <StoryContainer direction="column">
         <h3>Round 체크박스 (small) on/off/disabled</h3>
         <StoryContainer direction="row">
-          <Checkbox round state="on" size="small" />
-          <Checkbox round state="off" size="small" />
-          <Checkbox round state="on" size="small" disabled />
-          <Checkbox round state="off" size="small" disabled />
+          <Checkbox round checked $size="small" />
+          <Checkbox round $size="small" />
+          <Checkbox round checked $size="small" disabled />
+          <Checkbox round $size="small" disabled />
         </StoryContainer>
       </StoryContainer>
       <StoryContainer direction="column">
         <h3>Round 체크박스 (medium) on/off/disabled</h3>
         <StoryContainer direction="row">
-          <Checkbox round state="on" />
-          <Checkbox round state="off" />
-          <Checkbox round state="on" disabled />
-          <Checkbox round state="off" disabled />
+          <Checkbox round checked />
+          <Checkbox round />
+          <Checkbox round checked disabled />
+          <Checkbox round disabled />
         </StoryContainer>
       </StoryContainer>
       <StoryContainer direction="column">
@@ -56,13 +56,13 @@ export const Variants: ComponentStory<typeof Checkbox> = () => {
         <StoryContainer direction="row">
           <Checkbox
             round
-            state={checked ? 'on' : 'off'}
+            checked={checked}
             onClick={() => setChecked(!checked)}
           />
           <Checkbox
-            size="small"
+            $size="small"
             round
-            state={checked ? 'on' : 'off'}
+            checked={checked}
             onClick={() => setChecked(!checked)}
           />
         </StoryContainer>
