@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
-import { mobileOnly, contents999 } from '../../../core/GlobalStyle';
+import { bg100, mobileOnly } from '../../../core/GlobalStyle';
 import { NewBaseButton } from '../../Buttons';
 
 export const Content = styled.div`
-  background-color: ${contents999};
+  background-color: ${bg100};
   padding: 24px;
   border-radius: 8px;
   width: 360px;

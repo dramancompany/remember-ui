@@ -67,7 +67,7 @@ export const Container = styled.div<NewBaseButtonStyleType>`
   ${({ outline, buttonTheme, disabled }) => [
     outline &&
       css`
-        background-color: ${contents999};
+        background-color: transparent;
         color: ${THEME_COLOR[buttonTheme].main};
       `,
     disabled &&
@@ -81,7 +81,7 @@ export const Container = styled.div<NewBaseButtonStyleType>`
       css`
         border-color: ${disable};
         color: ${disable};
-        background-color: ${contents999};
+        background-color: transparent;
       `,
   ]}
 `;

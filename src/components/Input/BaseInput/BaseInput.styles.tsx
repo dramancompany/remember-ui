@@ -1,46 +1,40 @@
 import styled, { css } from 'styled-components';
 
 import {
-  font,
-  textSmall,
   placeholderColor,
   gray50,
   gray100,
   gray150,
   gray400,
-  red100,
   mobileOnly,
   mobileSubTitle13,
   contents100,
+  roleRed,
+  secondary100,
+  getTypographyStyles,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div``;
 
 export const Label = styled.div<{ $marginBottom?: number }>`
-  ${textSmall({ color: contents100 })};
+  ${getTypographyStyles('Body1_M')}
+  color: ${contents100};
 
   display: flex;
   align-items: center;
   margin-bottom: ${({ $marginBottom = 8 }) => `${$marginBottom}px`};
   min-height: 20px;
-
-  ${mobileOnly(css`
-    ${mobileSubTitle13({ color: contents100, weight: 'normal' })};
-  `)};
 `;
 
-export const Mark = styled.img`
+export const RequiredMark = styled.span`
   margin-left: 4px;
-  position: relative;
-  top: 1px;
-  width: 6px;
-  height: 6px;
+  color: ${secondary100};
 `;
 
 export const ErrorMessage = styled.div`
-  ${font({ size: '13px', color: red100, weight: 'normal' })}
-
-  height: 19px;
+  ${getTypographyStyles('Body2_M')}
+  color: ${roleRed};
+  margin-top: 8px;
 `;
 
 export const Input = styled.input<{
@@ -48,7 +42,8 @@ export const Input = styled.input<{
   footer?: boolean;
   disable?: boolean;
 }>`
-  ${font({ size: '15px', color: gray400 })}
+  ${getTypographyStyles('Body1_M')}
+  color: ${gray400};
   ${placeholderColor(gray150)}
 
   height: 44px;
@@ -66,7 +61,7 @@ export const Input = styled.input<{
   ${({ error }) =>
     error &&
     css`
-      border: 1px solid ${red100};
+      border: 1px solid ${roleRed};
     `}
 
   ${({ footer }) =>

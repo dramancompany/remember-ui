@@ -1,52 +1,23 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 
-import {
-  radioChecked,
-  radioUnchecked,
-  radioHovered,
-  radioBlackChecked,
-  radioBlackUnchecked,
-} from '../../../assets';
-import useHover from '../../../hooks/useHover';
+import { COLOR_MAP, RadioInput, SIZE_MAP } from './Radio.styles';
 
-import { RadioButton } from './Radio.styles';
-
-export interface RadioProps {
+export interface RadioProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  /**
+   * @deprecated
+   * `isChecked`대신 `checked`를 사용해 주세요
+   */
   isChecked?: boolean;
-  onClick?: () => void;
-  className?: string;
-  theme?: 'yellow' | 'black';
+  theme?: keyof typeof COLOR_MAP;
+  $size?: keyof typeof SIZE_MAP;
 }
 
 export const Radio = ({
   isChecked = false,
-  onClick,
-  className,
   theme = 'yellow',
-}: RadioProps) => {
-  const { ref: hoverRef, value: isHovered } = useHover<HTMLImageElement>();
-
-  const getIconImg = () => {
-    if (theme === 'yellow') {
-      if (isChecked) return radioChecked;
-      if (isHovered) return radioHovered;
-      return radioUnchecked;
-    }
-
-    if (theme === 'black') {
-      if (isChecked) return radioBlackChecked;
-      return radioBlackUnchecked;
-    }
-  };
-
-  return (
-    <RadioButton
-      ref={hoverRef}
-      className={className}
-      src={getIconImg()}
-      alt="checked"
-      onClick={onClick}
-      theme={theme}
-    />
-  );
-};
+  $size = 'medium',
+  ...props
+}: RadioProps) => (
+  <RadioInput checked={isChecked} theme={theme} $size={$size} {...props} />
+);

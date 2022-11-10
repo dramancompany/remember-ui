@@ -1,16 +1,86 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div<{ isRound: boolean; disabled: boolean }>`
-  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-  width: ${({ isRound }) => (isRound ? '20px' : '24px')};
-  height: ${({ isRound }) => (isRound ? '20px' : '24px')};
-  border-radius: ${({ isRound }) => (isRound ? '50%' : '0')};
-  align-items: center;
-  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-`;
+import {
+  bg100,
+  contents300,
+  disabled as disabledColor,
+  secondary100,
+} from 'core';
 
-export const Icon = styled.img<{ isRound: boolean }>`
-  width: ${({ isRound }) => (isRound ? '20px' : '16px')};
-  height: ${({ isRound }) => (isRound ? '20px' : '16px')};
-  margin: ${({ isRound }) => (isRound ? '0' : '4px')};
+export const SIZE_MAP = {
+  small: '13.4px',
+  medium: '20px',
+} as const;
+
+export const MARGIN_MAP = {
+  small: '1.3px',
+  medium: '2px',
+} as const;
+
+export const CheckboxInput = styled.input.attrs({ type: 'checkbox' })<{
+  isRound?: boolean;
+  $size?: keyof typeof SIZE_MAP;
+}>`
+  appearance: none;
+  ${({ $size = 'medium', isRound, disabled }) => css`
+    width: ${SIZE_MAP[$size]};
+    height: ${SIZE_MAP[$size]};
+    margin: ${MARGIN_MAP[$size]};
+    border-radius: ${isRound ? '50%' : '2px'};
+    cursor: ${disabled ? 'not-allowed' : 'pointer'};
+  `}
+  border: 1px solid ${contents300};
+  accent-color: ${secondary100};
+  background-color: ${bg100};
+  position: relative;
+  box-sizing: border-box;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%) rotate(-45deg);
+    border-width: 0 0 1.5px 1.5px;
+    border-style: solid;
+    border-color: ${contents300};
+    ${({ $size }) => css`
+      width: ${$size === 'medium' ? '7px' : '5px'};
+      height: ${$size === 'medium' ? '3.5px' : '2.5px'};
+    `}
+  }
+
+  &:hover {
+    border-color: ${secondary100};
+    background-color: ${bg100};
+
+    &::after {
+      border-color: ${secondary100};
+    }
+  }
+
+  &:checked {
+    border-color: ${secondary100};
+    background-color: ${secondary100};
+
+    &::after {
+      border-color: ${bg100};
+    }
+  }
+
+  &:disabled {
+    border-color: ${disabledColor};
+
+    &:hover::after {
+      border-color: ${disabledColor};
+    }
+
+    &:checked {
+      background-color: ${disabledColor};
+
+      &::after {
+        border-color: ${bg100};
+      }
+    }
+  }
 `;

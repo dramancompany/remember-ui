@@ -4,11 +4,11 @@ import useCustomSetInput from '../../../hooks/useCustomSetInput';
 
 import {
   Container,
-  Icon,
   Label,
   Max,
   Notice,
   Progress,
+  RequiredMark,
   Text,
   TextCount,
   Title,
@@ -67,7 +67,7 @@ export const Textarea = ({
       {(label || blankLabel) && (
         <Label>
           <Title>{label}</Title>
-          {required && <Icon />}
+          {required && <RequiredMark>*</RequiredMark>}
           {first && <Notice>* 필수항목</Notice>}
         </Label>
       )}

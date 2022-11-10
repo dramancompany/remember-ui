@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, useRef } from 'react';
 
-import { yellow100 } from '../../../core/GlobalStyle';
+import { secondary100 } from '../../../core/GlobalStyle';
 import { createUUID } from '../../../utils/common';
 
 import { Container, Input, Label, Span } from './Switch.styles';
@@ -22,10 +22,10 @@ export const Switch = ({
   checked,
   onClick,
   size = 'small',
-  color = yellow100,
+  color = secondary100,
 }: SwitchProps) => {
   const { current: target } = useRef(createUUID());
-  const _color = isHexColorCode(color) ? color : yellow100;
+  const _color = isHexColorCode(color) ? color : secondary100;
 
   return (
     <Container className={className}>

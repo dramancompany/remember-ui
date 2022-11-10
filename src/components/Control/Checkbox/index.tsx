@@ -1,54 +1,28 @@
-import React from 'react';
-import type { MouseEvent } from 'react';
+import React, { InputHTMLAttributes } from 'react';
 
-import {
-  checkboxChecked,
-  checkboxOutline,
-  checkboxDisabled,
-  checkboxHovered,
-  checkboxRoundOn,
-  checkboxRoundOff,
-} from '../../../assets';
-import useHover from '../../../hooks/useHover';
+import { CheckboxInput, SIZE_MAP } from './Checkbox.styles';
 
-import { Container, Icon } from './Checkbox.styles';
-
-export interface CheckboxProps {
+export interface CheckboxProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  /**
+   * @deprecated
+   * `state`대신 `checked`를 사용해 주세요
+   */
   state?: 'on' | 'off';
-  onClick?: (e: MouseEvent<HTMLDivElement>) => void;
-  disabled?: boolean;
-  className?: string;
   round?: boolean;
+  $size?: keyof typeof SIZE_MAP;
 }
 
 export const Checkbox = ({
   state = 'off',
-  onClick = () => {},
-  disabled = false,
-  className,
   round = false,
-}: CheckboxProps) => {
-  const { ref: hoverRef, value: isHovered } = useHover<HTMLDivElement>();
-
-  const getIconImg = () => {
-    if (round) {
-      return state === 'on' ? checkboxRoundOn : checkboxRoundOff;
-    }
-    if (disabled) return checkboxDisabled;
-    if (state === 'on') return checkboxChecked;
-    if (isHovered) return checkboxHovered;
-    return checkboxOutline;
-  };
-
-  return (
-    <Container
-      ref={hoverRef}
-      className={className}
-      disabled={disabled}
-      onClick={(e) => !disabled && onClick(e)}
-      isRound={round}
-    >
-      <Icon src={getIconImg()} alt={`checkbox-${state}`} isRound={round} />
-    </Container>
-  );
-};
+  $size = 'medium',
+  ...props
+}: CheckboxProps) => (
+  <CheckboxInput
+    checked={state === 'on'}
+    isRound={round}
+    $size={$size}
+    {...props}
+  />
+);

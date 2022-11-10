@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { requiredIcon } from '../../../assets';
 import {
   contents100,
   gray100,
@@ -15,6 +14,7 @@ import {
   placeholderColor,
   mobileOnly,
   mobileSubTitle13,
+  secondary100,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div``;
@@ -33,15 +33,9 @@ export const Label = styled.div`
 
 export const Title = styled.span``;
 
-export const Icon = styled.img.attrs({
-  width: 6,
-  height: 6,
-  src: requiredIcon,
-  alt: 'mark',
-})`
+export const RequiredMark = styled.span`
   margin-left: 4px;
-  position: relative;
-  top: 1px;
+  color: ${secondary100};
 `;
 
 export const Notice = styled.span`

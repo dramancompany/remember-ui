@@ -1,18 +1,18 @@
 import styled, { css } from 'styled-components';
 
 import {
-  textSmall,
-  font,
+  accent100,
+  background200,
+  bg100,
   contents000,
   contents100,
   contents200,
   contents300,
-  contents999,
-  background200,
-  yellow100,
+  font,
   mobileOnly,
   textEllipsis,
-  accent100,
+  textSmall,
+  yellow100,
 } from '../../../core/GlobalStyle';
 
 export const Container = styled.div`
@@ -77,7 +77,7 @@ export const Content = styled.div<{
 }>`
   border-radius: 4px;
   border: 1px solid ${contents300};
-  background-color: ${contents999};
+  background-color: ${bg100};
 
   ${({ error }) =>
     error &&
@@ -118,7 +118,7 @@ export const Options = styled.div<{ active: boolean; maxHeight?: number }>`
     css`
       position: absolute;
       width: 100%;
-      background-color: ${contents999};
+      background-color: ${bg100};
       border: 1px solid ${contents300};
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
