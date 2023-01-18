@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Instance, Props as TippyProps } from 'tippy.js';
-import 'tippy.js/dist/tippy.css';
 
 import { Tooltip } from './InfoTooltip.styles';
 
