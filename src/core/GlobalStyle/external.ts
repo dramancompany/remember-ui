@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import tippyStyles from 'tippy.js/dist/tippy.css';
 
 import { blue100, white, gray100, gray400 } from './variable';
 import { flexCenter, mobileOnly } from './mixin';
@@ -47,6 +48,8 @@ const arrowMixin = (name: string, color: string) => css`
 `;
 
 const TippyTheme = css`
+  ${tippyStyles}
+
   .tippy-content {
     cursor: pointer;
   }
