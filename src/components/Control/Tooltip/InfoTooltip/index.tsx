@@ -39,7 +39,7 @@ export const InfoTooltip = ({
     duration={0}
     zIndex={200}
     theme="dcblue"
-    placement="bottom" // TODO: bottom-center에서 bottom으로 변경함 (체크 필요)
+    placement="bottom"
     $customAnimation={customAnimation}
     onShow={onShow}
   >

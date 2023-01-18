@@ -34,6 +34,7 @@ export default () => {
       rollupOptions: {
         external: [
           '@tippy.js/react',
+          'tippy.js',
           'react-toastify',
           'react-outside-click-handler',
           'react-text-mask',
