@@ -36,7 +36,6 @@ export interface DesignedModalProps
   headerButton?: ReactNode;
   isLoading?: boolean;
   width?: string | number;
-  height?: string | number;
   mobileWidth?: string | number;
   mobileHeight?: string | number;
   bodyScrollLockTargetId?: string | null;
@@ -66,7 +65,6 @@ export const DesignedModal = ({
   dragOnStop = () => {},
   dragOnDrag = () => {},
   width = '635px',
-  height,
   mobileWidth = '90vw',
   mobileHeight,
   bodyScrollLockTargetId,
@@ -92,8 +90,7 @@ export const DesignedModal = ({
     >
       <Modal
         isDraggable={isDraggable}
-        width={width}
-        height={height}
+        $width={width}
         mobileWidth={mobileWidth}
         mobileHeight={mobileHeight}
       >

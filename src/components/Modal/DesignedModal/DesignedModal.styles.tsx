@@ -22,18 +22,13 @@ export const Container = styled(BaseModal)`
 
 export const Modal = styled.div<{
   isDraggable?: boolean;
-  width?: number | string;
-  height?: number | string;
+  $width?: number | string;
   mobileWidth?: number | string;
   mobileHeight?: number | string;
 }>`
   background-color: ${background100};
   border-radius: 10px;
-  width: ${({ width }) => width};
-  ${({ height }) =>
-    css`
-      height: ${height};
-    `};
+  width: ${({ $width }) => $width};
 
   ${({ isDraggable }) =>
     isDraggable &&
