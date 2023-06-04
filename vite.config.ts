@@ -42,12 +42,18 @@ export default () => {
           'react',
           'react-dom',
           'styled-components',
+          'react-draggable',
         ],
         output: {
           globals: {
             react: 'React',
             'react-dom': 'ReactDOM',
             'styled-components': 'styled',
+            '@tippy.js/react': 'Tippy',
+            'react-draggable': 'Draggable',
+            'react-outside-click-handler': 'OutsideClickHandler',
+            'react-text-mask': 'MaskedInput',
+            'react-modal': 'Modal',
           },
         },
       },
