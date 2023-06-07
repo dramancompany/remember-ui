@@ -1,45 +1,38 @@
 import React, {
-  useState,
   ChangeEventHandler,
-  RefObject,
-  MouseEventHandler,
+  InputHTMLAttributes,
   ReactNode,
+  RefObject,
+  useState,
 } from 'react';
 
 import { handleInputLength } from '../../../utils/string';
 
 import {
   Container,
-  Label,
   ErrorMessage,
   Input,
+  Label,
   RequiredMark,
 } from './BaseInput.styles';
 
-export interface BaseInputProps<T> {
-  name?: string;
+interface CustomInputProps<T extends string | number> {
   value?: T;
   onChange: ChangeEventHandler<HTMLInputElement>;
   outerRef?: RefObject<HTMLInputElement>;
   footer?: ReactNode;
-  placeholder?: string;
-  maxLength?: number;
   marginBottom?: number;
-  type?: string;
-  label?: string;
-  className?: string;
-  autoFocus?: boolean;
-  required?: boolean;
-  disabled?: boolean;
   useError?: boolean;
   errorMark?: boolean;
   onlyNumber?: boolean;
   blankLabel?: boolean;
-  readOnly?: boolean;
-  onClick?: MouseEventHandler<HTMLInputElement>;
   onEnter?: VoidFunction;
+  label?: string;
   validate?: (value?: T) => string;
 }
+
+export type BaseInputProps<T extends string | number> = CustomInputProps<T> &
+  InputHTMLAttributes<HTMLInputElement>;
 
 export const BaseInput = <T extends string | number = string>({
   value,
