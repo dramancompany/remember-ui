@@ -67,7 +67,7 @@ export const Textarea = ({
       {(label || blankLabel) && (
         <Label>
           <Title>{label}</Title>
-          {required && <RequiredMark>*</RequiredMark>}
+          {required && <RequiredMark />}
           {first && <Notice>* 필수항목</Notice>}
         </Label>
       )}
