@@ -5,6 +5,7 @@ import {
   background100,
   contents200,
   contents300,
+  divider,
   flexCenterY,
   getTypographyStyles,
   mobileOnly,
@@ -54,6 +55,7 @@ export const ModalHeader = styled.div`
 
   justify-content: space-between;
   padding: 24px 30px;
+  border-bottom: 1px solid ${divider};
 
   ${mobileOnly(css`
     padding: 15px;
