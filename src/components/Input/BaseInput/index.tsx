@@ -34,6 +34,9 @@ interface CustomInputProps<T extends string | number> {
 export type BaseInputProps<T extends string | number> = CustomInputProps<T> &
   InputHTMLAttributes<HTMLInputElement>;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const BaseInput = <T extends string | number = string>({
   value,
   name,

@@ -6,6 +6,9 @@ export interface RememberLogoProps {
   height?: number;
 }
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const RememberLogo = ({
   className,
   color = 'white',

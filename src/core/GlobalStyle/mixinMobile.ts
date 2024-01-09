@@ -5,6 +5,7 @@ import type { FontProps } from './mixin';
 
 /**
  * @description size 18px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileTitle = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
@@ -19,6 +20,7 @@ export const mobileTitle = ({ color, opacity, ...rest }: FontProps) => css`
 
 /**
  * @description size 16px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileSubTitle16 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
@@ -33,6 +35,7 @@ export const mobileSubTitle16 = ({ color, opacity, ...rest }: FontProps) => css`
 
 /**
  * @description size 14px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileSubTitle14 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
@@ -47,6 +50,7 @@ export const mobileSubTitle14 = ({ color, opacity, ...rest }: FontProps) => css`
 
 /**
  * @description size 13px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileSubTitle13 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
@@ -61,6 +65,7 @@ export const mobileSubTitle13 = ({ color, opacity, ...rest }: FontProps) => css`
 
 /**
  * @description size 12px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileSubTitle12 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
@@ -75,6 +80,7 @@ export const mobileSubTitle12 = ({ color, opacity, ...rest }: FontProps) => css`
 
 /**
  * @description size 15px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileBody15 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
@@ -89,6 +95,7 @@ export const mobileBody15 = ({ color, opacity, ...rest }: FontProps) => css`
 
 /**
  * @description size 13px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileBody13 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
@@ -103,6 +110,7 @@ export const mobileBody13 = ({ color, opacity, ...rest }: FontProps) => css`
 
 /**
  * @description size 12px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileBody12 = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
@@ -117,6 +125,7 @@ export const mobileBody12 = ({ color, opacity, ...rest }: FontProps) => css`
 
 /**
  * @description size 11px
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  */
 export const mobileSubCaption = ({ color, opacity, ...rest }: FontProps) => css`
   ${font({
