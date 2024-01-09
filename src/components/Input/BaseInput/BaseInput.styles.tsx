@@ -28,7 +28,10 @@ export const Label = styled.div<{ $marginBottom?: number }>`
 
 export const RequiredMark = styled.span`
   margin-left: 4px;
-  color: ${secondary100};
+  background: ${secondary100};
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
 `;
 
 export const ErrorMessage = styled.div`

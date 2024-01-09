@@ -25,6 +25,15 @@ export const Variants: ComponentStory<typeof BaseInput> = () => {
       <StoryContainer direction="row">
         <BaseInput
           name="test2"
+          label="required 제목"
+          placeholder="제목을 입력하세요 (최대 50자)"
+          maxLength={50}
+          marginBottom={10}
+          required
+          onChange={() => {}}
+        />
+        <BaseInput
+          name="test2"
           label="제목"
           placeholder="제목을 입력하세요 (최대 50자)"
           maxLength={50}

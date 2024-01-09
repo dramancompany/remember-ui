@@ -53,6 +53,7 @@ export const contents150 = '#8B8B87';
 export const contents200 = '#B2B1AD';
 export const contents300 = '#CDCCC6';
 export const contents999 = '#FFFFF9';
+export const divider = '#E8E7E0';
 
 // Disable disabled CTA
 export const disabled = '#CDCCC6';

@@ -81,7 +81,7 @@ export const BaseInput = <T extends string | number = string>({
       {(label || blankLabel) && (
         <Label $marginBottom={marginBottom}>
           <span>{label}</span>
-          {required && <RequiredMark>*</RequiredMark>}
+          {required && <RequiredMark />}
         </Label>
       )}
       <Input
