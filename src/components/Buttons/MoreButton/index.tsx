@@ -16,6 +16,9 @@ export interface MoreButtonProps {
   onClick?: React.MouseEventHandler<HTMLImageElement>;
 }
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const MoreButton = ({
   value = false,
   size = 'small',

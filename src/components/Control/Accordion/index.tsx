@@ -33,6 +33,9 @@ export interface AccordionMenuProps {
   isCheckedItem?: (title: string, value: string) => boolean;
 }
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const Accordion = ({
   menus = [],
   onClickItem = () => {},

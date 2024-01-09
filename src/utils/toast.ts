@@ -30,6 +30,7 @@ const defaultToastOption: ToastOptions = {
   transition: Zoom,
 };
 
+/** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const customToast = (content: ToastContent) => {
   toast(content, {
     ...defaultToastOption,
@@ -39,6 +40,7 @@ export const customToast = (content: ToastContent) => {
   });
 };
 
+/** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const errorToast = (content: ToastContent) => {
   toast.error(content, {
     ...defaultToastOption,

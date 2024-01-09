@@ -16,10 +16,12 @@ const PRETENDARD_FONT_FAMILY =
 
 /**
  * flexbox 관련 설정 믹스인
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  * @param { boolean | string } horizontal: `justify-content`
  * @param { boolean | string } vertical: `align-items`
  * @param { boolean | string } direction: `flex-direction`
  */
+
 export const flexContainer = (
   horizontal: CSSProperties['justifyContent'] | null = 'normal',
   vertical: CSSProperties['alignItems'] | null = 'normal',
@@ -31,38 +33,65 @@ export const flexContainer = (
   align-items: ${vertical};
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const flexCenter = css`
   ${flexContainer('center', 'center')}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const flexCenterX = css`
   ${flexContainer('center', null)}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const flexCenterY = css`
   ${flexContainer(null, 'center')}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const flexEndY = css`
   ${flexContainer(null, 'flex-end')}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const flexColumnCenter = css`
   ${flexContainer(null, 'center', 'column')}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const flexColumnCenterX = css`
   ${flexContainer(null, 'center', 'column')}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const flexColumnCenterY = css`
   ${flexContainer('center', null, 'column')}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const flexColumnCenterAll = css`
   ${flexContainer('center', 'center', 'column')}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const TYPOGRAPHY_STYLES = {
   Headline2_B: {
     fontSize: 24,
@@ -111,6 +140,9 @@ export const TYPOGRAPHY_STYLES = {
   },
 };
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const getTypographyStyles = (
   typography: keyof typeof TYPOGRAPHY_STYLES
 ) => {
@@ -125,6 +157,7 @@ export const getTypographyStyles = (
 
 /**
  * 텍스트 폰트 관련 설정 믹스인
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
  * @param { { size / weight / color / opacity } } params
  * size: font-size
  * weight: font-weight
@@ -139,6 +172,9 @@ export interface FontProps {
   lineHeight?: CSSProperties['lineHeight'];
 }
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const font = ({
   size = '12px',
   weight = 'normal',
@@ -241,23 +277,36 @@ export const textTripleExtraLarge = ({
 /**
  * 글자 출력 관련 설정
  */
+
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const textBreakPre = css`
   white-space: pre-line;
   word-break: normal;
   word-wrap: break-word;
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const textBreak = css`
   word-break: break-all;
   word-wrap: break-word;
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const textEllipsis = css`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const textLink = css`
   cursor: pointer;
 
@@ -266,6 +315,9 @@ export const textLink = css`
   }
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const ellipsis = (line = 1) => {
   if (line === 1) {
     return textEllipsis;
@@ -284,24 +336,36 @@ export const ellipsis = (line = 1) => {
  * breakpoint 관련 mixin
  */
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const mobileSmallOnly = (cssContent: string) => css`
   @media only screen and (max-width: ${mobileSmallSizeBreak}) {
     ${cssContent}
   }
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const mobileOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (max-width: ${mobileSizeBreak}) {
     ${cssContent}
   }
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const webOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (min-width: ${parseInt(mobileSizeBreak) + 1}px) {
     ${cssContent}
   }
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const landingMobileOnly = (
   cssContent: FlattenSimpleInterpolation
 ) => css`
@@ -310,6 +374,9 @@ export const landingMobileOnly = (
   }
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const landingWebOnly = (cssContent: FlattenSimpleInterpolation) => css`
   @media only screen and (min-width: ${parseInt(landingMobileSizeBreak) +
     1}px) {
@@ -317,6 +384,9 @@ export const landingWebOnly = (cssContent: FlattenSimpleInterpolation) => css`
   }
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const placeholderColor = (
   color: CSSProperties['color'],
   center = false
@@ -331,23 +401,35 @@ export const placeholderColor = (
   }
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const displayWebOnly = css`
   ${mobileOnly(css`
     display: none !important;
   `)}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const displayMobileOnly = css`
   ${webOnly(css`
     display: none !important;
   `)}
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const minHeightFix = (direction = 'row') => css`
   display: flex;
   flex-direction: ${direction};
 `;
 
+/**
+ * @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요.
+ */
 export const minHeightFixChild = css`
   flex: 1 1 auto;
 `;

@@ -1,10 +1,12 @@
 import { enableBodyScroll } from 'body-scroll-lock';
 
+/** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const range = (start: number, end: number) =>
   Array(end - start + 1)
     .fill(null)
     .map((_, idx) => start + idx);
 
+/** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const safeGetWindow = () => {
   if (typeof window === 'undefined') {
     return null;
@@ -12,9 +14,7 @@ export const safeGetWindow = () => {
   return window;
 };
 
-/*
-https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
- */
+/** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const createUUID = () => {
   // http://www.ietf.org/rfc/rfc4122.txt
   const s = [];
@@ -29,6 +29,7 @@ export const createUUID = () => {
   return s.join('');
 };
 
+/** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const enableBodyScrollLock = (
   bodyScrollLockTarget?: string | null,
   delegateCloseControl = false
