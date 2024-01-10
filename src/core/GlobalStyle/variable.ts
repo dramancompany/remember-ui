@@ -75,11 +75,11 @@ export const gray = gray200;
 
 // Primary 브랜드 컬러 표현 시 사용
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const primary100 = '#000000';
+export const primary100 = 'var(--rui-primary100, #000000)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const primary200 = '#FFFFF9';
+export const primary200 = 'var(--rui-primary200, #FFFFF9)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const secondary100 = '#FF5414';
+export const secondary100 = 'var(--rui-secondary100, #FF5414)';
 
 /**
  * colors in use
@@ -87,26 +87,27 @@ export const secondary100 = '#FF5414';
 
 // Contents  txt/ label/ border/ divider
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const contents000 = '#212322';
+export const contents000 = 'var(--rui-contents000, #212322)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const contents100 = '#61615F';
+export const contents100 = 'var(--rui-contents100, #61615F)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const contents150 = '#8B8B87';
+export const contents150 = 'var(--rui-contents150, #8B8B87)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const contents200 = '#B2B1AD';
+export const contents200 = 'var(--rui-contents200, #B2B1AD)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const contents300 = '#CDCCC6';
+export const contents300 = 'var(--rui-contents300, #CDCCC6)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const contents999 = '#FFFFF9';
-export const divider = '#E8E7E0';
+export const contents999 = 'var(--rui-contents999, #FFFFF9)';
+/** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
+export const divider = 'var(--rui-divider, #E8E7E0)';
 
 // Disable disabled CTA
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const disabled = '#CDCCC6';
+export const disabled = 'var(--rui-disabled, #CDCCC6)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const disabledRoleRed = '#FFAA8D';
+export const disabledRoleRed = 'var(--rui-disabled-role-red, #FFAA8D)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const disabledSecondary = '#FFCBBA';
+export const disabledSecondary = 'var(--rui-disabled-secondary, #FFCBBA)';
 // legacy
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const disable = disabled;
@@ -117,13 +118,13 @@ export const disableAccent200 = disabledSecondary;
 
 // Accent Error/ Link/
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const roleRed = '#BB3811';
+export const roleRed = 'var(--rui-role-red, #BB3811)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const roleYellow = '#EBA900';
+export const roleYellow = 'var(--rui-role-yellow, #EBA900)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const roleBlue = '#00B3EA';
+export const roleBlue = 'var(--rui-role-blue, #00B3EA)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const roleGreen = '#29B31E';
+export const roleGreen = 'var(--rui-role-green, #29B31E)';
 // legacy
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const accent100 = roleRed;
@@ -132,27 +133,27 @@ export const accent200 = secondary100;
 
 // Background
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bg100 = '#FFFFFF';
+export const bg100 = 'var(--rui-bg100, #FFFFFF)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bg200 = '#F7F7F0';
+export const bg200 = 'var(--rui-bg200, #F7F7F0)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bg300 = '#E8E7E0';
+export const bg300 = 'var(--rui-bg300, #E8E7E0)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bgModal100 = '#FFFFFF';
+export const bgModal100 = 'var(--rui-bg-modal100, #FFFFFF)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bgModal200 = '#F7F7F0';
+export const bgModal200 = 'var(--rui-bg-modal200, #F7F7F0)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bgRoleRed = '#FCE9E6';
+export const bgRoleRed = 'var(--rui-bg-role-red, #FCE9E6)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bgSecondary100 = '#FFF2F0';
+export const bgSecondary100 = 'var(--rui-bg-secondary100, #FFF2F0)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bgHighlight = '#FCF6E0';
+export const bgHighlight = 'var(--rui-bg-highlight, #FCF6E0)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bgRoleYellow = '#FCF6E0';
+export const bgRoleYellow = 'var(--rui-bg-role-yellow, #FCF6E0)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bgRoleBlue = '#E0F5FC';
+export const bgRoleBlue = 'var(--rui-bg-role-blue, #E0F5FC)';
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
-export const bgRoleGreen = '#E7F6E5';
+export const bgRoleGreen = 'var(--rui-bg-role-green, #E7F6E5)';
 // legacy
 /** @deprecated remember-ui는 더 이상 사용되지 않습니다. Rui를 사용해주세요. */
 export const background100 = bg100;
