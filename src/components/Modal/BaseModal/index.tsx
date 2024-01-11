@@ -1,5 +1,5 @@
 import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import Draggable from 'react-draggable';
 import Modal from 'react-modal';
 
