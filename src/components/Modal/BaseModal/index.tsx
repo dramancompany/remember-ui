@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
-import Modal from 'react-modal';
 import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
+import { ReactNode } from 'react';
 import Draggable from 'react-draggable';
+import Modal from 'react-modal';
 
 import { enableBodyScrollLock } from '../../../utils/common';
 
@@ -9,7 +9,7 @@ import { Container } from './BaseModal.styles';
 
 Modal.setAppElement('body');
 
-export interface BaseModalProps {
+export interface BaseModalProps extends ReactModal.Props {
   isOpen: boolean;
   isDraggable?: boolean;
   isDragDisabled?: boolean;
@@ -42,6 +42,7 @@ export const BaseModal = ({
   dragOnStop = () => {},
   dragOnDrag = () => {},
   bodyScrollLockTarget = '',
+  ...props
 }: BaseModalProps) => {
   const dragBounds = isDraggable && isDragBounded ? '.dc-modal-overlay' : '';
   const dragCancelTarget = 'input, textarea, .not-draggable';
@@ -84,6 +85,7 @@ export const BaseModal = ({
        * modal의 경우 해당 액션이 필요하여 분기처리
        */
       shouldCloseOnEsc={allowKeyExit}
+      {...props}
     >
       {isDraggable && (
         <Draggable
