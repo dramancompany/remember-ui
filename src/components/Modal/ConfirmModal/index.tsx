@@ -52,7 +52,7 @@ export interface ConfirmModalProps
   icon?: IconType;
   type?: Type;
   title?: ReactNode;
-  message?: string;
+  message?: ReactNode;
   isOpen: boolean;
   showClose?: boolean;
   onOk?: () => void;
