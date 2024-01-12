@@ -51,7 +51,7 @@ export interface ConfirmModalProps
   > {
   icon?: IconType;
   type?: Type;
-  title?: string | JSX.Element;
+  title?: string | JSX.Element | ReactNode;
   message?: string;
   isOpen: boolean;
   showClose?: boolean;
