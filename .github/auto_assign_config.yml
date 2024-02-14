@@ -7,7 +7,7 @@ numberOfReviewers: 2
 useReviewGroups: false
 
 reviewers:
-  - JeongminSung
+  - ikki-kki
   - DiveDiFF
   - yongsk0066
   - kimjeongwonn
@@ -16,5 +16,6 @@ reviewers:
   - takethisbus
   - KimJeongHyun
   - cb-bang
+  - rjcnd105
 
 useAssigneeGroups: false
