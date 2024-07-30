@@ -7,15 +7,15 @@ numberOfReviewers: 2
 useReviewGroups: false
 
 reviewers:
-  - ikki-kki
-  - DiveDiFF
   - yongsk0066
   - kimjeongwonn
   - saengmotmi
+  - DiveDiFF
   - jihunhong
   - takethisbus
   - KimJeongHyun
   - cb-bang
-  - rjcnd105
+  - soonki-98
+  - hazzzi
 
 useAssigneeGroups: false
